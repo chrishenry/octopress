@@ -3,12 +3,11 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Sphinx Full Text Search Engine - The Technician</title>
+	<title>Switching to Octopress - The Technician</title>
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="For a very long time, I was convinced that a FULLTEXT index in MySQL was the
-best solution for all your searching needs. Then I realized that it was &hellip;">
+	<meta name="description" content="Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -91,42 +90,36 @@ best solution for all your searching needs. Then I realized that it was &hellip;
 
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Sphinx Full Text Search Engine</h2>
-	<div class="entry-content"><p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
-best solution for all your searching needs. Then I realized that it was
-horribly slow, and mixing with complex joins completely destroyed any chances
-of using MySQL indexes in any way that would make sense or get decent results.
-The solution to fast and scalable free text search on any website is, of
-course, a Full Text search engine.</p>
+	<h2 class="title">Switching to Octopress</h2>
+	<div class="entry-content"><p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
-<p>There are a few different ones out there. After a brief affair with Lucene, I
-settled on Sphinx. Sphinx is easy to install, even on 64-bit machines, and is
-architected in a way that makes a lot of sense for the web. The following
-steps were performed on a Red Hat machine. Don&#8217;t skip the mysql-dev install,
-even if you already MySQL installed.</p>
-
-<figure class='code'><figcaption><span>[Sphinx installation] [bash:bash] [url] [link text] </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install gcc-c++
-</span><span class='line'>yum install mysql-dev*
-</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
-</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
-</span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql> ./make
-</span><span class='line'>make install</span></code></pre></td></tr></table></div></figure>
+<!-- more -->
 
 
-<p>Once installed, it&#8217;s fairly simple to start playing with the packaged example
-data and queries. The php APIs make integration easy, either to build a
-service, or use locally as a substitute for MySQL. In fact, as long as the
-index can be kept reasonably up to date, Sphinx is a better choice for
-complicated sorts than MySQL.</p>
+<p>Overall, here were the features I was looking for</p>
+
+<ul>
+<li>Display code beautifully, right off the bat.</li>
+<li>Add plugins. Maybe even write them myself.</li>
+<li>Be able to have all my content organized how I want.</li>
+</ul>
+
+
+<p><a href="http://octopress.org">Octopress</a> was a perfect fit. Working with git, the command line, and markdown are all things that are very familiar to me. There&#8217;s a great community around it, and enough open development around it to support most of the things I want to do. And if the community hasn&#8217;t built it yet, then I can certainly give it a try myself.</p>
+
+<p>The docs on the <a href="http://octopress.org/docs/setup/">Octopress</a> site are really good. Aside from the typical challenges of upgrading Ruby on Mac. <a href="http://www.macports.org/">MacPorts</a> was extremely helpful with the upgrade to Ruby 1.9.3.  Also, the provisioning of a Heroku dyno, and the deploy was as close to painless as it gets.</p>
+
+<p>The migration, however, was not quite as simple. I had plenty of trouble getting my content into tumblr, and I also had a bit of trouble getting it out. Tom Preston-Warner&#8217;s <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">github wiki</a> was very helpful. However, be aware that the default ruby gems are a little out of date, and the information <a href="https://github.com/mojombo/jekyll/issues/773">this resolved issue</a> helped get around the trouble.</p>
+
+<p>Once the posts were actually imported, there still needed to be a bit of massaging done to get them into shape. The yaml header was using tags instead of categories. In the source/_posts folder, a quick sed command got me what I wanted.</p>
+
+<figure class='code'><figcaption><span>Sed snippet  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="nv">$ </span>sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/^tags/categories/&#39;</span> *
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I do miss my old Wordpress blog, but it was definitely time for a change, as that had been my blog for years. Setting up Octopress has been a great experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
 </div>
 
 
@@ -143,11 +136,11 @@ complicated sorts than MySQL.</p>
   
 
 
-<time datetime="2010-01-29T00:00:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2010</time></div>
+<time datetime="2013-02-09T16:08:00-05:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
+	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tumblr/'>tumblr</a>, <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
 
 
 </div>
@@ -169,6 +162,12 @@ complicated sorts than MySQL.</p>
 </div>
 
 
+
+<section id="comment">
+    <h2 class="title">Comments</h2>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 
@@ -188,7 +187,10 @@ complicated sorts than MySQL.</p>
       var disqus_shortname = 'thetechnician';
       
         
-        var disqus_script = 'count.js';
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://yoursite.com/2013/02/09/switching-to-octopress/';
+        var disqus_url = 'http://yoursite.com/2013/02/09/switching-to-octopress/';
+        var disqus_script = 'embed.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

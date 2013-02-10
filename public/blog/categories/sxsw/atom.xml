@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Sxsw | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/sxsw/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SXSW isn't for Backend Devs Anymore]]></title>
-    <link href="http://yoursite.com/blog/2011/03/16/sxsw-isnt-for-backend-devs-anymore/"/>
+    <link href="http://yoursite.com/2011/03/16/sxsw-isnt-for-backend-devs-anymore/"/>
     <updated>2011-03-16T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2011/03/16/sxsw-isnt-for-backend-devs-anymore</id>
+    <id>http://yoursite.com/2011/03/16/sxsw-isnt-for-backend-devs-anymore</id>
     <content type="html"><![CDATA[<p>During my time at the interactive portion of SXSW, I was looking for great
 technical panels on practical ways to improve my technical skills. While I
 found a bunch of panels that addressed some interesting issues, I don't think
@@ -49,9 +49,9 @@ on how to create things worth talking about.</p>
   
   <entry>
     <title type="html"><![CDATA[The Progress Bar Pysch]]></title>
-    <link href="http://yoursite.com/blog/2011/03/12/the-progress-bar-pysch/"/>
+    <link href="http://yoursite.com/2011/03/12/the-progress-bar-pysch/"/>
     <updated>2011-03-12T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2011/03/12/the-progress-bar-pysch</id>
+    <id>http://yoursite.com/2011/03/12/the-progress-bar-pysch</id>
     <content type="html"><![CDATA[<p>A classic UX problems is communicating to users how long they'll have to wait
 before their task completes. A spinner or progress bar provides feedback that
 the system is, in fact, doing something, and how long that task may take.

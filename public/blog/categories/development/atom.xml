@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Development | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/development/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
-    <link href="http://yoursite.com/blog/2012/12/10/fizzbuzz-a-thon/"/>
+    <link href="http://yoursite.com/2012/12/10/fizzbuzz-a-thon/"/>
     <updated>2012-12-10T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2012/12/10/fizzbuzz-a-thon</id>
+    <id>http://yoursite.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
 other developers several times, I felt like a bit of hypocrite having never
@@ -54,9 +54,9 @@ repo.</a></p>
   
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <link href="http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
     <updated>2012-07-09T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <id>http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing"
 -<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
@@ -107,9 +107,9 @@ specialist might not be able to do by themselves.</p>
   
   <entry>
     <title type="html"><![CDATA[Development without Internet Access]]></title>
-    <link href="http://yoursite.com/blog/2011/06/12/development-without-internet-access/"/>
+    <link href="http://yoursite.com/2011/06/12/development-without-internet-access/"/>
     <updated>2011-06-12T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2011/06/12/development-without-internet-access</id>
+    <id>http://yoursite.com/2011/06/12/development-without-internet-access</id>
     <content type="html"><![CDATA[<p>While flying to Austin for sxsw, I had a small programming task. Take a string
 of a few search terms, break it apart and highlight those terms in another
 string. It's a straightforward task, and probably a wheel that's been
@@ -168,9 +168,9 @@ nothing about, and learn how do it via the Internet?</p>
   
   <entry>
     <title type="html"><![CDATA[Out of the Terminal]]></title>
-    <link href="http://yoursite.com/blog/2010/07/21/out-of-the-terminal/"/>
+    <link href="http://yoursite.com/2010/07/21/out-of-the-terminal/"/>
     <updated>2010-07-21T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/07/21/out-of-the-terminal</id>
+    <id>http://yoursite.com/2010/07/21/out-of-the-terminal</id>
     <content type="html"><![CDATA[<p>Every once and a while I get to leave server-land and get to do some fun
 projects that involve doing something on the front end. The latest was
 building an embed script for the Behance <a href="http://www.behance.net/joblist">Job
@@ -203,9 +203,9 @@ network for creative professionals.</p></blockquote>
   
   <entry>
     <title type="html"><![CDATA[Sphinx Full Text Search Engine]]></title>
-    <link href="http://yoursite.com/blog/2010/01/29/sphinx-full-text-search-engine/"/>
+    <link href="http://yoursite.com/2010/01/29/sphinx-full-text-search-engine/"/>
     <updated>2010-01-29T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2010/01/29/sphinx-full-text-search-engine</id>
+    <id>http://yoursite.com/2010/01/29/sphinx-full-text-search-engine</id>
     <content type="html"><![CDATA[<p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
 best solution for all your searching needs. Then I realized that it was
 horribly slow, and mixing with complex joins completely destroyed any chances
@@ -219,21 +219,22 @@ architected in a way that makes a lot of sense for the web. The following
 steps were performed on a Red Hat machine. Don't skip the mysql-dev install,
 even if you already MySQL installed.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Sphinx installation] [bash:bash] [url] [link text] </span></figcaption>
-<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
 <span class='line-number'>4</span>
 <span class='line-number'>5</span>
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>yum install gcc-c++
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
 </span><span class='line'>yum install mysql-dev*
 </span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
 </span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
 </span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql> ./make
-</span><span class='line'>make install</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
+</span><span class='line'>make install
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>Once installed, it's fairly simple to start playing with the packaged example
 data and queries. The php APIs make integration easy, either to build a

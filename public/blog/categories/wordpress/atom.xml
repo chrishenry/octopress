@@ -4,7 +4,7 @@
   <title><![CDATA[Category: wordpress | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/wordpress/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,14 +15,37 @@
   
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
-    <link href="http://yoursite.com/blog/2013/02/09/switching-to-octopress/"/>
+    <link href="http://yoursite.com/2013/02/09/switching-to-octopress/"/>
     <updated>2013-02-09T16:08:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/02/09/switching-to-octopress</id>
-    <content type="html"><![CDATA[<p>Wordpress was old and busted, tumblr wouldn't even let me embed an iframe, it was time to switch, get some more control, and make a project out of it.</p>
+    <id>http://yoursite.com/2013/02/09/switching-to-octopress</id>
+    <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn't quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
-<p>I do miss my old Wordpress blog, but it was definitely time to change, as that had been my blog layout for years. It was mostly an experiment for me to set up a Rackspace cloud server.</p>
+<!-- more -->
 
-<p>Much the same, setting up Octopress has been an experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
+
+<p>Overall, here were the features I was looking for</p>
+
+<ul>
+<li>Display code beautifully, right off the bat.</li>
+<li>Add plugins. Maybe even write them myself.</li>
+<li>Be able to have all my content organized how I want.</li>
+</ul>
+
+
+<p><a href="http://octopress.org">Octopress</a> was a perfect fit. Working with git, the command line, and markdown are all things that are very familiar to me. There's a great community around it, and enough open development around it to support most of the things I want to do. And if the community hasn't built it yet, then I can certainly give it a try myself.</p>
+
+<p>The docs on the <a href="http://octopress.org/docs/setup/">Octopress</a> site are really good. Aside from the typical challenges of upgrading Ruby on Mac. <a href="http://www.macports.org/">MacPorts</a> was extremely helpful with the upgrade to Ruby 1.9.3.  Also, the provisioning of a Heroku dyno, and the deploy was as close to painless as it gets.</p>
+
+<p>The migration, however, was not quite as simple. I had plenty of trouble getting my content into tumblr, and I also had a bit of trouble getting it out. Tom Preston-Warner's <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">github wiki</a> was very helpful. However, be aware that the default ruby gems are a little out of date, and the information <a href="https://github.com/mojombo/jekyll/issues/773">this resolved issue</a> helped get around the trouble.</p>
+
+<p>Once the posts were actually imported, there still needed to be a bit of massaging done to get them into shape. The yaml header was using tags instead of categories. In the source/_posts folder, a quick sed command got me what I wanted.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sed snippet  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="nv">$ </span>sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/&lt;sup&gt;tags/categories/&#39;</span>&lt;/sup&gt; *
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+
+<p>I do miss my old Wordpress blog, but it was definitely time for a change, as that had been my blog for years. Setting up Octopress has been a great experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
 ]]></content>
   </entry>
   

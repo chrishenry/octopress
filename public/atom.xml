@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,22 +15,46 @@
   
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
-    <link href="http://yoursite.com/blog/2013/02/09/switching-to-octopress/"/>
+    <link href="http://yoursite.com/2013/02/09/switching-to-octopress/"/>
     <updated>2013-02-09T16:08:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/02/09/switching-to-octopress</id>
-    <content type="html"><![CDATA[<p>Wordpress was old and busted, tumblr wouldn&#8217;t even let me embed an iframe, it was time to switch, get some more control, and make a project out of it.</p>
+    <id>http://yoursite.com/2013/02/09/switching-to-octopress</id>
+    <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
-<p>I do miss my old Wordpress blog, but it was definitely time to change, as that had been my blog layout for years. It was mostly an experiment for me to set up a Rackspace cloud server.</p>
+<!-- more -->
 
-<p>Much the same, setting up Octopress has been an experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
+
+<p>Overall, here were the features I was looking for</p>
+
+<ul>
+<li>Display code beautifully, right off the bat.</li>
+<li>Add plugins. Maybe even write them myself.</li>
+<li>Be able to have all my content organized how I want.</li>
+</ul>
+
+
+<p><a href="http://octopress.org">Octopress</a> was a perfect fit. Working with git, the command line, and markdown are all things that are very familiar to me. There&#8217;s a great community around it, and enough open development around it to support most of the things I want to do. And if the community hasn&#8217;t built it yet, then I can certainly give it a try myself.</p>
+
+<p>The docs on the <a href="http://octopress.org/docs/setup/">Octopress</a> site are really good. Aside from the typical challenges of upgrading Ruby on Mac. <a href="http://www.macports.org/">MacPorts</a> was extremely helpful with the upgrade to Ruby 1.9.3.  Also, the provisioning of a Heroku dyno, and the deploy was as close to painless as it gets.</p>
+
+<p>The migration, however, was not quite as simple. I had plenty of trouble getting my content into tumblr, and I also had a bit of trouble getting it out. Tom Preston-Warner&#8217;s <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">github wiki</a> was very helpful. However, be aware that the default ruby gems are a little out of date, and the information <a href="https://github.com/mojombo/jekyll/issues/773">this resolved issue</a> helped get around the trouble.</p>
+
+<p>Once the posts were actually imported, there still needed to be a bit of massaging done to get them into shape. The yaml header was using tags instead of categories. In the source/_posts folder, a quick sed command got me what I wanted.</p>
+
+<figure class='code'><figcaption><span>Sed snippet  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="nv">$ </span>sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/^tags/categories/&#39;</span> *
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>I do miss my old Wordpress blog, but it was definitely time for a change, as that had been my blog for years. Setting up Octopress has been a great experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[app.net community]]></title>
-    <link href="http://yoursite.com/blog/2013/02/09/appnet-community/"/>
+    <link href="http://yoursite.com/2013/02/09/appnet-community/"/>
     <updated>2013-02-09T12:08:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/02/09/appnet-community</id>
+    <id>http://yoursite.com/2013/02/09/appnet-community</id>
     <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
 a great online community, and super eloquent in some cases.</p>
 
@@ -43,9 +67,9 @@ wrong</a>.</p>
   
   <entry>
     <title type="html"><![CDATA[Purpose]]></title>
-    <link href="http://yoursite.com/blog/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
+    <link href="http://yoursite.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
     <updated>2013-02-07T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
+    <id>http://yoursite.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
     <content type="html"><![CDATA[<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
 purpose or the justification for said feature, all you get is a code monkey.
 Code monkeys merely translate requirements into code verbatim. There’s no room
@@ -58,18 +82,18 @@ do.</p></blockquote>
   
   <entry>
     <title type="html"><![CDATA[Airport Security at it’s finest.]]></title>
-    <link href="http://yoursite.com/blog/2013/02/03/airport-security-at-its-finest/"/>
+    <link href="http://yoursite.com/2013/02/03/airport-security-at-its-finest/"/>
     <updated>2013-02-03T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/02/03/airport-security-at-its-finest</id>
+    <id>http://yoursite.com/2013/02/03/airport-security-at-its-finest</id>
     <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/user/jfk_security.png" alt="" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[RWW's New Design]]></title>
-    <link href="http://yoursite.com/blog/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
+    <link href="http://yoursite.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
     <updated>2013-01-31T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
+    <id>http://yoursite.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
     <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
 barrage of text. And it’s mostly text I’m not interested in reading.</p>
 
@@ -83,9 +107,9 @@ you don’t expect.</p>
   
   <entry>
     <title type="html"><![CDATA[Rigoletto]]></title>
-    <link href="http://yoursite.com/blog/2013/01/29/rigoletto/"/>
+    <link href="http://yoursite.com/2013/01/29/rigoletto/"/>
     <updated>2013-01-29T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/01/29/rigoletto</id>
+    <id>http://yoursite.com/2013/01/29/rigoletto</id>
     <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
 the Met</p>
 
@@ -112,18 +136,18 @@ accessible.</p>
   
   <entry>
     <title type="html"><![CDATA[You’re not going to Eur - o - pee in there? - Jessica]]></title>
-    <link href="http://yoursite.com/blog/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
+    <link href="http://yoursite.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
     <updated>2013-01-27T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
+    <id>http://yoursite.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
     <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/user/euro_toilet.jpg" alt="" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
-    <link href="http://yoursite.com/blog/2013/01/27/ssh-tunnels-made-easy/"/>
+    <link href="http://yoursite.com/2013/01/27/ssh-tunnels-made-easy/"/>
     <updated>2013-01-27T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/01/27/ssh-tunnels-made-easy</id>
+    <id>http://yoursite.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine
 production data. Classically, phpMyAdmin has been a great tool for handling
@@ -184,9 +208,9 @@ closed.</p>
   
   <entry>
     <title type="html"><![CDATA[Rules for London]]></title>
-    <link href="http://yoursite.com/blog/2013/01/26/rules-for-london/"/>
+    <link href="http://yoursite.com/2013/01/26/rules-for-london/"/>
     <updated>2013-01-26T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/01/26/rules-for-london</id>
+    <id>http://yoursite.com/2013/01/26/rules-for-london</id>
     <content type="html"><![CDATA[<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
 Europe. Having never been to Europe, or on a real vacation for the last couple
 years, I was really looking to maximize my time there. So I had a couple rules
@@ -219,9 +243,9 @@ find the really cool stuff.</p>
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
-    <link href="http://yoursite.com/blog/2012/12/10/fizzbuzz-a-thon/"/>
+    <link href="http://yoursite.com/2012/12/10/fizzbuzz-a-thon/"/>
     <updated>2012-12-10T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2012/12/10/fizzbuzz-a-thon</id>
+    <id>http://yoursite.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
 other developers several times, I felt like a bit of hypocrite having never
@@ -258,9 +282,9 @@ repo.</a></p>
   
   <entry>
     <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
-    <link href="http://yoursite.com/blog/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
+    <link href="http://yoursite.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
     <updated>2012-10-14T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
+    <id>http://yoursite.com/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
     <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
 those interested, here are the slides.</p>
 
@@ -275,9 +299,9 @@ those interested, here are the slides.</p>
   
   <entry>
     <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
-    <link href="http://yoursite.com/blog/2012/08/19/appnet-i-smell-a-pattern/"/>
+    <link href="http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern/"/>
     <updated>2012-08-19T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/08/19/appnet-i-smell-a-pattern</id>
+    <id>http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern</id>
     <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
 <a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
 at what seemed like a very popular concept. If (IF) I understand correctly,
@@ -347,9 +371,9 @@ monetize without having to resort to advertising.</p>
   
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
-    <link href="http://yoursite.com/blog/2012/08/13/mysqls-insert-select-replication-and-you/"/>
+    <link href="http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
     <updated>2012-08-13T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/08/13/mysqls-insert-select-replication-and-you</id>
+    <id>http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
 SELECT</a> is an
@@ -389,9 +413,9 @@ situations.</p>
   
   <entry>
     <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
-    <link href="http://yoursite.com/blog/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
+    <link href="http://yoursite.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
     <updated>2012-07-28T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/07/28/gallow-green-is-still-a-bitgreen</id>
+    <id>http://yoursite.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
     <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I&#8217;ve
 been a huge fan of the rich, immersive experience put together by
 <a href="http://www.punchdrunk.org.uk/">Punchdrunk</a>.  I loved the dreamy feeling of
@@ -437,9 +461,9 @@ next reservation at the McKittrick will occur on a better night.</p>
   
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <link href="http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
     <updated>2012-07-09T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <id>http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>&#8220;An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing&#8221;
 -<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
@@ -490,9 +514,9 @@ specialist might not be able to do by themselves.</p>
   
   <entry>
     <title type="html"><![CDATA[Try Adding Distance]]></title>
-    <link href="http://yoursite.com/blog/2012/06/23/try-adding-distance/"/>
+    <link href="http://yoursite.com/2012/06/23/try-adding-distance/"/>
     <updated>2012-06-23T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/06/23/try-adding-distance</id>
+    <id>http://yoursite.com/2012/06/23/try-adding-distance</id>
     <content type="html"><![CDATA[<p>Part of my New Years (non-whiny) resolution was to go the gym more often. It
 is a resolution that I have (mostly) adhered to over the past six months. When
 I go to the gym, I <a href="http://www.fatcuda.com/wp-%0Acontent/uploads/2012/06/concept-2-model-d-rowing-machine_10_0.jpg">row</a>. I love the
@@ -541,9 +565,9 @@ me for years.</p>
   
   <entry>
     <title type="html"><![CDATA[Calliope NYC]]></title>
-    <link href="http://yoursite.com/blog/2012/05/31/calliope-nyc/"/>
+    <link href="http://yoursite.com/2012/05/31/calliope-nyc/"/>
     <updated>2012-05-31T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/05/31/calliope-nyc</id>
+    <id>http://yoursite.com/2012/05/31/calliope-nyc</id>
     <content type="html"><![CDATA[<p>On the corner of East 4th Street, the newest of the New American restaurants,
 <a href="http://calliopenyc.com/">Calliope</a> has soft launched. It&#8217;s in a beautiful
 space in a great part of the East Village. The dining room is open and airy,
@@ -570,9 +594,9 @@ a great addition to and already incredible neighborhood.</p>
   
   <entry>
     <title type="html"><![CDATA[Workflow with Synergy]]></title>
-    <link href="http://yoursite.com/blog/2012/05/26/workflow-with-synergy/"/>
+    <link href="http://yoursite.com/2012/05/26/workflow-with-synergy/"/>
     <updated>2012-05-26T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/05/26/workflow-with-synergy</id>
+    <id>http://yoursite.com/2012/05/26/workflow-with-synergy</id>
     <content type="html"><![CDATA[<p>As a web developer working in lots of different areas, I have to use <a href="http://blog.behance.net/dev/developers-toolkit-chris-%0Ahenry">lots of
 different programs</a> to perform various tasks. Terminal for SSH, Eclipse for php, etc.
 Chrome for all things web browsing, including Gmail. Eventually, the number of
@@ -611,9 +635,9 @@ machine that will be up and running.</p>
   
   <entry>
     <title type="html"><![CDATA[Why SOPA is fucking stupid]]></title>
-    <link href="http://yoursite.com/blog/2012/01/12/why-sopa-is-fucking-stupid/"/>
+    <link href="http://yoursite.com/2012/01/12/why-sopa-is-fucking-stupid/"/>
     <updated>2012-01-12T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2012/01/12/why-sopa-is-fucking-stupid</id>
+    <id>http://yoursite.com/2012/01/12/why-sopa-is-fucking-stupid</id>
     <content type="html"><![CDATA[<p>At its core, SOPA represents a universal, base desire of men to protect what
 they own. To some degree, it&#8217;s valid, something that anyone can respect.
 However, as with most things, ideas mean precisely shite, and execution is
@@ -669,9 +693,9 @@ bill, <a href="http://thomas.loc.gov/home/gpoxmlc112/h3261_ih.xml">click here</a
   
   <entry>
     <title type="html"><![CDATA[New Years Actionable (non-whiner) Resolutions]]></title>
-    <link href="http://yoursite.com/blog/2012/01/03/new-years-actionable-non-whiner-resolutions/"/>
+    <link href="http://yoursite.com/2012/01/03/new-years-actionable-non-whiner-resolutions/"/>
     <updated>2012-01-03T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2012/01/03/new-years-actionable-non-whiner-resolutions</id>
+    <id>http://yoursite.com/2012/01/03/new-years-actionable-non-whiner-resolutions</id>
     <content type="html"><![CDATA[<p>Normally, I&#8217;ve considered New Year&#8217;s Resolutions to be for whiners, people who
 never actually accomplish anything, people who are normally on the
 whhhaaaambulance. Most resolutions fall somewhere in the &#8220;stop being fat&#8221; to

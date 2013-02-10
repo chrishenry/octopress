@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Process | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/process/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <link href="http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
     <updated>2012-07-09T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <id>http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing"
 -<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
@@ -68,9 +68,9 @@ specialist might not be able to do by themselves.</p>
   
   <entry>
     <title type="html"><![CDATA[Workflow with Synergy]]></title>
-    <link href="http://yoursite.com/blog/2012/05/26/workflow-with-synergy/"/>
+    <link href="http://yoursite.com/2012/05/26/workflow-with-synergy/"/>
     <updated>2012-05-26T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/05/26/workflow-with-synergy</id>
+    <id>http://yoursite.com/2012/05/26/workflow-with-synergy</id>
     <content type="html"><![CDATA[<p>As a web developer working in lots of different areas, I have to use <a href="http://blog.behance.net/dev/developers-toolkit-chris-%0Ahenry">lots of
 different programs</a> to perform various tasks. Terminal for SSH, Eclipse for php, etc.
 Chrome for all things web browsing, including Gmail. Eventually, the number of
@@ -109,9 +109,9 @@ machine that will be up and running.</p>
   
   <entry>
     <title type="html"><![CDATA[Distributed Updates]]></title>
-    <link href="http://yoursite.com/blog/2011/06/25/distributed-updates/"/>
+    <link href="http://yoursite.com/2011/06/25/distributed-updates/"/>
     <updated>2011-06-25T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2011/06/25/distributed-updates</id>
+    <id>http://yoursite.com/2011/06/25/distributed-updates</id>
     <content type="html"><![CDATA[<p>Part of managing any large site involves writing scripts that will go through
 oyur data, make changes, merge things, remove things, do type transformations,
 etc. Most of the time, in PHP, iterating through rows or objects will do just
@@ -179,9 +179,9 @@ perform these processes in parallel.</p>
   
   <entry>
     <title type="html"><![CDATA[Emergencies will audit the shit out of you]]></title>
-    <link href="http://yoursite.com/blog/2010/10/21/emergencies-will-audit-the-shit-out-of-you/"/>
+    <link href="http://yoursite.com/2010/10/21/emergencies-will-audit-the-shit-out-of-you/"/>
     <updated>2010-10-21T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/10/21/emergencies-will-audit-the-shit-out-of-you</id>
+    <id>http://yoursite.com/2010/10/21/emergencies-will-audit-the-shit-out-of-you</id>
     <content type="html"><![CDATA[<p>Things never go wrong at convenient times: Like when you're auditing the
 latest, coolest version of your app, and looking for bugs. Things have a funny
 way of working out fine <strong>then</strong>. However, soon as you look the other way, a
@@ -217,9 +217,9 @@ happens when systems fail, for real.</p>
   
   <entry>
     <title type="html"><![CDATA[Accountability is a Feedback Loop]]></title>
-    <link href="http://yoursite.com/blog/2010/06/23/accountability-is-a-feedback-loop/"/>
+    <link href="http://yoursite.com/2010/06/23/accountability-is-a-feedback-loop/"/>
     <updated>2010-06-23T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/06/23/accountability-is-a-feedback-loop</id>
+    <id>http://yoursite.com/2010/06/23/accountability-is-a-feedback-loop</id>
     <content type="html"><![CDATA[<p><a href="http://wordnetweb.princeton.edu/perl/webwn?s=accountability">Accountability</a>
 is a word that's getting tossed around a lot lately. You hear people saying
 things like:</p>

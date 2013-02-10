@@ -3,11 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Switching to Octopress - The Technician</title>
+	<title>Sphinx Full Text Search Engine - The Technician</title>
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Wordpress was old and busted, tumblr wouldn&#8217;t even let me embed an iframe, it was time to switch, get some more control, and make a project out &hellip;">
+	<meta name="description" content="For a very long time, I was convinced that a FULLTEXT index in MySQL was the
+best solution for all your searching needs. Then I realized that it was &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -90,12 +91,43 @@
 
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Switching to Octopress</h2>
-	<div class="entry-content"><p>Wordpress was old and busted, tumblr wouldn&#8217;t even let me embed an iframe, it was time to switch, get some more control, and make a project out of it.</p>
+	<h2 class="title">Sphinx Full Text Search Engine</h2>
+	<div class="entry-content"><p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
+best solution for all your searching needs. Then I realized that it was
+horribly slow, and mixing with complex joins completely destroyed any chances
+of using MySQL indexes in any way that would make sense or get decent results.
+The solution to fast and scalable free text search on any website is, of
+course, a Full Text search engine.</p>
 
-<p>I do miss my old Wordpress blog, but it was definitely time to change, as that had been my blog layout for years. It was mostly an experiment for me to set up a Rackspace cloud server.</p>
+<p>There are a few different ones out there. After a brief affair with Lucene, I
+settled on Sphinx. Sphinx is easy to install, even on 64-bit machines, and is
+architected in a way that makes a lot of sense for the web. The following
+steps were performed on a Red Hat machine. Don&#8217;t skip the mysql-dev install,
+even if you already MySQL installed.</p>
 
-<p>Much the same, setting up Octopress has been an experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
+<figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
+</span><span class='line'>yum install mysql-dev*
+</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
+</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
+</span><span class='line'>mkdir /usr/local/sphinx
+</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
+</span><span class='line'>make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once installed, it&#8217;s fairly simple to start playing with the packaged example
+data and queries. The php APIs make integration easy, either to build a
+service, or use locally as a substitute for MySQL. In fact, as long as the
+index can be kept reasonably up to date, Sphinx is a better choice for
+complicated sorts than MySQL.</p>
 </div>
 
 
@@ -112,11 +144,11 @@
   
 
 
-<time datetime="2013-02-09T16:08:00-05:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time></div>
+<time datetime="2010-01-29T00:00:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tumblr/'>tumblr</a>, <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
+	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
 
 
 </div>
@@ -138,12 +170,6 @@
 </div>
 
 
-
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 
@@ -163,10 +189,7 @@
       var disqus_shortname = 'thetechnician';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://yoursite.com/blog/2013/02/09/switching-to-octopress/';
-        var disqus_url = 'http://yoursite.com/blog/2013/02/09/switching-to-octopress/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

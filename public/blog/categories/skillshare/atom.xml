@@ -4,7 +4,7 @@
   <title><![CDATA[Category: skillshare | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/skillshare/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
-    <link href="http://yoursite.com/blog/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
+    <link href="http://yoursite.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
     <updated>2012-10-14T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/10/14/the-care--feeding-of-a-mongodb-cluster</id>
+    <id>http://yoursite.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster</id>
     <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
 those interested, here are the slides.</p>
 

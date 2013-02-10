@@ -4,7 +4,7 @@
   <title><![CDATA[Category: specification | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/specification/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Purpose]]></title>
-    <link href="http://yoursite.com/blog/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
+    <link href="http://yoursite.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
     <updated>2013-02-07T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
+    <id>http://yoursite.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
     <content type="html"><![CDATA[<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
 purpose or the justification for said feature, all you get is a code monkey.
 Code monkeys merely translate requirements into code verbatim. There’s no room

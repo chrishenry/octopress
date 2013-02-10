@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MySQL | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/mysql/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
-    <link href="http://yoursite.com/blog/2012/12/10/fizzbuzz-a-thon/"/>
+    <link href="http://yoursite.com/2012/12/10/fizzbuzz-a-thon/"/>
     <updated>2012-12-10T00:00:00-05:00</updated>
-    <id>http://yoursite.com/blog/2012/12/10/fizzbuzz-a-thon</id>
+    <id>http://yoursite.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
 other developers several times, I felt like a bit of hypocrite having never
@@ -54,9 +54,9 @@ repo.</a></p>
   
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
-    <link href="http://yoursite.com/blog/2012/08/13/mysqls-insert-select-replication-and-you/"/>
+    <link href="http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
     <updated>2012-08-13T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/08/13/mysqls-insert-select-replication-and-you</id>
+    <id>http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
 SELECT</a> is an
@@ -96,9 +96,9 @@ situations.</p>
   
   <entry>
     <title type="html"><![CDATA[MySQL Error 28]]></title>
-    <link href="http://yoursite.com/blog/2011/11/02/mysql-error-28/"/>
+    <link href="http://yoursite.com/2011/11/02/mysql-error-28/"/>
     <updated>2011-11-02T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2011/11/02/mysql-error-28</id>
+    <id>http://yoursite.com/2011/11/02/mysql-error-28</id>
     <content type="html"><![CDATA[<p>Yesterday, I had to run a query for some statistics I needed. This was a query
 that I knew were going to be particularly nasty as it required sorting 1.3M
 rows. Normally I run these sorts of queries on a reporting slave I keep around
@@ -133,9 +133,9 @@ for this type of ad hoc query, this was exactly what we needed.</p>
   
   <entry>
     <title type="html"><![CDATA[MySQL and Linux swappiness]]></title>
-    <link href="http://yoursite.com/blog/2010/07/30/mysql-and-linux-swappiness/"/>
+    <link href="http://yoursite.com/2010/07/30/mysql-and-linux-swappiness/"/>
     <updated>2010-07-30T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/07/30/mysql-and-linux-swappiness</id>
+    <id>http://yoursite.com/2010/07/30/mysql-and-linux-swappiness</id>
     <content type="html"><![CDATA[<p>MySQL's InnoDB engine is really great. Row-level locking is amazing in tables
 where there is heavy concurrency. Write buffering is also awesome for cases
 where a table needs to accept a lot of data. InnoDB's use of memory to store
@@ -182,9 +182,9 @@ MySQL machines, tuning this variable can be really helpful.</p>
   
   <entry>
     <title type="html"><![CDATA[MySQL Slave Delay and Maatkit]]></title>
-    <link href="http://yoursite.com/blog/2010/05/03/mysql-slave-delay-and-maatkit/"/>
+    <link href="http://yoursite.com/2010/05/03/mysql-slave-delay-and-maatkit/"/>
     <updated>2010-05-03T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/05/03/mysql-slave-delay-and-maatkit</id>
+    <id>http://yoursite.com/2010/05/03/mysql-slave-delay-and-maatkit</id>
     <content type="html"><![CDATA[<p>This post could alternately be titled: 'How to make developers hate you.'</p>
 
 <p>A very common criticism of MySQL is that there is no support for delayed

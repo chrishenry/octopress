@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Advertising | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/advertising/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-09T20:47:45-05:00</updated>
+  <updated>2013-02-10T01:32:49-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
-    <link href="http://yoursite.com/blog/2012/08/19/appnet-i-smell-a-pattern/"/>
+    <link href="http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern/"/>
     <updated>2012-08-19T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2012/08/19/appnet-i-smell-a-pattern</id>
+    <id>http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern</id>
     <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
 <a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
 at what seemed like a very popular concept. If (IF) I understand correctly,
@@ -87,9 +87,9 @@ monetize without having to resort to advertising.</p>
   
   <entry>
     <title type="html"><![CDATA[Death of the CTR]]></title>
-    <link href="http://yoursite.com/blog/2010/05/31/death-of-the-ctr/"/>
+    <link href="http://yoursite.com/2010/05/31/death-of-the-ctr/"/>
     <updated>2010-05-31T00:00:00-04:00</updated>
-    <id>http://yoursite.com/blog/2010/05/31/death-of-the-ctr</id>
+    <id>http://yoursite.com/2010/05/31/death-of-the-ctr</id>
     <content type="html"><![CDATA[<p>Since the dawn of online advertising, the gold standard of effectiveness has
 been the CTR. This has made a lot of sense, since for the first time ever,
 adertisers could leverage technology to figure out <em>exactly</em> how well they

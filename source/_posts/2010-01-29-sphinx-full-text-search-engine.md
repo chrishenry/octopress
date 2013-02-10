@@ -19,7 +19,7 @@ architected in a way that makes a lot of sense for the web. The following
 steps were performed on a Red Hat machine. Don't skip the mysql-dev install,
 even if you already MySQL installed.
 
-{% codeblock [Sphinx installation] [bash:bash] [url] [link text] %}
+{% codeblock Sphinx installation lang:bash %}
 yum install gcc-c++
 yum install mysql-dev*
 wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
