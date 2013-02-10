@@ -3,11 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Switching to Octopress - The Technician</title>
+	<title>Save MySQL - The Technician</title>
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Wordpress was old and busted, tumblr wouldn&#8217;t even let me embed an iframe, it was time to switch, get some more control, and make a project out &hellip;">
+	<meta name="description" content="Runaway queries on MySQL can be a real problem. If a long-running query locks
+up important tables, other queries trying to query the table will will &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -90,12 +91,53 @@
 
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Switching to Octopress</h2>
-	<div class="entry-content"><p>Wordpress was old and busted, tumblr wouldn&#8217;t even let me embed an iframe, it was time to switch, get some more control, and make a project out of it.</p>
+	<h2 class="title">Save MySQL</h2>
+	<div class="entry-content"><p>Runaway queries on MySQL can be a real problem. If a long-running query locks
+up important tables, other queries trying to query the table will will placed
+in a queue. Each new query is a new connection to MySQL. Once you hit
+max_connections, your MySQL connection code will start to fail. Depending on
+how errors are handled at this stage of the request, this could mean total
+disaster for a site.</p>
 
-<p>I do miss my old Wordpress blog, but it was definitely time to change, as that had been my blog layout for years. It was mostly an experiment for me to set up a Rackspace cloud server.</p>
+<p>Although there is no way to fix this within the MySQL server itself, a bit of
+clever scripting can be run via cron to check if there is a problem.
+Presenting : save_mysql</p>
 
-<p>Much the same, setting up Octopress has been an experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
+<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/null |grep -A1 -B5 -E
+&#8220;Time: [1-9][0-9][0-9]?&#8221; |grep -E &#8220;Id\:\ |State\:\ &#8221; |/usr/bin/perl -n -e
+&#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_; }&#8221; |grep -E &#8220;\ State\:\
+Sending\ data$|\ State\:\ Sorting\ result$&#8221; |awk {&#8216;print $2&#8217;} |xargs -iTHREAD
+-r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/null</p>
+
+<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/nullThis line will grab
+a list of all the currently running queries and commands from the MySQL
+server. It also redirects any error output to the blackhole. It produces
+output like so:</p>
+
+<pre><code>*************************** 1. row ***************************Id: 842863User: adminHost: localhostdb: NULLCommand: QueryTime: 0State: NULLInfo: show full processlist
+</code></pre>
+
+<p>grep -A1 -B5 -E &#8220;Time: [1-9][0-9][0-9]?&#8221;The grep here will grab line directly
+below and the 5 above if the time is over 100 seconds. This line can be
+tweaked to grep for less time. My preference is between 30 seconds and a
+minute. So instead of[1-9][0-9][0-9]you&#8217;d have[3-9][0-9] (30 seconds) OR
+[6-9][0-9] (60 seconds)</p>
+
+<p>grep -E &#8220;Id\:\ |State\:\ &#8220;This will filter out the other lines from the
+previous grep and just grab the MySQL process ID and it&#8217;s State.</p>
+
+<p>/usr/bin/perl -n -e &#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_;
+}&#8221;Quick Perl script to put id and state from the step above on the same line.</p>
+
+<p>grep -E &#8220;\ State\:\ Sending\ data$|\ State\:\ Sorting\ result$&#8221;This line will
+filter out the queries being run that are in the state &#8216;Sending Data&#8217; or
+&#8216;Sorting Result&#8217;. These are both states where it&#8217;s safe to kill the query.</p>
+
+<p>awk {&#8216;print $2&#8217;}This line grabs the query ID from the output.</p>
+
+<p>xargs -iTHREAD -r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/nullLastly, this
+line will grab the ID from above to the mysqladmin kill command, effectively
+killing the query.</p>
 </div>
 
 
@@ -112,11 +154,11 @@
   
 
 
-<time datetime="2013-02-09T16:08:00-05:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time></div>
+<time datetime="2009-07-16T00:00:00-04:00" pubdate data-updated="true">Jul 16<span>th</span>, 2009</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tumblr/'>tumblr</a>, <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
 
 
 </div>
@@ -138,12 +180,6 @@
 </div>
 
 
-
-<section id="comment">
-    <h2 class="title">Comments</h2>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-</section>
 </div>
 	<footer id="footer" class="inner">Copyright &copy; 2013
 
@@ -163,10 +199,7 @@
       var disqus_shortname = 'thetechnician';
       
         
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://yoursite.com/blog/2013/02/09/switching-to-octopress/';
-        var disqus_url = 'http://yoursite.com/blog/2013/02/09/switching-to-octopress/';
-        var disqus_script = 'embed.js';
+        var disqus_script = 'count.js';
       
     (function () {
       var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

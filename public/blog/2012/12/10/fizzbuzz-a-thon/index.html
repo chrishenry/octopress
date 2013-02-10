@@ -3,12 +3,12 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title>Save MySQL - The Technician</title>
+	<title>FizzBuzz-a-thon - The Technician</title>
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Runaway queries on MySQL can be a real problem. If a long-running query locks
-up important tables, other queries trying to query the table will will &hellip;">
+	<meta name="description" content="The FizzBuzz test is a simple way of showing that a developer has mastery of
+basic concepts like loops, variables and operators. Having given the &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -91,53 +91,38 @@ up important tables, other queries trying to query the table will will &hellip;"
 
 	
 	<div id="content" class="inner"><article class="post">
-	<h2 class="title">Save MySQL</h2>
-	<div class="entry-content"><p>Runaway queries on MySQL can be a real problem. If a long-running query locks
-up important tables, other queries trying to query the table will will placed
-in a queue. Each new query is a new connection to MySQL. Once you hit
-max_connections, your MySQL connection code will start to fail. Depending on
-how errors are handled at this stage of the request, this could mean total
-disaster for a site.</p>
+	<h2 class="title">FizzBuzz-a-thon</h2>
+	<div class="entry-content"><p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
+basic concepts like loops, variables and operators. Having given the test to
+other developers several times, I felt like a bit of hypocrite having never
+actually having taken it myself. I&#8217;ve also asked folks to complete the task in
+php, even though it wasn&#8217;t a language they were particularly familiar with.
+So, I decided it was time to end the hypocrisy, and give myself a little
+challenge:</p>
 
-<p>Although there is no way to fix this within the MySQL server itself, a bit of
-clever scripting can be run via cron to check if there is a problem.
-Presenting : save_mysql</p>
+<p><strong>Do FizzBuzz in as many languages as I could.</strong></p>
 
-<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/null |grep -A1 -B5 -E
-&#8220;Time: [1-9][0-9][0-9]?&#8221; |grep -E &#8220;Id\:\ |State\:\ &#8221; |/usr/bin/perl -n -e
-&#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_; }&#8221; |grep -E &#8220;\ State\:\
-Sending\ data$|\ State\:\ Sorting\ result$&#8221; |awk {&#8216;print $2&#8217;} |xargs -iTHREAD
--r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/null</p>
+<p>So, what did I learn?</p>
 
-<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/nullThis line will grab
-a list of all the currently running queries and commands from the MySQL
-server. It also redirects any error output to the blackhole. It produces
-output like so:</p>
+<ul>
+<li>With the <a href="http://chr.ishenry.com/2011/06/13/development-without-internet-access/">internet</a>, you can learn the basics of most programming languages in about 5 minutes.</li>
+<li>Programming knowledge is portable between most common web languages. A loop is a loop, a variable is a variable, etc. Syntax for a task this simple can be learned in a few minutes.</li>
+<li>FizzBuzz <em>can</em> be done in sql, bitch.</li>
+<li>Clojure is hard for no reason.</li>
+<li>Lisp is basically impossible to get running.</li>
+<li>Languages have uptake because they&#8217;re included with the OS and have good documentation and communities.
+In the end, doing FizzBuzz in 10 languages took around 5 hours. There was,
+however, significant time taken for screwing around on Twitter, potty breaks,
+drinking too much coffee, <a href="http://stackoverflow.com/questions/13536889/php-works-but-%0Agives-sql-syntax-error/13536929#comment18536820_13536929">curmedgeon-ing on
+StackOverflow,</a> drinking beer, and
+making carnitas. Time was also spent looking for a way to run my FizzBuzzes in
+bash and benchmark them, which proved fruitless, since OS X doesn&#8217;t support
+nanoseconds in the date command.</li>
+</ul>
 
-<pre><code>*************************** 1. row ***************************Id: 842863User: adminHost: localhostdb: NULLCommand: QueryTime: 0State: NULLInfo: show full processlist
-</code></pre>
 
-<p>grep -A1 -B5 -E &#8220;Time: [1-9][0-9][0-9]?&#8221;The grep here will grab line directly
-below and the 5 above if the time is over 100 seconds. This line can be
-tweaked to grep for less time. My preference is between 30 seconds and a
-minute. So instead of[1-9][0-9][0-9]you&#8217;d have[3-9][0-9] (30 seconds) OR
-[6-9][0-9] (60 seconds)</p>
-
-<p>grep -E &#8220;Id\:\ |State\:\ &#8220;This will filter out the other lines from the
-previous grep and just grab the MySQL process ID and it&#8217;s State.</p>
-
-<p>/usr/bin/perl -n -e &#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_;
-}&#8221;Quick Perl script to put id and state from the step above on the same line.</p>
-
-<p>grep -E &#8220;\ State\:\ Sending\ data$|\ State\:\ Sorting\ result$&#8221;This line will
-filter out the queries being run that are in the state &#8216;Sending Data&#8217; or
-&#8216;Sorting Result&#8217;. These are both states where it&#8217;s safe to kill the query.</p>
-
-<p>awk {&#8216;print $2&#8217;}This line grabs the query ID from the output.</p>
-
-<p>xargs -iTHREAD -r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/nullLastly, this
-line will grab the ID from above to the mysqladmin kill command, effectively
-killing the query.</p>
+<p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
+repo.</a></p>
 </div>
 
 
@@ -154,11 +139,11 @@ killing the query.</p>
   
 
 
-<time datetime="2009-07-17T00:00:00-04:00" pubdate data-updated="true">Jul 17<span>th</span>, 2009</time></div>
+<time datetime="2012-12-10T00:00:00-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2012</time></div>
 	<div class="tags">
 
 
-	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/existentialism/'>Existentialism</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/thoughts/'>Thoughts</a>
 
 
 </div>
