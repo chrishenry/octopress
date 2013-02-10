@@ -1,0 +1,17 @@
+ruby -rubygems -e 'require "./_import/tumblr"; Jekyll::Tumblr.process("http://chr.ishenry.com", "md")'
+
+
+/usr/local/rvm/rubies/ruby-1.9.3-p385/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/post.rb:44:in `rescue in initialize': No such file or directory - /usr/local/rvm/rubies/ruby-1.9.3-p385/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/migrators/../_posts/tumblr/2013-02-09-appnet-community.md in /usr/local/rvm/rubies/ruby-1.9.3-p385/lib/ruby/gems/1.9.1/gems/jekyll-0.12.0/lib/jekyll/migrators/../_posts/tumblr/2013-02-09-appnet-community.md (Jekyll::FatalException)
+
+
+
+https://github.com/mojombo/jekyll/wiki/blog-migrations
+https://github.com/mojombo/jekyll/issues/773
+
+
+
+sed -i '' 's/^tags/categories/' 2013-02
+
+Fix the iframe thing. Figure out how to embed slideshare
+
+Fix gearman post, save mysql

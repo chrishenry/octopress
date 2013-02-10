@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Systems Administration | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/systems-administration/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL Error 28]]></title>
+    <link href="http://yoursite.com/blog/2011/11/02/mysql-error-28/"/>
+    <updated>2011-11-02T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2011/11/02/mysql-error-28</id>
+    <content type="html"><![CDATA[<p>Yesterday, I had to run a query for some statistics I needed. This was a query
+that I knew were going to be particularly nasty as it required sorting 1.3M
+rows. Normally I run these sorts of queries on a reporting slave I keep around
+for this reason, but for some reason I chose to run this query on a production
+slave. When I ran my query, I got the following error;</p>
+
+<p>ERROR 3 (HY000): Error writing file '/tmp/MYNcSyQ9' (Errcode: 28)</p>
+
+<p>Oh. *&amp;<sup>%.</sup> After some Googling, a bit of shitting my pants, and a wild grep
+session through as many application logs as I could find, I was able to figure
+out that problem seemed limited to this particular query. My Googling turned
+up the fact that the error code indicated that the server was out of disk
+space.</p>
+
+<p>As a rapidly growing company, we've had our fair share of issues with managing
+(or failing to manage) rapidly filling disks, failed RAID controllers, and the
+like. However, I had recently done audits of this particular cluster of
+servers, and ascertained that the situation with disks was nominal. I was
+confident the disk wasn't full, and permissions were correct. Our particular
+disk layout puts /tmp on its own 2GB partition, and after running the query,
+that partition was 2% full.</p>
+
+<p>It turns out that during the execution of the query, MySQL was creating a
+temporary table that was 2GB, hence the error. By default MySQL will write
+temporary tables to /tmp, which in many cases, is its own small partition. The
+solution here was to set the tmpdir to a folder on the main partition adjacent
+to the MySQL datadir. This solution obviously has its own problems (ie you
+could fill your main partition, which is way worse than filling /tmp) However,
+for this type of ad hoc query, this was exactly what we needed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Emergencies will audit the shit out of you]]></title>
+    <link href="http://yoursite.com/blog/2010/10/21/emergencies-will-audit-the-shit-out-of-you/"/>
+    <updated>2010-10-21T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/10/21/emergencies-will-audit-the-shit-out-of-you</id>
+    <content type="html"><![CDATA[<p>Things never go wrong at convenient times: Like when you're auditing the
+latest, coolest version of your app, and looking for bugs. Things have a funny
+way of working out fine <strong>then</strong>. However, soon as you look the other way, a
+multitude of problems come out of the woodwork. It usually goes something like
+this:</p>
+
+<p>One server goes down, and the system that was supposed to fail silently starts
+screaming. The application it was supporting goes down, because the proper
+timeouts and error handling was never written. You can't fail over, because
+failing over will take down 2 other applications. When that first server comes
+back up, nothing works, because the proper startup scripts were never put in
+place. Once the right services start, if you can remember what the hell they
+were, you find the original application is configured wrong. Not only is it
+configured wrong, it's <strong><em>always</em></strong> been configured wrong, and no one noticed.
+No one noticed because it only explodes in the exact set of horrible
+circumstances you have right now. Which is, by the way, being down.</p>
+
+<p>It's an all-too-familiar story, and one that even most the anal of admins has
+dealt with. The fact of the matter is that it is going to happen, and there's
+not a whole lot you can do to prepare, other than randomly pulling plugs out
+of servers. But with any mistake that causes downtime, it should <a href="http://l.chr.ishenry.com/fail">only happen
+once</a>. Proper postmortem examination needs to
+be taken here to figure out what went wrong where. Once all the variables are
+understood, the next step is to duplicate the same set of circumstances in
+your <a href="http://l.chr.ishenry.com/sbx">sandbox</a>, and apply the necessary error
+handling.</p>
+
+<p>Downtime and emergencies are a part of running any site. What's really
+important is to treat emergencies as an opportunity to learn about what
+happens when systems fail, for real.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[It happens to everyone...]]></title>
+    <link href="http://yoursite.com/blog/2010/09/26/it-happens-to-everyone/"/>
+    <updated>2010-09-26T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/09/26/it-happens-to-everyone</id>
+    <content type="html"><![CDATA[<p>Through a combination of unhealthy fears, paranoid tendencies, and luck, I've
+been able to avoid that unavoidable situation that every sysadmin fears:
+completely nuking a system. Until last Tuesday, when I did something really,
+really dumb. On the server that hosts
+<a href="http://chr.ishenry.com">http://chr.ishenry.com</a>, I had noticed a script,
+<a href="http://lmgtfy.com/?q=svcrack.py">svcrack.py</a>, running and consuming lots of
+resources, and bandwidth, as I would later find out from my hosting bill.</p>
+
+<p>Since I sure as hell wasn't running that, I could only assume that someone had
+exploited my server and was using it to look for unsecured voip installations.
+Initially, I assumed killing the scripts and changing some passwords would be
+sufficient. However, checking in the server later, I found the same script
+running. All this is fair enough, as I am on Wordpress, a few versions behind,
+and there are enough folders with unhealthy permissions that I kind of
+deserved it. So after a few days of trying to lock things down, I got a bit
+desperate.</p>
+
+<p>Since svcrack is a python script, there was a good chance the best way to
+discourage my assailant would be to remove python. Great idea in theory, but
+it seemed my execution was a bit poor. It turns out running 'yum remove
+python' is a great way to destroy your entire system. yum runs on python,
+which meant a reinstall would have to be done manually. Only problem, most of
+the shell bultins stopped working as well. cp, mv, ls all resulted in a
+'command not found' error. The best part of this situation: no backups. After
+all the <a href="http://www.codinghorror.com/blog/2009/12/international-backup-%0Aawareness-day.html">hubbub about blogs and
+backups</a> lately, it's kind of amazing I missed this rather
+important detail.</p>
+
+<p>I've always considered data loss the cardinal sin in development, web or
+otherwise. However, I also never considered my personal site to be mission
+critical, or worthy of taking the the time for backups. But as they say, you
+never know what you have till it's gone. I was lucky enough that mysql and
+apache were still running, and I was able to export everything, spin up a new
+server, and import. Even with no data loss, this is certainly a lesson
+learned. I am making a backup right now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Ode to the Environment]]></title>
+    <link href="http://yoursite.com/blog/2010/08/24/ode-to-the-environment/"/>
+    <updated>2010-08-24T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/08/24/ode-to-the-environment</id>
+    <content type="html"><![CDATA[<p>Consistency is key, in everything. People come to rely on trains, because they
+come on time. Devs rely on the environment which they develop in, because its
+stability allows them to be productive. Changing or upgrading that environment
+can be the same as changing the train schedule. Sometimes people get where
+they're going faster, but sometimes, the change makes their life miserable.</p>
+
+<p>Environment upgrades can be just like that.  Speed, security, features.
+Everybody likes those.  The ugly side to upgrades is that they have a tendency
+to break things that are already working, may be incompatible with current
+code, and disrupt the work of the team.  As a struggling sysadmin / developer,
+all I really want in life is to build a stable platform that I can build my
+app in.</p>
+
+<p>Hence, the Ode to the Environment:</p>
+
+<blockquote><p>The Environment is the basis for my business. Without it, and it's
+consistency, there is uncertainty, chaos, and ultimately, failure.</p></blockquote>
+
+<p>I need to be able to replicate the Environment quickly, identify when issues
+are caused by it, <a href="http://chr.ishenry.com/2010/02/22/sandboxes/%20">sandbox</a>
+it, and be comfortable building it from scratch, if it comes to that.
+(Hopefully, it never does.)</p>
+
+<p>I need to be confident in the set of packages I've come to love, loathe, and
+rely on, and make sure they work for my business's app.</p>
+
+<p>I know that the Environment's well-being will affect my application's uptime,
+developers relying on it, and my business's reputation.</p>
+
+<p>I need to know the flaws and shortcomings in the Environment, and weigh how to
+fix them against the cost of change.</p>
+
+<p>When it comes time to upgrade the Environment, there will be damn good reason.
+I need to be horribly convinced that my business will see benefits
+immediately.</p>
+
+<p>Once I upgrade the Environment, I need to love and loathe it same as the old,
+embrace whatever change it brings, advocate for it and fix whatever issues the
+change brings.</p>
+
+<p>Above all, I will maintain the best Environment that suits my business, and
+ensure that it is always meets the goals of my business, no matter the cost.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Sandboxes]]></title>
+    <link href="http://yoursite.com/blog/2010/02/22/sandboxes/"/>
+    <updated>2010-02-22T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2010/02/22/sandboxes</id>
+    <content type="html"><![CDATA[<p>Setting up a sandbox environment has normally been a trivial task. Set up a
+vhost, get a copy of the database, build out the app, and start doing stuff.
+When 'Stuff' is 'Done' push the changes onto production, and bask in your own
+crapulence. That is, until your data set exceeds the limits of the sandbox,
+and the <a href="http://l.chr.ishenry.com/bbhcu">SOA</a> which is saving the day in
+production is becoming nothing but a headache in development.</p>
+
+<p>The basic sandbox environment for an app includes a reasonably recent data
+set, similar ( underpowered can be OK, depending ) hardware, the exact same
+versions of php, mysql and apache. Php, mysql and apache need to be configured
+exactly the same way as in production. In fact, as part of this process, it
+might be useful to pull down those ever so important configuration files, put
+them in a safe place. Perhaps source control (cough). Consistent configuration
+is <strong><em>extremely</em></strong> important. Bugs produced by configuration problems are
+notoriously hard to reproduce, and result in devs combing through code looking
+for bugs that don't exist.</p>
+
+<p>Maintaining a few sandboxes should be a trivial endeavor. That is, until your
+project gets too big. A natural response to handling ever-growing problems is
+use a Service Oriented Architecture; that is, to shard off aspects of the app
+and dedicate hardware and resources to it. However, three or four shards
+later, multiplied by an environment for each developer, the guy who was doing
+sys admin work as needed just became full timer. Unfortunately, there's no way
+around this, even with a clever sys admin, who can leave enough automated
+scripts around so that developers can <em>mostly</em> maintain their own environment.</p>
+
+<p>The fact of the matter is maintaining the development environment is one of
+the most important things a company can do. Close attention to detail in the
+sandbox will make all the difference in the deployment process. Changes in
+code base, file permissions and configuration can all be tested and deployed
+the same as in production. So every build to every sandbox (everyone builds
+daily, right?) is a chance for the development team to catch mistakes, and
+learn from them, before the big push. And if that fails, we all know how to
+handle a <a href="http://chr.ishenry.com/2009/05/25/crisis-mo/">crisis</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

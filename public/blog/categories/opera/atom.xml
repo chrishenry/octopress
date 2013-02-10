@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: opera | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/opera/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rigoletto]]></title>
+    <link href="http://yoursite.com/blog/2013/01/29/rigoletto/"/>
+    <updated>2013-01-29T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2013/01/29/rigoletto</id>
+    <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
+the Met</p>
+
+<blockquote><p>As much as Verdi has resisted updating, his tale of a nasty hunchback court
+jester whose daughter is killed by his own need for revenge arrived here in
+the early-'80s as a gangster movie courtesy of Jonathan Miller and the
+visiting English National Opera. More recently in Wales, the Duke of Mantua's
+decadent court became the Oval Office. Mayer's production did everything that
+a Las Vegas setting threatens to do — colors never seen in nature, pole
+dancing, glitzy satellite chandeliers (not unlike the Met's) and even Met
+titles with modern English colloquialism. Some wondered aloud why the
+translation even bothered to keep names like "Duke." Why not Frank and Sammy?</p></blockquote>
+
+<p>Having never experienced an Opera before, and not knowing anything about the
+plot of Rigoletto other than what I read in Playbill, the modern setting and
+translation went a long way in helping me understand Verdi. In general, the
+few productions I've seen in the past few years have had odd elements
+alongside original text that seemed to have been put there to soften the
+harshness of unfamiliar colloquialisms. Superhero costumes in Shakespeare, and
+even the staging of Rigoletto help to make this otherwise stuffy content
+accessible.</p>
+]]></content>
+  </entry>
+  
+</feed>

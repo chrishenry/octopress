@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: blogs | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/blogs/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[RWW's New Design]]></title>
+    <link href="http://yoursite.com/blog/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
+    <updated>2013-01-31T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
+    <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
+barrage of text. And it’s mostly text I’m not interested in reading.</p>
+
+<p>They’ve done a great of job of making scrolling distracting, by ensuring that all
+the content that you don’t want to see (related links, blogroll) does something
+you don’t expect.</p>
+
+<p><img src="/images/user/rww_appnet.png" alt="" /></p>
+]]></content>
+  </entry>
+  
+</feed>

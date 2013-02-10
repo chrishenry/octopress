@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: tumblr | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/tumblr/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Switching to Octopress]]></title>
+    <link href="http://yoursite.com/blog/2013/02/09/switching-to-octopress/"/>
+    <updated>2013-02-09T16:08:00-05:00</updated>
+    <id>http://yoursite.com/blog/2013/02/09/switching-to-octopress</id>
+    <content type="html"><![CDATA[<p>Wordpress was old and busted, tumblr wouldn't even let me embed an iframe, it was time to switch, get some more control, and make a project out of it.</p>
+
+<!-- more -->
+
+
+<p>I do miss my old Wordpress blog, but it was definitely time to change, as that had been my blog layout for years. It was mostly an experiment for me to set up a Rackspace cloud server.</p>
+
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>[Push firstbyte data to statsd] [php:php] [url] [link text] </span></figcaption>
+<div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  foreach ( $log_lines as $line ) {&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;pre>&lt;code>$line_items = explode( ' ', $line );
+</span><span class='line'>
+</span><span class='line'>$firstybyte = $line_items[ count($line_items) - 1 ];
+</span><span class='line'>
+</span><span class='line'>$firstybyte_ms = ( $firstybyte / 1000 );
+</span><span class='line'>
+</span><span class='line'>// Graff that shit.
+</span><span class='line'>// @todo: statsd key: server's hostname, URL segment, time.
+</span><span class='line'>// @todo: probably want an array of URLs to graph specfically.
+</span><span class='line'>// @todo: graph the superset.
+</span><span class='line'>
+</span><span class='line'>
+</span><span class='line'>echo $firstybyte_ms . PHP_EOL;
+</span><span class='line'>&lt;/code>&lt;/pre>
+</span><span class='line'>
+</span><span class='line'>&lt;p>  }&lt;/p>
+</span><span class='line'>
+</span><span class='line'>&lt;p></span></code></pre></td></tr></table></div></figure></notextile></div></p>
+]]></content>
+  </entry>
+  
+</feed>

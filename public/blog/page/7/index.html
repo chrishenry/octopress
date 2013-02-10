@@ -1,0 +1,417 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>The Technician</title>
+	<meta name="author" content="Chris Henry">
+
+	
+	<meta name="description" content="&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
+Rackspace tech And bad people, too. On one occasion, I &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="The Technician" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">The Technician</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:yoursite.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/chrishnry" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/chrishenry" title="GitHub">GitHub</a>
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:yoursite.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/chrishnry">chrishnry</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('chrishnry', 4, false);
+	})(jQuery);
+</script>
+
+	
+	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/05/16/framed--hijacked/">
+		
+			Framed / Hijacked</a>
+	</h2>
+	<div class="entry-content">
+		<p>&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
+<a href="http://www.Rackspace.com">Rackspace</a> tech</p>
+
+<p>And bad people, too. On one occasion, I found that someone had hijacked a
+domain similar to ours, and framed our site. Once they had the frame set up,
+they started sending out spam from the hijacked domain. The legitimacy they
+gained from having our site at their domain was really, really scary. Users
+clicking links from their spam were sent to a site that was actually ours.
+Luckily, we were alerted to this issue before any real damage was done.</p>
+
+<p>There wasn&#8217;t much I could do server-side to fight this, without having to dig
+into a bunch of PHP. However, checking the location window.top against what I
+knew to be my domain turned out to be decent defense.</p>
+
+<p>if (top.location != self.location) { alert(&#8220;someone is doing something
+bad…&#8221;);}</p>
+
+<p>Of course, this particular defense will also complain about anyone who has
+framed your site for any other reason. For example, the Digg toolbar frames
+sites. So if anyone hits your site using the Digg toolbar, they&#8217;ll be treated
+to your warning as well. But whether Digg should be framing sites in this way
+seems to be <a href="http://bit.ly/15snr9">controversial</a> enough.</p>
+
+<p>Update : <a href="http://su.pr">su.pr</a>, which combines a URL shortener with the
+StumbleUpon toolbar, has even further complicated the framing situation. (Full
+disclosure : I am a user.) Clicking any su.pr link will open the shortened URL
+with the StumbleUpon toolbar. This has great potential for authors, who can
+use the toolbar to increase traffic to their site, but at the cost of forcing
+the toolbar on users.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-16T00:00:00-04:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/security/'>Security</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/05/10/hard-file-limits/">
+		
+			Hard File Limits</a>
+	</h2>
+	<div class="entry-content">
+		<p>A while ago, we ran up against a hard file limit on our storage server. Within
+the main images directory, we subdivide our folders for every user. Well, it
+turns out that on the <a href="http://en.wikipedia.org/wiki/Ext3">ext3</a> filesystem,
+there is a hard limit of 32k folders within a folder. So when our 32001th user
+signed up, they were welcomed by not being able to upload any content to their
+nonexistent user folder.</p>
+
+<p>So there we were…</p>
+
+<p>Several calls to our hosting provider <a href="http://www.rackspace.com">Rackspace</a>
+yielded no elegant solution where we could simply reconfigure the limit. If we
+wanted to continue on with our file structure the way it was, we would need to
+migrate our data off the server, reformat the filesystem to
+<a href="http://en.wikipedia.org/wiki/Xfs">xfs</a>, and migrate back on. That would take
+us down for close to 36 hours. Needless to say that was not an option.</p>
+
+<p>The other option was to quietly close registration, and start a mad dash to
+implement programmatic partitioning. We created 5 folders next to our root
+user content folder, numbered them 2-5, and assigned current users the
+partition of 1. New users would be assigned a randomly generated number at
+registration. Then we wrote a few quick utility methods to determine which
+user belonged to which partition and began the quickest rewrite of file upload
+system the world has ever seen.</p>
+
+<p>Downtime : 0</p>
+
+<p>In retrospect, someone (me) should have taken a scrutinizing look at the
+characteristics of the filesystem that would be responsible for storing all of
+our users&#8217; content.</p>
+
+<p>Lesson learned, the hard way.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-10T00:00:00-04:00" pubdate data-updated="true">May 10<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/05/02/run-cron-more-than-once-a-minute/">
+		
+			Run Cron More Than Once a Minute</a>
+	</h2>
+	<div class="entry-content">
+		<p>As far as linux utilities go, cron is one of my favorite tools. It handles
+batch jobs, checks your database, cleans up files, whatever you need to do on
+a regular basis. One of my favorite uses for it has been to keep a watchful
+eye on MySQL for runaway queries.</p>
+
+<p><img src="http://174.143.169.75/wp-%0Acontent/uploads/2009/02/picture-2.png" alt="The lowly crontab file" /></p>
+
+<p>One of the problems with managing a website that has outgrown its database
+design is that as traffic piles up and tables grow, so does the length of time
+it takes to run queries. Even the simplest query, when faced with examining
+several million rows can wind up locking a table for a scary amount of time.
+The real solution is to rewrite your app to not suck. However, when that
+luxury (neccessity?) isn&#8217;t available, the next best thing is periodically run
+a script that will kill long running queries.</p>
+
+<p>It is not the cleanest solution, or the safest, and care must be taken to
+avoid killing queries that do important things. It would be a really, really
+BAD THING if you wind up killing the query that logs that $500 transaction.
+That said, in most situations running this script every minute should solve
+all your woes. With decent error logging, it&#8217;ll also tell you exactly what is
+running away from you. But what happens when you need to run it more often?
+Say every 30 seconds. And that&#8217;s where cron falls on its face.</p>
+
+<p>After exhaustively researching, I could not find a way to get cron to run a
+job more than once a minute. (If any one knows differently, please say so…)
+However, knowing that I needed to run this script more than once a minute, I
+needed to find an alternative. That alternative turned out to be the humble,
+rarely used sleep() command. Set up a second cron job, with the script doing
+nothing sleeping for 30 seconds, and then calling the save mysql script.</p>
+
+<p>Voila, cron that runs more often than a minute!</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-02T00:00:00-04:00" pubdate data-updated="true">May 2<span>nd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/blog/2009/04/26/just-manage-it-for-me/">
+		
+			Just Manage It for Me</a>
+	</h2>
+	<div class="entry-content">
+		<p>I&#8217;m busy. Really busy. So busy that most of the time, I can&#8217;t be bothered with
+minor details that are so important they really shouldn&#8217;t be minor.</p>
+
+<p>Hardware upgrades, hardware failures, Kernel updates, Red Hat updates, PHP
+updates, MySQL updates, who actually has the expertise to make judgments on
+every single one of these? I certainly do not. However, at this point, I&#8217;m
+managing over 15 servers, and I need to be up to date and secure. So that&#8217;s
+why we host at <a href="http://www.rackspace.com/index.php">Rackspace</a>. They do it all
+for me.</p>
+
+<p>Then there&#8217;s mail.  Spam, ISP&#8217;s blacklists, whitelists, bounce management,
+mailbombs, DKIM, DomainKeys, SPF, WTF.  The world of SMTP messages is one of
+black magic and voodoo.  Hosting your own email offers infinite flexibility,
+and working with a single server with postfix lets you do pretty much whatever
+you want.  But every time you do something nifty, you have to deal with the
+ongoing maintenance of said nifty hack.  Then there&#8217;s spam.  Good luck.
+Instead of fighting the good fight against spammers, I decided to wimp out and
+let someone smarter do it for me.  In 20 minutes, I set up <a href="http://www.google.com/apps%20">Google
+Apps</a>, imported every user in my postfix
+server.  5 minutes later, after changing DNS, I gave my users a spam-free,
+flexible mail system.</p>
+
+<p>Moral of these stories…don&#8217;t be too proud to let someone else manage your IT.
+Free up your time to do important things.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-04-26T00:00:00-04:00" pubdate data-updated="true">Apr 26<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div></article>
+
+<nav id="pagenavi">
+    
+        <a href="/blog/page/6/" class="prev">Prev</a>
+    
+    
+    <div class="center"><a href="/blog/archives">Blog Archives</a></div>
+</nav></div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    Chris Henry
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'thetechnician';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-6652794-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

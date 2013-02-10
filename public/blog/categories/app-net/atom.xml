@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: app.net | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/app-net/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[app.net community]]></title>
+    <link href="http://yoursite.com/blog/2013/02/09/appnet-community/"/>
+    <updated>2013-02-09T12:08:00-05:00</updated>
+    <id>http://yoursite.com/blog/2013/02/09/appnet-community</id>
+    <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
+a great online community, and super eloquent in some cases.</p>
+
+<p><img src="/images/user/appnet.png" alt="Community leaders" /></p>
+
+<p>They're also not real open to the idea they <a href="https://alpha.app.net/radrad/post/2738575">might be
+wrong</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

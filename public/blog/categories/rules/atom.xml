@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: rules | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/rules/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Rules for London]]></title>
+    <link href="http://yoursite.com/blog/2013/01/26/rules-for-london/"/>
+    <updated>2013-01-26T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2013/01/26/rules-for-london</id>
+    <content type="html"><![CDATA[<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
+Europe. Having never been to Europe, or on a real vacation for the last couple
+years, I was really looking to maximize my time there. So I had a couple rules
+while for I was there;</p>
+
+<ol>
+<li>Have a long list of things to do, but no plan.</li>
+<li>Walk or take public transportation everywhere.</li>
+<li>Get to know the neighborhoods I'm staying in.</li>
+<li>If something looks interesting, do it.</li>
+<li>Don't be an #uglyamerican.</li>
+</ol>
+
+
+<p>As it turns out, those were some really great rules. The last thing I wanted
+in a vacation was a schedule. Plus, if we got involved in something, and took
+more time than we thought, it wouldn't matter. And following rule #2 the
+entire and rule #4 the entire trip, there were plenty of things that we found
+along the way that took up more time than we thought. The <a href="http://www.camdenlock.net/stables/index.html">Camden
+Stalls</a>, for example, were full
+of treasures and side alleys to explore.</p>
+
+<p>Rule #2 turned out to be pretty great for a bunch of reasons. The London tube
+is super efficient, clean, and has wifi. The only drawback of the Underground
+is that it closes early, as does most of London. Walking a city is really the
+only way to really get to know a city. Also, getting lost is the best way to
+find the really cool stuff.</p>
+]]></content>
+  </entry>
+  
+</feed>

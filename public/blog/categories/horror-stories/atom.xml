@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Horror Stories | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/horror-stories/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Emergencies will audit the shit out of you]]></title>
+    <link href="http://yoursite.com/blog/2010/10/21/emergencies-will-audit-the-shit-out-of-you/"/>
+    <updated>2010-10-21T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/10/21/emergencies-will-audit-the-shit-out-of-you</id>
+    <content type="html"><![CDATA[<p>Things never go wrong at convenient times: Like when you're auditing the
+latest, coolest version of your app, and looking for bugs. Things have a funny
+way of working out fine <strong>then</strong>. However, soon as you look the other way, a
+multitude of problems come out of the woodwork. It usually goes something like
+this:</p>
+
+<p>One server goes down, and the system that was supposed to fail silently starts
+screaming. The application it was supporting goes down, because the proper
+timeouts and error handling was never written. You can't fail over, because
+failing over will take down 2 other applications. When that first server comes
+back up, nothing works, because the proper startup scripts were never put in
+place. Once the right services start, if you can remember what the hell they
+were, you find the original application is configured wrong. Not only is it
+configured wrong, it's <strong><em>always</em></strong> been configured wrong, and no one noticed.
+No one noticed because it only explodes in the exact set of horrible
+circumstances you have right now. Which is, by the way, being down.</p>
+
+<p>It's an all-too-familiar story, and one that even most the anal of admins has
+dealt with. The fact of the matter is that it is going to happen, and there's
+not a whole lot you can do to prepare, other than randomly pulling plugs out
+of servers. But with any mistake that causes downtime, it should <a href="http://l.chr.ishenry.com/fail">only happen
+once</a>. Proper postmortem examination needs to
+be taken here to figure out what went wrong where. Once all the variables are
+understood, the next step is to duplicate the same set of circumstances in
+your <a href="http://l.chr.ishenry.com/sbx">sandbox</a>, and apply the necessary error
+handling.</p>
+
+<p>Downtime and emergencies are a part of running any site. What's really
+important is to treat emergencies as an opportunity to learn about what
+happens when systems fail, for real.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Search is Hard]]></title>
+    <link href="http://yoursite.com/blog/2010/10/09/search-is-hard/"/>
+    <updated>2010-10-09T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/10/09/search-is-hard</id>
+    <content type="html"><![CDATA[<p>The title of this post is a direct quote from a Facebook engineer presenting
+at the SXSW panel <a href="http://my.sxsw.com/events/event/386">Beyond Lamp</a>. Search
+is a critical function of any site, but its gotten much much harder as Google
+has gotten better. To quote the Beyond Lamp panel one more time:</p>
+
+<blockquote><p>Search is always compared against Google, which is like comparing the canoe
+you just built to the QE2.</p></blockquote>
+
+<p>The difficulty of search is made apparent by the majority of sites, even major
+sites get it wrong. A large factor in the success of search is relevancy.
+Google takes into account <a href="http://en.wikipedia.org/wiki/PageRank">500 million
+variables</a> in determining how relevant
+content is. Not only that, but they also know who you are, what you've
+clicked, and can make decisions based on that to present pages that are more
+relevant to you. Facebook's EdgeRank, LinkedIn's Signal are other examples of
+search implementations that are vast in scale.</p>
+
+<p>In a startup, where time is of the essence and resources need to be begged,
+borrowed or stolen, search is a huge challenge. Like trying to be build the
+QE2 with nothing but a swiss army knife. Basic tools normally don't cut it.
+MySQL's FULLTEXT indexes are helpful, but start trying to implement basic IR
+techniques like booleans, and MySQL's builtin functionality starts to lack the
+ability to get the results your want.</p>
+
+<p>There are ways to simplify building search.
+<a href="http://chr.ishenry.com/2010/01/28/sphinx-full-text-search-engine/">Sphinx</a>
+provides great matching capabilities and incredibly fast sorting. When
+combined with other data, Sphinx can be a great way to get users fast,
+meaningful results. The one downside with using a document based search engine
+is that there is little room for returning completely tailored results. Unlike
+MySQL, which allows you to slice and dice data in any way you choose, it is
+more difficult to return results that take into account relationship specific
+to users and documents. However, for most search tasks, it should function
+very well.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[It happens to everyone...]]></title>
+    <link href="http://yoursite.com/blog/2010/09/26/it-happens-to-everyone/"/>
+    <updated>2010-09-26T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/09/26/it-happens-to-everyone</id>
+    <content type="html"><![CDATA[<p>Through a combination of unhealthy fears, paranoid tendencies, and luck, I've
+been able to avoid that unavoidable situation that every sysadmin fears:
+completely nuking a system. Until last Tuesday, when I did something really,
+really dumb. On the server that hosts
+<a href="http://chr.ishenry.com">http://chr.ishenry.com</a>, I had noticed a script,
+<a href="http://lmgtfy.com/?q=svcrack.py">svcrack.py</a>, running and consuming lots of
+resources, and bandwidth, as I would later find out from my hosting bill.</p>
+
+<p>Since I sure as hell wasn't running that, I could only assume that someone had
+exploited my server and was using it to look for unsecured voip installations.
+Initially, I assumed killing the scripts and changing some passwords would be
+sufficient. However, checking in the server later, I found the same script
+running. All this is fair enough, as I am on Wordpress, a few versions behind,
+and there are enough folders with unhealthy permissions that I kind of
+deserved it. So after a few days of trying to lock things down, I got a bit
+desperate.</p>
+
+<p>Since svcrack is a python script, there was a good chance the best way to
+discourage my assailant would be to remove python. Great idea in theory, but
+it seemed my execution was a bit poor. It turns out running 'yum remove
+python' is a great way to destroy your entire system. yum runs on python,
+which meant a reinstall would have to be done manually. Only problem, most of
+the shell bultins stopped working as well. cp, mv, ls all resulted in a
+'command not found' error. The best part of this situation: no backups. After
+all the <a href="http://www.codinghorror.com/blog/2009/12/international-backup-%0Aawareness-day.html">hubbub about blogs and
+backups</a> lately, it's kind of amazing I missed this rather
+important detail.</p>
+
+<p>I've always considered data loss the cardinal sin in development, web or
+otherwise. However, I also never considered my personal site to be mission
+critical, or worthy of taking the the time for backups. But as they say, you
+never know what you have till it's gone. I was lucky enough that mysql and
+apache were still running, and I was able to export everything, spin up a new
+server, and import. Even with no data loss, this is certainly a lesson
+learned. I am making a backup right now.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gmail actually gets something really wrong.]]></title>
+    <link href="http://yoursite.com/blog/2010/08/16/gmail-actually-gets-something-really-wrong/"/>
+    <updated>2010-08-16T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/08/16/gmail-actually-gets-something-really-wrong</id>
+    <content type="html"><![CDATA[<p>I'm a huge fan of Gmail and Google Apps for
+<a href="http://chr.ishenry.com/2009/04/26/just-manage-it-for-me/">many</a> reasons. I
+love the new redesign, and how they're finally promoting consistency across
+their major webapps. It makes me feel like the web could <em>really</em> be a viable
+alternative alternative to desktop software. I can even deal with
+<a href="http://www.avc.com/a_vc/2010/06/gmail-performance-issues.html">slowness</a> in
+Gmail, given the amount of work they need to do in order to keep your inbox
+snappy. They need to index every message, which means parsing every message,
+converting every attachment, and linking it the search architecture. In real
+time. Not easy…</p>
+
+<p>However, what I found today, was completely inexcusable: Gmail's clipping
+"feature". This is definitely a feature that sounds a lot more like a bug than
+a helpful tool.</p>
+
+<p><a href="/images/user/gmail_clipping.png"><img src="/images/user/gmail_clipping.png" alt="Gmail Message clipping" /></a></p>
+
+<p>What <em>should</em> be here is a few more links, some mouse text that contains our
+mailing address and unsubscribe links. What I did not show in this screenshot
+is the capacity for destruction this feature has on HTML emails. When the
+email is 'clipped', the HTML is broken at a random place, and not displayed.
+If your message is clipped at an inopportune place, there goes your entire
+HTML layout. In the best case, your HTML is simply truncated, leaving users
+with only a piece of their email.</p>
+
+<p>As the entity sending this email, the responsibility falls on me to make sure
+that I send emails that are accessible, conform to CAN-SPAM, and are pleasing
+to the eye. Gmail bones me on three of these goals. Thanks to a
+<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">lack</a> of
+<a href="http://tinyurl.com/2asve9s">documentation</a> as to how long an email can be
+without invoking the clipping feature. Most importantly, my users have no
+clear to unsubscribe from the list, since the most likely links to be clipped
+are the unsubscribe links.</p>
+
+<p>I agree that
+<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">performance</a>
+is king, but never at the cost of the user.</p>
+
+<p><strong>Update:</strong> It seems like Gmail limits messages to around 102k characters before clipping. So the solution seems to be running HTML through a compressor. I found a pretty good one <a href="http://www.textfixer.com/html/compress-html-compression.php">here</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Rackspace Downtime]]></title>
+    <link href="http://yoursite.com/blog/2009/11/04/rackspace-downtime/"/>
+    <updated>2009-11-04T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2009/11/04/rackspace-downtime</id>
+    <content type="html"><![CDATA[<p>[Update] My team at Rackspace has sent me the fluffiest, most comfortable
+pillow I have ever had.</p>
+
+<p>When a hosting provider goes down, there are lots of questions that get
+raised. Is my host reliable? Will they flake out during crucial times when my
+site needs the traffic? Will they <a href="http://lmgtfy.com/?q=dreamhost+billing">double
+bill</a> me?</p>
+
+<p>Since I have been working with Rackspace, they have had less than stellar
+uptime, with issues mostly related to power. My company pays a lot for hosting
+with them, and downtime for a young company is deadly. But oddly enough, I'm
+still OK with Rackspace hosting my company's myriad services. The benefits of
+hosting with them have been so great that a couple hours of downtime is
+nothing.</p>
+
+<p>First off, their SLA has provisions for downtime, when it happens. If your
+server has a legitimate issue, you're entitled to ask for a credit. To me,
+this is a promise that they'll put their money where their mouth is. And if
+you call them on it, they'll be reasonable.</p>
+
+<p>Secondly, their support during crises is still amazing. During the <a href="http://bit.ly/9LrNz">truck
+incident</a>, I was able to get a tech to run fsck on my
+disks, and hang out to watch no questions asked. No, I am not on their
+intensive plan.</p>
+
+<p>Third, their support culture is simply amazing. Their linux techs are always
+willing to look deep into an issue to find a resolution, and they provide much
+of the basic <a href="http://bit.ly/1HkKYJ">infrastructure</a> that is hard to come by
+for small companies.. They're also completely willing to educate their
+customers about the servers they maintain.</p>
+
+<p>In short, Rackspace has been the target of a lot of criticism over issues in
+their datacenters. The fact of the matter is that there will always be issues
+and downtime. <a href="http://www.rackspace.com/solutions/managed_hosting/s%0Aupport/servicelevels/managedsla.php">Their SLA</a> guarantees the impossible, which they
+seem to realize, as any failure on their part comes with swift response. In
+the end their SLA seems to be more of a way of setting standards than anything
+else.</p>
+
+<p>[Full disclosure: I haven't slept in 2 days because of their power issues]</p>
+]]></content>
+  </entry>
+  
+</feed>

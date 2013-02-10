@@ -1,0 +1,212 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Emergencies will audit the shit out of you - The Technician</title>
+	<meta name="author" content="Chris Henry">
+
+	
+	<meta name="description" content="Things never go wrong at convenient times: Like when you&#8217;re auditing the
+latest, coolest version of your app, and looking for bugs. Things have &hellip;">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+	<link href="/atom.xml" rel="alternate" title="The Technician" type="application/atom+xml">
+	<link rel="canonical" href="">
+	<link href="/favicon.ico" rel="shortcut icon">
+	<link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+	<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+	
+</head>
+
+<body>
+	<header id="header" class="inner"><h1><a href="/">The Technician</a></h1>
+<nav id="main-nav"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</nav>
+<nav id="mobile-nav">
+	<div class="alignleft menu">
+		<a class="button">Menu</a>
+		<div class="container"><ul class="main">
+	<li><a href="/">Blog</a></li>
+	<li><a href="/blog/archives">Archives</a></li>
+</ul>
+</div>
+	</div>
+	<div class="alignright search">
+		<a class="button"></a>
+		<div class="container">
+			<form action="http://google.com/search" method="get">
+				<input type="text" name="q" results="0">
+				<input type="hidden" name="q" value="site:yoursite.com">
+			</form>
+		</div>
+	</div>
+</nav>
+<nav id="sub-nav" class="alignright">
+	<div class="social">
+		
+		
+		
+		<a class="twitter" href="http://twitter.com/chrishnry" title="Twitter">Twitter</a>
+		
+		
+		<a class="github" href="https://github.com/chrishenry" title="GitHub">GitHub</a>
+		
+    
+		
+		
+		
+		
+		
+		<a class="rss" href="/atom.xml" title="RSS">RSS</a>
+		
+	</div>
+	<form class="search" action="http://google.com/search" method="get">
+		<input class="alignright" type="text" name="q" results="0">
+		<input type="hidden" name="q" value="site:yoursite.com">
+	</form>
+</nav>
+
+</header>
+	
+		
+<div id="banner" class="inner">
+	<div class="container">
+		<ul class="feed"></ul>
+	</div>
+	<small><a href="http://twitter.com/chrishnry">chrishnry</a> @ <a href="http://twitter.com">Twitter</a></small>
+	<div class="loading">Loading...</div>
+</div>
+<script src="/javascripts/twitter.js"></script>
+<script type="text/javascript">
+	(function($){
+		$('#banner').getTwitterFeed('chrishnry', 4, false);
+	})(jQuery);
+</script>
+
+	
+	<div id="content" class="inner"><article class="post">
+	<h2 class="title">Emergencies Will Audit the Shit Out of You</h2>
+	<div class="entry-content"><p>Things never go wrong at convenient times: Like when you&#8217;re auditing the
+latest, coolest version of your app, and looking for bugs. Things have a funny
+way of working out fine <strong>then</strong>. However, soon as you look the other way, a
+multitude of problems come out of the woodwork. It usually goes something like
+this:</p>
+
+<p>One server goes down, and the system that was supposed to fail silently starts
+screaming. The application it was supporting goes down, because the proper
+timeouts and error handling was never written. You can&#8217;t fail over, because
+failing over will take down 2 other applications. When that first server comes
+back up, nothing works, because the proper startup scripts were never put in
+place. Once the right services start, if you can remember what the hell they
+were, you find the original application is configured wrong. Not only is it
+configured wrong, it&#8217;s <strong><em>always</em></strong> been configured wrong, and no one noticed.
+No one noticed because it only explodes in the exact set of horrible
+circumstances you have right now. Which is, by the way, being down.</p>
+
+<p>It&#8217;s an all-too-familiar story, and one that even most the anal of admins has
+dealt with. The fact of the matter is that it is going to happen, and there&#8217;s
+not a whole lot you can do to prepare, other than randomly pulling plugs out
+of servers. But with any mistake that causes downtime, it should <a href="http://l.chr.ishenry.com/fail">only happen
+once</a>. Proper postmortem examination needs to
+be taken here to figure out what went wrong where. Once all the variables are
+understood, the next step is to duplicate the same set of circumstances in
+your <a href="http://l.chr.ishenry.com/sbx">sandbox</a>, and apply the necessary error
+handling.</p>
+
+<p>Downtime and emergencies are a part of running any site. What&#8217;s really
+important is to treat emergencies as an opportunity to learn about what
+happens when systems fail, for real.</p>
+</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-21T00:00:00-04:00" pubdate data-updated="true">Oct 21<span>st</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>, <a class='category' href='/blog/categories/process/'>Process</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div></article>
+
+	<div class="share">
+	<div class="addthis_toolbox addthis_default_style ">
+	
+	<a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+	
+	
+	<a class="addthis_button_tweet"></a>
+	
+	
+	<a class="addthis_counter addthis_pill_style"></a>
+	</div>
+  <script type="text/javascript" src="http://s7.addthis.com/js/250/addthis_widget.js#pubid="></script>
+</div>
+
+
+</div>
+	<footer id="footer" class="inner">Copyright &copy; 2013
+
+    Chris Henry
+
+</footer>
+	<script src="/javascripts/slash.js"></script>
+<script src="/javascripts/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+	$('.fancybox').fancybox();
+})(jQuery);
+</script> <!-- Delete or comment this line to disable Fancybox -->
+
+
+<script type="text/javascript">
+      var disqus_shortname = 'thetechnician';
+      
+        
+        var disqus_script = 'count.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = 'http://' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
+
+
+
+	<script type="text/javascript">
+		var _gaq = _gaq || [];
+		_gaq.push(['_setAccount', 'UA-6652794-1']);
+		_gaq.push(['_trackPageview']);
+
+		(function() {
+			var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+			ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+		})();
+	</script>
+
+
+
+</body>
+</html>

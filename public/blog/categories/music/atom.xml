@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Music | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/music/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[30 Seconds to Mars :: This is War]]></title>
+    <link href="http://yoursite.com/blog/2009/12/22/30-seconds-to-mars--this-is-war/"/>
+    <updated>2009-12-22T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2009/12/22/30-seconds-to-mars--this-is-war</id>
+    <content type="html"><![CDATA[<p>30 Seconds to Mars recently released their third album, This is War, and it is
+quite the departure from their first album. Brand New Day was raw and angry,
+with amazing guitar sounds, great composition, and a real sense of urgency in
+the writing. The album was really exciting to listen to, and the live
+performances were great. I saw them at Avalon in NYC a few years ago, and it's
+still one of my all time favorite shows.</p>
+
+<p>This is War is mild and boring in comparison. The effects driven distorted
+guitars characteristic to Brand New Day is missing. They seem to have been
+replaced with over-produced electronics. Jared Leto has less than half the
+intensity than he did in Brand New Day, and the lyrics have lost their edge.
+The focus on deeply layered choruses of what sounds like children singing
+lacks impact. The collaboration with Kanye and his 808 didn't really go
+anywhere, and just seemed to pull the band further from their roots. It's sad
+to hear a band that had such a great band with a unique sound has gone so far
+off track.</p>
+]]></content>
+  </entry>
+  
+</feed>

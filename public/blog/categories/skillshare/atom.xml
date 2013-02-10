@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: skillshare | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/skillshare/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
+    <link href="http://yoursite.com/blog/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
+    <updated>2012-10-14T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2012/10/14/the-care--feeding-of-a-mongodb-cluster</id>
+    <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
+those interested, here are the slides.</p>
+
+<p><strong> <a href="http://www.slideshare.net/chrishnry/the-care-feeding-of-a-mongodb-cluster">The Care + Feeding of a Mongodb Cluster</a> </strong> from <strong><a href="http://www.slideshare.net/chrishnry">Chris Henry</a></strong></p>
+
+<iframe src="http://www.slideshare.net/slideshow/embed_code/14725427" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
+
+
+<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/chrishnry/the-care-feeding-of-a-mongodb-cluster" title="The Care + Feeding of a Mongodb Cluster" target="_blank">The Care + Feeding of a Mongodb Cluster</a> </strong> from <strong><a href="http://www.slideshare.net/chrishnry" target="_blank">Chris Henry</a></strong> </div></p>
+]]></content>
+  </entry>
+  
+</feed>

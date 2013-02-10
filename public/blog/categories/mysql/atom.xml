@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: MySQL | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/mysql/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
+    <link href="http://yoursite.com/blog/2012/12/09/fizzbuzz-a-thon/"/>
+    <updated>2012-12-09T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2012/12/09/fizzbuzz-a-thon</id>
+    <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
+basic concepts like loops, variables and operators. Having given the test to
+other developers several times, I felt like a bit of hypocrite having never
+actually having taken it myself. I've also asked folks to complete the task in
+php, even though it wasn't a language they were particularly familiar with.
+So, I decided it was time to end the hypocrisy, and give myself a little
+challenge:</p>
+
+<p><strong>Do FizzBuzz in as many languages as I could.</strong></p>
+
+<p>So, what did I learn?</p>
+
+<ul>
+<li>With the <a href="http://chr.ishenry.com/2011/06/13/development-without-internet-access/">internet</a>, you can learn the basics of most programming languages in about 5 minutes.</li>
+<li>Programming knowledge is portable between most common web languages. A loop is a loop, a variable is a variable, etc. Syntax for a task this simple can be learned in a few minutes.</li>
+<li>FizzBuzz <em>can</em> be done in sql, bitch.</li>
+<li>Clojure is hard for no reason.</li>
+<li>Lisp is basically impossible to get running.</li>
+<li>Languages have uptake because they're included with the OS and have good documentation and communities.
+In the end, doing FizzBuzz in 10 languages took around 5 hours. There was,
+however, significant time taken for screwing around on Twitter, potty breaks,
+drinking too much coffee, <a href="http://stackoverflow.com/questions/13536889/php-works-but-%0Agives-sql-syntax-error/13536929#comment18536820_13536929">curmedgeon-ing on
+StackOverflow,</a> drinking beer, and
+making carnitas. Time was also spent looking for a way to run my FizzBuzzes in
+bash and benchmark them, which proved fruitless, since OS X doesn't support
+nanoseconds in the date command.</li>
+</ul>
+
+
+<p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
+repo.</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
+    <link href="http://yoursite.com/blog/2012/08/13/mysqls-insert-select-replication-and-you/"/>
+    <updated>2012-08-13T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2012/08/13/mysqls-insert-select-replication-and-you</id>
+    <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
+table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
+SELECT</a> is an
+elegant solution. It reduces the number of queries sent to a MySQL server, and
+makes for elegant code. Additionally, with INSERT SELECTs, all processing
+happens on the MySQL side. The app doesn't have to deal with having any of the
+data in memory. This means that application servers can be run with less
+memory.</p>
+
+<p>Unfortunately, INSERT SELECT's best use cases coincide with cases where the
+SELECT query has the potential to run a long time. On standalone servers
+running InnoDB, this can be fine, as reads and writes will continue to execute
+concurrently. However, if you're running MyISAM, queries will lock, and
+nothing will execute. Instead, queries will queue up, your application will
+come to a dead halt, MySQL will likely hit max_connections and Very Bad Things
+will happen.</p>
+
+<p>In <a href="http://dev.mysql.com/doc/refman/5.5/en/replication-%0Aimplementation.html">replicated</a> environments, even well tuned ones running on InnoDB, a
+long running INSERT SELECT can cause other sorts of problem. MySQL replication
+is statement based. In other words, every statement that writes to disk on the
+master is written to a log. The log is then transferred to slave(s), and those
+statements are replayed on the slaves.</p>
+
+<p>With INSERT SELECTS, every slave needs to run the same SELECT. The master will
+not simply pass on the results of the SELECT, but rather simply pass the same
+query to be executed by the slave(s). So in a replicated environment, it's
+even more important to keep an eye on how long those INSERT SELECTS are
+running. Not only is it a waste of processing power to run the SELECT portion
+of the query across the entire cluster, the SELECT will actually block other
+statements in the log from executing. This means that the data on the slaves
+will become out of sync with the master, a condition called slave lag.</p>
+
+<p>INSERT SELECT is a great tool, but beware of the costs of using it in certain
+situations.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL Error 28]]></title>
+    <link href="http://yoursite.com/blog/2011/11/02/mysql-error-28/"/>
+    <updated>2011-11-02T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2011/11/02/mysql-error-28</id>
+    <content type="html"><![CDATA[<p>Yesterday, I had to run a query for some statistics I needed. This was a query
+that I knew were going to be particularly nasty as it required sorting 1.3M
+rows. Normally I run these sorts of queries on a reporting slave I keep around
+for this reason, but for some reason I chose to run this query on a production
+slave. When I ran my query, I got the following error;</p>
+
+<p>ERROR 3 (HY000): Error writing file '/tmp/MYNcSyQ9' (Errcode: 28)</p>
+
+<p>Oh. *&amp;<sup>%.</sup> After some Googling, a bit of shitting my pants, and a wild grep
+session through as many application logs as I could find, I was able to figure
+out that problem seemed limited to this particular query. My Googling turned
+up the fact that the error code indicated that the server was out of disk
+space.</p>
+
+<p>As a rapidly growing company, we've had our fair share of issues with managing
+(or failing to manage) rapidly filling disks, failed RAID controllers, and the
+like. However, I had recently done audits of this particular cluster of
+servers, and ascertained that the situation with disks was nominal. I was
+confident the disk wasn't full, and permissions were correct. Our particular
+disk layout puts /tmp on its own 2GB partition, and after running the query,
+that partition was 2% full.</p>
+
+<p>It turns out that during the execution of the query, MySQL was creating a
+temporary table that was 2GB, hence the error. By default MySQL will write
+temporary tables to /tmp, which in many cases, is its own small partition. The
+solution here was to set the tmpdir to a folder on the main partition adjacent
+to the MySQL datadir. This solution obviously has its own problems (ie you
+could fill your main partition, which is way worse than filling /tmp) However,
+for this type of ad hoc query, this was exactly what we needed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL and Linux swappiness]]></title>
+    <link href="http://yoursite.com/blog/2010/07/30/mysql-and-linux-swappiness/"/>
+    <updated>2010-07-30T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/07/30/mysql-and-linux-swappiness</id>
+    <content type="html"><![CDATA[<p>MySQL's InnoDB engine is really great. Row-level locking is amazing in tables
+where there is heavy concurrency. Write buffering is also awesome for cases
+where a table needs to accept a lot of data. InnoDB's use of memory to store
+indexes or sometimes the entire table can also make reads incredibly fast,
+especially on tables that need to support complex queries where even the best
+placed indexes do nothing.</p>
+
+<p>However, when tables get large, the innodb_buffer_pool is set to close to
+amount of memory on the server, Linux has a tendency to remove your data from
+memory for no good reason. The symptoms are unmistakable: a query that was
+known to be pretty quick, but hasn't run in a while, will take long. Too long.
+Run it again, and it becomes snappy. What's happening is that when the query
+initially runs, the necessary data isn't in memory, so it's read in from disk,
+and the query is performed. Once it's in memory, that second run is quick.</p>
+
+<p>Actually there is a good reason Linux behaves like this:</p>
+
+<blockquote><p>"My point is that decreasing the tendency of the kernel to swap stuff out is
+wrong. You really don't want hundreds of megabytes of BloatyApp's untouched
+memory floating about in the machine. Get it out on the disk, use the memory
+for something useful."</p></blockquote>
+
+<ul>
+<li><a href="http://kerneltrap.org/node/3000">[http://kerneltrap.org/node/3000](http://kerneltrap.org/node/3000)</a></li>
+</ul>
+
+
+<p>This all makes sense, as most systems need to reclaim memory from applications
+that aren't doing anything. Except in the case where you have a large dataset
+in InnoDB that you'd really like to be in memory when you query it. Luckily,
+there is a tunable that you can change to dictate how aggressive Linux is
+reclaiming memory from applications. /proc/sys/vm/swappiness stores a number
+for 0 to 100, where 100 means that Linux will be extremely aggressive in
+reclaiming memory, and 0 means that memory won't be reclaimed all that much.</p>
+
+<p>For servers that need to keep datasets in memory all the time, this variable
+can be extremely helpful. With an InnoDB table / indexes that consume ~80% of
+memory on the machine, a swappiness value of 30 is sufficient to allow MySQL
+to keep most of that in memory. Of course, I don't recommend this for a
+machine that is not 100% dedicated to a single task. However, on dedicated
+MySQL machines, tuning this variable can be really helpful.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL Slave Delay and Maatkit]]></title>
+    <link href="http://yoursite.com/blog/2010/05/03/mysql-slave-delay-and-maatkit/"/>
+    <updated>2010-05-03T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2010/05/03/mysql-slave-delay-and-maatkit</id>
+    <content type="html"><![CDATA[<p>This post could alternately be titled: 'How to make developers hate you.'</p>
+
+<p>A very common criticism of MySQL is that there is no support for delayed
+replication. Delaying data flowing from master to slave can be very useful in
+certain cases. For example, running a co-located slave for backups is still
+susceptible to data problems that caused by a DELETE with no where or a
+mistaken executed DROP. However, by running the slave anywhere from an hour to
+a day behind, you have the opportunity to catch whatever problems caused and
+have a good copy of your data ready to go.</p>
+
+<p>In <a href="http://chr.ishenry.com/2010/02/22/sandboxes/">sandbox environments</a>, a
+consistent slave delay is a great way to reproduce race conditions. In fact,
+running slave delay gives you the opportunity to ensure that data will be out
+of sync between the master and slave. When you can count on this part of the
+environment, developers can test and write code against this condition. Of
+course, in reality, working in this type of environment is reaally annoying,
+but necessary.</p>
+
+<p>Delayed MySQL replication can be accomplished by using a tool from the
+<a href="http://www.maatkit.org/">maatkit</a> library. Documentation for the tool can be
+found at <a href="http://www.maatkit.org/doc/mk-slave-delay.html">[http://www.maatkit.org/doc/mk-slave-
+delay.html](http://www.maatkit.org/doc/mk-slave-
+delay.html)</a>. What's great
+about this tool is that can be run as a daemon, so that it can be easily run
+for an extended period of time, without have to do any serious management.</p>
+]]></content>
+  </entry>
+  
+</feed>

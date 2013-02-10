@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Thoughts | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/thoughts/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
+    <link href="http://yoursite.com/blog/2012/12/09/fizzbuzz-a-thon/"/>
+    <updated>2012-12-09T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2012/12/09/fizzbuzz-a-thon</id>
+    <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
+basic concepts like loops, variables and operators. Having given the test to
+other developers several times, I felt like a bit of hypocrite having never
+actually having taken it myself. I've also asked folks to complete the task in
+php, even though it wasn't a language they were particularly familiar with.
+So, I decided it was time to end the hypocrisy, and give myself a little
+challenge:</p>
+
+<p><strong>Do FizzBuzz in as many languages as I could.</strong></p>
+
+<p>So, what did I learn?</p>
+
+<ul>
+<li>With the <a href="http://chr.ishenry.com/2011/06/13/development-without-internet-access/">internet</a>, you can learn the basics of most programming languages in about 5 minutes.</li>
+<li>Programming knowledge is portable between most common web languages. A loop is a loop, a variable is a variable, etc. Syntax for a task this simple can be learned in a few minutes.</li>
+<li>FizzBuzz <em>can</em> be done in sql, bitch.</li>
+<li>Clojure is hard for no reason.</li>
+<li>Lisp is basically impossible to get running.</li>
+<li>Languages have uptake because they're included with the OS and have good documentation and communities.
+In the end, doing FizzBuzz in 10 languages took around 5 hours. There was,
+however, significant time taken for screwing around on Twitter, potty breaks,
+drinking too much coffee, <a href="http://stackoverflow.com/questions/13536889/php-works-but-%0Agives-sql-syntax-error/13536929#comment18536820_13536929">curmedgeon-ing on
+StackOverflow,</a> drinking beer, and
+making carnitas. Time was also spent looking for a way to run my FizzBuzzes in
+bash and benchmark them, which proved fruitless, since OS X doesn't support
+nanoseconds in the date command.</li>
+</ul>
+
+
+<p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
+repo.</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
+    <link href="http://yoursite.com/blog/2012/08/19/appnet-i-smell-a-pattern/"/>
+    <updated>2012-08-19T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2012/08/19/appnet-i-smell-a-pattern</id>
+    <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
+<a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
+at what seemed like a very popular concept. If (IF) I understand correctly,
+app.net is an attempt to reboot Twitter. The aim is to build a realtime social
+feed free from the shackles of advertising, and instead a focus on creating an
+experience tailored to its users and developers. Also, there seems to be a $50
+cover.</p>
+
+<p>Frankly, this undertaking seems ill advised, as does asking a bunch of people
+for $50 for a username. App.net is taking on the giants of the Internet who
+have worked for years to build product, developer community, etc. Having
+worked with Twitter's APIs, I can say that Twitter has done a fantastic job of
+advocating for developers and providing them the tools and data to innovate. I
+can also say that I actually haven't noticed much impact from advertising, and
+I consider myself a pretty heavy Twitter user. I also tend to have a hard time
+differentiating between Rob Delaney's
+<a href="https://twitter.com/Charmin/status/231413266251907073">digital</a>
+<a href="https://twitter.com/HomeDepot/status/235083704358301697">harassment</a> and
+properly promoted tweets.</p>
+
+<p>Looking back, this project doesn't seem all that different from
+<a href="https://joindiaspora.com/">Diaspora</a>. A small team aggravated with certain
+aspects of larger services that they love puts out an app that is viable, but
+is really a carbon copy of the original, with their own special twist.
+Diaspora and App.net both want their users to have control over privacy, data,
+and how much advertising is shoved in their face. Currently, Diaspora seems to
+be completely off the radar, having made practically no dent in addressing its
+original goals.</p>
+
+<p>Building a product to address a flaw in someone else's product seems to be a
+fools errand, particularly when the giants of real time social feeds are well
+ensconced. Building a competitor product also doesn't seem like a great way to
+convince the Internet that advertising is bad. Also, the Internet doesn't
+really need convincing that ads are bad. I'm relatively sure that based on
+diving click throughs, nonexistent conversion, and the mere existence of
+banner blindness that Internet advertising industry also knows that its days
+are numbered. Interestingly enough, the most fertile area of brand awareness
+actually seems to be around using real time social media to engage in simple,
+human ways. So I'm not sure how cutting brands out of the business model will
+help here.</p>
+
+<p>What surprises me most about the existence of app.net is how blatantly it
+reinvents the wheel. The alpha was put out to show backers there was a real
+app behind the video. However, aside from proving they can convince folks that
+advertising control is bad, the actual app doesn't really do anything
+innovative or different, at least that I can see. OK, you got me, there's
+[data export|http://daltoncaldwell.com/we-did-it]. Realistically, this is an
+alpha, there's virtually no data to export, so I would hardly consider this a
+marvel of engineering. When Diaspora came onto the scene, they had actually
+built something different, and innovative. Even Identi.ca attempted to
+<a href="http://identi.ca/doc/faq">differentiate themselves</a> in functionality.</p>
+
+<p>This entire project reeks of misdirected energy, and a "<a href="http://www.richard-banks.org/2007/07/built-here-syndrome.html">not built
+here</a>"
+mentality. Granted, I'm a huge fan of building things that make you happy,
+it's part of what keeps me going as a developer. Truthfully, the thing I love
+most about being a developer is that I can build whatever the fuck I want,
+whether it helps, hurts, solves a problem, or complicates stuff. However, I
+just can't help but feel this entire project is a form of lashing out. It
+feels destructive to me to rally a group of smart people off of a platform
+that's working well because of some flaws. Flaws which are really inherent
+challenges building business on the Internet. I feel like a more effective
+method of changing the environment would've been creating better ways to
+monetize without having to resort to advertising.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
+    <link href="http://yoursite.com/blog/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
+    <updated>2012-07-28T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2012/07/28/gallow-green-is-still-a-bitgreen</id>
+    <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I've
+been a huge fan of the rich, immersive experience put together by
+<a href="http://www.punchdrunk.org.uk/">Punchdrunk</a>.  I loved the dreamy feeling of
+walking through an entire other world, inhabited by scared, angry, jealous
+shadows running, fighting and going insane. The Manderley bar, within the
+hotel, was an amazing experience, no less detailed than the rest of the hotel.
+The absinthe punch, in particular, is a fantastic drink, dark and complex,
+that perfectly compliments the experience.</p>
+
+<p>Upon hearing that they were opening a rooftop bar at the McKittrick Hotel
+called <a href="http://www.mckittrickhotel.com/gallowgreen/">Gallow Green</a>, I
+instantly bought tickets and eagerly awaited the night. The entrance was
+similar to that of Sleep No More. After a short wait, you're ushered into a
+small elevator that opens into a open floor with a coat check and a set of
+stairs to the roof. The rooftop garden is spacious, romantically lit, and
+beautifully decorated. Somehow or other, they also managed to get old rail car
+up there, too.</p>
+
+<p>My night at Gallow Green didn't quite have the same magic as my previous
+visits to the McKittrick. While I did not try any of the punches, the
+cocktails were disappointing. The Third Degree, a gin cocktail, tasted so
+strongly of warm Tanqueray that it was close to undrinkable. The Pimms Other
+Cup, a murky mixture of Pimms, dark rum, lemonade and a cucumber slice was
+potable, but only as a result of the lemonade. I'm not sure if this was the
+result of a bartender having an off night, or that the cocktails are just
+poorly conceived.</p>
+
+<p>While the space was beautiful, it seems the night I was there, a private party
+had booked an event. My wait at the door was plagued by demands of a very
+entitled gentlemen, who claimed he was very important to the party. After
+getting cocktails, we sat down at a table marked reserved, assuming our
+reservation entitled us to a 'Reserved' table. A waitress, after asking if we
+were part of the party, shooed us after a few minutes, leaving Jessica and I
+scurrying to find a place to sit. Luckily, we found a somewhat hidden swing a
+few steps away from the bar, which we camped out on all night.</p>
+
+<p>While the right elements are there for Gallow Green to be a fantastic
+experience, my night did not reflect that. However, I'm likely to go back,
+given the incredible quality of everything else in the hotel. Hopefully, my
+next reservation at the McKittrick will occur on a better night.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
+    <link href="http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <updated>2012-07-09T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
+absolutely everything about nothing"
+-<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
+
+<p>My grandfather was a carpenter. He had an immense workbench, with a pegboard
+that had hundreds of hammers, screwdrivers, wrenches, saws, drills, planes,
+awls. They were powered, hand powered, circular, rotary and reciprocating.
+Each of them had their own beauty, and their own use. The man could build a
+picture frame, a desk, a dock, or an entire house. He may not have wielded any
+of them expertly, but he knew which one to use when the situation called, and
+he certainly knew how to use them in concert.</p>
+
+<p>Two generations later, I have become a web developer, and can't help but
+notice the similarities between the two. He worked in wood, but I work in bits
+and bytes. Web sites, especially big ones, are not the product of a single
+technology, but the result of many technologies seamlessly interacting.
+Building a house is no different. Framing, roofing, laying foundation are all
+separate skills that require vastly different tools. Part of the challenge of
+being a web developer is being able to manage lots of technologies at once.</p>
+
+<p>Great web developers are carpenters. Just like carpentry, there is always the
+right tool for the job. Infrastructure that doesn't play well with software is
+bound for failure. Software that doesn't use or fit the hardware / kernel / OS
+well won't run well. As experts in web development, we can know less about
+each technology, but should know more about how they work together. Tailoring
+software or combinations of software packages is the magic bullet that solves
+problems quickly and scalably.</p>
+
+<p>In the context of early stage startups, generalists are a better bet for
+getting a production up and running. Even as a team grows, having generalists
+around means you can task a single developer with developing and entire
+feature. With a bit of support from specialists, they can pull off shipping a
+feature faster than a team of a couple of specialists. When widespread  issues
+occur, I prefer to have a generalist in my corner, because they typically
+understand the the connective tissue of a website very well, and are willing
+to put in the time debugging from a variety of perspectives.</p>
+
+<p>None of this is to say that specialists don't have their place in web
+development. The web is an innovative medium that it has spawned dozens of
+technologies (node.js) that require a deep pool of expertise to work in. There
+are vast arrays of techniques and frameworks that cater to working in a single
+technology. Generalists typically won't have the depth necessary to pull off a
+awe-inspiring, truly nasty implementation. However, they'll have the right
+instincts to pair it, deploy, and make it do something meaningful that a
+specialist might not be able to do by themselves.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Why SOPA is fucking stupid]]></title>
+    <link href="http://yoursite.com/blog/2012/01/12/why-sopa-is-fucking-stupid/"/>
+    <updated>2012-01-12T00:00:00-05:00</updated>
+    <id>http://yoursite.com/blog/2012/01/12/why-sopa-is-fucking-stupid</id>
+    <content type="html"><![CDATA[<p>At its core, SOPA represents a universal, base desire of men to protect what
+they own. To some degree, it's valid, something that anyone can respect.
+However, as with most things, ideas mean precisely shite, and execution is
+what really matters. In the case of SOPA, a misguided, poorly informed
+government is attempting to execute an idea in a way that could do the most
+damage possible. Let me count the ways SOPA is fucking stupid.</p>
+
+<p>SOPA threatens free speech. <a href="http://blog.heritage.org/2011/12/28%0A/morning-bell-the-unintended-consequences-of-internet-regulation/">This</a>
+<a href="http://www.techdirt.com/articles/20111228/10302017214/heritage-%0Afoundation-says-sopa-threatens-free-speech.shtml">has</a>
+<a href="http://blogpatriot2.blogspot.com/2011/12/sopa-threatens-free-speech-%0Aand.html">been</a> <a href="http://americancensorship.org/">said</a> by many folks who are much
+smarter than I. Any bill that allows the silencing of voices should not see
+the light of day. 'Nuff said.</p>
+
+<p>SOPA will starve and fracture an industry. A measure that could be taken
+against an "infringing" site is forcing advertising networks to stop serving
+ads for said site. For many sites, <a href="http://3.bp.blogspot.com/_Eci%0AFAUHzQJA/THfX4ogb1PI/AAAAAAAAApw/_8E_nAGoUa0/s1600/madmen.png">advertising</a> is their meat
+and potatoes. An equally despicable measure is forcing payment services (can
+you say paypal?) to stop accepting <a href="https://www.google.com/searc%0Ah?q=e+commerce+growth&amp;hl=en&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-Q%0ALT9myEYXr0gGX6v3wBQ&amp;ved=0CHoQsAQ&amp;biw=1440&amp;bih=805#hl=en&amp;tbm=isch&amp;sa=1&amp;q=meat+a%0And+potatoes&amp;oq=meat+and+potatoes&amp;aq=f&amp;aqi=g4g-m1g-S5&amp;aql=&amp;gs_sm=e&amp;gs_upl=29636%0Al29636l0l29989l1l1l0l0l0l0l155l155l0.1l1l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=67%0A6c4a75e36741e5&amp;biw=1440&amp;bih=805">transactions</a> from the infringing site. Any site that
+relies on e-commerce is now <a href="http://www.hotflick.net/flicks/200%0A0_Snatch./000SNC_Stephen_Graham_010.jpg">proper fucked</a>. Any service that provides a payment
+gateway or ad services is now unreliable. There will be a rift between
+providers that cooperate with SOPA, and those that don't.</p>
+
+<p>SOPA will break the one thing that makes the Internet accessible to humans,
+DNS. <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> is the system
+whereby domains names are translated to network addresses. Assigning IP
+addresses easy-to-remember names is one of the reasons the Internet has become
+a viable medium. As an extreme measure, SOPA will alter a site's DNS records
+to point somewhere else. This last measure make is pretty clear the authors of
+these bills are complete <a href="http://themalephabet.files.wordpress.com/2%0A009/06/dipshit-11.jpg?w=450">dipshits</a>.</p>
+
+<p>While altering DNS will render the site inaccessible to most, it does not
+remove the existence or accessibility of content from the Internet. This very
+post is available <a href="http://174.143.169.75/2012/01/12/why-sopa-is-fucking-%0Astupid/">here</a>, whether DNS is up or not. To cope with a broken DNS system, the
+Internet will respond, and it will not be pleasant. Hardware vendors will ship
+with <a href="http://en.wikipedia.org/wiki/Hosts_(file">host files</a>) set up to protect
+their own interests. Rogue DNS resolvers will pop up. The Internet will turn
+into <a href="http://en.wikipedia.org/wiki/Mad_Max_Beyond_Thunderdome">Bartertown</a>.
+Two browsers will enter, neither will find Facebook.</p>
+
+<p>The <a href="https://www.google.com/search?q=e+commerce+growth&amp;hl=e%0An&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-QLT9myEYXr0gGX6v3wBQ&amp;ved=0C%0AHoQsAQ&amp;biw=1440&amp;bih=805#hl=en&amp;tbm=isch&amp;sa=1&amp;q=US+internet+industry+growth&amp;pbx=%0A1&amp;oq=US+internet+industry+growth&amp;aq=f&amp;aqi=&amp;aql=&amp;gs_sm=e&amp;gs_upl=72732l82019l0l8%0A2314l26l23l3l1l1l7l234l3216l2.10.7l19l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=676c4%0Aa75e36741e5&amp;biw=1440&amp;bih=805">internet industry</a> and <a href="https://www.google.com/search?q%0A=e+commerce+growth&amp;hl=en&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-QLT9%0AmyEYXr0gGX6v3wBQ&amp;ved=0CHoQsAQ&amp;biw=1440&amp;bih=805">e-commerce</a> have proved to be the
+country's highest growth sectors in the past few years. One of the main
+contributors to that growth has been the availability of honest, reasonably
+reliable, interconnected services. They've given the classic <a href="http://whartoniteseekscodemonkey.tumblr.com/">humble
+entrepreneur + code monkey</a> team
+the tools to build a business that yields riches. Compromise those tools, and
+you will destroy an industry, not to mention perhaps the last golden vestige
+of American opportunity. Creating a market-based system to punish violators
+will only destroy the system. To help combat SOPA, contact your local
+<a href="http://americancensorship.org/">congressperson</a>, or go here. To read the
+bill, <a href="http://thomas.loc.gov/home/gpoxmlc112/h3261_ih.xml">click here</a>.</p>
+]]></content>
+  </entry>
+  
+</feed>

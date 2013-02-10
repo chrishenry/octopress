@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Scalability | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/scalability/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-09T20:19:03-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Architecture will Save You]]></title>
+    <link href="http://yoursite.com/blog/2009/06/04/architecture-will-save-you/"/>
+    <updated>2009-06-04T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2009/06/04/architecture-will-save-you</id>
+    <content type="html"><![CDATA[<p>There are two things that cause sites to go down:</p>
+
+<ul>
+<li>Something breaks.</li>
+<li>Too much traffic.</li>
+</ul>
+
+
+<p>When things break, there's nothing to do but <a href="http://chr.ishenry.com/2009/05/25/crisis-mo/">failover, examine, and
+fix</a>.</p>
+
+<p>But when there's too much traffic, you're screwed. The reason you're getting
+so much traffic is because you've done something to earn it. Your site has
+made it on to Digg or Reddit or even TV. Failing over to a status page is
+admitting that you haven't done your job. Staying up means that some people
+will see the site, maybe, but after a stupidly long wait. And then you become
+'that site' that was taken down by too much traffic.</p>
+
+<p>So as a web architect, this is your absolute worst moment. Everything you've
+done over the past months or years is falling down miserably in front of you,
+and there isn't anything you can do at that moment that will make a meaningful
+difference. Unless, of course, your architecture is set up so you can increase
+capacity by just turning up more servers. Among software architects, this is
+know as being able to <a href="http://bit.ly/14YkWx">scale horizontally</a></p>
+
+<p>So when the site is being built, it's extremely important that every choice
+you make supports scaling horizontally, with each layer able to be spread
+across many servers. Storage, session handling, database, apache […] are all
+different layers. They all need to be able to handle more capacity just by
+adding additional services to whatever layer needs it.</p>
+
+<p>Having the horizontal scalable quality is really difficult when trying to get
+a site out quickly. architecture is something that will often get de-
+prioritized because there is no immediate result. However, taking the extra
+time to build an application that follows the horizontally scalable patterns
+is extremely important. Without spending that extra time, you can easily be
+wiped out by the <a href="http://www.ndesign-studio.com/blog/updates/the-%0Adigg-effect/">Digg effect</a>.</p>
+
+<p>The biggest takeaway is when thinking about how to build your application,
+focus on making it scale horizontally. So when the moment comes when you get
+on Digg, you can spin up some more servers, sit back, and have a drink.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Success!]]></title>
+    <link href="http://yoursite.com/blog/2009/05/30/success/"/>
+    <updated>2009-05-30T00:00:00-04:00</updated>
+    <id>http://yoursite.com/blog/2009/05/30/success</id>
+    <content type="html"><![CDATA[<p>When making changes to a large site, it's really helpful to have tools to
+measure how those changes affect performance. One of my favorite tools is
+<a href="http://bit.ly/1tFcP">cacti</a>. This is a graph of the load average of one our
+database servers</p>
+
+<p><a href="http://174.143.169.75/wp-%0Acontent/uploads/2009/05/cacti.jpg"><img src="http://174.143.169.75/wp-%0Acontent/uploads/2009/05/cacti.jpg" alt="Database Load Average" /></a></p>
+
+<p>We done good…</p>
+]]></content>
+  </entry>
+  
+</feed>
