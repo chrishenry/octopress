@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: nyc | The Technician]]></title>
+  <link href="http://yoursite.com/blog/categories/nyc/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/"/>
+  <updated>2013-02-21T21:07:59-05:00</updated>
+  <id>http://yoursite.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Minetta Street]]></title>
+    <link href="http://yoursite.com/2013/02/21/minetta-street/"/>
+    <updated>2013-02-21T20:58:00-05:00</updated>
+    <id>http://yoursite.com/2013/02/21/minetta-street</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>

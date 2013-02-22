@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-02-10T01:32:49-05:00</updated>
+  <updated>2013-02-21T21:07:59-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,33 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Minetta Street]]></title>
+    <link href="http://yoursite.com/2013/02/21/minetta-street/"/>
+    <updated>2013-02-21T20:58:00-05:00</updated>
+    <id>http://yoursite.com/2013/02/21/minetta-street</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Resignation and Continuity]]></title>
+    <link href="http://yoursite.com/2013/02/21/resignation-and-continuity/"/>
+    <updated>2013-02-21T20:19:00-05:00</updated>
+    <id>http://yoursite.com/2013/02/21/resignation-and-continuity</id>
+    <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful one. Ever since my sister&#8217;s Confirmation, when there were three collections, and the sermon admonished parents that every firstborn should be sent to seminary, I have been convinced that church and faith are entirely separately. Reading through history, it&#8217;s clear the papacy is more of a political organization than anything else. The wars, the influence over entire countries to go to war seem more the actions of an organization obsessed with power than one that existed to help people.</p>
+
+<!-- more -->
+
+
+<p>With Ratzinger bucking the trend of holding the papacy till death, it is even more clear that what should be the peaceful fading away of an old man who has done his service will be turned into political jockeying. One of the more interesting political side effects of Ratzinger&#8217;s decision to resign will be that he will continue to influence the policies of the church until his death.</p>
+
+<p>The new Pope will be in a much different position from previous popes, who had free reign to set policy as he sees. In this case, there will be Ratzinger&#8217;s supporters and the ex-pope himself around to ensure that edicts put in place will stay there. Unlike previous new popes, there will be no clean break in policy. The man who is now closest to God among all other men will be within a stone&#8217;s throw of the man who was closest to God a couple months ago.</p>
+
+<p>The question here will be whether the papacy can continue to move forward with, or will the previous pope continue to be pope. Much like an an employee who suddenly sits up straight and closes the Facebook window when the boss walks in, will the future pope be influenced by the unspoken power dynamic of having a previous pope alive?</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
@@ -630,135 +657,6 @@ tremendously when applying pesky software updates, as you always have one
 machine that will be up and running.</p>
 
 <p><a href="http://yoursite.com/images/user/workflow_synergy.jpg"><img src="http://yoursite.com/images/user/workflow_synergy.jpg" alt="Rig at the Behnace Office" /></a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why SOPA is fucking stupid]]></title>
-    <link href="http://yoursite.com/2012/01/12/why-sopa-is-fucking-stupid/"/>
-    <updated>2012-01-12T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2012/01/12/why-sopa-is-fucking-stupid</id>
-    <content type="html"><![CDATA[<p>At its core, SOPA represents a universal, base desire of men to protect what
-they own. To some degree, it&#8217;s valid, something that anyone can respect.
-However, as with most things, ideas mean precisely shite, and execution is
-what really matters. In the case of SOPA, a misguided, poorly informed
-government is attempting to execute an idea in a way that could do the most
-damage possible. Let me count the ways SOPA is fucking stupid.</p>
-
-<p>SOPA threatens free speech. <a href="http://blog.heritage.org/2011/12/28%0A/morning-bell-the-unintended-consequences-of-internet-regulation/">This</a>
-<a href="http://www.techdirt.com/articles/20111228/10302017214/heritage-%0Afoundation-says-sopa-threatens-free-speech.shtml">has</a>
-<a href="http://blogpatriot2.blogspot.com/2011/12/sopa-threatens-free-speech-%0Aand.html">been</a> <a href="http://americancensorship.org/">said</a> by many folks who are much
-smarter than I. Any bill that allows the silencing of voices should not see
-the light of day. &#8216;Nuff said.</p>
-
-<p>SOPA will starve and fracture an industry. A measure that could be taken
-against an &#8220;infringing&#8221; site is forcing advertising networks to stop serving
-ads for said site. For many sites, <a href="http://3.bp.blogspot.com/_Eci%0AFAUHzQJA/THfX4ogb1PI/AAAAAAAAApw/_8E_nAGoUa0/s1600/madmen.png">advertising</a> is their meat
-and potatoes. An equally despicable measure is forcing payment services (can
-you say paypal?) to stop accepting <a href="https://www.google.com/searc%0Ah?q=e+commerce+growth&amp;hl=en&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-Q%0ALT9myEYXr0gGX6v3wBQ&amp;ved=0CHoQsAQ&amp;biw=1440&amp;bih=805#hl=en&amp;tbm=isch&amp;sa=1&amp;q=meat+a%0And+potatoes&amp;oq=meat+and+potatoes&amp;aq=f&amp;aqi=g4g-m1g-S5&amp;aql=&amp;gs_sm=e&amp;gs_upl=29636%0Al29636l0l29989l1l1l0l0l0l0l155l155l0.1l1l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=67%0A6c4a75e36741e5&amp;biw=1440&amp;bih=805">transactions</a> from the infringing site. Any site that
-relies on e-commerce is now <a href="http://www.hotflick.net/flicks/200%0A0_Snatch./000SNC_Stephen_Graham_010.jpg">proper fucked</a>. Any service that provides a payment
-gateway or ad services is now unreliable. There will be a rift between
-providers that cooperate with SOPA, and those that don&#8217;t.</p>
-
-<p>SOPA will break the one thing that makes the Internet accessible to humans,
-DNS. <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> is the system
-whereby domains names are translated to network addresses. Assigning IP
-addresses easy-to-remember names is one of the reasons the Internet has become
-a viable medium. As an extreme measure, SOPA will alter a site&#8217;s DNS records
-to point somewhere else. This last measure make is pretty clear the authors of
-these bills are complete <a href="http://themalephabet.files.wordpress.com/2%0A009/06/dipshit-11.jpg?w=450">dipshits</a>.</p>
-
-<p>While altering DNS will render the site inaccessible to most, it does not
-remove the existence or accessibility of content from the Internet. This very
-post is available <a href="http://174.143.169.75/2012/01/12/why-sopa-is-fucking-%0Astupid/">here</a>, whether DNS is up or not. To cope with a broken DNS system, the
-Internet will respond, and it will not be pleasant. Hardware vendors will ship
-with <a href="http://en.wikipedia.org/wiki/Hosts_(file">host files</a>) set up to protect
-their own interests. Rogue DNS resolvers will pop up. The Internet will turn
-into <a href="http://en.wikipedia.org/wiki/Mad_Max_Beyond_Thunderdome">Bartertown</a>.
-Two browsers will enter, neither will find Facebook.</p>
-
-<p>The <a href="https://www.google.com/search?q=e+commerce+growth&amp;hl=e%0An&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-QLT9myEYXr0gGX6v3wBQ&amp;ved=0C%0AHoQsAQ&amp;biw=1440&amp;bih=805#hl=en&amp;tbm=isch&amp;sa=1&amp;q=US+internet+industry+growth&amp;pbx=%0A1&amp;oq=US+internet+industry+growth&amp;aq=f&amp;aqi=&amp;aql=&amp;gs_sm=e&amp;gs_upl=72732l82019l0l8%0A2314l26l23l3l1l1l7l234l3216l2.10.7l19l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=676c4%0Aa75e36741e5&amp;biw=1440&amp;bih=805">internet industry</a> and <a href="https://www.google.com/search?q%0A=e+commerce+growth&amp;hl=en&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-QLT9%0AmyEYXr0gGX6v3wBQ&amp;ved=0CHoQsAQ&amp;biw=1440&amp;bih=805">e-commerce</a> have proved to be the
-country&#8217;s highest growth sectors in the past few years. One of the main
-contributors to that growth has been the availability of honest, reasonably
-reliable, interconnected services. They&#8217;ve given the classic <a href="http://whartoniteseekscodemonkey.tumblr.com/">humble
-entrepreneur + code monkey</a> team
-the tools to build a business that yields riches. Compromise those tools, and
-you will destroy an industry, not to mention perhaps the last golden vestige
-of American opportunity. Creating a market-based system to punish violators
-will only destroy the system. To help combat SOPA, contact your local
-<a href="http://americancensorship.org/">congressperson</a>, or go here. To read the
-bill, <a href="http://thomas.loc.gov/home/gpoxmlc112/h3261_ih.xml">click here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Years Actionable (non-whiner) Resolutions]]></title>
-    <link href="http://yoursite.com/2012/01/03/new-years-actionable-non-whiner-resolutions/"/>
-    <updated>2012-01-03T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2012/01/03/new-years-actionable-non-whiner-resolutions</id>
-    <content type="html"><![CDATA[<p>Normally, I&#8217;ve considered New Year&#8217;s Resolutions to be for whiners, people who
-never actually accomplish anything, people who are normally on the
-whhhaaaambulance. Most resolutions fall somewhere in the &#8220;stop being fat&#8221; to
-&#8220;be fluent in mesopotamian glyphs&#8221; range. They&#8217;re vague, completely un-
-actionable, and just describe a slightly unattainable goal / end result /
-dumbass want. This year, however, I&#8217;ve discovered a few serious problems in my
-life I need to fix. So, in the spirit of actually doing shit, I&#8217;ve provided a
-list of non-whiner resolutions + ways to actually make them happen.</p>
-
-<ol>
-<li><p><strong>Go to bed early(ish)</strong>. This is a tough one for me. I&#8217;m naturally a night
-owl, but I might be able to fool myself to getting to bed early by showering
-early(ish). I love me a good shower. I&#8217;ve even been known to drink a beer in
-the shower. I also really like being in really warm, comfortable, if slightly
-embarrassing, PJs. All these things put me in a good mood and generally make
-me want to relax, which is not all that far from being asleep. Action Steps:
-Just get in the fucking shower, don&#8217;t look at the mail / email / dirty dishes
-/ messy apartment / email / Twitter, just get in the shower (bring a beer).</p></li>
-<li><p><strong>See some doctors</strong>. I&#8217;ve avoided doctors for awhile, mostly because my
-lifestyle is a cross between Denis Nedry from Jurassic Park and a barfly. I
-consider this pretty simple. Action Steps: Make appointments with the
-following: dentist, general physician, eye doctor, nutritionist. Do it. Do
-what they say, even if it sucks. Follow up as often as the quacks say so.</p></li>
-<li><p><strong>Go to the gym regularly</strong>. OK, this one is, without a doubt, the most
-cliche, whine-tastic resolution evar. I know, because I have been to the gym
-in January. I&#8217;ve also been to the gym in April, when all the kids who were at
-the gym in January are nowhere to be found. Also, since the gym is a #creepy
-and #gross place to shower, resolution #1 should be even more important.
-Action Steps: Put that ish on the Google calendar with the following
-reminders; 2 hours, 1 hour, 30 minutes, 15 minutes, 10 minutes, and 5 minutes
-before. Keep gym clothes in the office. Don&#8217;t care how bad they smell.</p></li>
-<li><p><strong>Blog more</strong>. Writing has been a great way to get me to collect my
-thoughts, find some hindsight, and maybe, just maybe, help some other folks
-who have the same demented thoughts / stupid problems. As a technical guy,
-&#8220;the inspiration&#8221; doesn&#8217;t hit me so often, and when it does, I&#8217;m often busy,
-y&#8217;know, actually doing shit. However, as I&#8217;ve noted to myself more than once,
-keeping track of my day and journaling how I spend my time is something
-incredibly important for introspection. Action Steps: Write that thought down.
-Write down what you did 30 seconds ago, especially if it was different from
-regularly scheduled programming. Keep a sticky on your monitor to write shite
-down. Ask the dude next to you (<a href="http://twitter.com/bossjones">@bossjones</a>) to
-remind you to you write shit down. Lastly, a glass (or 7) of white wine, the
-notebook in which all your shit is written, and wordpress should convene
-regularly. Google Calendar #ftw, again. Lastly, check Google Analytics on
-posts. The un-monitored blog post is not worth writing.</p></li>
-<li><p><strong>Read more</strong>. Once upon a time (yesterday) I didn&#8217;t know nearly as much as
-I do now. Most of that knowledge came from reading shit-tons of blogs, books,
-bathroom graffiti, articles, and whitepapers related to web development. I
-read everything with a goal: How can I use, or leverage this to help me / my
-business work a little better? The Action Steps here are a bit tougher, and
-slightly conflict with non-whiner resolution #6: Keep Google Reader open.
-Curate my list of feeds with relevant sources. Prune feeds that stopped
-providing useful information. Lastly, and perhaps most important, find tidbits
-of information that make a difference in my life and / or business.</p></li>
-<li><p><strong>Don&#8217;t be distracted by bold numbers in parentheses</strong>. Simple (kinda).
-Action Steps: close Gmail, close Twitter. Try, and #fail, to delete my
-Facebook account.</p></li>
-<li><p><strong>Stop playing so much fucking air guitar by myself, alone in my apt, and
-start playing some real guitar, and actually learn the songs I normally rock
-out to</strong>. Action Steps: restring the Epiphone, buy a new amp, find tabs for
-shit I want to learn. If I&#8217;m feeling really frisky, get back into a band.</p></li>
-</ol>
-
 ]]></content>
   </entry>
   

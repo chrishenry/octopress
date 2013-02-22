@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
-Rackspace tech And bad people, too. On one occasion, I &hellip;">
+	<meta name="description" content="While running any sort of site, expect problems. Lots of them. They will range
+from trucks crashing into your data center, to bad releases, to &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -91,6 +91,143 @@ Rackspace tech And bad people, too. On one occasion, I &hellip;">
 
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/05/26/crisis-mo/">
+		
+			Crisis MO</a>
+	</h2>
+	<div class="entry-content">
+		<p>While running any sort of site, expect problems. Lots of them. They will range
+from trucks crashing into your data center, to bad releases, to people
+defacing your site. Whatever the problem may be, there always seems to be the
+same pattern in dealing with it.</p>
+
+<ol>
+<li>Fail over</li>
+<li>Diagnose</li>
+<li>Fix</li>
+<li>Fail over</li>
+</ol>
+
+
+<p>This list makes a few assumptions. It assumes that there is an alternate
+server for you to fail over to, and a means to do so. Having an alternate
+server with a simple status page is really cheap and quick to set up. The
+easiest way to fail over is probably to use DNS. <a href="http://dynect.com/">Dynect</a>
+offers really great DNS service and has an interface that anyone in the
+company can use.</p>
+
+<p>Of course, failing over doesn&#8217;t necessarily mean you take your entire site
+down either. It could mean pushing an update that closes a particular feature,
+or removing data that&#8217;s causing a problem. Failing over really means any sort
+of quick maneuver that will get you out of hot water.</p>
+
+<p>Once you&#8217;ve failed over, it&#8217;s really important to understand what happened and
+why. Knowing what caused the site to break is the most important step in
+fixing it. When you&#8217;re in this situation, it&#8217;s really easy to put up a quick
+fix without understanding what is happening. This can easily lead to thrashing
+through a number of quick fixes that each break something else. In situations
+like these, making decisions slowly and calmly is crucial. Anything that&#8217;s not
+well thought out can make a bad situation worse.</p>
+
+<p>Once the fix is applied, turn the feature back on or point DNS back to the
+production site. When everything is back up, it&#8217;s well worth spending some
+time making sanity checks on your fixes.</p>
+
+<p>Lastly, it&#8217;s also well worth the time to thoroughly documentwhat went wrong
+and why. The aftermath of crises is a golden opportunity to identify problems
+with architecture process. It&#8217;s also a great time to do a few shots…</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-26T00:00:00-04:00" pubdate data-updated="true">May 26<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>
+
+
+</div>
+	
+</div></article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/05/19/a-tool-to-dry-off/">
+		
+			A Tool to DRY Off</a>
+	</h2>
+	<div class="entry-content">
+		<p>Every developer worth their bits knows that code repeated is a maintenance
+problem waiting to happen. However, code written by a group of devs under
+tight deadlines tends to get pretty ugly pretty quick, with lots of snippets
+being copy/pasted because &#8216;they work&#8217;. The allure of getting things up and
+running quickly is a siren call that constantly lures us away from the all-
+important refactoring and integration that makes code maintainable. But once
+the dust has settled, and there is a spare moment to re-read and consider what
+should be changed, the task of refactoring seems too daunting to even bother.</p>
+
+<p>Thankfully, Sebastian Bergmann has created a tool that will find every dirty
+little Ctrl-V. It&#8217;s called the php <a href="http://bit.ly/1C6nR">Copy Paste Detector</a>,
+and can be installed using pear. Or download the source from git.</p>
+
+<p>What&#8217;s really interesting is when you play with the number of tokens and
+number of lines that constistutes a copy-paste. For my purposes, I used a
+minimum of 5 lines. In quite a few cases, the copy/paste turned out to
+declarations, or including the same style sheets and scripts on different
+pages. But when it was php, it was abundantly clear what needed to be
+refactored, and how.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-19T00:00:00-04:00" pubdate data-updated="true">May 19<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
