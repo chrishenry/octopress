@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: mysql | The Technician]]></title>
+  <title><![CDATA[Category: MySQL | The Technician]]></title>
   <link href="http://yoursite.com/blog/categories/mysql/atom.xml" rel="self"/>
   <link href="http://yoursite.com/"/>
-  <updated>2013-03-09T00:07:54-05:00</updated>
+  <updated>2013-03-09T00:38:39-05:00</updated>
   <id>http://yoursite.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -18,9 +18,7 @@
     <link href="http://yoursite.com/2013/03/08/apparmor-and-mysql/"/>
     <updated>2013-03-08T22:46:00-05:00</updated>
     <id>http://yoursite.com/2013/03/08/apparmor-and-mysql</id>
-    <content type="html"><![CDATA[<p>The other night I was investigating your typically heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I export a copy of the relevant data as a CSV, pulled it down, and attempted to run a LOAD DATA INFILE.</p>
-
-<p>Sane enough right? This is something I've done a million times in a bunch of different kinds of environments. However, after the inevitable fat-fingering, the error is typically pretty clear. In this case, not so much.</p>
+    <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I've done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
 <!-- more -->
 
@@ -29,17 +27,196 @@
 
 <blockquote><p>ERROR 29 (HY000): File '/home/technician/data.csv' not found (Errcode: 13)</p></blockquote>
 
-<p>I've been known to have short term memory glitches, so exited mysql and double checked my path. Three times. After jumping in and out of the mysql shell, I figured there must have been some sort of issue with the placement or permissions of file. Perhaps mysql simply isn't allowed to read the file from there. So I moved it over to the /tmp folder. Ubuntu allows everyone to read from there. No dice. So I moved it back to someplace that made sense and chown'ed it to mysql:mysql still no dice. It was simply as if mysql couldn't see the file.</p>
+<p>I've been known to have short term memory glitches, so I exited mysql and double checked my path. Three times. After jumping in and out of the mysql shell, I figured there must have been some sort of issue with the placement or permissions of file. Perhaps mysql simply isn't allowed to read the file from there. So I moved it over to the /tmp folder. Ubuntu allows everyone to read from there. No dice. So I moved it back to someplace that made sense and chown'ed it to mysql:mysql still no dice. It was simply as if mysql couldn't see the file.</p>
 
 <p>After quite a bit of googling, it turns out a program called AppArmor was blocking mysql's access to the filesystem. From the <a href="https://help.ubuntu.com/12.04/serverguide/apparmor.html">AppArmor Wiki</a>;</p>
 
 <blockquote><p>AppArmor is a Linux Security Module implementation of name-based mandatory access controls. AppArmor confines individual programs to a set of listed files and posix 1003.1e draft capabilities.</p></blockquote>
 
-<p>As it turns out, I'm not the <a href="https://bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/244406">only</a> <a href="http://ubuntuforums.org/archive/index.php/t-822084.html">one</a> <a href="http://stackoverflow.com/questions/2783313/how-can-i-get-around-mysql-errcode-13-with-select-into-outfile">who</a> had issues with this piece of software. Like any good piece of software fighting the good security fight, it gives <a href="http://en.wikipedia.org/wiki/No_quarter">no quarter</a>, intentionally obfuscating what the exact problem is. For Ubuntu, this is pretty strange behavior. Typically, difficult things are pretty easy in Ubuntu, which I have seen lead to performance and security issues.</p>
+<p>As it turns out, I'm not the <a href="https://bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/244406">only</a> <a href="http://ubuntuforums.org/archive/index.php/t-822084.html">one</a> <a href="http://stackoverflow.com/questions/2783313/how-can-i-get-around-mysql-errcode-13-with-select-into-outfile">who</a> had issues with this piece of software. Like any good piece of software fighting the good security fight, it gives <a href="http://en.wikipedia.org/wiki/No_quarter">no quarter</a>, intentionally obfuscating the exact error. For Ubuntu, this is pretty strange behavior. Typically, things in Ubuntu just work, and there aren't too many gotchas.</p>
 
-<p>After a bit more Googling, the solution was relatively simple. AppArmor operates by reading in profiles for each piece of software that it monitors.</p>
+<p>After a bit more Googling, the solution was relatively simple. AppArmor operates by reading in profiles for each piece of software that it monitors. Those profiles have two modes of execution, <a href="https://help.ubuntu.com/8.04/serverguide/apparmor.html">per the docs</a>.</p>
 
-<blockquote><p>sudo aa-complain /usr/bin/mysql</p></blockquote>
+<blockquote><ul>
+<li>Complaining/Learning: profile violations are permitted and logged. Useful for testing and developing new profiles.</li>
+<li>Enforced/Confined: enforces profile policy as well as logging the violation.</li>
+</ul>
+</blockquote>
+
+<p>So the only thing we actually have to do to get mysql back in a place where it's working as expected is to run the following.</p>
+
+<blockquote><p>$ sudo aa-complain /usr/bin/mysql</p></blockquote>
+
+<p>It's great that Ubuntu has enabled this by default, and taken a great step in being secure. However, it feels too heavy handed.</p>
+
+<p>Hope this helps someone!</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
+    <link href="http://yoursite.com/2012/12/10/fizzbuzz-a-thon/"/>
+    <updated>2012-12-10T00:00:00-05:00</updated>
+    <id>http://yoursite.com/2012/12/10/fizzbuzz-a-thon</id>
+    <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
+basic concepts like loops, variables and operators. Having given the test to
+other developers several times, I felt like a bit of hypocrite having never
+actually having taken it myself. I've also asked folks to complete the task in
+php, even though it wasn't a language they were particularly familiar with.
+So, I decided it was time to end the hypocrisy, and give myself a little
+challenge:</p>
+
+<p><strong>Do FizzBuzz in as many languages as I could.</strong></p>
+
+<p>So, what did I learn?</p>
+
+<ul>
+<li>With the <a href="http://chr.ishenry.com/2011/06/13/development-without-internet-access/">internet</a>, you can learn the basics of most programming languages in about 5 minutes.</li>
+<li>Programming knowledge is portable between most common web languages. A loop is a loop, a variable is a variable, etc. Syntax for a task this simple can be learned in a few minutes.</li>
+<li>FizzBuzz <em>can</em> be done in sql, bitch.</li>
+<li>Clojure is hard for no reason.</li>
+<li>Lisp is basically impossible to get running.</li>
+<li>Languages have uptake because they're included with the OS and have good documentation and communities.
+In the end, doing FizzBuzz in 10 languages took around 5 hours. There was,
+however, significant time taken for screwing around on Twitter, potty breaks,
+drinking too much coffee, <a href="http://stackoverflow.com/questions/13536889/php-works-but-%0Agives-sql-syntax-error/13536929#comment18536820_13536929">curmedgeon-ing on
+StackOverflow,</a> drinking beer, and
+making carnitas. Time was also spent looking for a way to run my FizzBuzzes in
+bash and benchmark them, which proved fruitless, since OS X doesn't support
+nanoseconds in the date command.</li>
+</ul>
+
+
+<p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
+repo.</a></p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
+    <link href="http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
+    <updated>2012-08-13T00:00:00-04:00</updated>
+    <id>http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
+    <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
+table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
+SELECT</a> is an
+elegant solution. It reduces the number of queries sent to a MySQL server, and
+makes for elegant code. Additionally, with INSERT SELECTs, all processing
+happens on the MySQL side. The app doesn't have to deal with having any of the
+data in memory. This means that application servers can be run with less
+memory.</p>
+
+<p>Unfortunately, INSERT SELECT's best use cases coincide with cases where the
+SELECT query has the potential to run a long time. On standalone servers
+running InnoDB, this can be fine, as reads and writes will continue to execute
+concurrently. However, if you're running MyISAM, queries will lock, and
+nothing will execute. Instead, queries will queue up, your application will
+come to a dead halt, MySQL will likely hit max_connections and Very Bad Things
+will happen.</p>
+
+<p>In <a href="http://dev.mysql.com/doc/refman/5.5/en/replication-%0Aimplementation.html">replicated</a> environments, even well tuned ones running on InnoDB, a
+long running INSERT SELECT can cause other sorts of problem. MySQL replication
+is statement based. In other words, every statement that writes to disk on the
+master is written to a log. The log is then transferred to slave(s), and those
+statements are replayed on the slaves.</p>
+
+<p>With INSERT SELECTS, every slave needs to run the same SELECT. The master will
+not simply pass on the results of the SELECT, but rather simply pass the same
+query to be executed by the slave(s). So in a replicated environment, it's
+even more important to keep an eye on how long those INSERT SELECTS are
+running. Not only is it a waste of processing power to run the SELECT portion
+of the query across the entire cluster, the SELECT will actually block other
+statements in the log from executing. This means that the data on the slaves
+will become out of sync with the master, a condition called slave lag.</p>
+
+<p>INSERT SELECT is a great tool, but beware of the costs of using it in certain
+situations.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL Error 28]]></title>
+    <link href="http://yoursite.com/2011/11/02/mysql-error-28/"/>
+    <updated>2011-11-02T00:00:00-04:00</updated>
+    <id>http://yoursite.com/2011/11/02/mysql-error-28</id>
+    <content type="html"><![CDATA[<p>Yesterday, I had to run a query for some statistics I needed. This was a query
+that I knew were going to be particularly nasty as it required sorting 1.3M
+rows. Normally I run these sorts of queries on a reporting slave I keep around
+for this reason, but for some reason I chose to run this query on a production
+slave. When I ran my query, I got the following error;</p>
+
+<p>ERROR 3 (HY000): Error writing file '/tmp/MYNcSyQ9' (Errcode: 28)</p>
+
+<p>Oh. *&amp;<sup>%.</sup> After some Googling, a bit of shitting my pants, and a wild grep
+session through as many application logs as I could find, I was able to figure
+out that problem seemed limited to this particular query. My Googling turned
+up the fact that the error code indicated that the server was out of disk
+space.</p>
+
+<p>As a rapidly growing company, we've had our fair share of issues with managing
+(or failing to manage) rapidly filling disks, failed RAID controllers, and the
+like. However, I had recently done audits of this particular cluster of
+servers, and ascertained that the situation with disks was nominal. I was
+confident the disk wasn't full, and permissions were correct. Our particular
+disk layout puts /tmp on its own 2GB partition, and after running the query,
+that partition was 2% full.</p>
+
+<p>It turns out that during the execution of the query, MySQL was creating a
+temporary table that was 2GB, hence the error. By default MySQL will write
+temporary tables to /tmp, which in many cases, is its own small partition. The
+solution here was to set the tmpdir to a folder on the main partition adjacent
+to the MySQL datadir. This solution obviously has its own problems (ie you
+could fill your main partition, which is way worse than filling /tmp) However,
+for this type of ad hoc query, this was exactly what we needed.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[MySQL and Linux swappiness]]></title>
+    <link href="http://yoursite.com/2010/07/30/mysql-and-linux-swappiness/"/>
+    <updated>2010-07-30T00:00:00-04:00</updated>
+    <id>http://yoursite.com/2010/07/30/mysql-and-linux-swappiness</id>
+    <content type="html"><![CDATA[<p>MySQL's InnoDB engine is really great. Row-level locking is amazing in tables
+where there is heavy concurrency. Write buffering is also awesome for cases
+where a table needs to accept a lot of data. InnoDB's use of memory to store
+indexes or sometimes the entire table can also make reads incredibly fast,
+especially on tables that need to support complex queries where even the best
+placed indexes do nothing.</p>
+
+<p>However, when tables get large, the innodb_buffer_pool is set to close to
+amount of memory on the server, Linux has a tendency to remove your data from
+memory for no good reason. The symptoms are unmistakable: a query that was
+known to be pretty quick, but hasn't run in a while, will take long. Too long.
+Run it again, and it becomes snappy. What's happening is that when the query
+initially runs, the necessary data isn't in memory, so it's read in from disk,
+and the query is performed. Once it's in memory, that second run is quick.</p>
+
+<p>Actually there is a good reason Linux behaves like this:</p>
+
+<blockquote><p>"My point is that decreasing the tendency of the kernel to swap stuff out is
+wrong. You really don't want hundreds of megabytes of BloatyApp's untouched
+memory floating about in the machine. Get it out on the disk, use the memory
+for something useful."</p></blockquote>
+
+<ul>
+<li><a href="http://kerneltrap.org/node/3000">[http://kerneltrap.org/node/3000](http://kerneltrap.org/node/3000)</a></li>
+</ul>
+
+
+<p>This all makes sense, as most systems need to reclaim memory from applications
+that aren't doing anything. Except in the case where you have a large dataset
+in InnoDB that you'd really like to be in memory when you query it. Luckily,
+there is a tunable that you can change to dictate how aggressive Linux is
+reclaiming memory from applications. /proc/sys/vm/swappiness stores a number
+for 0 to 100, where 100 means that Linux will be extremely aggressive in
+reclaiming memory, and 0 means that memory won't be reclaimed all that much.</p>
+
+<p>For servers that need to keep datasets in memory all the time, this variable
+can be extremely helpful. With an InnoDB table / indexes that consume ~80% of
+memory on the machine, a swappiness value of 30 is sufficient to allow MySQL
+to keep most of that in memory. Of course, I don't recommend this for a
+machine that is not 100% dedicated to a single task. However, on dedicated
+MySQL machines, tuning this variable can be really helpful.</p>
 ]]></content>
   </entry>
   
