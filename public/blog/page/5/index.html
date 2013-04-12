@@ -7,8 +7,7 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Small, obscure optimizations sometimes have the potential to make the greatest
-impact. For example, every time a connection is made, MySQL will do a &hellip;">
+	<meta name="description" content="This post could alternately be titled: &#8216;How to make developers hate you.&#8217; A very common criticism of MySQL is that there is no support &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -91,6 +90,70 @@ impact. For example, every time a connection is made, MySQL will do a &hellip;">
 
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/05/03/mysql-slave-delay-and-maatkit/">
+		
+			MySQL Slave Delay and Maatkit</a>
+	</h2>
+	<div class="entry-content">
+		<p>This post could alternately be titled: &#8216;How to make developers hate you.&#8217;</p>
+
+<p>A very common criticism of MySQL is that there is no support for delayed
+replication. Delaying data flowing from master to slave can be very useful in
+certain cases. For example, running a co-located slave for backups is still
+susceptible to data problems that caused by a DELETE with no where or a
+mistaken executed DROP. However, by running the slave anywhere from an hour to
+a day behind, you have the opportunity to catch whatever problems caused and
+have a good copy of your data ready to go.</p>
+
+<p>In <a href="http://chr.ishenry.com/2010/02/22/sandboxes/">sandbox environments</a>, a
+consistent slave delay is a great way to reproduce race conditions. In fact,
+running slave delay gives you the opportunity to ensure that data will be out
+of sync between the master and slave. When you can count on this part of the
+environment, developers can test and write code against this condition. Of
+course, in reality, working in this type of environment is reaally annoying,
+but necessary.</p>
+
+<p>Delayed MySQL replication can be accomplished by using a tool from the
+<a href="http://www.maatkit.org/">maatkit</a> library. Documentation for the tool can be
+found at <a href="http://www.maatkit.org/doc/mk-slave-delay.html">[http://www.maatkit.org/doc/mk-slave-
+delay.html](http://www.maatkit.org/doc/mk-slave-
+delay.html)</a>. What&#8217;s great
+about this tool is that can be run as a daemon, so that it can be easily run
+for an extended period of time, without have to do any serious management.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-03T00:00:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
@@ -657,80 +720,6 @@ else.</p>
 
 
 	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/10/24/fix-or-manage/">
-		
-			Fix or Manage?</a>
-	</h2>
-	<div class="entry-content">
-		<p>Sometimes bugs come along that require significant work to fix. Depending on
-what project timelines are like at the moment, sometimes fixing the bug isn&#8217;t
-the best option. For example, a race condition in the caching architecture
-causes pages to be stale. The persistent data store is correct, but the cache
-is not. To the person who just triggered the update, there&#8217;s a bug. The
-information on the public side is not in sync with the information they just
-entered.</p>
-
-<p>So, like any other bug, a report will eventually percolate down to the dev
-team. People scream, fortunes are lost, the svn blame command is used, and the
-devs who wrote the code pee their pants. Once the chaos dies down, the actual
-prognosis of this issue can turn out to be extremely grim.</p>
-
-<p>A shortcoming of the caching architecture shows that there&#8217;s a race condition
-when the system is under heavy load. In order to fix it, the dev team needs to
-plumb the depths of the data access layer, and probably change some
-parameters. But that&#8217;ll probably break everything. Everywhere. Or the layer
-manipulating the data could be fixed to replace the cache instead of
-invalidating. Except the methods to manipulate that entity live in 3 different
-codebases. It&#8217;ll probably break the editor. Either way, the actual solution
-doesn&#8217;t matter.The dev team certainly needs to do something, and it needs to
-be released three days ago.</p>
-
-<p>The correct way to fix this issue will vary widely depending on circumstances.
-But in this particular case, the best answer was to <strong>not fix it, just manage
-it</strong>. Our team was busy, there were other projects that were more pressing.
-Plus the codebase was being rewritten. So instead of flogging a dead horse, a
-simple script was thrown together that compared the cache and the database. If
-they were out of sync, the cache would be cleared, and would be repopulated
-with the correct information the next time it was requested. Once it was
-implemented, the bug was still there, but the cache <em>seemed</em> to be up to date.</p>
-
-<p>Every dev team will face bugs that have enormous costs to fix. The way to deal
-with these bugs will be different every time they come up. It&#8217;s important to
-remember that managing bugs can be almost as effective as fixing them.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-24T00:00:00-04:00" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
 
 
 </div>

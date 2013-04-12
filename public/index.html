@@ -7,7 +7,7 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev &hellip;">
+	<meta name="description" content="As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -90,6 +90,49 @@
 
 	
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/04/01/first-byte/">
+		
+			First Byte</a>
+	</h2>
+	<div class="entry-content">
+		<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
+
+<p>When you click on a link, your browser or client looks up the location of the server via DNS, and then sends off an HTTP request, then your poorly secured router passes it on to the demons that are your local ISP, who then fiendishly pass that same request up to a backbone, which then traverses continents, oceans or even hemispheres, finally arriving at the data center or poorly ventilated closet where the web servers for that particular site live. That web server reads in that request for your stuff (probably porn, you sicko), and begins whatever its process may be to assemble the initial HTML payload, which hopefully involves validating that the way you asked for said stuff is correct, and if it is, then connecting to a database to actually get that lovely stuff, receiving a response, and puts together an HTML page with that data on it, plus references (more on those later) to CSS and JS to format the data in a way that makes sense, and even make it look a little purty. After that exhausting operation, the web server will take the opposite route through the backbone to the succubus ISP, through your router to your computer to your browser. Once that happens, you technically only have the payload HTML, which by itself isn&#8217;t a whole lot of fun, so then the browser will read aforementioned references to CSS and JS, and then make web requests for each of those files, which, btw, will follow the same process as the initial HTML payload went through, until you have all of the CSS and JS. Then you can finally improve your mind by thoughtfully reflecting on the highly intellectual prose you requested not too long ago.</p>
+
+
+		
+		<a href="/2013/04/01/first-byte/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-01T23:29:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/apache/'>apache</a>, <a class='category' href='/blog/categories/devops/'>devops</a>, <a class='category' href='/blog/categories/statsd/'>statsd</a>
+
+
+</div>
+	
+</div></article>
 
 
     <article class="post">
@@ -487,100 +530,6 @@ accessible.</p>
 
 
 	<a class='category' href='/blog/categories/london/'>london</a>
-
-
-</div>
-	
-</div></article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2013/01/27/ssh-tunnels-made-easy/">
-		
-			SSH Tunnels Made Easy</a>
-	</h2>
-	<div class="entry-content">
-		<p>One of the classic problems in administering databases is providing secure,
-yet accessible tools for all those who need to run queries or examine
-production data. Classically, phpMyAdmin has been a great tool for handling
-MySQL for those who don&#8217;t know the command line. However, as any sysadmin
-worth his salt knows, it&#8217;s an extremely insecure tool for a couple of reasons.</p>
-
-<ul>
-<li>It requires php, and specific modules, which is just one more thing to install.</li>
-<li>It requires apache.</li>
-<li>Apache requires port 80 to be open.</li>
-</ul>
-
-
-<p>All of these things are bad, since garden variety attackers and script kiddies
-can potentially find your phpmyadmin installation. Since phpMyAdmin is open-
-source, and freely available, there always likely to be security holes. One of
-the best ways around this is to close phpMyAdmin off to the public via
-firewall, and then use an SSH tunnel to pass traffic through another server.
-The server hosting mysql and phpMyAdmin can safely stay hidden, with all ports
-closed.</p>
-
-<p><img src="/images/user/ssh_tunnel_diagram.gif" alt="Diagram, showing the flow of traffic between client and secure mysql server.
-" /></p>
-
-<p>Set up looks something like this (on a Mac, at least).</p>
-
-<ol>
-<li><p>Install <a href="http://www.macports.org/install.php">MacPorts</a></p></li>
-<li><p>Install Xcode command line dev tools.</p></li>
-</ol>
-
-
-<blockquote><p>Open Xcode -> Preferences -> Downloads -> Command Line Tools</p></blockquote>
-
-<ol>
-<li>Install <a href="http://www.harding.motd.ca/autossh/">autossh</a> , which is a tool for opening an ssh connection, and making sure it stays open. I use MacPorts to install it. <a href="http://www.macports.org/">http://www.macports.org/</a></li>
-</ol>
-
-
-<blockquote><p>$ sudo port install autossh</p></blockquote>
-
-<ol>
-<li>Once that&#8217;s installed, you can run something like this. (Make sure that the port is the port that you configured Apache to accept traffic on.)</li>
-</ol>
-
-
-<blockquote><p>autossh -M 20002 -f -L 7422:your.db.served.biz.org:7422 your.jump.server.biz
-&#8220;sleep 99999999999&#8221;</p></blockquote>
-
-<ol>
-<li>From there, you can open phpMyAdmin at a URL like http://localhost:7422/phpMyAdmin. One very convenient way to wrap all this up is to use the automator app.</li>
-</ol>
-
-
-<p><img src="/images/user/ssh_tunnel_auto.png" alt="Automator screenshot" /></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-27T00:00:00-05:00" pubdate data-updated="true">Jan 27<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/security/'>security</a>, <a class='category' href='/blog/categories/ssh/'>ssh</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
 
 
 </div>
