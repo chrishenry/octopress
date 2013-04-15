@@ -2,12 +2,12 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://yoursite.com
+url: http://chr.ishenry.com
 title: "The Technician"
 subtitle:
 author: "Chris Henry"
 simple_search: http://google.com/search
-description:
+description: "The life and times of Chris Henry"
 
 # Default date format is "ordinal" (resulting in "July 22nd 2007")
 # You can customize the format as defined in
