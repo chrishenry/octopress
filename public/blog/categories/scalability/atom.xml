@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Scalability | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/scalability/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/scalability/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Architecture will Save You]]></title>
-    <link href="http://yoursite.com/2009/06/04/architecture-will-save-you/"/>
+    <link href="http://chr.ishenry.com/2009/06/04/architecture-will-save-you/"/>
     <updated>2009-06-04T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2009/06/04/architecture-will-save-you</id>
+    <id>http://chr.ishenry.com/2009/06/04/architecture-will-save-you</id>
     <content type="html"><![CDATA[<p>There are two things that cause sites to go down:</p>
 
 <ul>
@@ -64,9 +64,9 @@ on Digg, you can spin up some more servers, sit back, and have a drink.</p>
   
   <entry>
     <title type="html"><![CDATA[Success!]]></title>
-    <link href="http://yoursite.com/2009/05/30/success/"/>
+    <link href="http://chr.ishenry.com/2009/05/30/success/"/>
     <updated>2009-05-30T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2009/05/30/success</id>
+    <id>http://chr.ishenry.com/2009/05/30/success</id>
     <content type="html"><![CDATA[<p>When making changes to a large site, it's really helpful to have tools to
 measure how those changes affect performance. One of my favorite tools is
 <a href="http://bit.ly/1tFcP">cacti</a>. This is a graph of the load average of one our

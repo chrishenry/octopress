@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: blog | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/blog/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/blog/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
-    <link href="http://yoursite.com/2013/02/09/switching-to-octopress/"/>
+    <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
     <updated>2013-02-09T16:08:00-05:00</updated>
-    <id>http://yoursite.com/2013/02/09/switching-to-octopress</id>
+    <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
     <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn't quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
 <!-- more -->

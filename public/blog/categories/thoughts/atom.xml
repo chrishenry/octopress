@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Thoughts | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/thoughts/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/thoughts/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
-    <link href="http://yoursite.com/2012/12/10/fizzbuzz-a-thon/"/>
+    <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
     <updated>2012-12-10T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2012/12/10/fizzbuzz-a-thon</id>
+    <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
 other developers several times, I felt like a bit of hypocrite having never
@@ -54,9 +54,9 @@ repo.</a></p>
   
   <entry>
     <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
-    <link href="http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern/"/>
+    <link href="http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern/"/>
     <updated>2012-08-19T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern</id>
+    <id>http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern</id>
     <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
 <a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
 at what seemed like a very popular concept. If (IF) I understand correctly,
@@ -126,9 +126,9 @@ monetize without having to resort to advertising.</p>
   
   <entry>
     <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
-    <link href="http://yoursite.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
+    <link href="http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
     <updated>2012-07-28T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
+    <id>http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
     <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I've
 been a huge fan of the rich, immersive experience put together by
 <a href="http://www.punchdrunk.org.uk/">Punchdrunk</a>.  I loved the dreamy feeling of
@@ -174,9 +174,9 @@ next reservation at the McKittrick will occur on a better night.</p>
   
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
     <updated>2012-07-09T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing"
 -<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
@@ -227,9 +227,9 @@ specialist might not be able to do by themselves.</p>
   
   <entry>
     <title type="html"><![CDATA[Why SOPA is fucking stupid]]></title>
-    <link href="http://yoursite.com/2012/01/12/why-sopa-is-fucking-stupid/"/>
+    <link href="http://chr.ishenry.com/2012/01/12/why-sopa-is-fucking-stupid/"/>
     <updated>2012-01-12T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2012/01/12/why-sopa-is-fucking-stupid</id>
+    <id>http://chr.ishenry.com/2012/01/12/why-sopa-is-fucking-stupid</id>
     <content type="html"><![CDATA[<p>At its core, SOPA represents a universal, base desire of men to protect what
 they own. To some degree, it's valid, something that anyone can respect.
 However, as with most things, ideas mean precisely shite, and execution is

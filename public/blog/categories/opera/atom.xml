@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: opera | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/opera/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/opera/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[Rigoletto]]></title>
-    <link href="http://yoursite.com/2013/01/29/rigoletto/"/>
+    <link href="http://chr.ishenry.com/2013/01/29/rigoletto/"/>
     <updated>2013-01-29T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/29/rigoletto</id>
+    <id>http://chr.ishenry.com/2013/01/29/rigoletto</id>
     <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
 the Met</p>
 

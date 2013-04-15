@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: tools | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/tools/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/tools/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
-    <link href="http://yoursite.com/2013/01/27/ssh-tunnels-made-easy/"/>
+    <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
     <updated>2013-01-27T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/27/ssh-tunnels-made-easy</id>
+    <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine
 production data. Classically, phpMyAdmin has been a great tool for handling

@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Music | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/music/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/music/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[30 Seconds to Mars :: This is War]]></title>
-    <link href="http://yoursite.com/2009/12/22/30-seconds-to-mars--this-is-war/"/>
+    <link href="http://chr.ishenry.com/2009/12/22/30-seconds-to-mars--this-is-war/"/>
     <updated>2009-12-22T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2009/12/22/30-seconds-to-mars--this-is-war</id>
+    <id>http://chr.ishenry.com/2009/12/22/30-seconds-to-mars--this-is-war</id>
     <content type="html"><![CDATA[<p>30 Seconds to Mars recently released their third album, This is War, and it is
 quite the departure from their first album. Brand New Day was raw and angry,
 with amazing guitar sounds, great composition, and a real sense of urgency in

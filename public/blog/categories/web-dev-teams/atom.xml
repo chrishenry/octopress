@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Web Dev Teams | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/web-dev-teams/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/web-dev-teams/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
     <updated>2012-07-09T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing"
 -<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
@@ -68,9 +68,9 @@ specialist might not be able to do by themselves.</p>
   
   <entry>
     <title type="html"><![CDATA[I'll buy time any day.]]></title>
-    <link href="http://yoursite.com/2010/06/16/ill-buy-time-any-day/"/>
+    <link href="http://chr.ishenry.com/2010/06/16/ill-buy-time-any-day/"/>
     <updated>2010-06-16T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2010/06/16/ill-buy-time-any-day</id>
+    <id>http://chr.ishenry.com/2010/06/16/ill-buy-time-any-day</id>
     <content type="html"><![CDATA[<p>Many people value money as the most important thing in life, and will gladly
 trade time for it. The pursuit of saving money is an extremely American one.
 People will spend time in line for free stuff, just because it's free.
@@ -118,9 +118,9 @@ you really like.</p>
   
   <entry>
     <title type="html"><![CDATA[Japanese Inspection]]></title>
-    <link href="http://yoursite.com/2010/02/12/japanese-inspection/"/>
+    <link href="http://chr.ishenry.com/2010/02/12/japanese-inspection/"/>
     <updated>2010-02-12T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2010/02/12/japanese-inspection</id>
+    <id>http://chr.ishenry.com/2010/02/12/japanese-inspection</id>
     <content type="html"><![CDATA[<p>Everybody procrastinates. Some tasks that get pushed off don't matter, it just
 gets done later. Some tasks that go over deadline result in profanities and
 bloody noses. But every once in a while, tasks come along that have an
@@ -149,9 +149,9 @@ that just aren't important enough to get done.</p>
   
   <entry>
     <title type="html"><![CDATA[Fix or Manage?]]></title>
-    <link href="http://yoursite.com/2009/10/24/fix-or-manage/"/>
+    <link href="http://chr.ishenry.com/2009/10/24/fix-or-manage/"/>
     <updated>2009-10-24T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2009/10/24/fix-or-manage</id>
+    <id>http://chr.ishenry.com/2009/10/24/fix-or-manage</id>
     <content type="html"><![CDATA[<p>Sometimes bugs come along that require significant work to fix. Depending on
 what project timelines are like at the moment, sometimes fixing the bug isn't
 the best option. For example, a race condition in the caching architecture
@@ -192,9 +192,9 @@ remember that managing bugs can be almost as effective as fixing them.</p>
   
   <entry>
     <title type="html"><![CDATA[What's in a Name?]]></title>
-    <link href="http://yoursite.com/2009/10/14/whats-in-a-name/"/>
+    <link href="http://chr.ishenry.com/2009/10/14/whats-in-a-name/"/>
     <updated>2009-10-14T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2009/10/14/whats-in-a-name</id>
+    <id>http://chr.ishenry.com/2009/10/14/whats-in-a-name</id>
     <content type="html"><![CDATA[<p>It's easy to get caught up in semantics. Figuring out the best names for
 variables, tables, columns, classes, etc is something that can eat up hours or
 even days of a development schedule. The idea is that the more precise the

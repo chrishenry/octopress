@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: apache | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/apache/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/apache/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[First Byte]]></title>
-    <link href="http://yoursite.com/2013/04/01/first-byte/"/>
+    <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
     <updated>2013-04-01T23:29:00-04:00</updated>
-    <id>http://yoursite.com/2013/04/01/first-byte</id>
+    <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
     <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there's a lot of stuff that happens. I'll briefly explain it here in a couple run-on sentences.</p>
 
 <p>When you click on a link, your browser or client looks up the location of the server via DNS, and then sends off an HTTP request, then your poorly secured router passes it on to the demons that are your local ISP, who then fiendishly pass that same request up to a backbone, which then traverses continents, oceans or even hemispheres, finally arriving at the data center or poorly ventilated closet where the web servers for that particular site live. That web server reads in that request for your stuff (probably porn, you sicko), and begins whatever its process may be to assemble the initial HTML payload, which hopefully involves validating that the way you asked for said stuff is correct, and if it is, then connecting to a database to actually get that lovely stuff, receiving a response, and puts together an HTML page with that data on it, plus references (more on those later) to CSS and JS to format the data in a way that makes sense, and even make it look a little purty. After that exhausting operation, the web server will take the opposite route through the backbone to the succubus ISP, through your router to your computer to your browser. Once that happens, you technically only have the payload HTML, which by itself isn't a whole lot of fun, so then the browser will read aforementioned references to CSS and JS, and then make web requests for each of those files, which, btw, will follow the same process as the initial HTML payload went through, until you have all of the CSS and JS. Then you can finally improve your mind by thoughtfully reflecting on the highly intellectual prose you requested not too long ago.</p>

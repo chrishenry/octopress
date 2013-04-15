@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[The Technician]]></title>
-  <link href="http://yoursite.com/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[First Byte]]></title>
-    <link href="http://yoursite.com/2013/04/01/first-byte/"/>
+    <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
     <updated>2013-04-01T23:29:00-04:00</updated>
-    <id>http://yoursite.com/2013/04/01/first-byte</id>
+    <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
     <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
 
 <p>When you click on a link, your browser or client looks up the location of the server via DNS, and then sends off an HTTP request, then your poorly secured router passes it on to the demons that are your local ISP, who then fiendishly pass that same request up to a backbone, which then traverses continents, oceans or even hemispheres, finally arriving at the data center or poorly ventilated closet where the web servers for that particular site live. That web server reads in that request for your stuff (probably porn, you sicko), and begins whatever its process may be to assemble the initial HTML payload, which hopefully involves validating that the way you asked for said stuff is correct, and if it is, then connecting to a database to actually get that lovely stuff, receiving a response, and puts together an HTML page with that data on it, plus references (more on those later) to CSS and JS to format the data in a way that makes sense, and even make it look a little purty. After that exhausting operation, the web server will take the opposite route through the backbone to the succubus ISP, through your router to your computer to your browser. Once that happens, you technically only have the payload HTML, which by itself isn&#8217;t a whole lot of fun, so then the browser will read aforementioned references to CSS and JS, and then make web requests for each of those files, which, btw, will follow the same process as the initial HTML payload went through, until you have all of the CSS and JS. Then you can finally improve your mind by thoughtfully reflecting on the highly intellectual prose you requested not too long ago.</p>
@@ -144,9 +144,9 @@
   
   <entry>
     <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
-    <link href="http://yoursite.com/2013/03/08/apparmor-and-mysql/"/>
+    <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
     <updated>2013-03-08T22:46:00-05:00</updated>
-    <id>http://yoursite.com/2013/03/08/apparmor-and-mysql</id>
+    <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
     <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I&#8217;ve done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
 <!-- more -->
@@ -184,9 +184,9 @@
   
   <entry>
     <title type="html"><![CDATA[Resignation and Continuity]]></title>
-    <link href="http://yoursite.com/2013/02/21/resignation-and-continuity/"/>
+    <link href="http://chr.ishenry.com/2013/02/21/resignation-and-continuity/"/>
     <updated>2013-02-21T20:19:00-05:00</updated>
-    <id>http://yoursite.com/2013/02/21/resignation-and-continuity</id>
+    <id>http://chr.ishenry.com/2013/02/21/resignation-and-continuity</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful one. Ever since my sister&#8217;s Confirmation, when there were three collections, and the sermon admonished parents that every firstborn should be sent to seminary, I have been convinced that church and faith are entirely separately. Reading through history, it&#8217;s clear the papacy is more of a political organization than anything else. The wars, the influence over entire countries to go to war seem more the actions of an organization obsessed with power than one that existed to help people.</p>
 
 <!-- more -->
@@ -202,9 +202,9 @@
   
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
-    <link href="http://yoursite.com/2013/02/09/switching-to-octopress/"/>
+    <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
     <updated>2013-02-09T16:08:00-05:00</updated>
-    <id>http://yoursite.com/2013/02/09/switching-to-octopress</id>
+    <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
     <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
 <!-- more -->
@@ -239,13 +239,13 @@
   
   <entry>
     <title type="html"><![CDATA[app.net community]]></title>
-    <link href="http://yoursite.com/2013/02/09/appnet-community/"/>
+    <link href="http://chr.ishenry.com/2013/02/09/appnet-community/"/>
     <updated>2013-02-09T12:08:00-05:00</updated>
-    <id>http://yoursite.com/2013/02/09/appnet-community</id>
+    <id>http://chr.ishenry.com/2013/02/09/appnet-community</id>
     <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
 a great online community, and super eloquent in some cases.</p>
 
-<p><img src="http://yoursite.com/images/user/appnet.png" alt="Community leaders" /></p>
+<p><img src="http://chr.ishenry.com/images/user/appnet.png" alt="Community leaders" /></p>
 
 <p>They&#8217;re also not real open to the idea they <a href="https://alpha.app.net/radrad/post/2738575">might be
 wrong</a>.</p>
@@ -254,9 +254,9 @@ wrong</a>.</p>
   
   <entry>
     <title type="html"><![CDATA[Purpose]]></title>
-    <link href="http://yoursite.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
+    <link href="http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
     <updated>2013-02-07T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
+    <id>http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
     <content type="html"><![CDATA[<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
 purpose or the justification for said feature, all you get is a code monkey.
 Code monkeys merely translate requirements into code verbatim. There’s no room
@@ -269,18 +269,18 @@ do.</p></blockquote>
   
   <entry>
     <title type="html"><![CDATA[Airport Security at it’s finest.]]></title>
-    <link href="http://yoursite.com/2013/02/03/airport-security-at-its-finest/"/>
+    <link href="http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest/"/>
     <updated>2013-02-03T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/02/03/airport-security-at-its-finest</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/user/jfk_security.png" alt="" /></p>
+    <id>http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest</id>
+    <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/jfk_security.png" alt="" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[RWW's New Design]]></title>
-    <link href="http://yoursite.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
+    <link href="http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
     <updated>2013-01-31T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
+    <id>http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
     <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
 barrage of text. And it’s mostly text I’m not interested in reading.</p>
 
@@ -288,15 +288,15 @@ barrage of text. And it’s mostly text I’m not interested in reading.</p>
 the content that you don’t want to see (related links, blogroll) does something
 you don’t expect.</p>
 
-<p><img src="http://yoursite.com/images/user/rww_appnet.png" alt="" /></p>
+<p><img src="http://chr.ishenry.com/images/user/rww_appnet.png" alt="" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Rigoletto]]></title>
-    <link href="http://yoursite.com/2013/01/29/rigoletto/"/>
+    <link href="http://chr.ishenry.com/2013/01/29/rigoletto/"/>
     <updated>2013-01-29T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/29/rigoletto</id>
+    <id>http://chr.ishenry.com/2013/01/29/rigoletto</id>
     <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
 the Met</p>
 
@@ -323,18 +323,18 @@ accessible.</p>
   
   <entry>
     <title type="html"><![CDATA[You’re not going to Eur - o - pee in there? - Jessica]]></title>
-    <link href="http://yoursite.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
+    <link href="http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
     <updated>2013-01-27T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
-    <content type="html"><![CDATA[<p><img src="http://yoursite.com/images/user/euro_toilet.jpg" alt="" /></p>
+    <id>http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
+    <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/euro_toilet.jpg" alt="" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
-    <link href="http://yoursite.com/2013/01/27/ssh-tunnels-made-easy/"/>
+    <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
     <updated>2013-01-27T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/27/ssh-tunnels-made-easy</id>
+    <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine
 production data. Classically, phpMyAdmin has been a great tool for handling
@@ -356,7 +356,7 @@ firewall, and then use an SSH tunnel to pass traffic through another server.
 The server hosting mysql and phpMyAdmin can safely stay hidden, with all ports
 closed.</p>
 
-<p><img src="http://yoursite.com/images/user/ssh_tunnel_diagram.gif" alt="Diagram, showing the flow of traffic between client and secure mysql server.
+<p><img src="http://chr.ishenry.com/images/user/ssh_tunnel_diagram.gif" alt="Diagram, showing the flow of traffic between client and secure mysql server.
 " /></p>
 
 <p>Set up looks something like this (on a Mac, at least).</p>
@@ -389,15 +389,15 @@ closed.</p>
 </ol>
 
 
-<p><img src="http://yoursite.com/images/user/ssh_tunnel_auto.png" alt="Automator screenshot" /></p>
+<p><img src="http://chr.ishenry.com/images/user/ssh_tunnel_auto.png" alt="Automator screenshot" /></p>
 ]]></content>
   </entry>
   
   <entry>
     <title type="html"><![CDATA[Rules for London]]></title>
-    <link href="http://yoursite.com/2013/01/26/rules-for-london/"/>
+    <link href="http://chr.ishenry.com/2013/01/26/rules-for-london/"/>
     <updated>2013-01-26T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2013/01/26/rules-for-london</id>
+    <id>http://chr.ishenry.com/2013/01/26/rules-for-london</id>
     <content type="html"><![CDATA[<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
 Europe. Having never been to Europe, or on a real vacation for the last couple
 years, I was really looking to maximize my time there. So I had a couple rules
@@ -430,9 +430,9 @@ find the really cool stuff.</p>
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
-    <link href="http://yoursite.com/2012/12/10/fizzbuzz-a-thon/"/>
+    <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
     <updated>2012-12-10T00:00:00-05:00</updated>
-    <id>http://yoursite.com/2012/12/10/fizzbuzz-a-thon</id>
+    <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
 other developers several times, I felt like a bit of hypocrite having never
@@ -469,9 +469,9 @@ repo.</a></p>
   
   <entry>
     <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
-    <link href="http://yoursite.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
+    <link href="http://chr.ishenry.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
     <updated>2012-10-14T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
+    <id>http://chr.ishenry.com/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
     <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
 those interested, here are the slides.</p>
 
@@ -486,9 +486,9 @@ those interested, here are the slides.</p>
   
   <entry>
     <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
-    <link href="http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern/"/>
+    <link href="http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern/"/>
     <updated>2012-08-19T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/08/19/appnet-i-smell-a-pattern</id>
+    <id>http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern</id>
     <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
 <a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
 at what seemed like a very popular concept. If (IF) I understand correctly,
@@ -558,9 +558,9 @@ monetize without having to resort to advertising.</p>
   
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
-    <link href="http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
+    <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
     <updated>2012-08-13T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
+    <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
 SELECT</a> is an
@@ -600,9 +600,9 @@ situations.</p>
   
   <entry>
     <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
-    <link href="http://yoursite.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
+    <link href="http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
     <updated>2012-07-28T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
+    <id>http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
     <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I&#8217;ve
 been a huge fan of the rich, immersive experience put together by
 <a href="http://www.punchdrunk.org.uk/">Punchdrunk</a>.  I loved the dreamy feeling of
@@ -648,9 +648,9 @@ next reservation at the McKittrick will occur on a better night.</p>
   
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
+    <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
     <updated>2012-07-09T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
+    <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>&#8220;An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing&#8221;
 -<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
@@ -701,9 +701,9 @@ specialist might not be able to do by themselves.</p>
   
   <entry>
     <title type="html"><![CDATA[Try Adding Distance]]></title>
-    <link href="http://yoursite.com/2012/06/23/try-adding-distance/"/>
+    <link href="http://chr.ishenry.com/2012/06/23/try-adding-distance/"/>
     <updated>2012-06-23T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/06/23/try-adding-distance</id>
+    <id>http://chr.ishenry.com/2012/06/23/try-adding-distance</id>
     <content type="html"><![CDATA[<p>Part of my New Years (non-whiny) resolution was to go the gym more often. It
 is a resolution that I have (mostly) adhered to over the past six months. When
 I go to the gym, I <a href="http://www.fatcuda.com/wp-%0Acontent/uploads/2012/06/concept-2-model-d-rowing-machine_10_0.jpg">row</a>. I love the
@@ -752,9 +752,9 @@ me for years.</p>
   
   <entry>
     <title type="html"><![CDATA[Calliope NYC]]></title>
-    <link href="http://yoursite.com/2012/05/31/calliope-nyc/"/>
+    <link href="http://chr.ishenry.com/2012/05/31/calliope-nyc/"/>
     <updated>2012-05-31T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/05/31/calliope-nyc</id>
+    <id>http://chr.ishenry.com/2012/05/31/calliope-nyc</id>
     <content type="html"><![CDATA[<p>On the corner of East 4th Street, the newest of the New American restaurants,
 <a href="http://calliopenyc.com/">Calliope</a> has soft launched. It&#8217;s in a beautiful
 space in a great part of the East Village. The dining room is open and airy,

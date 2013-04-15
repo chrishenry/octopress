@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: Ops | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/ops/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/ops/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
-    <link href="http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
+    <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
     <updated>2012-08-13T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
+    <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
 SELECT</a> is an
@@ -57,9 +57,9 @@ situations.</p>
   
   <entry>
     <title type="html"><![CDATA[Distributed Updates]]></title>
-    <link href="http://yoursite.com/2011/06/25/distributed-updates/"/>
+    <link href="http://chr.ishenry.com/2011/06/25/distributed-updates/"/>
     <updated>2011-06-25T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2011/06/25/distributed-updates</id>
+    <id>http://chr.ishenry.com/2011/06/25/distributed-updates</id>
     <content type="html"><![CDATA[<p>Part of managing any large site involves writing scripts that will go through
 oyur data, make changes, merge things, remove things, do type transformations,
 etc. Most of the time, in PHP, iterating through rows or objects will do just

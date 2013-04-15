@@ -2,10 +2,10 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
 
   <title><![CDATA[Category: mongodb | The Technician]]></title>
-  <link href="http://yoursite.com/blog/categories/mongodb/atom.xml" rel="self"/>
-  <link href="http://yoursite.com/"/>
-  <updated>2013-04-11T23:39:47-04:00</updated>
-  <id>http://yoursite.com/</id>
+  <link href="http://chr.ishenry.com/blog/categories/mongodb/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2013-04-14T22:13:51-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
     
@@ -15,9 +15,9 @@
   
   <entry>
     <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
-    <link href="http://yoursite.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
+    <link href="http://chr.ishenry.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
     <updated>2012-10-14T00:00:00-04:00</updated>
-    <id>http://yoursite.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster</id>
+    <id>http://chr.ishenry.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster</id>
     <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
 those interested, here are the slides.</p>
 
