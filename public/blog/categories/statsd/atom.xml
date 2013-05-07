@@ -4,7 +4,7 @@
   <title><![CDATA[Category: statsd | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/statsd/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-05-01T23:37:21-04:00</updated>
+  <updated>2013-05-06T17:18:44-07:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -14,9 +14,42 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Making Decisions with Graphite]]></title>
+    <link href="http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite/"/>
+    <updated>2013-05-05T21:01:00-07:00</updated>
+    <id>http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite</id>
+    <content type="html"><![CDATA[<p>The DevOps mentality of "measure everything" can be really helpful in key moments when you need to make decisions. In particular, deploying two things side by side for the purposes of measurement can yield super helpful decision making information. For example, the Behance team was wanted to see how <a href="http://php.net/manual/en/book.apc.php">APC</a> stacked up against <a href="http://pecl.php.net/package/ZendOpcache">Zend Opcode Cache</a>.</p>
+
+<!-- more -->
+
+
+<p>Behance has been running APC for several years, and we've been pretty happy with it. There's the typical pain, usually in unexplainable segfaults, that comes with upgrades. However, with the most recent upgrade to PHP 5.4, the segfaults got a bit out of hand. After some investigation, it turned out that APC was on it's way out, and we should probably consider other opcode caches. However, as a rightly skeptical team, we wanted to thoroughly vet any alternative thoroughly. APC has been good to us, from a performance standpoint, and we needed to make sure that anything we changed to was as good or better.</p>
+
+<p>For a baseline, we were already measuring performance using <a href="/2013/04/01/first-byte/">mod_log_firstbyte</a> and kicking its output to <a href="https://github.com/etsy/statsd/">statsd</a> with a <a href="http://graphite.wikidot.com/">Graphite</a> frontend. Once we confirmed that Zend actually worked with our app (not in production), we reconfigured one of our production web heads to use it. Luckily, our segfaults stopped, which was a fantastic sign. However, to satisfy our performance requirement, we needed some hard numbers.</p>
+
+<p>Graphite has a really great <a href="http://graphite.readthedocs.org/en/0.9.10/render_api.html">API</a> that allows you to slice and dice your data in really helpful ways. Since we were interested in comparing two data series (the newly configured server, and any older server), we were able to use the <a href="http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.diffSeries">diffSeries function</a> to graph the comparison between the two datasets, like so, and produced a graph like below.</p>
+
+<blockquote><p>diffSeries(stats.timers.stat_thats_likely_to_be_higher, stats.timers.stat_thats_likely_to_be_lower)</p></blockquote>
+
+<p><img src="/images/user/diffseries.png" alt="diffSeries graph" /></p>
+
+<p>Since there's some math involved, this isn't the most straightforward graph to read. There are 3 patterns that emerge from using this function;</p>
+
+<ul>
+<li>If both series are equal, then it will produce a graph that hovers around 0.</li>
+<li>If the second series is consistently lower, then the graph will be consistently > 0.</li>
+<li>If the first series is consistently lower, then the graph will be consistently &lt; 0.</li>
+</ul>
+
+
+<p>In the case of our example, we saw a graph that was consistently above 0. This meant that Zend Opcode cache was consistently faster, to the tune of 5-10ms. Knowing that we had solved the segfaults problem, and knowing that Zend was statistically faster, the choice was super simple.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[First Byte]]></title>
     <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
-    <updated>2013-04-01T23:29:00-04:00</updated>
+    <updated>2013-04-01T23:29:00-07:00</updated>
     <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
     <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there's a lot of stuff that happens. I'll briefly explain it here in a couple run-on sentences.</p>
 

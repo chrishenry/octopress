@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Systems Administration | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/systems-administration/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-05-01T23:37:21-04:00</updated>
+  <updated>2013-05-06T17:18:44-07:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[MySQL Error 28]]></title>
     <link href="http://chr.ishenry.com/2011/11/02/mysql-error-28/"/>
-    <updated>2011-11-02T00:00:00-04:00</updated>
+    <updated>2011-11-02T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2011/11/02/mysql-error-28</id>
     <content type="html"><![CDATA[<p>Yesterday, I had to run a query for some statistics I needed. This was a query
 that I knew were going to be particularly nasty as it required sorting 1.3M
@@ -53,7 +53,7 @@ for this type of ad hoc query, this was exactly what we needed.</p>
   <entry>
     <title type="html"><![CDATA[Emergencies will audit the shit out of you]]></title>
     <link href="http://chr.ishenry.com/2010/10/21/emergencies-will-audit-the-shit-out-of-you/"/>
-    <updated>2010-10-21T00:00:00-04:00</updated>
+    <updated>2010-10-21T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2010/10/21/emergencies-will-audit-the-shit-out-of-you</id>
     <content type="html"><![CDATA[<p>Things never go wrong at convenient times: Like when you're auditing the
 latest, coolest version of your app, and looking for bugs. Things have a funny
@@ -91,7 +91,7 @@ happens when systems fail, for real.</p>
   <entry>
     <title type="html"><![CDATA[It happens to everyone...]]></title>
     <link href="http://chr.ishenry.com/2010/09/26/it-happens-to-everyone/"/>
-    <updated>2010-09-26T00:00:00-04:00</updated>
+    <updated>2010-09-26T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2010/09/26/it-happens-to-everyone</id>
     <content type="html"><![CDATA[<p>Through a combination of unhealthy fears, paranoid tendencies, and luck, I've
 been able to avoid that unavoidable situation that every sysadmin fears:
@@ -134,7 +134,7 @@ learned. I am making a backup right now.</p>
   <entry>
     <title type="html"><![CDATA[Ode to the Environment]]></title>
     <link href="http://chr.ishenry.com/2010/08/24/ode-to-the-environment/"/>
-    <updated>2010-08-24T00:00:00-04:00</updated>
+    <updated>2010-08-24T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2010/08/24/ode-to-the-environment</id>
     <content type="html"><![CDATA[<p>Consistency is key, in everything. People come to rely on trains, because they
 come on time. Devs rely on the environment which they develop in, because its
@@ -184,7 +184,7 @@ ensure that it is always meets the goals of my business, no matter the cost.</p>
   <entry>
     <title type="html"><![CDATA[Sandboxes]]></title>
     <link href="http://chr.ishenry.com/2010/02/22/sandboxes/"/>
-    <updated>2010-02-22T00:00:00-05:00</updated>
+    <updated>2010-02-22T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2010/02/22/sandboxes</id>
     <content type="html"><![CDATA[<p>Setting up a sandbox environment has normally been a trivial task. Set up a
 vhost, get a copy of the database, build out the app, and start doing stuff.

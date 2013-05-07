@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-05-01T23:37:21-04:00</updated>
+  <updated>2013-05-06T17:18:44-07:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -14,9 +14,42 @@
 
   
   <entry>
+    <title type="html"><![CDATA[Making Decisions with Graphite]]></title>
+    <link href="http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite/"/>
+    <updated>2013-05-05T21:01:00-07:00</updated>
+    <id>http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite</id>
+    <content type="html"><![CDATA[<p>The DevOps mentality of &#8220;measure everything&#8221; can be really helpful in key moments when you need to make decisions. In particular, deploying two things side by side for the purposes of measurement can yield super helpful decision making information. For example, the Behance team was wanted to see how <a href="http://php.net/manual/en/book.apc.php">APC</a> stacked up against <a href="http://pecl.php.net/package/ZendOpcache">Zend Opcode Cache</a>.</p>
+
+<!-- more -->
+
+
+<p>Behance has been running APC for several years, and we&#8217;ve been pretty happy with it. There&#8217;s the typical pain, usually in unexplainable segfaults, that comes with upgrades. However, with the most recent upgrade to PHP 5.4, the segfaults got a bit out of hand. After some investigation, it turned out that APC was on it&#8217;s way out, and we should probably consider other opcode caches. However, as a rightly skeptical team, we wanted to thoroughly vet any alternative thoroughly. APC has been good to us, from a performance standpoint, and we needed to make sure that anything we changed to was as good or better.</p>
+
+<p>For a baseline, we were already measuring performance using <a href="http://chr.ishenry.com/2013/04/01/first-byte/">mod_log_firstbyte</a> and kicking its output to <a href="https://github.com/etsy/statsd/">statsd</a> with a <a href="http://graphite.wikidot.com/">Graphite</a> frontend. Once we confirmed that Zend actually worked with our app (not in production), we reconfigured one of our production web heads to use it. Luckily, our segfaults stopped, which was a fantastic sign. However, to satisfy our performance requirement, we needed some hard numbers.</p>
+
+<p>Graphite has a really great <a href="http://graphite.readthedocs.org/en/0.9.10/render_api.html">API</a> that allows you to slice and dice your data in really helpful ways. Since we were interested in comparing two data series (the newly configured server, and any older server), we were able to use the <a href="http://graphite.readthedocs.org/en/0.9.10/functions.html#graphite.render.functions.diffSeries">diffSeries function</a> to graph the comparison between the two datasets, like so, and produced a graph like below.</p>
+
+<blockquote><p>diffSeries(stats.timers.stat_thats_likely_to_be_higher, stats.timers.stat_thats_likely_to_be_lower)</p></blockquote>
+
+<p><img src="http://chr.ishenry.com/images/user/diffseries.png" alt="diffSeries graph" /></p>
+
+<p>Since there&#8217;s some math involved, this isn&#8217;t the most straightforward graph to read. There are 3 patterns that emerge from using this function;</p>
+
+<ul>
+<li>If both series are equal, then it will produce a graph that hovers around 0.</li>
+<li>If the second series is consistently lower, then the graph will be consistently > 0.</li>
+<li>If the first series is consistently lower, then the graph will be consistently &lt; 0.</li>
+</ul>
+
+
+<p>In the case of our example, we saw a graph that was consistently above 0. This meant that Zend Opcode cache was consistently faster, to the tune of 5-10ms. Knowing that we had solved the segfaults problem, and knowing that Zend was statistically faster, the choice was super simple.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Policy Fallacy]]></title>
     <link href="http://chr.ishenry.com/2013/04/14/policy-fallacy/"/>
-    <updated>2013-04-14T19:05:00-04:00</updated>
+    <updated>2013-04-14T19:05:00-07:00</updated>
     <id>http://chr.ishenry.com/2013/04/14/policy-fallacy</id>
     <content type="html"><![CDATA[<blockquote><p>&#8220;The Navy is a master plan designed by geniuses for execution by idiots. If you&#8217;re not an idiot, but find yourself in the Navy, you can only operate well by pretending to be one.&#8221;
 -Herman Wouk, The Caine Mutiny</p></blockquote>
@@ -36,7 +69,7 @@
   <entry>
     <title type="html"><![CDATA[First Byte]]></title>
     <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
-    <updated>2013-04-01T23:29:00-04:00</updated>
+    <updated>2013-04-01T23:29:00-07:00</updated>
     <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
     <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
 
@@ -165,7 +198,7 @@
   <entry>
     <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
     <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
-    <updated>2013-03-08T22:46:00-05:00</updated>
+    <updated>2013-03-08T22:46:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
     <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I&#8217;ve done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
@@ -205,7 +238,7 @@
   <entry>
     <title type="html"><![CDATA[Resignation and Continuity]]></title>
     <link href="http://chr.ishenry.com/2013/02/21/resignation-and-continuity/"/>
-    <updated>2013-02-21T20:19:00-05:00</updated>
+    <updated>2013-02-21T20:19:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/02/21/resignation-and-continuity</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful one. Ever since my sister&#8217;s Confirmation, when there were three collections, and the sermon admonished parents that every firstborn should be sent to seminary, I have been convinced that church and faith are entirely separately. Reading through history, it&#8217;s clear the papacy is more of a political organization than anything else. The wars, the influence over entire countries to go to war seem more the actions of an organization obsessed with power than one that existed to help people.</p>
 
@@ -223,7 +256,7 @@
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
-    <updated>2013-02-09T16:08:00-05:00</updated>
+    <updated>2013-02-09T16:08:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
     <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
@@ -260,7 +293,7 @@
   <entry>
     <title type="html"><![CDATA[app.net community]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/appnet-community/"/>
-    <updated>2013-02-09T12:08:00-05:00</updated>
+    <updated>2013-02-09T12:08:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/appnet-community</id>
     <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
 a great online community, and super eloquent in some cases.</p>
@@ -275,7 +308,7 @@ wrong</a>.</p>
   <entry>
     <title type="html"><![CDATA[Purpose]]></title>
     <link href="http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
-    <updated>2013-02-07T00:00:00-05:00</updated>
+    <updated>2013-02-07T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
     <content type="html"><![CDATA[<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
 purpose or the justification for said feature, all you get is a code monkey.
@@ -290,7 +323,7 @@ do.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Airport Security at it’s finest.]]></title>
     <link href="http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest/"/>
-    <updated>2013-02-03T00:00:00-05:00</updated>
+    <updated>2013-02-03T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/jfk_security.png" alt="" /></p>
 ]]></content>
@@ -299,7 +332,7 @@ do.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[RWW's New Design]]></title>
     <link href="http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
-    <updated>2013-01-31T00:00:00-05:00</updated>
+    <updated>2013-01-31T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
     <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
 barrage of text. And it’s mostly text I’m not interested in reading.</p>
@@ -315,7 +348,7 @@ you don’t expect.</p>
   <entry>
     <title type="html"><![CDATA[Rigoletto]]></title>
     <link href="http://chr.ishenry.com/2013/01/29/rigoletto/"/>
-    <updated>2013-01-29T00:00:00-05:00</updated>
+    <updated>2013-01-29T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/01/29/rigoletto</id>
     <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
 the Met</p>
@@ -344,7 +377,7 @@ accessible.</p>
   <entry>
     <title type="html"><![CDATA[You’re not going to Eur - o - pee in there? - Jessica]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
-    <updated>2013-01-27T00:00:00-05:00</updated>
+    <updated>2013-01-27T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/euro_toilet.jpg" alt="" /></p>
 ]]></content>
@@ -353,7 +386,7 @@ accessible.</p>
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
-    <updated>2013-01-27T00:00:00-05:00</updated>
+    <updated>2013-01-27T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine
@@ -416,7 +449,7 @@ closed.</p>
   <entry>
     <title type="html"><![CDATA[Rules for London]]></title>
     <link href="http://chr.ishenry.com/2013/01/26/rules-for-london/"/>
-    <updated>2013-01-26T00:00:00-05:00</updated>
+    <updated>2013-01-26T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/01/26/rules-for-london</id>
     <content type="html"><![CDATA[<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
 Europe. Having never been to Europe, or on a real vacation for the last couple
@@ -451,7 +484,7 @@ find the really cool stuff.</p>
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
     <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
-    <updated>2012-12-10T00:00:00-05:00</updated>
+    <updated>2012-12-10T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
@@ -490,7 +523,7 @@ repo.</a></p>
   <entry>
     <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
     <link href="http://chr.ishenry.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
-    <updated>2012-10-14T00:00:00-04:00</updated>
+    <updated>2012-10-14T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
     <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
 those interested, here are the slides.</p>
@@ -507,7 +540,7 @@ those interested, here are the slides.</p>
   <entry>
     <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
     <link href="http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern/"/>
-    <updated>2012-08-19T00:00:00-04:00</updated>
+    <updated>2012-08-19T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern</id>
     <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
 <a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
@@ -579,7 +612,7 @@ monetize without having to resort to advertising.</p>
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
     <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
-    <updated>2012-08-13T00:00:00-04:00</updated>
+    <updated>2012-08-13T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
@@ -621,7 +654,7 @@ situations.</p>
   <entry>
     <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
     <link href="http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
-    <updated>2012-07-28T00:00:00-04:00</updated>
+    <updated>2012-07-28T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
     <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I&#8217;ve
 been a huge fan of the rich, immersive experience put together by
@@ -669,7 +702,7 @@ next reservation at the McKittrick will occur on a better night.</p>
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
     <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
-    <updated>2012-07-09T00:00:00-04:00</updated>
+    <updated>2012-07-09T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>&#8220;An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing&#8221;
@@ -716,57 +749,6 @@ technology. Generalists typically won&#8217;t have the depth necessary to pull o
 awe-inspiring, truly nasty implementation. However, they&#8217;ll have the right
 instincts to pair it, deploy, and make it do something meaningful that a
 specialist might not be able to do by themselves.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Try Adding Distance]]></title>
-    <link href="http://chr.ishenry.com/2012/06/23/try-adding-distance/"/>
-    <updated>2012-06-23T00:00:00-04:00</updated>
-    <id>http://chr.ishenry.com/2012/06/23/try-adding-distance</id>
-    <content type="html"><![CDATA[<p>Part of my New Years (non-whiny) resolution was to go the gym more often. It
-is a resolution that I have (mostly) adhered to over the past six months. When
-I go to the gym, I <a href="http://www.fatcuda.com/wp-%0Acontent/uploads/2012/06/concept-2-model-d-rowing-machine_10_0.jpg">row</a>. I love the
-rhythm, the fight against the machine, and the fact that no else at most gyms
-know what to do with it. Rowing is a grueling workout, which is one of the
-reasons I like it. Even when the workout is bad, it&#8217;s good. It also gives me a
-chance to crawl inside myself for 20 or so minutes and muddle through the
-tumult in my head.</p>
-
-<p>For a couple weeks I kept my workout distance consistent at 4k, and was able
-to drop the time almost every workout. When I added 1k meters to my workout,
-the distance completely outstripped my ability to improve. When rowing the 4k,
-I was able to row every
-<a href="http://en.wikipedia.org/wiki/Indoor_rower#Exercise">split</a> evenly, with very
-little variance in performance. I was even able to throw in some intervals
-rowing at way above my normal split, just for funsies.  But when rowing the
-5k, my splits varied widely, arced, and crashed for a few months.</p>
-
-<p>Measurement on an ergometer is pretty easy. The average split time is recorded
-and displayed at the end (if you can still see through the sweat.) Also, for
-every 500m you row, there&#8217;s a split and strokes/minute displayed. Essentially,
-it tells you how hard you went out, at what point in your workout you died,
-where you rallied, and if you pushed hard at the end. There are no lies,
-deception, or excuses on the LCD, only numbers. My takeaway from this screen
-is always that I was not consistent enough.</p>
-
-<p>I&#8217;ve seen parallels in my own life and career performance as well. While
-working on <a href="http://www.linkedin.com/opensocialInst%0Aallation/preview?_ch_panel_id=1&amp;_applicationId=104096">Creative Portfolio Display</a>, an extremely intense,
-but relatively short duration project, I was able to push hard, crash, and
-push hard again. The entire project was feature complete in approx 3 weeks.
-While handling the ever growing DBA responsibilities of be.net, I&#8217;ve had an
-extremely difficult time being consistent with a task that requires constant
-work over years. Performance there has been inconsistent as the data outgrew
-it&#8217;s architecture.</p>
-
-<p>In personalities and friendships, I&#8217;ve come to value the people that remain
-consistent over time. People who continue to struggle by doing meaningful work
-that is of constant quality over years and years. Intensity is often hailed as
-the more desirable between consistency and intensity. But the people who have
-been the most valuable in my life and career are those who have stood beside
-me for years.</p>
-
-<p>In the end, it is the miles that make champions.</p>
 ]]></content>
   </entry>
   
