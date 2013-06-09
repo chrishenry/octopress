@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-05-06T17:18:44-07:00</updated>
+  <updated>2013-06-09T14:09:47-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -14,9 +14,27 @@
 
   
   <entry>
+    <title type="html"><![CDATA[GReader is going away, and I'm not that sad]]></title>
+    <link href="http://chr.ishenry.com/2013/06/09/greader-is-going-away/"/>
+    <updated>2013-06-09T13:15:00-04:00</updated>
+    <id>http://chr.ishenry.com/2013/06/09/greader-is-going-away</id>
+    <content type="html"><![CDATA[<p>There was a period where I was insanely into RSS. It was what I did every time I sat down at the computer. I fired up the Google Reader tab, and spent hours in there. I pored over everything, and it was a really fun game to try and get through everything and still retain at least one useful piece of information from my frenzied filtering. That was usually the case, as at that time, I had a pretty tightly curated list of feeds.</p>
+
+<!-- more -->
+
+
+<p>Then Twitter came along. I was quite the naysayer of Twitter when it came out, dismissing it as a fad. But I got caught up, just like most people. It was a lot of fun sharing small bits of stuff, and forced me to distill a thought down into 140 characters. It gave me insight into smart people and what they were thinking about. But most importantly, I started using it as my reading list. It was easier to let others pick out the good stuff, and then scan through to find the stuff I thought was relevant to me. Quickly, favorites list became my reading list.</p>
+
+<p>I did, however, switch everything over to <a href="http://www.feedly.com/index.html">Feedly</a> this morning. What I realized is that my list of feeds has become completely unmanageable. I actually broke their UI trying to organize everything. (Not sure if it&#8217;s their fault or mine.) The biggest problem is that I would randomly add feeds after seeing a single post, and many times there was nothing else helpful in the feed. Or worse, the feed is completely dead. In order for RSS to be useful, it seems like a feed has to be active to make it&#8217;s way to in front of my eyeballs. So I got rid of a lot of feeds that had no posts since my last visit to GReader.</p>
+
+<p>This experience has made me doubt the future of RSS Readers as a scalable solution for consuming information. While I&#8217;ll be giving Feedly a fair shot, I wonder how if I&#8217;ll actually be opening it up every day, as opposed to going to Twitter favorites.</p>
+]]></content>
+  </entry>
+  
+  <entry>
     <title type="html"><![CDATA[Making Decisions with Graphite]]></title>
     <link href="http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite/"/>
-    <updated>2013-05-05T21:01:00-07:00</updated>
+    <updated>2013-05-05T21:01:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite</id>
     <content type="html"><![CDATA[<p>The DevOps mentality of &#8220;measure everything&#8221; can be really helpful in key moments when you need to make decisions. In particular, deploying two things side by side for the purposes of measurement can yield super helpful decision making information. For example, the Behance team was wanted to see how <a href="http://php.net/manual/en/book.apc.php">APC</a> stacked up against <a href="http://pecl.php.net/package/ZendOpcache">Zend Opcode Cache</a>.</p>
 
@@ -49,7 +67,7 @@
   <entry>
     <title type="html"><![CDATA[Policy Fallacy]]></title>
     <link href="http://chr.ishenry.com/2013/04/14/policy-fallacy/"/>
-    <updated>2013-04-14T19:05:00-07:00</updated>
+    <updated>2013-04-14T19:05:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/04/14/policy-fallacy</id>
     <content type="html"><![CDATA[<blockquote><p>&#8220;The Navy is a master plan designed by geniuses for execution by idiots. If you&#8217;re not an idiot, but find yourself in the Navy, you can only operate well by pretending to be one.&#8221;
 -Herman Wouk, The Caine Mutiny</p></blockquote>
@@ -69,7 +87,7 @@
   <entry>
     <title type="html"><![CDATA[First Byte]]></title>
     <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
-    <updated>2013-04-01T23:29:00-07:00</updated>
+    <updated>2013-04-01T23:29:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
     <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
 
@@ -198,7 +216,7 @@
   <entry>
     <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
     <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
-    <updated>2013-03-08T22:46:00-08:00</updated>
+    <updated>2013-03-08T22:46:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
     <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I&#8217;ve done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
@@ -238,7 +256,7 @@
   <entry>
     <title type="html"><![CDATA[Resignation and Continuity]]></title>
     <link href="http://chr.ishenry.com/2013/02/21/resignation-and-continuity/"/>
-    <updated>2013-02-21T20:19:00-08:00</updated>
+    <updated>2013-02-21T20:19:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/21/resignation-and-continuity</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful one. Ever since my sister&#8217;s Confirmation, when there were three collections, and the sermon admonished parents that every firstborn should be sent to seminary, I have been convinced that church and faith are entirely separately. Reading through history, it&#8217;s clear the papacy is more of a political organization than anything else. The wars, the influence over entire countries to go to war seem more the actions of an organization obsessed with power than one that existed to help people.</p>
 
@@ -256,7 +274,7 @@
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
-    <updated>2013-02-09T16:08:00-08:00</updated>
+    <updated>2013-02-09T16:08:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
     <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
@@ -293,7 +311,7 @@
   <entry>
     <title type="html"><![CDATA[app.net community]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/appnet-community/"/>
-    <updated>2013-02-09T12:08:00-08:00</updated>
+    <updated>2013-02-09T12:08:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/appnet-community</id>
     <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
 a great online community, and super eloquent in some cases.</p>
@@ -308,7 +326,7 @@ wrong</a>.</p>
   <entry>
     <title type="html"><![CDATA[Purpose]]></title>
     <link href="http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
-    <updated>2013-02-07T00:00:00-08:00</updated>
+    <updated>2013-02-07T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
     <content type="html"><![CDATA[<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
 purpose or the justification for said feature, all you get is a code monkey.
@@ -323,7 +341,7 @@ do.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Airport Security at it’s finest.]]></title>
     <link href="http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest/"/>
-    <updated>2013-02-03T00:00:00-08:00</updated>
+    <updated>2013-02-03T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/jfk_security.png" alt="" /></p>
 ]]></content>
@@ -332,7 +350,7 @@ do.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[RWW's New Design]]></title>
     <link href="http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
-    <updated>2013-01-31T00:00:00-08:00</updated>
+    <updated>2013-01-31T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
     <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
 barrage of text. And it’s mostly text I’m not interested in reading.</p>
@@ -348,7 +366,7 @@ you don’t expect.</p>
   <entry>
     <title type="html"><![CDATA[Rigoletto]]></title>
     <link href="http://chr.ishenry.com/2013/01/29/rigoletto/"/>
-    <updated>2013-01-29T00:00:00-08:00</updated>
+    <updated>2013-01-29T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/29/rigoletto</id>
     <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
 the Met</p>
@@ -377,7 +395,7 @@ accessible.</p>
   <entry>
     <title type="html"><![CDATA[You’re not going to Eur - o - pee in there? - Jessica]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
-    <updated>2013-01-27T00:00:00-08:00</updated>
+    <updated>2013-01-27T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/euro_toilet.jpg" alt="" /></p>
 ]]></content>
@@ -386,7 +404,7 @@ accessible.</p>
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
-    <updated>2013-01-27T00:00:00-08:00</updated>
+    <updated>2013-01-27T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine
@@ -449,7 +467,7 @@ closed.</p>
   <entry>
     <title type="html"><![CDATA[Rules for London]]></title>
     <link href="http://chr.ishenry.com/2013/01/26/rules-for-london/"/>
-    <updated>2013-01-26T00:00:00-08:00</updated>
+    <updated>2013-01-26T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/26/rules-for-london</id>
     <content type="html"><![CDATA[<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
 Europe. Having never been to Europe, or on a real vacation for the last couple
@@ -484,7 +502,7 @@ find the really cool stuff.</p>
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
     <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
-    <updated>2012-12-10T00:00:00-08:00</updated>
+    <updated>2012-12-10T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
@@ -523,7 +541,7 @@ repo.</a></p>
   <entry>
     <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
     <link href="http://chr.ishenry.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
-    <updated>2012-10-14T00:00:00-07:00</updated>
+    <updated>2012-10-14T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
     <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
 those interested, here are the slides.</p>
@@ -540,7 +558,7 @@ those interested, here are the slides.</p>
   <entry>
     <title type="html"><![CDATA[app.net, I smell a pattern]]></title>
     <link href="http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern/"/>
-    <updated>2012-08-19T00:00:00-07:00</updated>
+    <updated>2012-08-19T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2012/08/19/appnet-i-smell-a-pattern</id>
     <content type="html"><![CDATA[<p>After being pummeled into submission by 42924 tweets about
 <a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
@@ -612,7 +630,7 @@ monetize without having to resort to advertising.</p>
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
     <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
-    <updated>2012-08-13T00:00:00-07:00</updated>
+    <updated>2012-08-13T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
@@ -654,7 +672,7 @@ situations.</p>
   <entry>
     <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
     <link href="http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
-    <updated>2012-07-28T00:00:00-07:00</updated>
+    <updated>2012-07-28T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
     <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I&#8217;ve
 been a huge fan of the rich, immersive experience put together by
@@ -696,59 +714,6 @@ few steps away from the bar, which we camped out on all night.</p>
 experience, my night did not reflect that. However, I&#8217;m likely to go back,
 given the incredible quality of everything else in the hotel. Hopefully, my
 next reservation at the McKittrick will occur on a better night.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
-    <updated>2012-07-09T00:00:00-07:00</updated>
-    <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
-    <content type="html"><![CDATA[<p>&#8220;An expert is one who knows more and more about less and less until he knows
-absolutely everything about nothing&#8221;
--<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
-
-<p>My grandfather was a carpenter. He had an immense workbench, with a pegboard
-that had hundreds of hammers, screwdrivers, wrenches, saws, drills, planes,
-awls. They were powered, hand powered, circular, rotary and reciprocating.
-Each of them had their own beauty, and their own use. The man could build a
-picture frame, a desk, a dock, or an entire house. He may not have wielded any
-of them expertly, but he knew which one to use when the situation called, and
-he certainly knew how to use them in concert.</p>
-
-<p>Two generations later, I have become a web developer, and can&#8217;t help but
-notice the similarities between the two. He worked in wood, but I work in bits
-and bytes. Web sites, especially big ones, are not the product of a single
-technology, but the result of many technologies seamlessly interacting.
-Building a house is no different. Framing, roofing, laying foundation are all
-separate skills that require vastly different tools. Part of the challenge of
-being a web developer is being able to manage lots of technologies at once.</p>
-
-<p>Great web developers are carpenters. Just like carpentry, there is always the
-right tool for the job. Infrastructure that doesn&#8217;t play well with software is
-bound for failure. Software that doesn&#8217;t use or fit the hardware / kernel / OS
-well won&#8217;t run well. As experts in web development, we can know less about
-each technology, but should know more about how they work together. Tailoring
-software or combinations of software packages is the magic bullet that solves
-problems quickly and scalably.</p>
-
-<p>In the context of early stage startups, generalists are a better bet for
-getting a production up and running. Even as a team grows, having generalists
-around means you can task a single developer with developing and entire
-feature. With a bit of support from specialists, they can pull off shipping a
-feature faster than a team of a couple of specialists. When widespread  issues
-occur, I prefer to have a generalist in my corner, because they typically
-understand the the connective tissue of a website very well, and are willing
-to put in the time debugging from a variety of perspectives.</p>
-
-<p>None of this is to say that specialists don&#8217;t have their place in web
-development. The web is an innovative medium that it has spawned dozens of
-technologies (node.js) that require a deep pool of expertise to work in. There
-are vast arrays of techniques and frameworks that cater to working in a single
-technology. Generalists typically won&#8217;t have the depth necessary to pull off a
-awe-inspiring, truly nasty implementation. However, they&#8217;ll have the right
-instincts to pair it, deploy, and make it do something meaningful that a
-specialist might not be able to do by themselves.</p>
 ]]></content>
   </entry>
   

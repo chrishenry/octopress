@@ -2,6 +2,7 @@
 layout: post
 title: "Making Decisions with Graphite"
 date: 2013-05-05 21:01
+css: "public/stylesheets/screen.css"
 comments: true
 categories:
  - devops

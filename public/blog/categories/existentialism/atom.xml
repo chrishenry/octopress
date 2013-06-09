@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Existentialism | The Technician]]></title>
+  <title><![CDATA[Category: existentialism | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/existentialism/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-05-06T17:18:44-07:00</updated>
+  <updated>2013-06-09T14:09:47-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -14,274 +14,20 @@
 
   
   <entry>
-    <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
-    <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
-    <updated>2012-12-10T00:00:00-08:00</updated>
-    <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
-    <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
-basic concepts like loops, variables and operators. Having given the test to
-other developers several times, I felt like a bit of hypocrite having never
-actually having taken it myself. I've also asked folks to complete the task in
-php, even though it wasn't a language they were particularly familiar with.
-So, I decided it was time to end the hypocrisy, and give myself a little
-challenge:</p>
+    <title type="html"><![CDATA[GReader is going away, and I'm not that sad]]></title>
+    <link href="http://chr.ishenry.com/2013/06/09/greader-is-going-away/"/>
+    <updated>2013-06-09T13:15:00-04:00</updated>
+    <id>http://chr.ishenry.com/2013/06/09/greader-is-going-away</id>
+    <content type="html"><![CDATA[<p>There was a period where I was insanely into RSS. It was what I did every time I sat down at the computer. I fired up the Google Reader tab, and spent hours in there. I pored over everything, and it was a really fun game to try and get through everything and still retain at least one useful piece of information from my frenzied filtering. That was usually the case, as at that time, I had a pretty tightly curated list of feeds.</p>
 
-<p><strong>Do FizzBuzz in as many languages as I could.</strong></p>
-
-<p>So, what did I learn?</p>
-
-<ul>
-<li>With the <a href="http://chr.ishenry.com/2011/06/13/development-without-internet-access/">internet</a>, you can learn the basics of most programming languages in about 5 minutes.</li>
-<li>Programming knowledge is portable between most common web languages. A loop is a loop, a variable is a variable, etc. Syntax for a task this simple can be learned in a few minutes.</li>
-<li>FizzBuzz <em>can</em> be done in sql, bitch.</li>
-<li>Clojure is hard for no reason.</li>
-<li>Lisp is basically impossible to get running.</li>
-<li>Languages have uptake because they're included with the OS and have good documentation and communities.
-In the end, doing FizzBuzz in 10 languages took around 5 hours. There was,
-however, significant time taken for screwing around on Twitter, potty breaks,
-drinking too much coffee, <a href="http://stackoverflow.com/questions/13536889/php-works-but-%0Agives-sql-syntax-error/13536929#comment18536820_13536929">curmedgeon-ing on
-StackOverflow,</a> drinking beer, and
-making carnitas. Time was also spent looking for a way to run my FizzBuzzes in
-bash and benchmark them, which proved fruitless, since OS X doesn't support
-nanoseconds in the date command.</li>
-</ul>
+<!-- more -->
 
 
-<p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
-repo.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
-    <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
-    <updated>2012-07-09T00:00:00-07:00</updated>
-    <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
-    <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
-absolutely everything about nothing"
--<a href="https://twitter.com/mastersje/status/192257585745891330">@mastersje</a></p>
+<p>Then Twitter came along. I was quite the naysayer of Twitter when it came out, dismissing it as a fad. But I got caught up, just like most people. It was a lot of fun sharing small bits of stuff, and forced me to distill a thought down into 140 characters. It gave me insight into smart people and what they were thinking about. But most importantly, I started using it as my reading list. It was easier to let others pick out the good stuff, and then scan through to find the stuff I thought was relevant to me. Quickly, favorites list became my reading list.</p>
 
-<p>My grandfather was a carpenter. He had an immense workbench, with a pegboard
-that had hundreds of hammers, screwdrivers, wrenches, saws, drills, planes,
-awls. They were powered, hand powered, circular, rotary and reciprocating.
-Each of them had their own beauty, and their own use. The man could build a
-picture frame, a desk, a dock, or an entire house. He may not have wielded any
-of them expertly, but he knew which one to use when the situation called, and
-he certainly knew how to use them in concert.</p>
+<p>I did, however, switch everything over to <a href="http://www.feedly.com/index.html">Feedly</a> this morning. What I realized is that my list of feeds has become completely unmanageable. I actually broke their UI trying to organize everything. (Not sure if it's their fault or mine.) The biggest problem is that I would randomly add feeds after seeing a single post, and many times there was nothing else helpful in the feed. Or worse, the feed is completely dead. In order for RSS to be useful, it seems like a feed has to be active to make it's way to in front of my eyeballs. So I got rid of a lot of feeds that had no posts since my last visit to GReader.</p>
 
-<p>Two generations later, I have become a web developer, and can't help but
-notice the similarities between the two. He worked in wood, but I work in bits
-and bytes. Web sites, especially big ones, are not the product of a single
-technology, but the result of many technologies seamlessly interacting.
-Building a house is no different. Framing, roofing, laying foundation are all
-separate skills that require vastly different tools. Part of the challenge of
-being a web developer is being able to manage lots of technologies at once.</p>
-
-<p>Great web developers are carpenters. Just like carpentry, there is always the
-right tool for the job. Infrastructure that doesn't play well with software is
-bound for failure. Software that doesn't use or fit the hardware / kernel / OS
-well won't run well. As experts in web development, we can know less about
-each technology, but should know more about how they work together. Tailoring
-software or combinations of software packages is the magic bullet that solves
-problems quickly and scalably.</p>
-
-<p>In the context of early stage startups, generalists are a better bet for
-getting a production up and running. Even as a team grows, having generalists
-around means you can task a single developer with developing and entire
-feature. With a bit of support from specialists, they can pull off shipping a
-feature faster than a team of a couple of specialists. When widespread  issues
-occur, I prefer to have a generalist in my corner, because they typically
-understand the the connective tissue of a website very well, and are willing
-to put in the time debugging from a variety of perspectives.</p>
-
-<p>None of this is to say that specialists don't have their place in web
-development. The web is an innovative medium that it has spawned dozens of
-technologies (node.js) that require a deep pool of expertise to work in. There
-are vast arrays of techniques and frameworks that cater to working in a single
-technology. Generalists typically won't have the depth necessary to pull off a
-awe-inspiring, truly nasty implementation. However, they'll have the right
-instincts to pair it, deploy, and make it do something meaningful that a
-specialist might not be able to do by themselves.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Try Adding Distance]]></title>
-    <link href="http://chr.ishenry.com/2012/06/23/try-adding-distance/"/>
-    <updated>2012-06-23T00:00:00-07:00</updated>
-    <id>http://chr.ishenry.com/2012/06/23/try-adding-distance</id>
-    <content type="html"><![CDATA[<p>Part of my New Years (non-whiny) resolution was to go the gym more often. It
-is a resolution that I have (mostly) adhered to over the past six months. When
-I go to the gym, I <a href="http://www.fatcuda.com/wp-%0Acontent/uploads/2012/06/concept-2-model-d-rowing-machine_10_0.jpg">row</a>. I love the
-rhythm, the fight against the machine, and the fact that no else at most gyms
-know what to do with it. Rowing is a grueling workout, which is one of the
-reasons I like it. Even when the workout is bad, it's good. It also gives me a
-chance to crawl inside myself for 20 or so minutes and muddle through the
-tumult in my head.</p>
-
-<p>For a couple weeks I kept my workout distance consistent at 4k, and was able
-to drop the time almost every workout. When I added 1k meters to my workout,
-the distance completely outstripped my ability to improve. When rowing the 4k,
-I was able to row every
-<a href="http://en.wikipedia.org/wiki/Indoor_rower#Exercise">split</a> evenly, with very
-little variance in performance. I was even able to throw in some intervals
-rowing at way above my normal split, just for funsies.  But when rowing the
-5k, my splits varied widely, arced, and crashed for a few months.</p>
-
-<p>Measurement on an ergometer is pretty easy. The average split time is recorded
-and displayed at the end (if you can still see through the sweat.) Also, for
-every 500m you row, there's a split and strokes/minute displayed. Essentially,
-it tells you how hard you went out, at what point in your workout you died,
-where you rallied, and if you pushed hard at the end. There are no lies,
-deception, or excuses on the LCD, only numbers. My takeaway from this screen
-is always that I was not consistent enough.</p>
-
-<p>I've seen parallels in my own life and career performance as well. While
-working on <a href="http://www.linkedin.com/opensocialInst%0Aallation/preview?_ch_panel_id=1&amp;_applicationId=104096">Creative Portfolio Display</a>, an extremely intense,
-but relatively short duration project, I was able to push hard, crash, and
-push hard again. The entire project was feature complete in approx 3 weeks.
-While handling the ever growing DBA responsibilities of be.net, I've had an
-extremely difficult time being consistent with a task that requires constant
-work over years. Performance there has been inconsistent as the data outgrew
-it's architecture.</p>
-
-<p>In personalities and friendships, I've come to value the people that remain
-consistent over time. People who continue to struggle by doing meaningful work
-that is of constant quality over years and years. Intensity is often hailed as
-the more desirable between consistency and intensity. But the people who have
-been the most valuable in my life and career are those who have stood beside
-me for years.</p>
-
-<p>In the end, it is the miles that make champions.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Why SOPA is fucking stupid]]></title>
-    <link href="http://chr.ishenry.com/2012/01/12/why-sopa-is-fucking-stupid/"/>
-    <updated>2012-01-12T00:00:00-08:00</updated>
-    <id>http://chr.ishenry.com/2012/01/12/why-sopa-is-fucking-stupid</id>
-    <content type="html"><![CDATA[<p>At its core, SOPA represents a universal, base desire of men to protect what
-they own. To some degree, it's valid, something that anyone can respect.
-However, as with most things, ideas mean precisely shite, and execution is
-what really matters. In the case of SOPA, a misguided, poorly informed
-government is attempting to execute an idea in a way that could do the most
-damage possible. Let me count the ways SOPA is fucking stupid.</p>
-
-<p>SOPA threatens free speech. <a href="http://blog.heritage.org/2011/12/28%0A/morning-bell-the-unintended-consequences-of-internet-regulation/">This</a>
-<a href="http://www.techdirt.com/articles/20111228/10302017214/heritage-%0Afoundation-says-sopa-threatens-free-speech.shtml">has</a>
-<a href="http://blogpatriot2.blogspot.com/2011/12/sopa-threatens-free-speech-%0Aand.html">been</a> <a href="http://americancensorship.org/">said</a> by many folks who are much
-smarter than I. Any bill that allows the silencing of voices should not see
-the light of day. 'Nuff said.</p>
-
-<p>SOPA will starve and fracture an industry. A measure that could be taken
-against an "infringing" site is forcing advertising networks to stop serving
-ads for said site. For many sites, <a href="http://3.bp.blogspot.com/_Eci%0AFAUHzQJA/THfX4ogb1PI/AAAAAAAAApw/_8E_nAGoUa0/s1600/madmen.png">advertising</a> is their meat
-and potatoes. An equally despicable measure is forcing payment services (can
-you say paypal?) to stop accepting <a href="https://www.google.com/searc%0Ah?q=e+commerce+growth&amp;hl=en&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-Q%0ALT9myEYXr0gGX6v3wBQ&amp;ved=0CHoQsAQ&amp;biw=1440&amp;bih=805#hl=en&amp;tbm=isch&amp;sa=1&amp;q=meat+a%0And+potatoes&amp;oq=meat+and+potatoes&amp;aq=f&amp;aqi=g4g-m1g-S5&amp;aql=&amp;gs_sm=e&amp;gs_upl=29636%0Al29636l0l29989l1l1l0l0l0l0l155l155l0.1l1l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=67%0A6c4a75e36741e5&amp;biw=1440&amp;bih=805">transactions</a> from the infringing site. Any site that
-relies on e-commerce is now <a href="http://www.hotflick.net/flicks/200%0A0_Snatch./000SNC_Stephen_Graham_010.jpg">proper fucked</a>. Any service that provides a payment
-gateway or ad services is now unreliable. There will be a rift between
-providers that cooperate with SOPA, and those that don't.</p>
-
-<p>SOPA will break the one thing that makes the Internet accessible to humans,
-DNS. <a href="http://en.wikipedia.org/wiki/Domain_Name_System">DNS</a> is the system
-whereby domains names are translated to network addresses. Assigning IP
-addresses easy-to-remember names is one of the reasons the Internet has become
-a viable medium. As an extreme measure, SOPA will alter a site's DNS records
-to point somewhere else. This last measure make is pretty clear the authors of
-these bills are complete <a href="http://themalephabet.files.wordpress.com/2%0A009/06/dipshit-11.jpg?w=450">dipshits</a>.</p>
-
-<p>While altering DNS will render the site inaccessible to most, it does not
-remove the existence or accessibility of content from the Internet. This very
-post is available <a href="http://174.143.169.75/2012/01/12/why-sopa-is-fucking-%0Astupid/">here</a>, whether DNS is up or not. To cope with a broken DNS system, the
-Internet will respond, and it will not be pleasant. Hardware vendors will ship
-with <a href="http://en.wikipedia.org/wiki/Hosts_(file">host files</a>) set up to protect
-their own interests. Rogue DNS resolvers will pop up. The Internet will turn
-into <a href="http://en.wikipedia.org/wiki/Mad_Max_Beyond_Thunderdome">Bartertown</a>.
-Two browsers will enter, neither will find Facebook.</p>
-
-<p>The <a href="https://www.google.com/search?q=e+commerce+growth&amp;hl=e%0An&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-QLT9myEYXr0gGX6v3wBQ&amp;ved=0C%0AHoQsAQ&amp;biw=1440&amp;bih=805#hl=en&amp;tbm=isch&amp;sa=1&amp;q=US+internet+industry+growth&amp;pbx=%0A1&amp;oq=US+internet+industry+growth&amp;aq=f&amp;aqi=&amp;aql=&amp;gs_sm=e&amp;gs_upl=72732l82019l0l8%0A2314l26l23l3l1l1l7l234l3216l2.10.7l19l0&amp;bav=on.2,or.r_gc.r_pw.,cf.osb&amp;fp=676c4%0Aa75e36741e5&amp;biw=1440&amp;bih=805">internet industry</a> and <a href="https://www.google.com/search?q%0A=e+commerce+growth&amp;hl=en&amp;prmd=imvnsu&amp;tbm=isch&amp;tbo=u&amp;source=univ&amp;sa=X&amp;ei=7-QLT9%0AmyEYXr0gGX6v3wBQ&amp;ved=0CHoQsAQ&amp;biw=1440&amp;bih=805">e-commerce</a> have proved to be the
-country's highest growth sectors in the past few years. One of the main
-contributors to that growth has been the availability of honest, reasonably
-reliable, interconnected services. They've given the classic <a href="http://whartoniteseekscodemonkey.tumblr.com/">humble
-entrepreneur + code monkey</a> team
-the tools to build a business that yields riches. Compromise those tools, and
-you will destroy an industry, not to mention perhaps the last golden vestige
-of American opportunity. Creating a market-based system to punish violators
-will only destroy the system. To help combat SOPA, contact your local
-<a href="http://americancensorship.org/">congressperson</a>, or go here. To read the
-bill, <a href="http://thomas.loc.gov/home/gpoxmlc112/h3261_ih.xml">click here</a>.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[New Years Actionable (non-whiner) Resolutions]]></title>
-    <link href="http://chr.ishenry.com/2012/01/03/new-years-actionable-non-whiner-resolutions/"/>
-    <updated>2012-01-03T00:00:00-08:00</updated>
-    <id>http://chr.ishenry.com/2012/01/03/new-years-actionable-non-whiner-resolutions</id>
-    <content type="html"><![CDATA[<p>Normally, I've considered New Year's Resolutions to be for whiners, people who
-never actually accomplish anything, people who are normally on the
-whhhaaaambulance. Most resolutions fall somewhere in the "stop being fat" to
-"be fluent in mesopotamian glyphs" range. They're vague, completely un-
-actionable, and just describe a slightly unattainable goal / end result /
-dumbass want. This year, however, I've discovered a few serious problems in my
-life I need to fix. So, in the spirit of actually doing shit, I've provided a
-list of non-whiner resolutions + ways to actually make them happen.</p>
-
-<ol>
-<li><p><strong>Go to bed early(ish)</strong>. This is a tough one for me. I'm naturally a night
-owl, but I might be able to fool myself to getting to bed early by showering
-early(ish). I love me a good shower. I've even been known to drink a beer in
-the shower. I also really like being in really warm, comfortable, if slightly
-embarrassing, PJs. All these things put me in a good mood and generally make
-me want to relax, which is not all that far from being asleep. Action Steps:
-Just get in the fucking shower, don't look at the mail / email / dirty dishes
-/ messy apartment / email / Twitter, just get in the shower (bring a beer).</p></li>
-<li><p><strong>See some doctors</strong>. I've avoided doctors for awhile, mostly because my
-lifestyle is a cross between Denis Nedry from Jurassic Park and a barfly. I
-consider this pretty simple. Action Steps: Make appointments with the
-following: dentist, general physician, eye doctor, nutritionist. Do it. Do
-what they say, even if it sucks. Follow up as often as the quacks say so.</p></li>
-<li><p><strong>Go to the gym regularly</strong>. OK, this one is, without a doubt, the most
-cliche, whine-tastic resolution evar. I know, because I have been to the gym
-in January. I've also been to the gym in April, when all the kids who were at
-the gym in January are nowhere to be found. Also, since the gym is a #creepy
-and #gross place to shower, resolution #1 should be even more important.
-Action Steps: Put that ish on the Google calendar with the following
-reminders; 2 hours, 1 hour, 30 minutes, 15 minutes, 10 minutes, and 5 minutes
-before. Keep gym clothes in the office. Don't care how bad they smell.</p></li>
-<li><p><strong>Blog more</strong>. Writing has been a great way to get me to collect my
-thoughts, find some hindsight, and maybe, just maybe, help some other folks
-who have the same demented thoughts / stupid problems. As a technical guy,
-"the inspiration" doesn't hit me so often, and when it does, I'm often busy,
-y'know, actually doing shit. However, as I've noted to myself more than once,
-keeping track of my day and journaling how I spend my time is something
-incredibly important for introspection. Action Steps: Write that thought down.
-Write down what you did 30 seconds ago, especially if it was different from
-regularly scheduled programming. Keep a sticky on your monitor to write shite
-down. Ask the dude next to you (<a href="http://twitter.com/bossjones">@bossjones</a>) to
-remind you to you write shit down. Lastly, a glass (or 7) of white wine, the
-notebook in which all your shit is written, and wordpress should convene
-regularly. Google Calendar #ftw, again. Lastly, check Google Analytics on
-posts. The un-monitored blog post is not worth writing.</p></li>
-<li><p><strong>Read more</strong>. Once upon a time (yesterday) I didn't know nearly as much as
-I do now. Most of that knowledge came from reading shit-tons of blogs, books,
-bathroom graffiti, articles, and whitepapers related to web development. I
-read everything with a goal: How can I use, or leverage this to help me / my
-business work a little better? The Action Steps here are a bit tougher, and
-slightly conflict with non-whiner resolution #6: Keep Google Reader open.
-Curate my list of feeds with relevant sources. Prune feeds that stopped
-providing useful information. Lastly, and perhaps most important, find tidbits
-of information that make a difference in my life and / or business.</p></li>
-<li><p><strong>Don't be distracted by bold numbers in parentheses</strong>. Simple (kinda).
-Action Steps: close Gmail, close Twitter. Try, and #fail, to delete my
-Facebook account.</p></li>
-<li><p><strong>Stop playing so much fucking air guitar by myself, alone in my apt, and
-start playing some real guitar, and actually learn the songs I normally rock
-out to</strong>. Action Steps: restring the Epiphone, buy a new amp, find tabs for
-shit I want to learn. If I'm feeling really frisky, get back into a band.</p></li>
-</ol>
-
+<p>This experience has made me doubt the future of RSS Readers as a scalable solution for consuming information. While I'll be giving Feedly a fair shot, I wonder how if I'll actually be opening it up every day, as opposed to going to Twitter favorites.</p>
 ]]></content>
   </entry>
   

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: ubuntu | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/ubuntu/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-05-06T17:18:44-07:00</updated>
+  <updated>2013-06-09T14:09:47-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
     <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
-    <updated>2013-03-08T22:46:00-08:00</updated>
+    <updated>2013-03-08T22:46:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
     <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I've done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
