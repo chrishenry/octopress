@@ -3,7 +3,9 @@ layout: post
 title: "GReader is going away, and I'm not that sad"
 date: 2013-06-09 13:15
 comments: true
-categories: thoughts, existentialism
+categories:
+ - thoughts
+ - existentialism
 ---
 
 There was a period where I was insanely into RSS. It was what I did every time I sat down at the computer. I fired up the Google Reader tab, and spent hours in there. I pored over everything, and it was a really fun game to try and get through everything and still retain at least one useful piece of information from my frenzied filtering. That was usually the case, as at that time, I had a pretty tightly curated list of feeds.
