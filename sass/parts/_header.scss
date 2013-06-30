@@ -29,7 +29,7 @@ $header-height: 30px;
 #main-nav{
 	float: left;
 	margin-left: 30px;
-	display:none;	
+	display:none;
 	@media screen and (max-width: 1040px){
 		float: none;
 		margin-left: 0;
@@ -389,6 +389,13 @@ $header-height: 30px;
 				border: 1px solid #EF7522;
 				&:hover{
 					border: 1px solid darken(#EF7522, 10%);
+				}
+			}
+			&.feedly{
+				background: image-url('social/feedly.png') center no-repeat #6cc655;
+				border: 1px solid #6cc655;
+				&:hover{
+					border: 1px solid darken(#6cc655, 10%);
 				}
 			}
 		}
