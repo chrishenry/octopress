@@ -88,6 +88,9 @@ pinboard_count: 3
 delicious_user:
 delicious_count: 3
 
+# Feedly
+feedly_add_url: "http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fchr.ishenry.com%2Fatom.xml"
+
 # Disqus Comments
 disqus_short_name: thetechnician
 disqus_show_comment_count: false

@@ -47,7 +47,12 @@
 		{% if site.subscribe_rss %}
 		<a class="rss" href="{{ site.subscribe_rss }}" title="RSS">RSS</a>
 		{% endif %}
-		<a class="feedly" title="Feedly" href="http://cloud.feedly.com/#subscription%2Ffeed%2Fhttp%3A%2F%2Fchr.ishenry.com%2Fatom.xml" target="blank">Feedly</a>
+    {% if site.instagram_user %}
+    <a class="instagram" href="http://instagram.com/{{ site.instagram_user }}" title="Instagram">Instagram</a>
+		{% endif %}
+		{% if site.feedly_add_url %}
+		<a class="feedly" title="Feedly" href="{{ site.feedly_add_url }}" target="blank">Feedly</a>
+		{% endif %}
 	</div>
 	<form class="search" action="{{ site.simple_search }}" method="get">
 		<input class="alignright" type="text" name="q" results="0">
