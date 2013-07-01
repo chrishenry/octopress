@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-06-30T20:33:00-04:00</updated>
+  <updated>2013-06-30T22:01:36-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,20 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[RSS Resolution, and Blog Updates]]></title>
+    <link href="http://chr.ishenry.com/2013/06/30/blog-updates/"/>
+    <updated>2013-06-30T20:40:00-04:00</updated>
+    <id>http://chr.ishenry.com/2013/06/30/blog-updates</id>
+    <content type="html"><![CDATA[<p>After much neglect, and a few insane weeks, I&#8217;ve finally gotten the time to update a few things in my daily toolkit. First, RSS; I&#8217;ve decided to go all in with <a href="http://www.feedly.com" target="_blank">Feedly</a>. I&#8217;ve found it to be a great cross-platform candidate that&#8217;s had to deal with a <a href="http://blog.feedly.com/2013/06/21/summary-of-the-last-100-days/">lot of scaling challenges</a> in a very, very short period of time. I give them a lot of credit for building a massive platform and being able to continue to add features to what looks like a web app with great potential. At the moment, my only real gripe would be a progress indicator in the browser of the iOS app.</p>
+
+<!-- more -->
+
+
+<p>Secondly, I&#8217;ve made a few small updates to this very site. Since Twitter has deprecated v1 of their API, which the <a href="http://octopress.org">Octopress</a> supplied twitter widget depends on, has crapped out. Since I&#8217;ve been all about minimalism lately, it seemed appropriate to simply pull the plug on it. That decision led me down the rabbit hole of how to update Octopress themes. (Hint: if you are using a theme, and you edit sass and html files in source, <a href="http://i95.photobucket.com/albums/l142/gstatejester/02-youre-doing-it-wrong.jpg?t=1285658433" target="_blank">you&#8217;re doing it wrong</a>.) That revelation led me to forking the venerable <a href="https://github.com/tommy351/Octopress-Theme-Slash">Slash</a> Octopress theme. <a href="https://github.com/chrishenry/Octopress-Theme-Slash">My own fork</a> loses the Twitter feed, narrows the layout a bit, and adds an Add to Feedly link.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[GReader is going away, and I'm not that sad]]></title>
@@ -666,54 +680,6 @@ will become out of sync with the master, a condition called slave lag.</p>
 
 <p>INSERT SELECT is a great tool, but beware of the costs of using it in certain
 situations.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Gallow Green is still a bit...green]]></title>
-    <link href="http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen/"/>
-    <updated>2012-07-28T00:00:00-04:00</updated>
-    <id>http://chr.ishenry.com/2012/07/28/gallow-green-is-still-a-bitgreen</id>
-    <content type="html"><![CDATA[<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I&#8217;ve
-been a huge fan of the rich, immersive experience put together by
-<a href="http://www.punchdrunk.org.uk/">Punchdrunk</a>.  I loved the dreamy feeling of
-walking through an entire other world, inhabited by scared, angry, jealous
-shadows running, fighting and going insane. The Manderley bar, within the
-hotel, was an amazing experience, no less detailed than the rest of the hotel.
-The absinthe punch, in particular, is a fantastic drink, dark and complex,
-that perfectly compliments the experience.</p>
-
-<p>Upon hearing that they were opening a rooftop bar at the McKittrick Hotel
-called <a href="http://www.mckittrickhotel.com/gallowgreen/">Gallow Green</a>, I
-instantly bought tickets and eagerly awaited the night. The entrance was
-similar to that of Sleep No More. After a short wait, you&#8217;re ushered into a
-small elevator that opens into a open floor with a coat check and a set of
-stairs to the roof. The rooftop garden is spacious, romantically lit, and
-beautifully decorated. Somehow or other, they also managed to get old rail car
-up there, too.</p>
-
-<p>My night at Gallow Green didn&#8217;t quite have the same magic as my previous
-visits to the McKittrick. While I did not try any of the punches, the
-cocktails were disappointing. The Third Degree, a gin cocktail, tasted so
-strongly of warm Tanqueray that it was close to undrinkable. The Pimms Other
-Cup, a murky mixture of Pimms, dark rum, lemonade and a cucumber slice was
-potable, but only as a result of the lemonade. I&#8217;m not sure if this was the
-result of a bartender having an off night, or that the cocktails are just
-poorly conceived.</p>
-
-<p>While the space was beautiful, it seems the night I was there, a private party
-had booked an event. My wait at the door was plagued by demands of a very
-entitled gentlemen, who claimed he was very important to the party. After
-getting cocktails, we sat down at a table marked reserved, assuming our
-reservation entitled us to a &#8216;Reserved&#8217; table. A waitress, after asking if we
-were part of the party, shooed us after a few minutes, leaving Jessica and I
-scurrying to find a place to sit. Luckily, we found a somewhat hidden swing a
-few steps away from the bar, which we camped out on all night.</p>
-
-<p>While the right elements are there for Gallow Green to be a fantastic
-experience, my night did not reflect that. However, I&#8217;m likely to go back,
-given the incredible quality of everything else in the hotel. Hopefully, my
-next reservation at the McKittrick will occur on a better night.</p>
 ]]></content>
   </entry>
   

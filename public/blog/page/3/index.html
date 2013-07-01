@@ -7,9 +7,9 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="&#8220;An expert is one who knows more and more about less and less until he knows
-absolutely everything about nothing&#8221;
--@mastersje My &hellip;">
+	<meta name="description" content="Since seeing Sleep No More a year ago, I&#8217;ve
+been a huge fan of the rich, immersive experience put together by
+Punchdrunk.  I loved the dreamy &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +80,86 @@ absolutely everything about nothing&#8221;
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2012/07/28/gallow-green-is-still-a-bitgreen/">
+		
+			Gallow Green Is Still a bit&#8230;green</a>
+	</h2>
+	<div class="entry-content">
+		<p>Since seeing <a href="http://www.sleepnomore.com/">Sleep No More</a> a year ago, I&#8217;ve
+been a huge fan of the rich, immersive experience put together by
+<a href="http://www.punchdrunk.org.uk/">Punchdrunk</a>.  I loved the dreamy feeling of
+walking through an entire other world, inhabited by scared, angry, jealous
+shadows running, fighting and going insane. The Manderley bar, within the
+hotel, was an amazing experience, no less detailed than the rest of the hotel.
+The absinthe punch, in particular, is a fantastic drink, dark and complex,
+that perfectly compliments the experience.</p>
+
+<p>Upon hearing that they were opening a rooftop bar at the McKittrick Hotel
+called <a href="http://www.mckittrickhotel.com/gallowgreen/">Gallow Green</a>, I
+instantly bought tickets and eagerly awaited the night. The entrance was
+similar to that of Sleep No More. After a short wait, you&#8217;re ushered into a
+small elevator that opens into a open floor with a coat check and a set of
+stairs to the roof. The rooftop garden is spacious, romantically lit, and
+beautifully decorated. Somehow or other, they also managed to get old rail car
+up there, too.</p>
+
+<p>My night at Gallow Green didn&#8217;t quite have the same magic as my previous
+visits to the McKittrick. While I did not try any of the punches, the
+cocktails were disappointing. The Third Degree, a gin cocktail, tasted so
+strongly of warm Tanqueray that it was close to undrinkable. The Pimms Other
+Cup, a murky mixture of Pimms, dark rum, lemonade and a cucumber slice was
+potable, but only as a result of the lemonade. I&#8217;m not sure if this was the
+result of a bartender having an off night, or that the cocktails are just
+poorly conceived.</p>
+
+<p>While the space was beautiful, it seems the night I was there, a private party
+had booked an event. My wait at the door was plagued by demands of a very
+entitled gentlemen, who claimed he was very important to the party. After
+getting cocktails, we sat down at a table marked reserved, assuming our
+reservation entitled us to a &#8216;Reserved&#8217; table. A waitress, after asking if we
+were part of the party, shooed us after a few minutes, leaving Jessica and I
+scurrying to find a place to sit. Luckily, we found a somewhat hidden swing a
+few steps away from the bar, which we camped out on all night.</p>
+
+<p>While the right elements are there for Gallow Green to be a fantastic
+experience, my night did not reflect that. However, I&#8217;m likely to go back,
+given the incredible quality of everything else in the hotel. Hopefully, my
+next reservation at the McKittrick will occur on a better night.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2012-07-28T00:00:00-04:00" pubdate data-updated="true">Jul 28<span>th</span>, 2012</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/new-york/'>New York</a>, <a class='category' href='/blog/categories/thoughts/'>Thoughts</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -798,108 +878,6 @@ inspiration totally got me through.</p>
 
 <time datetime="2011-07-31T00:00:00-04:00" pubdate data-updated="true">Jul 31<span>st</span>, 2011</time></div>
 	<div class="tags">
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2011/06/25/distributed-updates/">
-		
-			Distributed Updates</a>
-	</h2>
-	<div class="entry-content">
-		<p>Part of managing any large site involves writing scripts that will go through
-oyur data, make changes, merge things, remove things, do type transformations,
-etc. Most of the time, in PHP, iterating through rows or objects will do just
-fine. However, when there are lots of rows or objects, you could be faced with
-a script that takes hours or days to run. Depending on how often active the
-is, you may need to restrict access to ensure that the data before and after
-the transformation remains consistent. In other words, if someone tries to
-make a change to the data before the transformation, and the new feature only
-looks at data after the transformation, that user has just lost their changes.
-That is Very Bad.</p>
-
-<p>As sites get larger and problems like this loom, taking the site offline
-becomes less and less of an option. This is what the business team calls a
-luxury problem, and what the ops team refers to simply as a problem. One
-option is to write a more efficient script. You can get pretty far by simply
-ensuring you&#8217;re reading from the fastest data source available, make good use
-of cache, etc. ensure that the tables being read for the transformation are
-properly indexed. All of these are great places to start. Additionally, making
-sure that data is grabbed in chunks can give the database time to breathe.
-There&#8217;s nothing worse than getting stuck in MySQL&#8217;s &#8220;sending data&#8221; phase
-simply because it needs to read several thousand rows from disk. MySQL
-configuration can also be your friend here. If using InnoDB, increasing the
-insert buffer is a great way to speed up writes.*</p>
-
-<p>However, as much as you can do to speed up a single transaction, the fact
-remains that you have to execute each transformation serially, one after
-another. Your bottleneck is the transformation itself. It will take (# of
-transformations * # of objects to transform) to complete the job. No matter
-how well tuned the database is, it will only be performing one operation at a
-time, which means that the other (max connections - 1) connections are doing
-precisely crap. So the next logical step is to change your update script to
-distribute the update operations so a few can be run in parrallel.</p>
-
-<p>Rewriting the update script does require thinking about your update
-differently, and will not work in every case. For example, if one is simply
-moving a large amount of data from one table to another, and there is no
-transformation, or the transformation can be accomplished via a builtin MySQL
-function, use that. However, just be prepared to deal with locking issues, and
-the source data potentially not being available while the transformation is
-taking place. However, if your transformation is complicated, and requires
-per-case logic, this is definitely a good route to take. The biggest
-difference is how the code for the update is organized. The update script
-needs to be separated out into code that will apply the transformation for
-exactly one entity, and code that will manage which entities get transformed
-and when. Ideally, the code for the transformation is idempotent, so failures
-can be handled by simply resubmitting the entity / object to be transformed
-again.</p>
-
-<p>Accomplishing parallel processing in PHP can be kind of tricky. Php&#8217;s
-pcntl_exec function has always felt a bit finicky to me. Of course exec on its
-own it blocking, so that&#8217;s out. Additionally, neither of these solutions offer
-any sort of baked-in communication between the process that submitted the job,
-and the process carrying out the job. That leaves us with a queuing system.
-Popular systems include: RabbitMQ and Gearman. Personally, I&#8217;ve made great use
-of <a href="http://chr.ishenry.com/2009/07/25/gearman/">Gearman</a>. It&#8217;s easy to
-install, as is the PHP module.</p>
-
-<p>To sum up, performing large data updates via a distributed system is the way
-to go if you have complex requirements per transformation, and the option to
-perform these processes in parallel.</p>
-
-<p>*If using MySQL&#8217;s MyISAM engine, this isn&#8217;t necessarily true, as writes will block, and the database could become the bottleneck. However, since MySQL is continuing to push InnnDB, this is getting increasingly unlikely. So if your tables are all InnoDB, you&#8217;re probably in good shape.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-06-25T00:00:00-04:00" pubdate data-updated="true">Jun 25<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/ops/'>Ops</a>, <a class='category' href='/blog/categories/process/'>Process</a>
-
 
 </div>
 	
