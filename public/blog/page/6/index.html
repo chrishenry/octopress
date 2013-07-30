@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="30 Seconds to Mars recently released their third album, This is War, and it is
-quite the departure from their first album. Brand New Day was raw and &hellip;">
+	<meta name="description" content="Having your own domain and server is a really fun thing. You can keep a blog,
+store files, post photos. All good ole down-home interwebz fun you can &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,59 @@ quite the departure from their first album. Brand New Day was raw and &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/01/07/google-short-links/">
+		
+			Google Short Links</a>
+	</h2>
+	<div class="entry-content">
+		<p>Having your own domain and server is a really fun thing. You can keep a blog,
+store files, post photos. All good ole down-home interwebz fun you can dream
+up. With the advent of micro-blogging, everyone now has an audience they need
+to communicate with in the briefest fashion.</p>
+
+<p>Short links have become the norm for sharing, but with a huge price. Short
+links break the interconnectedness of the Internet. Search results that depend
+on the count of links become incorrect. Some services try to reconnect links
+between domains by using some DNS trickery. But the issue remains that there
+is a middleman that can&#8217;t help make the connection.</p>
+
+<p>Unless, of course, that middleman is the search engine. Google&#8217;s recently
+announced URL shortener could solve many of the problems inherent with URL
+shorteners. By being the middleman, Google would have all the necessary
+information to put the pieces back together. It&#8217;s easy enough to set up,
+provided you have a Google Apps account. It does not currently have an API,
+but here&#8217;s hoping.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-07T00:00:00-05:00" pubdate data-updated="true">Jan 7<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -718,101 +771,6 @@ killing the query.</p>
 
 
 	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/07/08/do-one-thing-but-do-it-really-well/">
-		
-			Do One Thing, but Do It Really Well</a>
-	</h2>
-	<div class="entry-content">
-		<p>In life there are people who will consider themselves Jacks of all Trades. But
-as the saying goes, they are master of none.</p>
-
-<p>Websites will always start out as a codebase that does everything. There will
-be a couple files that add users, encode video to Flash, pull rss feeds,
-assemble HTML, update products, charge users, manipulate images, redirect old
-links, handle file uploads, calculate shipping, delete categories, create rss
-feeds, search the database, etc. Sometimes the code to do these will be
-organized into files, sometimes it won&#8217;t. The whole site will run on a single
-server, or more likely, a slice of a single server.</p>
-
-<p>None of the things in the above list will be done well. None. This is mostly
-because there is too little code and too little hardware focused on doing too
-much. Also, every piece of code will be tightly coupled. So any one of those
-features could potentially get a ton of traffic, or hit a bump, and consume a
-ton of resources. Once that happens, it&#8217;s safe to assume the whole thing will
-go down in flames.</p>
-
-<p>So to avoid the Fail Whale, its really important to build sites as a group of
-components that work together. <a href="http://bit.ly/TunGR">Architecture</a> is key, and
-when carefully thought out, can ensure that the most important parts of the
-site stay up. Even when your image manipulation script on the backend freaks
-out, the home page should continue to load flawlessly.</p>
-
-<p>With database-driven apps (almost every major site on the web), there needs to
-be particular attention paid to a caching layer. Again, since most sites start
-out with a jumbled codebase, the likelihood that all the code to manage data
-is in the same place is unlikely. Given the complexities of managing cache
-objects, making sure that objects are invalidated on update is crucial to
-making updates look seamless. So there needs to be a set of code that&#8217;s good
-at one thing: managing data and its cache.</p>
-
-<p>Search is another area that commonly relies on database, and can eat a ton of
-resources. If performing search in SQL, difficult queries can lock tables and
-keep other queries from being answered. As good as some DBMSes have gotten at
-handling search ( ie MySQL&#8217;s FULLTEXT ), they still can&#8217;t fulfill the
-concurrency demands of a site with heavy traffic. So, again, the solution is a
-change where a resource intensice feature needs to be isolated from other
-code. There are a few different ways to do this. One is running replication,
-which may not be possible in smaller hosting environments. Another is to use
-Full Text Search (Lucene, Sphinx, etc.) Again, this may not be possible in
-smaller hosting environments.</p>
-
-<p>Using code that&#8217;s already good at managing and retrieving data, an interface
-can be built to query your data. A second hosting environment that&#8217;s suitable
-for running the search tool of your choice can then query the data code for
-updates it needs to keep itself updated. In turn, this server will return
-search results without tying up any resources necessary for doing important
-stuff, like serving the home page.</p>
-
-<p>So in these two short examples, we&#8217;ve created a theoretical architecture that
-can sustain heavy, site-breaking traffic to the search, and still continue to
-serve the home page. Of course, until the Apache server becomes so inundated
-with requests that it can&#8217;t do anything. Then it&#8217;s time to get that load
-balancer in place…</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-08T00:00:00-04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
 
 
 </div>

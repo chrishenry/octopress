@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Every once and a while I get to leave server-land and get to do some fun
-projects that involve doing something on the front end. The latest was &hellip;">
+	<meta name="description" content="MySQL&#8217;s InnoDB engine is really great. Row-level locking is amazing in tables
+where there is heavy concurrency. Write buffering is also &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,87 @@ projects that involve doing something on the front end. The latest was &hellip;"
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/07/30/mysql-and-linux-swappiness/">
+		
+			MySQL and Linux Swappiness</a>
+	</h2>
+	<div class="entry-content">
+		<p>MySQL&#8217;s InnoDB engine is really great. Row-level locking is amazing in tables
+where there is heavy concurrency. Write buffering is also awesome for cases
+where a table needs to accept a lot of data. InnoDB&#8217;s use of memory to store
+indexes or sometimes the entire table can also make reads incredibly fast,
+especially on tables that need to support complex queries where even the best
+placed indexes do nothing.</p>
+
+<p>However, when tables get large, the innodb_buffer_pool is set to close to
+amount of memory on the server, Linux has a tendency to remove your data from
+memory for no good reason. The symptoms are unmistakable: a query that was
+known to be pretty quick, but hasn&#8217;t run in a while, will take long. Too long.
+Run it again, and it becomes snappy. What&#8217;s happening is that when the query
+initially runs, the necessary data isn&#8217;t in memory, so it&#8217;s read in from disk,
+and the query is performed. Once it&#8217;s in memory, that second run is quick.</p>
+
+<p>Actually there is a good reason Linux behaves like this:</p>
+
+<blockquote><p>&#8220;My point is that decreasing the tendency of the kernel to swap stuff out is
+wrong. You really don&#8217;t want hundreds of megabytes of BloatyApp&#8217;s untouched
+memory floating about in the machine. Get it out on the disk, use the memory
+for something useful.&#8221;</p></blockquote>
+
+<ul>
+<li><a href="http://kerneltrap.org/node/3000">[http://kerneltrap.org/node/3000](http://kerneltrap.org/node/3000)</a></li>
+</ul>
+
+
+<p>This all makes sense, as most systems need to reclaim memory from applications
+that aren&#8217;t doing anything. Except in the case where you have a large dataset
+in InnoDB that you&#8217;d really like to be in memory when you query it. Luckily,
+there is a tunable that you can change to dictate how aggressive Linux is
+reclaiming memory from applications. /proc/sys/vm/swappiness stores a number
+for 0 to 100, where 100 means that Linux will be extremely aggressive in
+reclaiming memory, and 0 means that memory won&#8217;t be reclaimed all that much.</p>
+
+<p>For servers that need to keep datasets in memory all the time, this variable
+can be extremely helpful. With an InnoDB table / indexes that consume ~80% of
+memory on the machine, a swappiness value of 30 is sufficient to allow MySQL
+to keep most of that in memory. Of course, I don&#8217;t recommend this for a
+machine that is not 100% dedicated to a single task. However, on dedicated
+MySQL machines, tuning this variable can be really helpful.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-30T00:00:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -712,59 +793,6 @@ complicated sorts than MySQL.</p>
 
 	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
 
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/01/07/google-short-links/">
-		
-			Google Short Links</a>
-	</h2>
-	<div class="entry-content">
-		<p>Having your own domain and server is a really fun thing. You can keep a blog,
-store files, post photos. All good ole down-home interwebz fun you can dream
-up. With the advent of micro-blogging, everyone now has an audience they need
-to communicate with in the briefest fashion.</p>
-
-<p>Short links have become the norm for sharing, but with a huge price. Short
-links break the interconnectedness of the Internet. Search results that depend
-on the count of links become incorrect. Some services try to reconnect links
-between domains by using some DNS trickery. But the issue remains that there
-is a middleman that can&#8217;t help make the connection.</p>
-
-<p>Unless, of course, that middleman is the search engine. Google&#8217;s recently
-announced URL shortener could solve many of the problems inherent with URL
-shorteners. By being the middleman, Google would have all the necessary
-information to put the pieces back together. It&#8217;s easy enough to set up,
-provided you have a Google Apps account. It does not currently have an API,
-but here&#8217;s hoping.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-07T00:00:00-05:00" pubdate data-updated="true">Jan 7<span>th</span>, 2010</time></div>
-	<div class="tags">
 
 </div>
 	

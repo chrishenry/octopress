@@ -7,7 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content=" Feb 3rd, 2013 hack, jfk, network-security ">
+	<meta name="description" content="If you simply ask a programmer to implement a feature, but fail to share the
+purpose or the justification for said feature, all you get is a code &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -78,6 +79,53 @@
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/">
+		
+			Purpose</a>
+	</h2>
+	<div class="entry-content">
+		<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
+purpose or the justification for said feature, all you get is a code monkey.
+Code monkeys merely translate requirements into code verbatim. There’s no room
+to trade concessions with the designers if I don’t know what you’re trying to
+do.</p></blockquote>
+
+<p>&#8211;<a href="http://37signals.com/svn/posts/3392-humans-need-to-know-why">http://37signals.com/svn/posts/3392-humans-need-to-know-why</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-07T00:00:00-05:00" pubdate data-updated="true">Feb 7<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/special-purpose/'>special-purpose</a>, <a class='category' href='/blog/categories/specification/'>specification</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -649,80 +697,6 @@ monetize without having to resort to advertising.</p>
 
 
 	<a class='category' href='/blog/categories/advertising/'>Advertising</a>, <a class='category' href='/blog/categories/thoughts/'>Thoughts</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2012/08/13/mysqls-insert-select-replication-and-you/">
-		
-			MySQL&#8217;s INSERT SELECT, Replication, and You</a>
-	</h2>
-	<div class="entry-content">
-		<p>Whenever there are situations where data needs to be copied from table to
-table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
-SELECT</a> is an
-elegant solution. It reduces the number of queries sent to a MySQL server, and
-makes for elegant code. Additionally, with INSERT SELECTs, all processing
-happens on the MySQL side. The app doesn&#8217;t have to deal with having any of the
-data in memory. This means that application servers can be run with less
-memory.</p>
-
-<p>Unfortunately, INSERT SELECT&#8217;s best use cases coincide with cases where the
-SELECT query has the potential to run a long time. On standalone servers
-running InnoDB, this can be fine, as reads and writes will continue to execute
-concurrently. However, if you&#8217;re running MyISAM, queries will lock, and
-nothing will execute. Instead, queries will queue up, your application will
-come to a dead halt, MySQL will likely hit max_connections and Very Bad Things
-will happen.</p>
-
-<p>In <a href="http://dev.mysql.com/doc/refman/5.5/en/replication-%0Aimplementation.html">replicated</a> environments, even well tuned ones running on InnoDB, a
-long running INSERT SELECT can cause other sorts of problem. MySQL replication
-is statement based. In other words, every statement that writes to disk on the
-master is written to a log. The log is then transferred to slave(s), and those
-statements are replayed on the slaves.</p>
-
-<p>With INSERT SELECTS, every slave needs to run the same SELECT. The master will
-not simply pass on the results of the SELECT, but rather simply pass the same
-query to be executed by the slave(s). So in a replicated environment, it&#8217;s
-even more important to keep an eye on how long those INSERT SELECTS are
-running. Not only is it a waste of processing power to run the SELECT portion
-of the query across the entire cluster, the SELECT will actually block other
-statements in the log from executing. This means that the data on the slaves
-will become out of sync with the master, a condition called slave lag.</p>
-
-<p>INSERT SELECT is a great tool, but beware of the costs of using it in certain
-situations.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-13T00:00:00-04:00" pubdate data-updated="true">Aug 13<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/ops/'>Ops</a>
 
 
 </div>
