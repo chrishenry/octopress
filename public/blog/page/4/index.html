@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Creative Index The now defunct Creative Index was a search engine aimed at indexing portfolio
-sites. The Creative Index was perhaps the most open- &hellip;">
+	<meta name="description" content="Yesterday, I had to run a query for some statistics I needed. This was a query
+that I knew were going to be particularly nasty as it required &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,75 @@ sites. The Creative Index was perhaps the most open- &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2011/11/02/mysql-error-28/">
+		
+			MySQL Error 28</a>
+	</h2>
+	<div class="entry-content">
+		<p>Yesterday, I had to run a query for some statistics I needed. This was a query
+that I knew were going to be particularly nasty as it required sorting 1.3M
+rows. Normally I run these sorts of queries on a reporting slave I keep around
+for this reason, but for some reason I chose to run this query on a production
+slave. When I ran my query, I got the following error;</p>
+
+<p>ERROR 3 (HY000): Error writing file &#8216;/tmp/MYNcSyQ9&#8217; (Errcode: 28)</p>
+
+<p>Oh. *&amp;<sup>%.</sup> After some Googling, a bit of shitting my pants, and a wild grep
+session through as many application logs as I could find, I was able to figure
+out that problem seemed limited to this particular query. My Googling turned
+up the fact that the error code indicated that the server was out of disk
+space.</p>
+
+<p>As a rapidly growing company, we&#8217;ve had our fair share of issues with managing
+(or failing to manage) rapidly filling disks, failed RAID controllers, and the
+like. However, I had recently done audits of this particular cluster of
+servers, and ascertained that the situation with disks was nominal. I was
+confident the disk wasn&#8217;t full, and permissions were correct. Our particular
+disk layout puts /tmp on its own 2GB partition, and after running the query,
+that partition was 2% full.</p>
+
+<p>It turns out that during the execution of the query, MySQL was creating a
+temporary table that was 2GB, hence the error. By default MySQL will write
+temporary tables to /tmp, which in many cases, is its own small partition. The
+solution here was to set the tmpdir to a folder on the main partition adjacent
+to the MySQL datadir. This solution obviously has its own problems (ie you
+could fill your main partition, which is way worse than filling /tmp) However,
+for this type of ad hoc query, this was exactly what we needed.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-11-02T00:00:00-04:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -794,85 +863,6 @@ ensure that it is always meets the goals of my business, no matter the cost.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/08/16/gmail-actually-gets-something-really-wrong/">
-		
-			Gmail Actually Gets Something Really Wrong.</a>
-	</h2>
-	<div class="entry-content">
-		<p>I&#8217;m a huge fan of Gmail and Google Apps for
-<a href="http://chr.ishenry.com/2009/04/26/just-manage-it-for-me/">many</a> reasons. I
-love the new redesign, and how they&#8217;re finally promoting consistency across
-their major webapps. It makes me feel like the web could <em>really</em> be a viable
-alternative alternative to desktop software. I can even deal with
-<a href="http://www.avc.com/a_vc/2010/06/gmail-performance-issues.html">slowness</a> in
-Gmail, given the amount of work they need to do in order to keep your inbox
-snappy. They need to index every message, which means parsing every message,
-converting every attachment, and linking it the search architecture. In real
-time. Not easy…</p>
-
-<p>However, what I found today, was completely inexcusable: Gmail&#8217;s clipping
-&#8220;feature&#8221;. This is definitely a feature that sounds a lot more like a bug than
-a helpful tool.</p>
-
-<p><a href="/images/user/gmail_clipping.png"><img src="/images/user/gmail_clipping.png" alt="Gmail Message clipping" /></a></p>
-
-<p>What <em>should</em> be here is a few more links, some mouse text that contains our
-mailing address and unsubscribe links. What I did not show in this screenshot
-is the capacity for destruction this feature has on HTML emails. When the
-email is &#8216;clipped&#8217;, the HTML is broken at a random place, and not displayed.
-If your message is clipped at an inopportune place, there goes your entire
-HTML layout. In the best case, your HTML is simply truncated, leaving users
-with only a piece of their email.</p>
-
-<p>As the entity sending this email, the responsibility falls on me to make sure
-that I send emails that are accessible, conform to CAN-SPAM, and are pleasing
-to the eye. Gmail bones me on three of these goals. Thanks to a
-<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">lack</a> of
-<a href="http://tinyurl.com/2asve9s">documentation</a> as to how long an email can be
-without invoking the clipping feature. Most importantly, my users have no
-clear to unsubscribe from the list, since the most likely links to be clipped
-are the unsubscribe links.</p>
-
-<p>I agree that
-<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">performance</a>
-is king, but never at the cost of the user.</p>
-
-<p><strong>Update:</strong> It seems like Gmail limits messages to around 102k characters before clipping. So the solution seems to be running HTML through a compressor. I found a pretty good one <a href="http://www.textfixer.com/html/compress-html-compression.php">here</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-08-16T00:00:00-04:00" pubdate data-updated="true">Aug 16<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
 
 
 </div>

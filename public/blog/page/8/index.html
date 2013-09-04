@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="As far as linux utilities go, cron is one of my favorite tools. It handles
-batch jobs, checks your database, cleans up files, whatever you need to &hellip;">
+	<meta name="description" content="A while ago, we ran up against a hard file limit on our storage server. Within
+the main images directory, we subdivide our folders for every user. &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,77 @@ batch jobs, checks your database, cleans up files, whatever you need to &hellip;
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/05/10/hard-file-limits/">
+		
+			Hard File Limits</a>
+	</h2>
+	<div class="entry-content">
+		<p>A while ago, we ran up against a hard file limit on our storage server. Within
+the main images directory, we subdivide our folders for every user. Well, it
+turns out that on the <a href="http://en.wikipedia.org/wiki/Ext3">ext3</a> filesystem,
+there is a hard limit of 32k folders within a folder. So when our 32001th user
+signed up, they were welcomed by not being able to upload any content to their
+nonexistent user folder.</p>
+
+<p>So there we were…</p>
+
+<p>Several calls to our hosting provider <a href="http://www.rackspace.com">Rackspace</a>
+yielded no elegant solution where we could simply reconfigure the limit. If we
+wanted to continue on with our file structure the way it was, we would need to
+migrate our data off the server, reformat the filesystem to
+<a href="http://en.wikipedia.org/wiki/Xfs">xfs</a>, and migrate back on. That would take
+us down for close to 36 hours. Needless to say that was not an option.</p>
+
+<p>The other option was to quietly close registration, and start a mad dash to
+implement programmatic partitioning. We created 5 folders next to our root
+user content folder, numbered them 2-5, and assigned current users the
+partition of 1. New users would be assigned a randomly generated number at
+registration. Then we wrote a few quick utility methods to determine which
+user belonged to which partition and began the quickest rewrite of file upload
+system the world has ever seen.</p>
+
+<p>Downtime : 0</p>
+
+<p>In retrospect, someone (me) should have taken a scrutinizing look at the
+characteristics of the filesystem that would be responsible for storing all of
+our users&#8217; content.</p>
+
+<p>Lesson learned, the hard way.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-10T00:00:00-04:00" pubdate data-updated="true">May 10<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">

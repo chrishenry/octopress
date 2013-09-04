@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="In life there are people who will consider themselves Jacks of all Trades. But
-as the saying goes, they are master of none. Websites will always &hellip;">
+	<meta name="description" content="Runaway queries on MySQL can be a real problem. If a long-running query locks
+up important tables, other queries trying to query the table will will &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,92 @@ as the saying goes, they are master of none. Websites will always &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/07/16/save-mysql/">
+		
+			Save MySQL</a>
+	</h2>
+	<div class="entry-content">
+		<p>Runaway queries on MySQL can be a real problem. If a long-running query locks
+up important tables, other queries trying to query the table will will placed
+in a queue. Each new query is a new connection to MySQL. Once you hit
+max_connections, your MySQL connection code will start to fail. Depending on
+how errors are handled at this stage of the request, this could mean total
+disaster for a site.</p>
+
+<p>Although there is no way to fix this within the MySQL server itself, a bit of
+clever scripting can be run via cron to check if there is a problem.
+Presenting : save_mysql</p>
+
+<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/null |grep -A1 -B5 -E
+&#8220;Time: [1-9][0-9][0-9]?&#8221; |grep -E &#8220;Id\:\ |State\:\ &#8221; |/usr/bin/perl -n -e
+&#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_; }&#8221; |grep -E &#8220;\ State\:\
+Sending\ data$|\ State\:\ Sorting\ result$&#8221; |awk {&#8216;print $2&#8217;} |xargs -iTHREAD
+-r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/null</p>
+
+<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/nullThis line will grab
+a list of all the currently running queries and commands from the MySQL
+server. It also redirects any error output to the blackhole. It produces
+output like so:</p>
+
+<pre><code>*************************** 1. row ***************************Id: 842863User: adminHost: localhostdb: NULLCommand: QueryTime: 0State: NULLInfo: show full processlist
+</code></pre>
+
+<p>grep -A1 -B5 -E &#8220;Time: [1-9][0-9][0-9]?&#8221;The grep here will grab line directly
+below and the 5 above if the time is over 100 seconds. This line can be
+tweaked to grep for less time. My preference is between 30 seconds and a
+minute. So instead of[1-9][0-9][0-9]you&#8217;d have[3-9][0-9] (30 seconds) OR
+[6-9][0-9] (60 seconds)</p>
+
+<p>grep -E &#8220;Id\:\ |State\:\ &#8220;This will filter out the other lines from the
+previous grep and just grab the MySQL process ID and it&#8217;s State.</p>
+
+<p>/usr/bin/perl -n -e &#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_;
+}&#8221;Quick Perl script to put id and state from the step above on the same line.</p>
+
+<p>grep -E &#8220;\ State\:\ Sending\ data$|\ State\:\ Sorting\ result$&#8221;This line will
+filter out the queries being run that are in the state &#8216;Sending Data&#8217; or
+&#8216;Sorting Result&#8217;. These are both states where it&#8217;s safe to kill the query.</p>
+
+<p>awk {&#8216;print $2&#8217;}This line grabs the query ID from the output.</p>
+
+<p>xargs -iTHREAD -r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/nullLastly, this
+line will grab the ID from above to the mysqladmin kill command, effectively
+killing the query.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-16T00:00:00-04:00" pubdate data-updated="true">Jul 16<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -681,77 +767,6 @@ the toolbar on users.</p>
 
 
 	<a class='category' href='/blog/categories/security/'>Security</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/05/10/hard-file-limits/">
-		
-			Hard File Limits</a>
-	</h2>
-	<div class="entry-content">
-		<p>A while ago, we ran up against a hard file limit on our storage server. Within
-the main images directory, we subdivide our folders for every user. Well, it
-turns out that on the <a href="http://en.wikipedia.org/wiki/Ext3">ext3</a> filesystem,
-there is a hard limit of 32k folders within a folder. So when our 32001th user
-signed up, they were welcomed by not being able to upload any content to their
-nonexistent user folder.</p>
-
-<p>So there we were…</p>
-
-<p>Several calls to our hosting provider <a href="http://www.rackspace.com">Rackspace</a>
-yielded no elegant solution where we could simply reconfigure the limit. If we
-wanted to continue on with our file structure the way it was, we would need to
-migrate our data off the server, reformat the filesystem to
-<a href="http://en.wikipedia.org/wiki/Xfs">xfs</a>, and migrate back on. That would take
-us down for close to 36 hours. Needless to say that was not an option.</p>
-
-<p>The other option was to quietly close registration, and start a mad dash to
-implement programmatic partitioning. We created 5 folders next to our root
-user content folder, numbered them 2-5, and assigned current users the
-partition of 1. New users would be assigned a randomly generated number at
-registration. Then we wrote a few quick utility methods to determine which
-user belonged to which partition and began the quickest rewrite of file upload
-system the world has ever seen.</p>
-
-<p>Downtime : 0</p>
-
-<p>In retrospect, someone (me) should have taken a scrutinizing look at the
-characteristics of the filesystem that would be responsible for storing all of
-our users&#8217; content.</p>
-
-<p>Lesson learned, the hard way.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-10T00:00:00-04:00" pubdate data-updated="true">May 10<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
 
 
 </div>

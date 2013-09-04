@@ -7,8 +7,9 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="MySQL&#8217;s InnoDB engine is really great. Row-level locking is amazing in tables
-where there is heavy concurrency. Write buffering is also &hellip;">
+	<meta name="description" content="I&#8217;m a huge fan of Gmail and Google Apps for
+many reasons. I
+love the new redesign, and how they&#8217;re finally promoting consistency across &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +80,85 @@ where there is heavy concurrency. Write buffering is also &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/08/16/gmail-actually-gets-something-really-wrong/">
+		
+			Gmail Actually Gets Something Really Wrong.</a>
+	</h2>
+	<div class="entry-content">
+		<p>I&#8217;m a huge fan of Gmail and Google Apps for
+<a href="http://chr.ishenry.com/2009/04/26/just-manage-it-for-me/">many</a> reasons. I
+love the new redesign, and how they&#8217;re finally promoting consistency across
+their major webapps. It makes me feel like the web could <em>really</em> be a viable
+alternative alternative to desktop software. I can even deal with
+<a href="http://www.avc.com/a_vc/2010/06/gmail-performance-issues.html">slowness</a> in
+Gmail, given the amount of work they need to do in order to keep your inbox
+snappy. They need to index every message, which means parsing every message,
+converting every attachment, and linking it the search architecture. In real
+time. Not easy…</p>
+
+<p>However, what I found today, was completely inexcusable: Gmail&#8217;s clipping
+&#8220;feature&#8221;. This is definitely a feature that sounds a lot more like a bug than
+a helpful tool.</p>
+
+<p><a href="/images/user/gmail_clipping.png"><img src="/images/user/gmail_clipping.png" alt="Gmail Message clipping" /></a></p>
+
+<p>What <em>should</em> be here is a few more links, some mouse text that contains our
+mailing address and unsubscribe links. What I did not show in this screenshot
+is the capacity for destruction this feature has on HTML emails. When the
+email is &#8216;clipped&#8217;, the HTML is broken at a random place, and not displayed.
+If your message is clipped at an inopportune place, there goes your entire
+HTML layout. In the best case, your HTML is simply truncated, leaving users
+with only a piece of their email.</p>
+
+<p>As the entity sending this email, the responsibility falls on me to make sure
+that I send emails that are accessible, conform to CAN-SPAM, and are pleasing
+to the eye. Gmail bones me on three of these goals. Thanks to a
+<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">lack</a> of
+<a href="http://tinyurl.com/2asve9s">documentation</a> as to how long an email can be
+without invoking the clipping feature. Most importantly, my users have no
+clear to unsubscribe from the list, since the most likely links to be clipped
+are the unsubscribe links.</p>
+
+<p>I agree that
+<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">performance</a>
+is king, but never at the cost of the user.</p>
+
+<p><strong>Update:</strong> It seems like Gmail limits messages to around 102k characters before clipping. So the solution seems to be running HTML through a compressor. I found a pretty good one <a href="http://www.textfixer.com/html/compress-html-compression.php">here</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-16T00:00:00-04:00" pubdate data-updated="true">Aug 16<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -716,82 +796,6 @@ that just aren&#8217;t important enough to get done.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/01/29/sphinx-full-text-search-engine/">
-		
-			Sphinx Full Text Search Engine</a>
-	</h2>
-	<div class="entry-content">
-		<p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
-best solution for all your searching needs. Then I realized that it was
-horribly slow, and mixing with complex joins completely destroyed any chances
-of using MySQL indexes in any way that would make sense or get decent results.
-The solution to fast and scalable free text search on any website is, of
-course, a Full Text search engine.</p>
-
-<p>There are a few different ones out there. After a brief affair with Lucene, I
-settled on Sphinx. Sphinx is easy to install, even on 64-bit machines, and is
-architected in a way that makes a lot of sense for the web. The following
-steps were performed on a Red Hat machine. Don&#8217;t skip the mysql-dev install,
-even if you already MySQL installed.</p>
-
-<figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
-</span><span class='line'>yum install mysql-dev*
-</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
-</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
-</span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Once installed, it&#8217;s fairly simple to start playing with the packaged example
-data and queries. The php APIs make integration easy, either to build a
-service, or use locally as a substitute for MySQL. In fact, as long as the
-index can be kept reasonably up to date, Sphinx is a better choice for
-complicated sorts than MySQL.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-29T00:00:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
 
 
 </div>
