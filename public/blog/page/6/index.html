@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="For a very long time, I was convinced that a FULLTEXT index in MySQL was the
-best solution for all your searching needs. Then I realized that it was &hellip;">
+	<meta name="description" content="Everybody procrastinates. Some tasks that get pushed off don&#8217;t matter, it just
+gets done later. Some tasks that go over deadline result in &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,69 @@ best solution for all your searching needs. Then I realized that it was &hellip;
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/02/12/japanese-inspection/">
+		
+			Japanese Inspection</a>
+	</h2>
+	<div class="entry-content">
+		<p>Everybody procrastinates. Some tasks that get pushed off don&#8217;t matter, it just
+gets done later. Some tasks that go over deadline result in profanities and
+bloody noses. But every once in a while, tasks come along that have an
+expiration date. As in, if it doesn&#8217;t get done by a certain time, it doesn&#8217;t
+matter.</p>
+
+<blockquote><p>You ever heard of a &#8220;Japanese Inspection?&#8221; Japanese Inspection, you see,
+when the Japs take in a load of lettuce they&#8217;re not sure they wanna let in the
+country, why they&#8217;ll just let it sit there on the dock &#8216;til they get good and
+ready to look at, But then of course, it&#8217;s all gone rotten… ain&#8217;t nothing left
+to inspect. You see, lettuce is a perishable item…like you two monkeys.</p></blockquote>
+
+<ul>
+<li><a href="http://www.imdb.com/title/tt0099371/">Big John, <em>Days of Thunder</em></a></li>
+</ul>
+
+
+<p>What Big John was referring to was the fact that all he had to do was ignore
+Cole and Rowdy until they didn&#8217;t any fight left in them. Tasks can be just the
+same way. Eventually, the need for the task to be done just goes away, or
+starts to smell. The only thing that really matters is being able to tell the
+difference between the things that <strong>really</strong> need to get done, and the things
+that just aren&#8217;t important enough to get done.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-12T00:00:00-05:00" pubdate data-updated="true">Feb 12<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -670,97 +733,6 @@ between apps is probably even more important than pushing App World.</p>
 
 
 	<a class='category' href='/blog/categories/mobile/'>Mobile</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/07/25/gearman/">
-		
-			Gearman</a>
-	</h2>
-	<div class="entry-content">
-		<p>Users have high expectations of web apps in terms of performance,
-responsiveness and tons of features. Normally, you&#8217;re only allowed two of any
-list of three really cool things. In the case of Web Apps, that would be true.
-Most will find some compromise of between performance / responsiveness and
-tons of features. More features usually equals less responsiveness, depending
-on the feature and scale.</p>
-
-<p>Enter Gearman. <a href="http://bit.ly/1Wrot">Gearman</a> is a queuing system that allows
-work to be farmed out to other servers. Most importantly, it allows for
-intense tasks to be queued and performed in the background. This means that
-when a user performs an action that could potentially take a long time
-(sending notification emails, updating Full Text indexes, etc), that slow task
-can be queued to run in the background, and the page can be sent to the user,
-keeping things snappy.</p>
-
-<p>Gearman is pretty simple to install on Red Hat.</p>
-
-<p>download gearman from server> wget <a href="http://launchpad.net/gearmand/trunk/0.8/+download%0A/gearmand-0.8.tar.gz">http://launchpad.net/gearmand/trunk/0.8/+d
-ownload/gearmand-0.8.tar.gz</a></p>
-
-<p>unzip and move into the directory> tar -xvzf gearmand-0.8.tar.gz> cd
-gearmand-0.8</p>
-
-<p>Red Hat didn&#8217;t have some dependencies. The next few steps will vary depending
-on your *nix distro.</p>
-
-<p>Install the libevent developer library.> yum install libevent-devel</p>
-
-<p>Install the e2fsprogs developer library> yum install e2fsprogs-devel</p>
-
-<p>configure and install> ./configure> make> make install</p>
-
-<p>/<strong> Net Gearman </strong>/</p>
-
-<p>download php extension from the pecl repo> wget <a href="http://pecl.php.net/get/gearman-0.4.0.tgz">http://pecl.php.net/get/gearm
-an-0.4.0.tgz</a></p>
-
-<p>untar> tar -xvf gearman-0.4.0.tgz</p>
-
-<p>build the extension> phpize> ./configure> make> make test> make install</p>
-
-<p>Add the extension to the php.ini</p>
-
-<p>[gearman]extension=gearman.so</p>
-
-<p>And you&#8217;re all set!</p>
-
-<p>Integration will depend on if you decide to use the php extension, and how
-encapsulated the code base is. I highly recommend using the pecl extension, as
-it provides great implementations of the client and worker. <a href="http://bit.ly/TunGR"> and Gearman will
-save you.</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-25T00:00:00-04:00" pubdate data-updated="true">Jul 25<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
 
 
 </div>

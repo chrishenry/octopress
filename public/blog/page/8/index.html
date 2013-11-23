@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="A while ago, we ran up against a hard file limit on our storage server. Within
-the main images directory, we subdivide our folders for every user. &hellip;">
+	<meta name="description" content="&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
+Rackspace tech And bad people, too. On one occasion, I &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,75 @@ the main images directory, we subdivide our folders for every user. &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/05/16/framed--hijacked/">
+		
+			Framed / Hijacked</a>
+	</h2>
+	<div class="entry-content">
+		<p>&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
+<a href="http://www.Rackspace.com">Rackspace</a> tech</p>
+
+<p>And bad people, too. On one occasion, I found that someone had hijacked a
+domain similar to ours, and framed our site. Once they had the frame set up,
+they started sending out spam from the hijacked domain. The legitimacy they
+gained from having our site at their domain was really, really scary. Users
+clicking links from their spam were sent to a site that was actually ours.
+Luckily, we were alerted to this issue before any real damage was done.</p>
+
+<p>There wasn&#8217;t much I could do server-side to fight this, without having to dig
+into a bunch of PHP. However, checking the location window.top against what I
+knew to be my domain turned out to be decent defense.</p>
+
+<p>if (top.location != self.location) { alert(&#8220;someone is doing something
+bad…&#8221;);}</p>
+
+<p>Of course, this particular defense will also complain about anyone who has
+framed your site for any other reason. For example, the Digg toolbar frames
+sites. So if anyone hits your site using the Digg toolbar, they&#8217;ll be treated
+to your warning as well. But whether Digg should be framing sites in this way
+seems to be <a href="http://bit.ly/15snr9">controversial</a> enough.</p>
+
+<p>Update : <a href="http://su.pr">su.pr</a>, which combines a URL shortener with the
+StumbleUpon toolbar, has even further complicated the framing situation. (Full
+disclosure : I am a user.) Clicking any su.pr link will open the shortened URL
+with the StumbleUpon toolbar. This has great potential for authors, who can
+use the toolbar to increase traffic to their site, but at the cost of forcing
+the toolbar on users.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-05-16T00:00:00-04:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/security/'>Security</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">

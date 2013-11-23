@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-09-03T23:00:20-04:00</updated>
+  <updated>2013-11-23T17:55:53-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,21 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Eggs Benedict and Burgers]]></title>
+    <link href="http://chr.ishenry.com/2013/10/06/eggs-benedict-and-burgers/"/>
+    <updated>2013-10-06T12:33:00-04:00</updated>
+    <id>http://chr.ishenry.com/2013/10/06/eggs-benedict-and-burgers</id>
+    <content type="html"><![CDATA[<p>Since moving to New York, and discovering that there are more restaurants per square mile than any other place in the world, I&#8217;ve started eating out a lot. A probably unhealthy amount. But that&#8217;s OK, because everyone&#8217;s got to eat, right? And after eating at lots of places, I&#8217;ve discovered that there are certain gold standard dishes that most places are beholden to. The two that I&#8217;ve focused on are Eggs Benedict, and the humble hamburger. These are two meals that are basic, but can be riffed on infinitely.</p>
+
+<p>Eggs Benedict is arguably the more complex of the two, given <a href="http://www.youtube.com/watch?v=z3eLeDNK1fo">how hard it can be to poach a goddamn egg properly</a>. Also, since it&#8217;s a breakfast, a bad eggs benny can put a serious damper on your day. However, despite the whole poaching challenge, I&#8217;ve rarely seen it mangled. There&#8217;s even room for quite a bit of variance. A bit of apple cider vinegar in the water can impart a tangy flavor. A few seconds can make the difference between a completely liquid yolk and a more viscous one.  Then we get to the bread (soda bread being a unique standout, at <a href="http://wilfieandnell.com/">Wilfie and Nell</a>. This is the foundation of the dish, so it can really make or break it. For example, an overdone, rubbery English muffin can be so challenging to even the sharpest steak knife that you wind up shredding the whole meal. Breakfast should never be a workout. Hollandaise sauce is yet another canvas which can be painted on in endless ways. It accepts most seasonings surprisingly well. Dill is my favorite so far. Then you have the pig portion of the meal. Ham steak, streaky bacon, it&#8217;s all fair game.</p>
+
+<p>The you have the burger, the old American stalwart. Again, super hard to screw up, but even harder to stand out. You also don&#8217;t have to wait in line at Umami Burger to get a good one. The blend of meat that goes into the patty (LaFrieda is king here), the cheese, bun all have a universe of possibilities. In my opinion, the more fat you start with in your meat, the better. Any burger that has short rib within 10 feet of it&#8217;s name is almost guaranteed to have a great flavor and texture. As pricy as it was, the $25 Black Label burger at <a href="http://www.minettatavernny.com/">Minetta Tavern</a> was really something special. The patty there was made of prime dry-aged neef cuts. The choice of caramelized onions was awesome, as was skipping the cheese, as the patty stood completely on its own. Cave aged cheddar, which <a href="http://peelsnyc.com/">Peels</a> employs, has made for a notable meal. And of course, the bun is there to keep your fingers (relatively) clean, or just fall apart. It doesn&#8217;t even have to be a traditional bun. <a href="http://whitmansnyc.com/">Whitman&#8217;s</a> makes a patty melt that comes between two slices of a Blue Ribbon Pullman loaf.</p>
+
+<p>The best thing about these two dishes is that they&#8217;ll never get old. As long as restaurants keep experiments, coming and going, there&#8217;s always going to be an awesome variation!</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[the wrong path]]></title>
@@ -610,23 +625,6 @@ nanoseconds in the date command.</li>
 
 <p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
 repo.</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[The Care + Feeding of a MongoDB Cluster]]></title>
-    <link href="http://chr.ishenry.com/2012/10/14/the-care--feeding-of-a-mongodb-cluster/"/>
-    <updated>2012-10-14T00:00:00-04:00</updated>
-    <id>http://chr.ishenry.com/2012/10/14/the-care&#8211;feeding-of-a-mongodb-cluster</id>
-    <content type="html"><![CDATA[<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
-those interested, here are the slides.</p>
-
-<p><strong> <a href="http://www.slideshare.net/chrishnry/the-care-feeding-of-a-mongodb-cluster">The Care + Feeding of a Mongodb Cluster</a> </strong> from <strong><a href="http://www.slideshare.net/chrishnry">Chris Henry</a></strong></p>
-
-<iframe src="http://www.slideshare.net/slideshow/embed_code/14725427" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
-
-
-<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/chrishnry/the-care-feeding-of-a-mongodb-cluster" title="The Care + Feeding of a Mongodb Cluster" target="_blank">The Care + Feeding of a Mongodb Cluster</a> </strong> from <strong><a href="http://www.slideshare.net/chrishnry" target="_blank">Chris Henry</a></strong> </div></p>
 ]]></content>
   </entry>
   

@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Runaway queries on MySQL can be a real problem. If a long-running query locks
-up important tables, other queries trying to query the table will will &hellip;">
+	<meta name="description" content="Users have high expectations of web apps in terms of performance,
+responsiveness and tons of features. Normally, you&#8217;re only allowed two of &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,97 @@ up important tables, other queries trying to query the table will will &hellip;"
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/07/25/gearman/">
+		
+			Gearman</a>
+	</h2>
+	<div class="entry-content">
+		<p>Users have high expectations of web apps in terms of performance,
+responsiveness and tons of features. Normally, you&#8217;re only allowed two of any
+list of three really cool things. In the case of Web Apps, that would be true.
+Most will find some compromise of between performance / responsiveness and
+tons of features. More features usually equals less responsiveness, depending
+on the feature and scale.</p>
+
+<p>Enter Gearman. <a href="http://bit.ly/1Wrot">Gearman</a> is a queuing system that allows
+work to be farmed out to other servers. Most importantly, it allows for
+intense tasks to be queued and performed in the background. This means that
+when a user performs an action that could potentially take a long time
+(sending notification emails, updating Full Text indexes, etc), that slow task
+can be queued to run in the background, and the page can be sent to the user,
+keeping things snappy.</p>
+
+<p>Gearman is pretty simple to install on Red Hat.</p>
+
+<p>download gearman from server> wget <a href="http://launchpad.net/gearmand/trunk/0.8/+download%0A/gearmand-0.8.tar.gz">http://launchpad.net/gearmand/trunk/0.8/+d
+ownload/gearmand-0.8.tar.gz</a></p>
+
+<p>unzip and move into the directory> tar -xvzf gearmand-0.8.tar.gz> cd
+gearmand-0.8</p>
+
+<p>Red Hat didn&#8217;t have some dependencies. The next few steps will vary depending
+on your *nix distro.</p>
+
+<p>Install the libevent developer library.> yum install libevent-devel</p>
+
+<p>Install the e2fsprogs developer library> yum install e2fsprogs-devel</p>
+
+<p>configure and install> ./configure> make> make install</p>
+
+<p>/<strong> Net Gearman </strong>/</p>
+
+<p>download php extension from the pecl repo> wget <a href="http://pecl.php.net/get/gearman-0.4.0.tgz">http://pecl.php.net/get/gearm
+an-0.4.0.tgz</a></p>
+
+<p>untar> tar -xvf gearman-0.4.0.tgz</p>
+
+<p>build the extension> phpize> ./configure> make> make test> make install</p>
+
+<p>Add the extension to the php.ini</p>
+
+<p>[gearman]extension=gearman.so</p>
+
+<p>And you&#8217;re all set!</p>
+
+<p>Integration will depend on if you decide to use the php extension, and how
+encapsulated the code base is. I highly recommend using the pecl extension, as
+it provides great implementations of the client and worker. <a href="http://bit.ly/TunGR"> and Gearman will
+save you.</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-25T00:00:00-04:00" pubdate data-updated="true">Jul 25<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -698,75 +789,6 @@ refactored, and how.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/05/16/framed--hijacked/">
-		
-			Framed / Hijacked</a>
-	</h2>
-	<div class="entry-content">
-		<p>&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
-<a href="http://www.Rackspace.com">Rackspace</a> tech</p>
-
-<p>And bad people, too. On one occasion, I found that someone had hijacked a
-domain similar to ours, and framed our site. Once they had the frame set up,
-they started sending out spam from the hijacked domain. The legitimacy they
-gained from having our site at their domain was really, really scary. Users
-clicking links from their spam were sent to a site that was actually ours.
-Luckily, we were alerted to this issue before any real damage was done.</p>
-
-<p>There wasn&#8217;t much I could do server-side to fight this, without having to dig
-into a bunch of PHP. However, checking the location window.top against what I
-knew to be my domain turned out to be decent defense.</p>
-
-<p>if (top.location != self.location) { alert(&#8220;someone is doing something
-bad…&#8221;);}</p>
-
-<p>Of course, this particular defense will also complain about anyone who has
-framed your site for any other reason. For example, the Digg toolbar frames
-sites. So if anyone hits your site using the Digg toolbar, they&#8217;ll be treated
-to your warning as well. But whether Digg should be framing sites in this way
-seems to be <a href="http://bit.ly/15snr9">controversial</a> enough.</p>
-
-<p>Update : <a href="http://su.pr">su.pr</a>, which combines a URL shortener with the
-StumbleUpon toolbar, has even further complicated the framing situation. (Full
-disclosure : I am a user.) Clicking any su.pr link will open the shortened URL
-with the StumbleUpon toolbar. This has great potential for authors, who can
-use the toolbar to increase traffic to their site, but at the cost of forcing
-the toolbar on users.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-16T00:00:00-04:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/security/'>Security</a>
 
 
 </div>
