@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Best Practices | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/best-practices/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-11-23T17:55:53-05:00</updated>
+  <updated>2013-12-30T18:22:34-08:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
     <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
-    <updated>2012-08-13T00:00:00-04:00</updated>
+    <updated>2012-08-13T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
@@ -58,7 +58,7 @@ situations.</p>
   <entry>
     <title type="html"><![CDATA[Workflow with Synergy]]></title>
     <link href="http://chr.ishenry.com/2012/05/26/workflow-with-synergy/"/>
-    <updated>2012-05-26T00:00:00-04:00</updated>
+    <updated>2012-05-26T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/05/26/workflow-with-synergy</id>
     <content type="html"><![CDATA[<p>As a web developer working in lots of different areas, I have to use <a href="http://blog.behance.net/dev/developers-toolkit-chris-%0Ahenry">lots of
 different programs</a> to perform various tasks. Terminal for SSH, Eclipse for php, etc.
@@ -99,7 +99,7 @@ machine that will be up and running.</p>
   <entry>
     <title type="html"><![CDATA[New Years Actionable (non-whiner) Resolutions]]></title>
     <link href="http://chr.ishenry.com/2012/01/03/new-years-actionable-non-whiner-resolutions/"/>
-    <updated>2012-01-03T00:00:00-05:00</updated>
+    <updated>2012-01-03T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2012/01/03/new-years-actionable-non-whiner-resolutions</id>
     <content type="html"><![CDATA[<p>Normally, I've considered New Year's Resolutions to be for whiners, people who
 never actually accomplish anything, people who are normally on the
@@ -170,7 +170,7 @@ shit I want to learn. If I'm feeling really frisky, get back into a band.</p></l
   <entry>
     <title type="html"><![CDATA[Distributed Updates]]></title>
     <link href="http://chr.ishenry.com/2011/06/25/distributed-updates/"/>
-    <updated>2011-06-25T00:00:00-04:00</updated>
+    <updated>2011-06-25T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2011/06/25/distributed-updates</id>
     <content type="html"><![CDATA[<p>Part of managing any large site involves writing scripts that will go through
 oyur data, make changes, merge things, remove things, do type transformations,
@@ -240,7 +240,7 @@ perform these processes in parallel.</p>
   <entry>
     <title type="html"><![CDATA[The Progress Bar Pysch]]></title>
     <link href="http://chr.ishenry.com/2011/03/12/the-progress-bar-pysch/"/>
-    <updated>2011-03-12T00:00:00-05:00</updated>
+    <updated>2011-03-12T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2011/03/12/the-progress-bar-pysch</id>
     <content type="html"><![CDATA[<p>A classic UX problems is communicating to users how long they'll have to wait
 before their task completes. A spinner or progress bar provides feedback that

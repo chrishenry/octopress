@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Consistency is key, in everything. People come to rely on trains, because they
-come on time. Devs rely on the environment which they develop in, &hellip;">
+	<meta name="description" content="Through a combination of unhealthy fears, paranoid tendencies, and luck, I&#8217;ve
+been able to avoid that unavoidable situation that every &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -84,6 +84,81 @@ come on time. Devs rely on the environment which they develop in, &hellip;">
     <article class="post">
 	<h2 class="title">
 		
+		<a href="/2010/09/26/it-happens-to-everyone/">
+		
+			It Happens to Everyone&#8230;</a>
+	</h2>
+	<div class="entry-content">
+		<p>Through a combination of unhealthy fears, paranoid tendencies, and luck, I&#8217;ve
+been able to avoid that unavoidable situation that every sysadmin fears:
+completely nuking a system. Until last Tuesday, when I did something really,
+really dumb. On the server that hosts
+<a href="http://chr.ishenry.com">http://chr.ishenry.com</a>, I had noticed a script,
+<a href="http://lmgtfy.com/?q=svcrack.py">svcrack.py</a>, running and consuming lots of
+resources, and bandwidth, as I would later find out from my hosting bill.</p>
+
+<p>Since I sure as hell wasn&#8217;t running that, I could only assume that someone had
+exploited my server and was using it to look for unsecured voip installations.
+Initially, I assumed killing the scripts and changing some passwords would be
+sufficient. However, checking in the server later, I found the same script
+running. All this is fair enough, as I am on Wordpress, a few versions behind,
+and there are enough folders with unhealthy permissions that I kind of
+deserved it. So after a few days of trying to lock things down, I got a bit
+desperate.</p>
+
+<p>Since svcrack is a python script, there was a good chance the best way to
+discourage my assailant would be to remove python. Great idea in theory, but
+it seemed my execution was a bit poor. It turns out running &#8216;yum remove
+python&#8217; is a great way to destroy your entire system. yum runs on python,
+which meant a reinstall would have to be done manually. Only problem, most of
+the shell bultins stopped working as well. cp, mv, ls all resulted in a
+&#8216;command not found&#8217; error. The best part of this situation: no backups. After
+all the <a href="http://www.codinghorror.com/blog/2009/12/international-backup-%0Aawareness-day.html">hubbub about blogs and
+backups</a> lately, it&#8217;s kind of amazing I missed this rather
+important detail.</p>
+
+<p>I&#8217;ve always considered data loss the cardinal sin in development, web or
+otherwise. However, I also never considered my personal site to be mission
+critical, or worthy of taking the the time for backups. But as they say, you
+never know what you have till it&#8217;s gone. I was lucky enough that mysql and
+apache were still running, and I was able to export everything, spin up a new
+server, and import. Even with no data loss, this is certainly a lesson
+learned. I am making a backup right now.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-26T00:00:00-07:00" pubdate data-updated="true">Sep 26<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
 		<a href="/2010/08/24/ode-to-the-environment/">
 		
 			Ode to the Environment</a>
@@ -150,7 +225,7 @@ ensure that it is always meets the goals of my business, no matter the cost.</p>
   
 
 
-<time datetime="2010-08-24T00:00:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2010</time></div>
+<time datetime="2010-08-24T00:00:00-07:00" pubdate data-updated="true">Aug 24<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -229,7 +304,7 @@ is king, but never at the cost of the user.</p>
   
 
 
-<time datetime="2010-08-16T00:00:00-04:00" pubdate data-updated="true">Aug 16<span>th</span>, 2010</time></div>
+<time datetime="2010-08-16T00:00:00-07:00" pubdate data-updated="true">Aug 16<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -310,7 +385,7 @@ MySQL machines, tuning this variable can be really helpful.</p>
   
 
 
-<time datetime="2010-07-30T00:00:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2010</time></div>
+<time datetime="2010-07-30T00:00:00-07:00" pubdate data-updated="true">Jul 30<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -377,7 +452,7 @@ network for creative professionals.</p></blockquote>
   
 
 
-<time datetime="2010-07-21T00:00:00-04:00" pubdate data-updated="true">Jul 21<span>st</span>, 2010</time></div>
+<time datetime="2010-07-21T00:00:00-07:00" pubdate data-updated="true">Jul 21<span>st</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -461,7 +536,7 @@ really upset they didn&#8217;t ask BP about that little safety measure.</p>
   
 
 
-<time datetime="2010-06-23T00:00:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2010</time></div>
+<time datetime="2010-06-23T00:00:00-07:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -543,7 +618,7 @@ you really like.</p>
   
 
 
-<time datetime="2010-06-16T00:00:00-04:00" pubdate data-updated="true">Jun 16<span>th</span>, 2010</time></div>
+<time datetime="2010-06-16T00:00:00-07:00" pubdate data-updated="true">Jun 16<span>th</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -618,7 +693,7 @@ devices.</p>
   
 
 
-<time datetime="2010-05-31T00:00:00-04:00" pubdate data-updated="true">May 31<span>st</span>, 2010</time></div>
+<time datetime="2010-05-31T00:00:00-07:00" pubdate data-updated="true">May 31<span>st</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -683,7 +758,7 @@ for an extended period of time, without have to do any serious management.</p>
   
 
 
-<time datetime="2010-05-03T00:00:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2010</time></div>
+<time datetime="2010-05-03T00:00:00-07:00" pubdate data-updated="true">May 3<span>rd</span>, 2010</time></div>
 	<div class="tags">
 
 
@@ -735,85 +810,11 @@ addresses as hostnames. For most MySQL users, this shouldn&#8217;t be an issue.<
   
 
 
-<time datetime="2010-04-02T00:00:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2010</time></div>
+<time datetime="2010-04-02T00:00:00-07:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2010</time></div>
 	<div class="tags">
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/02/22/sandboxes/">
-		
-			Sandboxes</a>
-	</h2>
-	<div class="entry-content">
-		<p>Setting up a sandbox environment has normally been a trivial task. Set up a
-vhost, get a copy of the database, build out the app, and start doing stuff.
-When &#8216;Stuff&#8217; is &#8216;Done&#8217; push the changes onto production, and bask in your own
-crapulence. That is, until your data set exceeds the limits of the sandbox,
-and the <a href="http://l.chr.ishenry.com/bbhcu">SOA</a> which is saving the day in
-production is becoming nothing but a headache in development.</p>
-
-<p>The basic sandbox environment for an app includes a reasonably recent data
-set, similar ( underpowered can be OK, depending ) hardware, the exact same
-versions of php, mysql and apache. Php, mysql and apache need to be configured
-exactly the same way as in production. In fact, as part of this process, it
-might be useful to pull down those ever so important configuration files, put
-them in a safe place. Perhaps source control (cough). Consistent configuration
-is <strong><em>extremely</em></strong> important. Bugs produced by configuration problems are
-notoriously hard to reproduce, and result in devs combing through code looking
-for bugs that don&#8217;t exist.</p>
-
-<p>Maintaining a few sandboxes should be a trivial endeavor. That is, until your
-project gets too big. A natural response to handling ever-growing problems is
-use a Service Oriented Architecture; that is, to shard off aspects of the app
-and dedicate hardware and resources to it. However, three or four shards
-later, multiplied by an environment for each developer, the guy who was doing
-sys admin work as needed just became full timer. Unfortunately, there&#8217;s no way
-around this, even with a clever sys admin, who can leave enough automated
-scripts around so that developers can <em>mostly</em> maintain their own environment.</p>
-
-<p>The fact of the matter is maintaining the development environment is one of
-the most important things a company can do. Close attention to detail in the
-sandbox will make all the difference in the deployment process. Changes in
-code base, file permissions and configuration can all be tested and deployed
-the same as in production. So every build to every sandbox (everyone builds
-daily, right?) is a chance for the development team to catch mistakes, and
-learn from them, before the big push. And if that fails, we all know how to
-handle a <a href="http://chr.ishenry.com/2009/05/25/crisis-mo/">crisis</a>.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-22T00:00:00-05:00" pubdate data-updated="true">Feb 22<span>nd</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
 
 
 </div>

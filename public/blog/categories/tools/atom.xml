@@ -4,7 +4,7 @@
   <title><![CDATA[Category: tools | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/tools/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-11-23T17:55:53-05:00</updated>
+  <updated>2013-12-30T18:22:34-08:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[RSS Resolution, and Blog Updates]]></title>
     <link href="http://chr.ishenry.com/2013/06/30/blog-updates/"/>
-    <updated>2013-06-30T20:40:00-04:00</updated>
+    <updated>2013-06-30T20:40:00-07:00</updated>
     <id>http://chr.ishenry.com/2013/06/30/blog-updates</id>
     <content type="html"><![CDATA[<p>After much neglect, and a few insane weeks, I've finally gotten the time to update a few things in my daily toolkit. First, RSS; I've decided to go all in with <a href="http://www.feedly.com" target="_blank">Feedly</a>. I've found it to be a great cross-platform candidate that's had to deal with a <a href="http://blog.feedly.com/2013/06/21/summary-of-the-last-100-days/">lot of scaling challenges</a> in a very, very short period of time. I give them a lot of credit for building a massive platform and being able to continue to add features to what looks like a web app with great potential. At the moment, my only real gripe would be a progress indicator in the browser of the iOS app.</p>
 
@@ -30,7 +30,7 @@
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
-    <updated>2013-01-27T00:00:00-05:00</updated>
+    <updated>2013-01-27T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Development | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/development/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-11-23T17:55:53-05:00</updated>
+  <updated>2013-12-30T18:22:34-08:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
     <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
-    <updated>2012-12-10T00:00:00-05:00</updated>
+    <updated>2012-12-10T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
@@ -55,7 +55,7 @@ repo.</a></p>
   <entry>
     <title type="html"><![CDATA[The Argument for Generalists in Web Development]]></title>
     <link href="http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development/"/>
-    <updated>2012-07-09T00:00:00-04:00</updated>
+    <updated>2012-07-09T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/07/09/the-argument-for-generalists-in-web-development</id>
     <content type="html"><![CDATA[<p>"An expert is one who knows more and more about less and less until he knows
 absolutely everything about nothing"
@@ -108,7 +108,7 @@ specialist might not be able to do by themselves.</p>
   <entry>
     <title type="html"><![CDATA[Development without Internet Access]]></title>
     <link href="http://chr.ishenry.com/2011/06/12/development-without-internet-access/"/>
-    <updated>2011-06-12T00:00:00-04:00</updated>
+    <updated>2011-06-12T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2011/06/12/development-without-internet-access</id>
     <content type="html"><![CDATA[<p>While flying to Austin for sxsw, I had a small programming task. Take a string
 of a few search terms, break it apart and highlight those terms in another
@@ -169,7 +169,7 @@ nothing about, and learn how do it via the Internet?</p>
   <entry>
     <title type="html"><![CDATA[Out of the Terminal]]></title>
     <link href="http://chr.ishenry.com/2010/07/21/out-of-the-terminal/"/>
-    <updated>2010-07-21T00:00:00-04:00</updated>
+    <updated>2010-07-21T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2010/07/21/out-of-the-terminal</id>
     <content type="html"><![CDATA[<p>Every once and a while I get to leave server-land and get to do some fun
 projects that involve doing something on the front end. The latest was
@@ -204,7 +204,7 @@ network for creative professionals.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Sphinx Full Text Search Engine]]></title>
     <link href="http://chr.ishenry.com/2010/01/29/sphinx-full-text-search-engine/"/>
-    <updated>2010-01-29T00:00:00-05:00</updated>
+    <updated>2010-01-29T00:00:00-08:00</updated>
     <id>http://chr.ishenry.com/2010/01/29/sphinx-full-text-search-engine</id>
     <content type="html"><![CDATA[<p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
 best solution for all your searching needs. Then I realized that it was

@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Ops | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/ops/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-11-23T17:55:53-05:00</updated>
+  <updated>2013-12-30T18:22:34-08:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
     <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
-    <updated>2012-08-13T00:00:00-04:00</updated>
+    <updated>2012-08-13T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
@@ -58,7 +58,7 @@ situations.</p>
   <entry>
     <title type="html"><![CDATA[Distributed Updates]]></title>
     <link href="http://chr.ishenry.com/2011/06/25/distributed-updates/"/>
-    <updated>2011-06-25T00:00:00-04:00</updated>
+    <updated>2011-06-25T00:00:00-07:00</updated>
     <id>http://chr.ishenry.com/2011/06/25/distributed-updates</id>
     <content type="html"><![CDATA[<p>Part of managing any large site involves writing scripts that will go through
 oyur data, make changes, merge things, remove things, do type transformations,
