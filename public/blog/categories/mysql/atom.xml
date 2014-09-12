@@ -4,7 +4,7 @@
   <title><![CDATA[Category: MySQL | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/mysql/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-12-30T18:22:34-08:00</updated>
+  <updated>2014-09-12T19:32:06-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
     <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
-    <updated>2013-03-08T22:46:00-08:00</updated>
+    <updated>2013-03-08T22:46:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
     <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I've done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
@@ -56,7 +56,7 @@
   <entry>
     <title type="html"><![CDATA[FizzBuzz-a-thon]]></title>
     <link href="http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon/"/>
-    <updated>2012-12-10T00:00:00-08:00</updated>
+    <updated>2012-12-10T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2012/12/10/fizzbuzz-a-thon</id>
     <content type="html"><![CDATA[<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
 basic concepts like loops, variables and operators. Having given the test to
@@ -95,7 +95,7 @@ repo.</a></p>
   <entry>
     <title type="html"><![CDATA[MySQL's INSERT SELECT, Replication, and You]]></title>
     <link href="http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you/"/>
-    <updated>2012-08-13T00:00:00-07:00</updated>
+    <updated>2012-08-13T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2012/08/13/mysqls-insert-select-replication-and-you</id>
     <content type="html"><![CDATA[<p>Whenever there are situations where data needs to be copied from table to
 table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
@@ -137,7 +137,7 @@ situations.</p>
   <entry>
     <title type="html"><![CDATA[MySQL Error 28]]></title>
     <link href="http://chr.ishenry.com/2011/11/02/mysql-error-28/"/>
-    <updated>2011-11-02T00:00:00-07:00</updated>
+    <updated>2011-11-02T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2011/11/02/mysql-error-28</id>
     <content type="html"><![CDATA[<p>Yesterday, I had to run a query for some statistics I needed. This was a query
 that I knew were going to be particularly nasty as it required sorting 1.3M
@@ -174,7 +174,7 @@ for this type of ad hoc query, this was exactly what we needed.</p>
   <entry>
     <title type="html"><![CDATA[MySQL and Linux swappiness]]></title>
     <link href="http://chr.ishenry.com/2010/07/30/mysql-and-linux-swappiness/"/>
-    <updated>2010-07-30T00:00:00-07:00</updated>
+    <updated>2010-07-30T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2010/07/30/mysql-and-linux-swappiness</id>
     <content type="html"><![CDATA[<p>MySQL's InnoDB engine is really great. Row-level locking is amazing in tables
 where there is heavy concurrency. Write buffering is also awesome for cases

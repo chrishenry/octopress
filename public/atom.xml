@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-12-30T18:22:34-08:00</updated>
+  <updated>2014-09-12T19:32:01-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[Inn on Randolph]]></title>
     <link href="http://chr.ishenry.com/2013/12/30/inn-on-randolph/"/>
-    <updated>2013-12-30T17:13:00-08:00</updated>
+    <updated>2013-12-30T17:13:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/12/30/inn-on-randolph</id>
     <content type="html"><![CDATA[<p>This Christmas, <a href="http://sequinsandbobbypins.com/">Jessica</a> and I took a trip to Napa Valley. In the past year, I&#8217;ve taken quite a few trips out to California, but most of them have been helicopter trips for work. I&#8217;ve flown in, done what I needed to do, and flown out, as quickly as possible. These trips have been grueling, as they were designed to get me home quickly, and never allowed any time for relaxation. It seemed important to take a trip focused on getting to know an area.</p>
 
@@ -33,7 +33,7 @@
   <entry>
     <title type="html"><![CDATA[Eggs Benedict and Burgers]]></title>
     <link href="http://chr.ishenry.com/2013/10/06/eggs-benedict-and-burgers/"/>
-    <updated>2013-10-06T12:33:00-07:00</updated>
+    <updated>2013-10-06T12:33:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/10/06/eggs-benedict-and-burgers</id>
     <content type="html"><![CDATA[<p>Since moving to New York, and discovering that there are more restaurants per square mile than any other place in the world, I&#8217;ve started eating out a lot. A probably unhealthy amount. But that&#8217;s OK, because everyone&#8217;s got to eat, right? And after eating at lots of places, I&#8217;ve discovered that there are certain gold standard dishes that most places are beholden to. The two that I&#8217;ve focused on are Eggs Benedict, and the humble hamburger. These are two meals that are basic, but can be riffed on infinitely.</p>
 
@@ -48,7 +48,7 @@
   <entry>
     <title type="html"><![CDATA[the wrong path]]></title>
     <link href="http://chr.ishenry.com/2013/09/03/the-wrong-path/"/>
-    <updated>2013-09-03T22:26:00-07:00</updated>
+    <updated>2013-09-03T22:26:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/09/03/the-wrong-path</id>
     <content type="html"><![CDATA[<p>Robert Frost extolled the path not taken in his famous poem. It was a tribute to bucking the trend, and finding a place that was your own. In the go go go world of the tech industry, there are fewer paths untrodden, and many of them look wrong. And yet there are just as many reasons to go along those paths. Those reasons are specific to each context, and may look sunnier or darker depending on what lays along that path.</p>
 
@@ -61,7 +61,7 @@
   <entry>
     <title type="html"><![CDATA[What it feels like to be DDoS'ed]]></title>
     <link href="http://chr.ishenry.com/2013/07/29/what-it-feels-like-to-be-ddosed/"/>
-    <updated>2013-07-29T23:02:00-07:00</updated>
+    <updated>2013-07-29T23:02:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/07/29/what-it-feels-like-to-be-ddosed</id>
     <content type="html"><![CDATA[<p>The internet is hostile. Not because of trolls or flame wars or your opinion on gay marriage, but because people want to destroy you. For absolutely no fucking reason. DDoS attacks are the scariest thing in the world to someone running a website.</p>
 
@@ -109,7 +109,7 @@
   <entry>
     <title type="html"><![CDATA[RSS Resolution, and Blog Updates]]></title>
     <link href="http://chr.ishenry.com/2013/06/30/blog-updates/"/>
-    <updated>2013-06-30T20:40:00-07:00</updated>
+    <updated>2013-06-30T20:40:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/06/30/blog-updates</id>
     <content type="html"><![CDATA[<p>After much neglect, and a few insane weeks, I&#8217;ve finally gotten the time to update a few things in my daily toolkit. First, RSS; I&#8217;ve decided to go all in with <a href="http://www.feedly.com" target="_blank">Feedly</a>. I&#8217;ve found it to be a great cross-platform candidate that&#8217;s had to deal with a <a href="http://blog.feedly.com/2013/06/21/summary-of-the-last-100-days/">lot of scaling challenges</a> in a very, very short period of time. I give them a lot of credit for building a massive platform and being able to continue to add features to what looks like a web app with great potential. At the moment, my only real gripe would be a progress indicator in the browser of the iOS app.</p>
 
@@ -123,7 +123,7 @@
   <entry>
     <title type="html"><![CDATA[GReader is going away, and I'm not that sad]]></title>
     <link href="http://chr.ishenry.com/2013/06/09/greader-is-going-away/"/>
-    <updated>2013-06-09T13:15:00-07:00</updated>
+    <updated>2013-06-09T13:15:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/06/09/greader-is-going-away</id>
     <content type="html"><![CDATA[<p>There was a period where I was insanely into RSS. It was what I did every time I sat down at the computer. I fired up the Google Reader tab, and spent hours in there. I pored over everything, and it was a really fun game to try and get through everything and still retain at least one useful piece of information from my frenzied filtering. That was usually the case, as at that time, I had a pretty tightly curated list of feeds.</p>
 
@@ -141,7 +141,7 @@
   <entry>
     <title type="html"><![CDATA[Making Decisions with Graphite]]></title>
     <link href="http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite/"/>
-    <updated>2013-05-05T21:01:00-07:00</updated>
+    <updated>2013-05-05T21:01:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/05/05/making-decisions-with-graphite</id>
     <content type="html"><![CDATA[<p>The DevOps mentality of &#8220;measure everything&#8221; can be really helpful in key moments when you need to make decisions. In particular, deploying two things side by side for the purposes of measurement can yield super helpful decision making information. For example, the Behance team was wanted to see how <a href="http://php.net/manual/en/book.apc.php">APC</a> stacked up against <a href="http://pecl.php.net/package/ZendOpcache">Zend Opcode Cache</a>.</p>
 
@@ -174,7 +174,7 @@
   <entry>
     <title type="html"><![CDATA[Policy Fallacy]]></title>
     <link href="http://chr.ishenry.com/2013/04/14/policy-fallacy/"/>
-    <updated>2013-04-14T19:05:00-07:00</updated>
+    <updated>2013-04-14T19:05:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/04/14/policy-fallacy</id>
     <content type="html"><![CDATA[<blockquote><p>&#8220;The Navy is a master plan designed by geniuses for execution by idiots. If you&#8217;re not an idiot, but find yourself in the Navy, you can only operate well by pretending to be one.&#8221;
 -Herman Wouk, The Caine Mutiny</p></blockquote>
@@ -194,7 +194,7 @@
   <entry>
     <title type="html"><![CDATA[First Byte]]></title>
     <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
-    <updated>2013-04-01T23:29:00-07:00</updated>
+    <updated>2013-04-01T23:29:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
     <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
 
@@ -323,7 +323,7 @@
   <entry>
     <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
     <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
-    <updated>2013-03-08T22:46:00-08:00</updated>
+    <updated>2013-03-08T22:46:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
     <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I&#8217;ve done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
 
@@ -363,7 +363,7 @@
   <entry>
     <title type="html"><![CDATA[Resignation and Continuity]]></title>
     <link href="http://chr.ishenry.com/2013/02/21/resignation-and-continuity/"/>
-    <updated>2013-02-21T20:19:00-08:00</updated>
+    <updated>2013-02-21T20:19:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/21/resignation-and-continuity</id>
     <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful one. Ever since my sister&#8217;s Confirmation, when there were three collections, and the sermon admonished parents that every firstborn should be sent to seminary, I have been convinced that church and faith are entirely separately. Reading through history, it&#8217;s clear the papacy is more of a political organization than anything else. The wars, the influence over entire countries to go to war seem more the actions of an organization obsessed with power than one that existed to help people.</p>
 
@@ -381,7 +381,7 @@
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
-    <updated>2013-02-09T16:08:00-08:00</updated>
+    <updated>2013-02-09T16:08:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
     <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
@@ -418,7 +418,7 @@
   <entry>
     <title type="html"><![CDATA[app.net community]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/appnet-community/"/>
-    <updated>2013-02-09T12:08:00-08:00</updated>
+    <updated>2013-02-09T12:08:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/appnet-community</id>
     <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
 a great online community, and super eloquent in some cases.</p>
@@ -433,7 +433,7 @@ wrong</a>.</p>
   <entry>
     <title type="html"><![CDATA[Purpose]]></title>
     <link href="http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co/"/>
-    <updated>2013-02-07T00:00:00-08:00</updated>
+    <updated>2013-02-07T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/07/if-you-simply-ask-a-programmer-to-implement-a-feature-but-fail-to-share-the-purpose-or-the-justification-for-said-feature-all-you-get-is-a-code-monkey-code-monkeys-merely-translate-requirements-into-co</id>
     <content type="html"><![CDATA[<blockquote><p>If you simply ask a programmer to implement a feature, but fail to share the
 purpose or the justification for said feature, all you get is a code monkey.
@@ -448,7 +448,7 @@ do.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[Airport Security at it’s finest.]]></title>
     <link href="http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest/"/>
-    <updated>2013-02-03T00:00:00-08:00</updated>
+    <updated>2013-02-03T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/jfk_security.png" alt="" /></p>
 ]]></content>
@@ -457,7 +457,7 @@ do.</p></blockquote>
   <entry>
     <title type="html"><![CDATA[RWW's New Design]]></title>
     <link href="http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
-    <updated>2013-01-31T00:00:00-08:00</updated>
+    <updated>2013-01-31T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
     <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
 barrage of text. And it’s mostly text I’m not interested in reading.</p>
@@ -473,7 +473,7 @@ you don’t expect.</p>
   <entry>
     <title type="html"><![CDATA[Rigoletto]]></title>
     <link href="http://chr.ishenry.com/2013/01/29/rigoletto/"/>
-    <updated>2013-01-29T00:00:00-08:00</updated>
+    <updated>2013-01-29T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/29/rigoletto</id>
     <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
 the Met</p>
@@ -502,7 +502,7 @@ accessible.</p>
   <entry>
     <title type="html"><![CDATA[You’re not going to Eur - o - pee in there? - Jessica]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
-    <updated>2013-01-27T00:00:00-08:00</updated>
+    <updated>2013-01-27T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/euro_toilet.jpg" alt="" /></p>
 ]]></content>
@@ -511,7 +511,7 @@ accessible.</p>
   <entry>
     <title type="html"><![CDATA[SSH tunnels made easy]]></title>
     <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
-    <updated>2013-01-27T00:00:00-08:00</updated>
+    <updated>2013-01-27T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
     <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
 yet accessible tools for all those who need to run queries or examine
@@ -574,7 +574,7 @@ closed.</p>
   <entry>
     <title type="html"><![CDATA[Rules for London]]></title>
     <link href="http://chr.ishenry.com/2013/01/26/rules-for-london/"/>
-    <updated>2013-01-26T00:00:00-08:00</updated>
+    <updated>2013-01-26T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/01/26/rules-for-london</id>
     <content type="html"><![CDATA[<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
 Europe. Having never been to Europe, or on a real vacation for the last couple

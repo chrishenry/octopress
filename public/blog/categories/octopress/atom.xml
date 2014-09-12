@@ -4,7 +4,7 @@
   <title><![CDATA[Category: octopress | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/octopress/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2013-12-30T18:22:34-08:00</updated>
+  <updated>2014-09-12T19:32:06-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -16,7 +16,7 @@
   <entry>
     <title type="html"><![CDATA[RSS Resolution, and Blog Updates]]></title>
     <link href="http://chr.ishenry.com/2013/06/30/blog-updates/"/>
-    <updated>2013-06-30T20:40:00-07:00</updated>
+    <updated>2013-06-30T20:40:00-04:00</updated>
     <id>http://chr.ishenry.com/2013/06/30/blog-updates</id>
     <content type="html"><![CDATA[<p>After much neglect, and a few insane weeks, I've finally gotten the time to update a few things in my daily toolkit. First, RSS; I've decided to go all in with <a href="http://www.feedly.com" target="_blank">Feedly</a>. I've found it to be a great cross-platform candidate that's had to deal with a <a href="http://blog.feedly.com/2013/06/21/summary-of-the-last-100-days/">lot of scaling challenges</a> in a very, very short period of time. I give them a lot of credit for building a massive platform and being able to continue to add features to what looks like a web app with great potential. At the moment, my only real gripe would be a progress indicator in the browser of the iOS app.</p>
 
@@ -30,7 +30,7 @@
   <entry>
     <title type="html"><![CDATA[Switching to Octopress]]></title>
     <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
-    <updated>2013-02-09T16:08:00-08:00</updated>
+    <updated>2013-02-09T16:08:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
     <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn't quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
 
@@ -54,10 +54,9 @@
 
 <p>Once the posts were actually imported, there still needed to be a bit of massaging done to get them into shape. The yaml header was using tags instead of categories. In the source/_posts folder, a quick sed command got me what I wanted.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sed snippet  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="nv">$ </span>sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/&lt;sup&gt;tags/categories/&#39;</span>&lt;/sup&gt; *
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock Sed snippet lang:bash %}
+  $ sed -i '' 's/<sup>tags/categories/'</sup> *
+{% endcodeblock %}</p>
 
 <p>I do miss my old Wordpress blog, but it was definitely time for a change, as that had been my blog for years. Setting up Octopress has been a great experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
 ]]></content>
