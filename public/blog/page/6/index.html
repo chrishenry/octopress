@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Setting up a sandbox environment has normally been a trivial task. Set up a
-vhost, get a copy of the database, build out the app, and start doing &hellip;">
+	<meta name="description" content="Small, obscure optimizations sometimes have the potential to make the greatest
+impact. For example, every time a connection is made, MySQL will do a &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,58 @@ vhost, get a copy of the database, build out the app, and start doing &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/04/02/mysql-skip-name-resolve/">
+		
+			MySQL Skip-name-resolve</a>
+	</h2>
+	<div class="entry-content">
+		<p>Small, obscure optimizations sometimes have the potential to make the greatest
+impact. For example, every time a connection is made, MySQL will do a
+<a href="http://l.chr.ishenry.com/mbukt">DNS</a> lookup of the host that is trying to
+connect. If MySQL is handling many connections, the overhead of an extra DNS
+lookup can be hefty, simply because of the number of extra operations that
+have to be performed before MySQL can actually start doing actual <em>work</em>.</p>
+
+<p>Thankfully, there is an option in recent versions (4.1+) of MySQL that will
+instruct MySQL to skip the extra DNS lookup. It&#8217;s a fairly obscure option
+called <a href="http://l.chr.ishenry.com/elgrt">skip-name-resolve</a>. The only caveat to
+using this option is that the users defined the GRANT tables can only use IP
+addresses as hostnames. For most MySQL users, this shouldn&#8217;t be an issue.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-04-02T00:00:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -676,77 +728,6 @@ remember that managing bugs can be almost as effective as fixing them.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/10/14/whats-in-a-name/">
-		
-			What&#8217;s in a Name?</a>
-	</h2>
-	<div class="entry-content">
-		<p>It&#8217;s easy to get caught up in semantics. Figuring out the best names for
-variables, tables, columns, classes, etc is something that can eat up hours or
-even days of a development schedule. The idea is that the more precise the
-name, the better it is. The arguments for precision naming are many :</p>
-
-<ul>
-<li>Clear names help other developers read your code.<em> New developers who come on will immediately understand what&#8217;s happening</em> Calling well named methods of classes will read like sentence, further increasing readability.* Clear names will be able to help developers relate things in the UI to the code.</li>
-</ul>
-
-
-<p>Keep in mind, I&#8217;m not talking about <a href="http://en.wikipedia.org/wiki/Identifier_naming_convention">naming
-conventions</a>.
-Naming conventions are simply rules for choosing the character sequences. They
-don&#8217;t dictate what words you should assign to things in your code.</p>
-
-<p>Whatever names developers choose, they will get strewn throughout the layers
-of the application. Database, table and column names will be impacted.
-Variables in server-side scripts. Organization of classes into folders.
-Javascript file names. Memcache keys. URLs. Just like sand at the beach, the
-labels the dev team decided on goes everywhere you can think of. Invariably,
-the marketing team will bound down the hall, and announce the product is being
-rebranded. Jobs will become Gigs. Friends will become Followers. Application
-code will become confusing.</p>
-
-<p>New devs won&#8217;t get it anyway.</p>
-
-<p>The fact of the matter is overthinking naming is a good way to get nowhere
-fast. Keeping it simple and just take enough time to make sure that things
-make sense will give devs more time to focus on important stuff. Like being
-able to articulate the thought <a href="http://chr.ishenry.com/2009/07/01/explain-your-code/">process behind
-code</a>.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-10-14T00:00:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
 
 
 </div>

@@ -1,0 +1,11 @@
+---
+layout: post
+title: "A Return"
+date: 2014-09-12 19:48
+comments: true
+categories:
+ - life
+---
+
+The past year has been an extremely busy one. There have been a number of challenges placed in front of me that were somewhat all-consuming. While there's been plenty of introspection, much of it has been exceedingly private. My goal for the end of the year is to consider what I've learned in the past 9 or so months, and share it publicly. Wish me luck.
+

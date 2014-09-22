@@ -7,8 +7,9 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Through a combination of unhealthy fears, paranoid tendencies, and luck, I&#8217;ve
-been able to avoid that unavoidable situation that every &hellip;">
+	<meta name="description" content="The title of this post is a direct quote from a Facebook engineer presenting
+at the SXSW panel Beyond Lamp. Search
+is a critical function of any &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +80,80 @@ been able to avoid that unavoidable situation that every &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/10/09/search-is-hard/">
+		
+			Search Is Hard</a>
+	</h2>
+	<div class="entry-content">
+		<p>The title of this post is a direct quote from a Facebook engineer presenting
+at the SXSW panel <a href="http://my.sxsw.com/events/event/386">Beyond Lamp</a>. Search
+is a critical function of any site, but its gotten much much harder as Google
+has gotten better. To quote the Beyond Lamp panel one more time:</p>
+
+<blockquote><p>Search is always compared against Google, which is like comparing the canoe
+you just built to the QE2.</p></blockquote>
+
+<p>The difficulty of search is made apparent by the majority of sites, even major
+sites get it wrong. A large factor in the success of search is relevancy.
+Google takes into account <a href="http://en.wikipedia.org/wiki/PageRank">500 million
+variables</a> in determining how relevant
+content is. Not only that, but they also know who you are, what you&#8217;ve
+clicked, and can make decisions based on that to present pages that are more
+relevant to you. Facebook&#8217;s EdgeRank, LinkedIn&#8217;s Signal are other examples of
+search implementations that are vast in scale.</p>
+
+<p>In a startup, where time is of the essence and resources need to be begged,
+borrowed or stolen, search is a huge challenge. Like trying to be build the
+QE2 with nothing but a swiss army knife. Basic tools normally don&#8217;t cut it.
+MySQL&#8217;s FULLTEXT indexes are helpful, but start trying to implement basic IR
+techniques like booleans, and MySQL&#8217;s builtin functionality starts to lack the
+ability to get the results your want.</p>
+
+<p>There are ways to simplify building search.
+<a href="http://chr.ishenry.com/2010/01/28/sphinx-full-text-search-engine/">Sphinx</a>
+provides great matching capabilities and incredibly fast sorting. When
+combined with other data, Sphinx can be a great way to get users fast,
+meaningful results. The one downside with using a document based search engine
+is that there is little room for returning completely tailored results. Unlike
+MySQL, which allows you to slice and dice data in any way you choose, it is
+more difficult to return results that take into account relationship specific
+to users and documents. However, for most search tasks, it should function
+very well.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-10-09T00:00:00-04:00" pubdate data-updated="true">Oct 9<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -763,58 +838,6 @@ for an extended period of time, without have to do any serious management.</p>
 
 
 	<a class='category' href='/blog/categories/mysql/'>MySQL</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/04/02/mysql-skip-name-resolve/">
-		
-			MySQL Skip-name-resolve</a>
-	</h2>
-	<div class="entry-content">
-		<p>Small, obscure optimizations sometimes have the potential to make the greatest
-impact. For example, every time a connection is made, MySQL will do a
-<a href="http://l.chr.ishenry.com/mbukt">DNS</a> lookup of the host that is trying to
-connect. If MySQL is handling many connections, the overhead of an extra DNS
-lookup can be hefty, simply because of the number of extra operations that
-have to be performed before MySQL can actually start doing actual <em>work</em>.</p>
-
-<p>Thankfully, there is an option in recent versions (4.1+) of MySQL that will
-instruct MySQL to skip the extra DNS lookup. It&#8217;s a fairly obscure option
-called <a href="http://l.chr.ishenry.com/elgrt">skip-name-resolve</a>. The only caveat to
-using this option is that the users defined the GRANT tables can only use IP
-addresses as hostnames. For most MySQL users, this shouldn&#8217;t be an issue.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-04-02T00:00:00-04:00" pubdate data-updated="true">Apr 2<span>nd</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>
 
 
 </div>
