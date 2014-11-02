@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: ops | The Technician]]></title>
-  <link href="http://chr.ishenry.com/blog/categories/ops/atom.xml" rel="self"/>
+  <title><![CDATA[Category: research | The Technician]]></title>
+  <link href="http://chr.ishenry.com/blog/categories/research/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
   <updated>2014-11-02T16:58:33-05:00</updated>
   <id>http://chr.ishenry.com/</id>

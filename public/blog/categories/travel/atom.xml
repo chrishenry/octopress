@@ -4,7 +4,7 @@
   <title><![CDATA[Category: travel | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/travel/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2014-09-21T20:14:24-04:00</updated>
+  <updated>2014-11-02T16:58:33-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,27 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Flight Status]]></title>
+    <link href="http://chr.ishenry.com/2014/11/02/flight-status/"/>
+    <updated>2014-11-02T16:13:00-05:00</updated>
+    <id>http://chr.ishenry.com/2014/11/02/flight-status</id>
+    <content type="html"><![CDATA[<p>A few weeks ago, I was stuck in an airport for a couple hours. I was flying to San Francisco, and upon arriving to JFK, was informed my flight would be delayed several hours due to a <a href="http://en.wikipedia.org/wiki/Ground_delay_program">ground delay program</a>. A ground delay program is put in place when a particular airport's ability to keep up with traffic is diminished. If your destination airport has a program in place, your takeoff will be delayed until the destination recovers.</p>
+
+<p>A ground delay program is the operations equivalent of shedding load. ATC essentially stops allowing inbound flights to take off to allow for the extra time and care it takes for en-route flights to land safely. This is very similar to <a href="http://techblog.netflix.com/2011/12/making-netflix-api-more-resilient.html">Netflix's implementation of the CircuitBreaker pattern</a>, as it allows the resource having trouble to recover while keeping flights en route at a minimum.</p>
+
+<p>While I was stuck, I found there's a couple really neat tools that can tell you a little about your chances of getting there on time.</p>
+
+<h4>FAA</h4>
+
+<p>The FAA is kind enough to supply information on delays <a href="http://www.fly.faa.gov/flyfaa/usmap.jsp">here</a>. However, I found the information to be presented here a bit disingenuous. The map continued to show my destination airport as green, although flights were actually being held at departure points.</p>
+
+<h4>FlightStats.com</h4>
+
+<p><a href="http://www.flightstats.com">They</a> have a delay index where every destination airport is given a ranking of 0 through 5, 0 being totally on time, and 5 meaning go back to the airport bar and grab another beer. They also very helpfully track whether that index is trending up or down. These relate directly to how long a Ground Delay Program has been running. The longer that ground delay program runs, they more likely that index is going to going to trend up. They also provide a listing of flights to your destination airport that you can use to benchmark how delayed other flights and airlines are.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Rules for London]]></title>
