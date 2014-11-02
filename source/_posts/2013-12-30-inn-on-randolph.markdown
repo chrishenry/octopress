@@ -5,6 +5,7 @@ date: 2013-12-30 17:13
 comments: true
 categories:
  - vacation
+ - travel
  - wine
  - service
 ---
