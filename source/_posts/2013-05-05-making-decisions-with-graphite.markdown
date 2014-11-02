@@ -8,7 +8,6 @@ categories:
  - devops
  - graphite
  - statsd
- - DevOps
 ---
 
 The DevOps mentality of "measure everything" can be really helpful in key moments when you need to make decisions. In particular, deploying two things side by side for the purposes of measurement can yield super helpful decision making information. For example, the Behance team was wanted to see how [APC](http://php.net/manual/en/book.apc.php) stacked up against [Zend Opcode Cache](http://pecl.php.net/package/ZendOpcache).
