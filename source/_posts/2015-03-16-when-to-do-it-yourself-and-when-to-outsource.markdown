@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "When to do it yourself and when to outsource"
-date: 2015-03-16 20:07
+title: "When to do it yourself"
+date: 2015-03-31 20:07
 comments: true
 categories:
 ---
@@ -31,7 +31,12 @@ difficult because of defenses put in place by major ISPs. You need an IP with a
 good reputation, reverse DNS, a host that will allow massive amount of email to
 leave it’s datacenter, and the list goes on and on.
 
-
+There are also implicit supporting requirements of running a service that you
+need to have but shouldn't ever try to build. Project tracking, monitoring,
+graphing, and alerting are all examples of components that have executed
+extremely well by others, and can simply be turned on or deployed with minimal
+effort on the part of your team.
 
 In the end, what’s critical is spending your energy on the things that actually
-create impact. Knowing the tradeoffs to different solutions is
+create impact. Knowing the intersection of tradeoffs and priorities is what will
+keep your team on the path that gets the job done.
