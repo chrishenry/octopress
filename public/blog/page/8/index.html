@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="When making changes to a large site, it&#8217;s really helpful to have tools to
-measure how those changes affect performance. One of my favorite &hellip;">
+	<meta name="description" content="There are two things that cause sites to go down: Something breaks.
+Too much traffic. When things break, there&#8217;s nothing to do but failover, &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,87 @@ measure how those changes affect performance. One of my favorite &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/06/04/architecture-will-save-you/">
+		
+			Architecture Will Save You</a>
+	</h2>
+	<div class="entry-content">
+		<p>There are two things that cause sites to go down:</p>
+
+<ul>
+<li>Something breaks.</li>
+<li>Too much traffic.</li>
+</ul>
+
+
+<p>When things break, there&#8217;s nothing to do but <a href="http://chr.ishenry.com/2009/05/25/crisis-mo/">failover, examine, and
+fix</a>.</p>
+
+<p>But when there&#8217;s too much traffic, you&#8217;re screwed. The reason you&#8217;re getting
+so much traffic is because you&#8217;ve done something to earn it. Your site has
+made it on to Digg or Reddit or even TV. Failing over to a status page is
+admitting that you haven&#8217;t done your job. Staying up means that some people
+will see the site, maybe, but after a stupidly long wait. And then you become
+&#8216;that site&#8217; that was taken down by too much traffic.</p>
+
+<p>So as a web architect, this is your absolute worst moment. Everything you&#8217;ve
+done over the past months or years is falling down miserably in front of you,
+and there isn&#8217;t anything you can do at that moment that will make a meaningful
+difference. Unless, of course, your architecture is set up so you can increase
+capacity by just turning up more servers. Among software architects, this is
+know as being able to <a href="http://bit.ly/14YkWx">scale horizontally</a></p>
+
+<p>So when the site is being built, it&#8217;s extremely important that every choice
+you make supports scaling horizontally, with each layer able to be spread
+across many servers. Storage, session handling, database, apache […] are all
+different layers. They all need to be able to handle more capacity just by
+adding additional services to whatever layer needs it.</p>
+
+<p>Having the horizontal scalable quality is really difficult when trying to get
+a site out quickly. architecture is something that will often get de-
+prioritized because there is no immediate result. However, taking the extra
+time to build an application that follows the horizontally scalable patterns
+is extremely important. Without spending that extra time, you can easily be
+wiped out by the <a href="http://www.ndesign-studio.com/blog/updates/the-%0Adigg-effect/">Digg effect</a>.</p>
+
+<p>The biggest takeaway is when thinking about how to build your application,
+focus on making it scale horizontally. So when the moment comes when you get
+on Digg, you can spin up some more servers, sit back, and have a drink.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-04T00:00:00-04:00" pubdate data-updated="true">Jun 4<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/scalability/'>Scalability</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -549,7 +630,7 @@ Free up your time to do important things.</p>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+	<footer id="footer" class="inner">Copyright &copy; 2015
 
     Chris Henry
 
