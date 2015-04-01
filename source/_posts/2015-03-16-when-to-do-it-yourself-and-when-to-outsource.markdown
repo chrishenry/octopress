@@ -10,7 +10,7 @@ categories:
 
 Your time is extremely valuable, and execution of your product is everything.
 When it comes to building out key pieces of infrastructure, the choice of
-whether to build it yourself, outsource, or use open source is very personal,
+whether to build it, buy it, or use open source is very personal,
 and depends on what the business really needs.
 
 You do things yourself when you need fine grained control of a resource, or
@@ -24,7 +24,7 @@ Dead giveaways are things the user sees. Design and product development can’t 
 outsourced, nor can the actual execution of your product. Those stay in house,
 no matter what. Your ability to find your voice and interact with your customers
 is the thing that makes your product unique. If you cannot execute on your own
-product, you should find something different to do with your life.
+product, it's a strong indication you're not doing the right thing.
 
 However, depending on your needs, there gets to be a long list of things that
 aren’t your product, but are still critical to running your business. Campaign
