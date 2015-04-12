@@ -8,7 +8,7 @@
 
 	
 	<meta name="description" content="Part of managing any large site involves writing scripts that will go through
-oyur data, make changes, merge things, remove things, do type &hellip;">
+your data, make changes, merge things, remove things, do type &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -81,7 +81,7 @@ oyur data, make changes, merge things, remove things, do type &hellip;">
 	<div id="content" class="inner"><article class="post">
 	<h2 class="title">Distributed Updates</h2>
 	<div class="entry-content"><p>Part of managing any large site involves writing scripts that will go through
-oyur data, make changes, merge things, remove things, do type transformations,
+your data, make changes, merge things, remove things, do type transformations,
 etc. Most of the time, in PHP, iterating through rows or objects will do just
 fine. However, when there are lots of rows or objects, you could be faced with
 a script that takes hours or days to run. Depending on how often active the
@@ -109,9 +109,9 @@ remains that you have to execute each transformation serially, one after
 another. Your bottleneck is the transformation itself. It will take (# of
 transformations * # of objects to transform) to complete the job. No matter
 how well tuned the database is, it will only be performing one operation at a
-time, which means that the other (max connections - 1) connections are doing
-precisely crap. So the next logical step is to change your update script to
-distribute the update operations so a few can be run in parrallel.</p>
+time, which means your database, which is more than capable of thousands of
+parallel, is not being used well. So the next logical step is to change your
+update script to distribute the update operations so a few can be run in parallel.</p>
 
 <p>Rewriting the update script does require thinking about your update
 differently, and will not work in every case. For example, if one is simply
@@ -186,7 +186,7 @@ perform these processes in parallel.</p>
 
 
 </div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+	<footer id="footer" class="inner">Copyright &copy; 2015
 
     Chris Henry
 

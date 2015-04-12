@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Development | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/development/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2014-11-02T18:01:58-05:00</updated>
+  <updated>2015-04-12T18:07:55-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -167,41 +167,6 @@ nothing about, and learn how do it via the Internet?</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Out of the Terminal]]></title>
-    <link href="http://chr.ishenry.com/2010/07/21/out-of-the-terminal/"/>
-    <updated>2010-07-21T00:00:00-04:00</updated>
-    <id>http://chr.ishenry.com/2010/07/21/out-of-the-terminal</id>
-    <content type="html"><![CDATA[<p>Every once and a while I get to leave server-land and get to do some fun
-projects that involve doing something on the front end. The latest was
-building an embed script for the Behance <a href="http://www.behance.net/joblist">Job
-List</a>. Projects like this, that get me out of
-the terminal and into a space that requires a bit more interaction between
-domains, are particularly appealing. As much as I think the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same Origin
-Policy</a> is reasonable rule
-for security, I love looking at ways to get around it.</p>
-
-<p>The technique I chose for this was
-<a href="http://en.wikipedia.org/wiki/JSONP#JSONP">JSONP</a>, or JSON with Padding. I'm a
-huge fan of JSON as a transport, as I feel it is compact, flexible and
-stupidly simple to generate and consume. In fact, I've sworn to never touch
-another XML file as long as I live. JSONP is really convenient from a API
-implementation perspective, because when the request for the data is made (via
-the script tag), all the client has to do is pass a callback and it can use
-the data in any way it chooses. The server doesn't have to be aware of what
-the callback actually does, although I do recommend checking against a list of
-pre-approved callbacks, just to make sure.</p>
-
-<p>Like any semi-decent developer, I have dog-fooded my own work, and implemented
-the Behance Joblist embed code right <a href="/design-jobs/">here.</a></p>
-
-<p>A little about the Behance Joblist:</p>
-
-<blockquote><p>Top global companies find and hire talent on Behance, the world's leading
-network for creative professionals.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Sphinx Full Text Search Engine]]></title>
     <link href="http://chr.ishenry.com/2010/01/29/sphinx-full-text-search-engine/"/>
     <updated>2010-01-29T00:00:00-05:00</updated>
@@ -219,28 +184,60 @@ architected in a way that makes a lot of sense for the web. The following
 steps were performed on a Red Hat machine. Don't skip the mysql-dev install,
 even if you already MySQL installed.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
-</span><span class='line'>yum install mysql-dev*
-</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
-</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
-</span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock Sphinx installation lang:bash %}
+yum install gcc-c++
+yum install mysql-dev*
+wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
+tar xzvf sphinx-0.9.9.tar.gz
+mkdir /usr/local/sphinx
+./configure --prefix /usr/local/sphinx --with-mysql> ./make
+make install
+{% endcodeblock %}</p>
 
 <p>Once installed, it's fairly simple to start playing with the packaged example
 data and queries. The php APIs make integration easy, either to build a
 service, or use locally as a substitute for MySQL. In fact, as long as the
 index can be kept reasonably up to date, Sphinx is a better choice for
 complicated sorts than MySQL.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[What's in a Name?]]></title>
+    <link href="http://chr.ishenry.com/2009/10/14/whats-in-a-name/"/>
+    <updated>2009-10-14T00:00:00-04:00</updated>
+    <id>http://chr.ishenry.com/2009/10/14/whats-in-a-name</id>
+    <content type="html"><![CDATA[<p>It's easy to get caught up in semantics. Figuring out the best names for
+variables, tables, columns, classes, etc is something that can eat up hours or
+even days of a development schedule. The idea is that the more precise the
+name, the better it is. The arguments for precision naming are many :</p>
+
+<ul>
+<li>Clear names help other developers read your code.<em> New developers who come on will immediately understand what's happening</em> Calling well named methods of classes will read like sentence, further increasing readability.* Clear names will be able to help developers relate things in the UI to the code.</li>
+</ul>
+
+
+<p>Keep in mind, I'm not talking about <a href="http://en.wikipedia.org/wiki/Identifier_naming_convention">naming
+conventions</a>.
+Naming conventions are simply rules for choosing the character sequences. They
+don't dictate what words you should assign to things in your code.</p>
+
+<p>Whatever names developers choose, they will get strewn throughout the layers
+of the application. Database, table and column names will be impacted.
+Variables in server-side scripts. Organization of classes into folders.
+Javascript file names. Memcache keys. URLs. Just like sand at the beach, the
+labels the dev team decided on goes everywhere you can think of. Invariably,
+the marketing team will bound down the hall, and announce the product is being
+rebranded. Jobs will become Gigs. Friends will become Followers. Application
+code will become confusing.</p>
+
+<p>New devs won't get it anyway.</p>
+
+<p>The fact of the matter is overthinking naming is a good way to get nowhere
+fast. Keeping it simple and just take enough time to make sure that things
+make sense will give devs more time to focus on important stuff. Like being
+able to articulate the thought <a href="http://chr.ishenry.com/2009/07/01/explain-your-code/">process behind
+code</a>.</p>
 ]]></content>
   </entry>
   

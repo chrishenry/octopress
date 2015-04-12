@@ -545,73 +545,6 @@ MySQL machines, tuning this variable can be really helpful.</p>
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/2010/07/21/out-of-the-terminal/">
-		
-			Out of the Terminal</a>
-	</h2>
-	<div class="entry-content">
-		<p>Every once and a while I get to leave server-land and get to do some fun
-projects that involve doing something on the front end. The latest was
-building an embed script for the Behance <a href="http://www.behance.net/joblist">Job
-List</a>. Projects like this, that get me out of
-the terminal and into a space that requires a bit more interaction between
-domains, are particularly appealing. As much as I think the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same Origin
-Policy</a> is reasonable rule
-for security, I love looking at ways to get around it.</p>
-
-<p>The technique I chose for this was
-<a href="http://en.wikipedia.org/wiki/JSONP#JSONP">JSONP</a>, or JSON with Padding. I&#8217;m a
-huge fan of JSON as a transport, as I feel it is compact, flexible and
-stupidly simple to generate and consume. In fact, I&#8217;ve sworn to never touch
-another XML file as long as I live. JSONP is really convenient from a API
-implementation perspective, because when the request for the data is made (via
-the script tag), all the client has to do is pass a callback and it can use
-the data in any way it chooses. The server doesn&#8217;t have to be aware of what
-the callback actually does, although I do recommend checking against a list of
-pre-approved callbacks, just to make sure.</p>
-
-<p>Like any semi-decent developer, I have dog-fooded my own work, and implemented
-the Behance Joblist embed code right <a href="/design-jobs/">here.</a></p>
-
-<p>A little about the Behance Joblist:</p>
-
-<blockquote><p>Top global companies find and hire talent on Behance, the world&#8217;s leading
-network for creative professionals.</p></blockquote>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-07-21T00:00:00-04:00" pubdate data-updated="true">Jul 21<span>st</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
 		<a href="/2010/06/23/accountability-is-a-feedback-loop/">
 		
 			Accountability Is a Feedback Loop</a>
@@ -849,6 +782,71 @@ devices.</p>
 </div>
 </article>
 
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/05/03/mysql-slave-delay-and-maatkit/">
+		
+			MySQL Slave Delay and Maatkit</a>
+	</h2>
+	<div class="entry-content">
+		<p>This post could alternately be titled: &#8216;How to make developers hate you.&#8217;</p>
+
+<p>A very common criticism of MySQL is that there is no support for delayed
+replication. Delaying data flowing from master to slave can be very useful in
+certain cases. For example, running a co-located slave for backups is still
+susceptible to data problems that caused by a DELETE with no where or a
+mistaken executed DROP. However, by running the slave anywhere from an hour to
+a day behind, you have the opportunity to catch whatever problems caused and
+have a good copy of your data ready to go.</p>
+
+<p>In <a href="http://chr.ishenry.com/2010/02/22/sandboxes/">sandbox environments</a>, a
+consistent slave delay is a great way to reproduce race conditions. In fact,
+running slave delay gives you the opportunity to ensure that data will be out
+of sync between the master and slave. When you can count on this part of the
+environment, developers can test and write code against this condition. Of
+course, in reality, working in this type of environment is reaally annoying,
+but necessary.</p>
+
+<p>Delayed MySQL replication can be accomplished by using a tool from the
+<a href="http://www.maatkit.org/">maatkit</a> library. Documentation for the tool can be
+found at <a href="http://www.maatkit.org/doc/mk-slave-delay.html">[http://www.maatkit.org/doc/mk-slave-
+delay.html](http://www.maatkit.org/doc/mk-slave-
+delay.html)</a>. What&#8217;s great
+about this tool is that can be run as a daemon, so that it can be easily run
+for an extended period of time, without have to do any serious management.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-05-03T00:00:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>
+
+
+</div>
+	
+</div>
+</article>
+
 <nav id="pagenavi">
     
         <a href="/blog/page/4/" class="prev">Prev</a>
@@ -858,7 +856,7 @@ devices.</p>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>
-	<footer id="footer" class="inner">Copyright &copy; 2014
+	<footer id="footer" class="inner">Copyright &copy; 2015
 
     Chris Henry
 

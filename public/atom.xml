@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2014-11-02T18:01:58-05:00</updated>
+  <updated>2015-04-12T18:07:49-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,106 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Coding Music, Spring 2015]]></title>
+    <link href="http://chr.ishenry.com/2015/04/11/coding-music-spring-2015/"/>
+    <updated>2015-04-11T16:14:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/04/11/coding-music-spring-2015</id>
+    <content type="html"><![CDATA[<p>Normally, I&#8217;m a big fan of music without lyrics or much adornment for coding,
+but for the past few months, there have been a few albums in my rotation that
+are pretty heavy on the lyrics and complications. This edition has four guitar
+heavy albums, and three with way more singing than usual.</p>
+
+<h3><em>Antemasque</em>, Antemasque</h3>
+
+<p>Antemasque is a newish project from Omar Rodriguez-Lopez, from Mars Volta and At
+the Drive-In fame. While Mars Volta have long been a favorite for coding, thanks
+to the free form jazz and overall chaotic energy, Antemasque is significantly
+more straight ahead progressive rock. Busy guitars, with only a light coat of
+fuzz, push forward and provide a sonic landscape you can lose yourself in.
+Cedric Bixler-Zavala&#8217;s vocals are elegantly mixed in, riding right alongside the
+guitars. Most of album has a quick, steady drive, with only a quick slowdown for
+&#8220;Drown All Your Witches&#8221; and &#8220;Providence&#8221;.</p>
+
+<h3><em>Monuments</em>, Ume</h3>
+
+<p>I found this album through <a href="http://www.craveonline.com/music/articles/795103-20-best-albums-2014">Crave Online&#8217;s Best Albums of 2014</a>.
+I&#8217;m a huge sucker for a band with a big sound and a strong female front, having
+spent a lot of time listening to the Joy Formidable after seeing them at SXSW
+years ago. Ume (pronounced ooh-may) is usually a bit more of what I&#8217;m looking
+for, tempowise, in coding music. Most songs are a laid back andante, moved along
+by thrumming bass. What I like most is Lauren Larson&#8217;s silky, gently echoing
+voice over shiny, just shy of screeching guitar licks.</p>
+
+<h3><em>Gangs</em>, And So I Watch You from Afar</h3>
+
+<p>As creepy as this band&#8217;s name is, they are anything but. Their more recent
+album, <em>All Hail Bright Futures</em>, was contagiously happy and comforting, but
+that&#8217;s for another post. <em>Gangs</em>, on the other hand, is certainly
+non-threatening, but has a big enough punch to kick your ass even through Apple
+earbuds. Both albums were instrumental, and as such have been a big part of my
+Spotify rotation. The standout track for me is &#8220;Search:Party:Animal&#8221;, with a
+desperate, machine guitar riff driving away, punctuated by mountainous bass guitar hits.
+Interwoven throughout are quiet, but perturbed bass interludes that eventually
+culminate in the band coming together for builds that drop into high jitter. The
+whole thing ends in a midrange modulation turned into a samba-esque power chord
+riff with an abrupt but tasty ending. The rest of the album presents the same
+mountainous walls of guitar distortion.</p>
+
+<h3><em>Gemini, Her Majesty</em>, RX Bandits</h3>
+
+<p>The RX Bandits were a favorite of mine a few years ago, and <em>Gemini, Her
+Majesty</em> is their first record in five years. Again, big thanks to <a href="http://www.craveonline.com/music/articles/795103-20-best-albums-2014">Crave
+Online</a>
+for uncovering this one. What I like here is the relaxed, smooth, yet exuberant
+crooning over bright SoCal guitar riffs. There&#8217;s lots of forward movement, as
+most of the album has a quick pace, driving at times, but powerful riffs where
+the whole band hits together.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[When to do it yourself]]></title>
+    <link href="http://chr.ishenry.com/2015/03/31/when-to-do-it-yourself/"/>
+    <updated>2015-03-31T20:07:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/03/31/when-to-do-it-yourself</id>
+    <content type="html"><![CDATA[<p>Your time is extremely valuable, and execution of your product is everything.
+When it comes to building out key pieces of infrastructure, the choice of
+whether to build it, buy it, or use open source is very personal,
+and depends on what the business really needs.</p>
+
+<p>You do things yourself when you need fine grained control of a resource, or
+require a deep understanding of a mission critical function. Can anyone do it
+better than you can? Even if they can, do you have enough control in the
+direction to get what you need? Does the time it takes to learn and execute in a
+given domain warrant the value it provides? Or could that time be spent on
+something else that would move the needle?</p>
+
+<p>Dead giveaways are things the user sees. Design and product development can’t be
+outsourced, nor can the actual execution of your product. Those stay in house,
+no matter what. Your ability to find your voice and interact with your customers
+is the thing that makes your product unique. If you cannot execute on your own
+product, it&#8217;s a strong indication you&#8217;re not doing the right thing.</p>
+
+<p>However, depending on your needs, there gets to be a long list of things that
+aren’t your product, but are still critical to running your business. Campaign
+and transactional email are great examples. Executing on mass email is extremely
+difficult because of defenses put in place by major ISPs. You need an IP with a
+good reputation, reverse DNS, a host that will allow massive amount of email to
+leave it’s datacenter, and the list goes on and on.</p>
+
+<p>There are also implicit supporting requirements of running a service that you
+need to have but shouldn&#8217;t ever try to build. Project tracking, monitoring,
+graphing, and alerting are all examples of components that have executed
+extremely well by others, and can simply be turned on or deployed with minimal
+effort on the part of your team.</p>
+
+<p>In the end, what’s critical is spending your energy on the things that actually
+create impact. Knowing the intersection of tradeoffs and priorities is what will
+keep your team on the path that gets the job done.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Flight Status]]></title>
@@ -209,13 +309,18 @@
     <content type="html"><![CDATA[<blockquote><p>&#8220;The Navy is a master plan designed by geniuses for execution by idiots. If you&#8217;re not an idiot, but find yourself in the Navy, you can only operate well by pretending to be one.&#8221;
 -Herman Wouk, The Caine Mutiny</p></blockquote>
 
-<p>The worst arguments I&#8217;ve ever had were with people who weren&#8217;t willing to bend on policy in situations where the policy made no sense. Context is everything, and most policy is made for a situation that has likely come and gone.</p>
+<p>The worst arguments I&#8217;ve ever had were with people who weren&#8217;t willing to bend
+on policy in situations where the policy made no sense. Context is everything,
+and most policy is made for a situation that has likely come and gone.</p>
 
-<p>People with judgment will recognize this, especially in the context of running startups. Hopefully, they were the same person that made the original policy, and can see that things have changed. Smart companies have fewer policies, implicitly trusting their teams to make the right decision.</p>
+<p>People with judgment will recognize this, especially in the context of running
+startups. Hopefully, they were the same person that made the original policy,
+and can see that things have changed. Smart companies have fewer policies,
+implicitly trusting their teams to make the right decision.</p>
 
-<p><a href="http://www.slideshare.net/HubSpot/the-hubspot-culture-code-creating-a-company-we-love" title="Culture Code: Creating A Lovable Company" target="_blank"><img src="http://image.slidesharecdn.com/culturecode-v7-130320111259-phpapp02/95/slide-62-638.jpg?1366572567" /></a></p>
+<p><a href="http://chr.ishenry.com/images/user/use_good_judgement.png"><img src="http://chr.ishenry.com/images/user/use_good_judgement.png" alt="Use Good Judgement" /></a></p>
 
-<p><a href="http://www.slideshare.net/HubSpot/the-hubspot-culture-code-creating-a-company-we-love">Culture Code: Creating A Lovable Company</a> </strong> from <strong><a href="http://www.slideshare.net/HubSpot" target="_blank">HubSpot All-in-one Marketing Software</a></strong></p>
+<p>From <a href="https://www.slideshare.net/HubSpot/the-hubspot-culture-code-creating-a-company-we-love/56">Hubspot&#8217;s Presentation Culture Code: Creating A Lovable Company</a></p>
 
 <p>The takeaway here is that you can judge organizations and people based on how beholden they are to policy. Smart ones let you make smart decisions.</p>
 ]]></content>
@@ -395,16 +500,36 @@
     <link href="http://chr.ishenry.com/2013/02/21/resignation-and-continuity/"/>
     <updated>2013-02-21T20:19:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/21/resignation-and-continuity</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful one. Ever since my sister&#8217;s Confirmation, when there were three collections, and the sermon admonished parents that every firstborn should be sent to seminary, I have been convinced that church and faith are entirely separately. Reading through history, it&#8217;s clear the papacy is more of a political organization than anything else. The wars, the influence over entire countries to go to war seem more the actions of an organization obsessed with power than one that existed to help people.</p>
+    <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful
+one. Ever since my sister&#8217;s Confirmation, when there were three collections, and
+the sermon admonished parents that every firstborn should be sent to seminary,
+I have been convinced that church and faith are entirely separately. Reading
+through history, it&#8217;s clear the papacy is more of a political organization than
+anything else. The wars, the influence over entire countries to go to war seem
+more the actions of an organization obsessed with power than one that existed to
+help people.</p>
 
 <!-- more -->
 
 
-<p>With Ratzinger bucking the trend of holding the papacy till death, it is even more clear that what should be the peaceful fading away of an old man who has done his service will be turned into political jockeying. One of the more interesting political side effects of Ratzinger&#8217;s decision to resign will be that he will continue to influence the policies of the church until his death.</p>
+<p>With Ratzinger bucking the trend of holding the papacy till death, it is even
+more clear that what should be the peaceful fading away of an old
+man who has done his service will be turned into political jockeying. One of the
+more interesting political side effects of Ratzinger&#8217;s decision to resign will
+be that he will continue to influence the policies of the church until his death.</p>
 
-<p>The new Pope will be in a much different position from previous popes, who had free reign to set policy as he sees. In this case, there will be Ratzinger&#8217;s supporters and the ex-pope himself around to ensure that edicts put in place will stay there. Unlike previous new popes, there will be no clean break in policy. The man who is now closest to God among all other men will be within a stone&#8217;s throw of the man who was closest to God a couple months ago.</p>
+<p>The new Pope will be in a much different position from previous popes, who had
+free reign to set policy as he sees. In this case, there will be Ratzinger&#8217;s
+supporters and the ex-pope himself around to ensure that edicts put in place
+will stay there. Unlike previous new popes, there will be no clean break in
+policy. The man who is now closest to God among all other men will be within a
+stone&#8217;s throw of the man who was closest to God a couple months ago.</p>
 
-<p>The question here will be whether the papacy can continue to move forward with, or will the previous pope continue to be pope. Much like an an employee who suddenly sits up straight and closes the Facebook window when the boss walks in, will the future pope be influenced by the unspoken power dynamic of having a previous pope alive?</p>
+<p>The question here will be whether the papacy can continue to move forward with,
+or will the previous pope continue to be pope. Much like an an employee who
+suddenly sits up straight and closes the Facebook window when the boss walks in,
+will the future pope be influenced by the unspoken power dynamic of having a
+previous pope alive?</p>
 ]]></content>
   </entry>
   
@@ -497,44 +622,6 @@ the content that you don’t want to see (related links, blogroll) does somethin
 you don’t expect.</p>
 
 <p><img src="http://chr.ishenry.com/images/user/rww_appnet.png" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Rigoletto]]></title>
-    <link href="http://chr.ishenry.com/2013/01/29/rigoletto/"/>
-    <updated>2013-01-29T00:00:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/01/29/rigoletto</id>
-    <content type="html"><![CDATA[<p>From the <a href="http://www.wqxr.org/#!/blogs/operavore/2013/jan/29%0A/review-metropolitan-operas-rat-pack-rigoletto-hits-jackpot/">WQXR review</a> of Rigoletto at
-the Met</p>
-
-<blockquote><p>As much as Verdi has resisted updating, his tale of a nasty hunchback court
-jester whose daughter is killed by his own need for revenge arrived here in
-the early-&#8217;80s as a gangster movie courtesy of Jonathan Miller and the
-visiting English National Opera. More recently in Wales, the Duke of Mantua&#8217;s
-decadent court became the Oval Office. Mayer&#8217;s production did everything that
-a Las Vegas setting threatens to do — colors never seen in nature, pole
-dancing, glitzy satellite chandeliers (not unlike the Met&#8217;s) and even Met
-titles with modern English colloquialism. Some wondered aloud why the
-translation even bothered to keep names like &#8220;Duke.&#8221; Why not Frank and Sammy?</p></blockquote>
-
-<p>Having never experienced an Opera before, and not knowing anything about the
-plot of Rigoletto other than what I read in Playbill, the modern setting and
-translation went a long way in helping me understand Verdi. In general, the
-few productions I&#8217;ve seen in the past few years have had odd elements
-alongside original text that seemed to have been put there to soften the
-harshness of unfamiliar colloquialisms. Superhero costumes in Shakespeare, and
-even the staging of Rigoletto help to make this otherwise stuffy content
-accessible.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[You’re not going to Eur - o - pee in there? - Jessica]]></title>
-    <link href="http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur---o---pee-in-there---jessica/"/>
-    <updated>2013-01-27T00:00:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/01/27/youre-not-going-to-eur&#8212;o&#8212;pee-in-there&#8212;jessica</id>
-    <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/euro_toilet.jpg" alt="" /></p>
 ]]></content>
   </entry>
   
