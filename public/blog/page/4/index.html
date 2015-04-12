@@ -179,7 +179,7 @@ desktop without having to worry about shuffling things around. It also helps
 tremendously when applying pesky software updates, as you always have one
 machine that will be up and running.</p>
 
-<p><a href="/images/user/workflow_synergy.jpg"><img src="/images/user/workflow_synergy.jpg" alt="Rig at the Behnace Office" /></a></p>
+<p><a href="/images/user/workflow_synergy.jpg"><img src="/images/user/workflow_synergy.jpg" alt="Rig at the Behance Office" /></a></p>
 
 		
 		
@@ -408,73 +408,6 @@ shit I want to learn. If I&#8217;m feeling really frisky, get back into a band.<
     <article class="post">
 	<h2 class="title">
 		
-		<a href="/2011/11/25/why-i-hate-sushi-restaurants/">
-		
-			Why I Hate Sushi Restaurants</a>
-	</h2>
-	<div class="entry-content">
-		<p>Sushi restaurants hold a special place in my heart as possibly the worst place
-to go for a meal. Granted, I have not been to many, but the ones I have been
-to all share the same horrible characteristics.</p>
-
-<p>The service is always has a certain briskness to it. To many, this is great,
-you order, get your food, eat, and have your plates taken away almost as the
-last piece of sashimi leaves your chopsticks. Rice notwithstanding, once most
-of your food is gone, so is your plate, replaced almost as quickly with the
-check. While many consider speed to be a feature, I&#8217;m not sure I agree when it
-comes to my dinner. While the staff at every sushi joint I&#8217;ve ever been to has
-been efficient, they&#8217;ve also been less than accommodating when it comes to
-simple things, like recommendations.</p>
-
-<p>Ambiance and fellow patrons normally leave something to be desired as well.
-Somehow, sushi has come to be the meal of choice for the screaming hordes of
-clubgoers, Jersey Shore wannabes, and that certain type douchebag that only
-comes at night. Thusly, the soundtrack of most of these places closely
-resembles being inside a speaker cabinet while DJ Pauly D spins whatever the
-fuck it is that he spins. Again, nothing wrong with that, but not while
-consuming raw fish.</p>
-
-<p>Then, there&#8217;s sushi itself. Don&#8217;t get me wrong, I like sushi, particularly a
-real nice piece of toro when it&#8217;s nice and cold. And I&#8217;ve been adventurous
-enough to have tried some more exotic options, like uni, which is without a
-doubt, a taste you need to acquire. I also understand that it&#8217;s considered an
-art form. But what bothers me most about going out for sushi is the vast
-majority of places do not regard it that way.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2011-11-25T00:00:00-05:00" pubdate data-updated="true">Nov 25<span>th</span>, 2011</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/thoughts/'>Thoughts</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
 		<a href="/2011/11/02/mysql-error-28/">
 		
 			MySQL Error 28</a>
@@ -646,7 +579,7 @@ inspiration totally got me through.</p>
 	</h2>
 	<div class="entry-content">
 		<p>Part of managing any large site involves writing scripts that will go through
-oyur data, make changes, merge things, remove things, do type transformations,
+your data, make changes, merge things, remove things, do type transformations,
 etc. Most of the time, in PHP, iterating through rows or objects will do just
 fine. However, when there are lots of rows or objects, you could be faced with
 a script that takes hours or days to run. Depending on how often active the
@@ -674,9 +607,9 @@ remains that you have to execute each transformation serially, one after
 another. Your bottleneck is the transformation itself. It will take (# of
 transformations * # of objects to transform) to complete the job. No matter
 how well tuned the database is, it will only be performing one operation at a
-time, which means that the other (max connections - 1) connections are doing
-precisely crap. So the next logical step is to change your update script to
-distribute the update operations so a few can be run in parrallel.</p>
+time, which means your database, which is more than capable of thousands of
+parallel, is not being used well. So the next logical step is to change your
+update script to distribute the update operations so a few can be run in parallel.</p>
 
 <p>Rewriting the update script does require thinking about your update
 differently, and will not work in every case. For example, if one is simply
@@ -890,6 +823,69 @@ on how to create things worth talking about.</p>
 
 
 	<a class='category' href='/blog/categories/sxsw/'>Sxsw</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2011/03/12/the-progress-bar-pysch/">
+		
+			The Progress Bar Pysch</a>
+	</h2>
+	<div class="entry-content">
+		<p>A classic UX problems is communicating to users how long they&#8217;ll have to wait
+before their task completes. A spinner or progress bar provides feedback that
+the system is, in fact, doing something, and how long that task may take.
+Psychologically, progress bars create tension while progressing, and
+resolution when completed.</p>
+
+<p>From a technical standpoint, progress bars are black magic. The developer is
+attempting to estimate a task based on potentially thousands of variables. In
+the case of a file upload, the developer has to deal with differing network
+conditions, disk performance, etc, etc, etc. Then they have to write the code
+to communicate what is happening to the browser. Not a trivial task. However,
+when executed well, can provide the user with reasonable feedback about their
+task.</p>
+
+<p>Lately, sites like LinkedIn, Mint.com, and OKCupid have used that same tension
+to motivate users to completely fill out their profiles. During profile
+creation, a progress bar is displayed indicating how far the user has come
+along. Once the user completely fills out their profile, the progress bar hits
+100%, and what changes? In most cases, nothing. The progress bar is just a
+psychological hack to entice users to go through the entire process.</p>
+
+<p>The question is: Exactly how effective is the progress bar at enticing users
+to fully complete the task at hand? And are they actually worth it.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-12T00:00:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/sxsw/'>Sxsw</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
 
 
 </div>

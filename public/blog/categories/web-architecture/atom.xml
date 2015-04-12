@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Web Architecture | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/web-architecture/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-03-31T23:43:10-04:00</updated>
+  <updated>2015-04-12T18:07:55-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -56,41 +56,6 @@ very well.</p>
   </entry>
   
   <entry>
-    <title type="html"><![CDATA[Out of the Terminal]]></title>
-    <link href="http://chr.ishenry.com/2010/07/21/out-of-the-terminal/"/>
-    <updated>2010-07-21T00:00:00-04:00</updated>
-    <id>http://chr.ishenry.com/2010/07/21/out-of-the-terminal</id>
-    <content type="html"><![CDATA[<p>Every once and a while I get to leave server-land and get to do some fun
-projects that involve doing something on the front end. The latest was
-building an embed script for the Behance <a href="http://www.behance.net/joblist">Job
-List</a>. Projects like this, that get me out of
-the terminal and into a space that requires a bit more interaction between
-domains, are particularly appealing. As much as I think the <a href="http://en.wikipedia.org/wiki/Same_origin_policy">Same Origin
-Policy</a> is reasonable rule
-for security, I love looking at ways to get around it.</p>
-
-<p>The technique I chose for this was
-<a href="http://en.wikipedia.org/wiki/JSONP#JSONP">JSONP</a>, or JSON with Padding. I'm a
-huge fan of JSON as a transport, as I feel it is compact, flexible and
-stupidly simple to generate and consume. In fact, I've sworn to never touch
-another XML file as long as I live. JSONP is really convenient from a API
-implementation perspective, because when the request for the data is made (via
-the script tag), all the client has to do is pass a callback and it can use
-the data in any way it chooses. The server doesn't have to be aware of what
-the callback actually does, although I do recommend checking against a list of
-pre-approved callbacks, just to make sure.</p>
-
-<p>Like any semi-decent developer, I have dog-fooded my own work, and implemented
-the Behance Joblist embed code right <a href="/design-jobs/">here.</a></p>
-
-<p>A little about the Behance Joblist:</p>
-
-<blockquote><p>Top global companies find and hire talent on Behance, the world's leading
-network for creative professionals.</p></blockquote>
-]]></content>
-  </entry>
-  
-  <entry>
     <title type="html"><![CDATA[Sphinx Full Text Search Engine]]></title>
     <link href="http://chr.ishenry.com/2010/01/29/sphinx-full-text-search-engine/"/>
     <updated>2010-01-29T00:00:00-05:00</updated>
@@ -108,22 +73,15 @@ architected in a way that makes a lot of sense for the web. The following
 steps were performed on a Red Hat machine. Don't skip the mysql-dev install,
 even if you already MySQL installed.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
-</span><span class='line'>yum install mysql-dev*
-</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
-</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
-</span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock Sphinx installation lang:bash %}
+yum install gcc-c++
+yum install mysql-dev*
+wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
+tar xzvf sphinx-0.9.9.tar.gz
+mkdir /usr/local/sphinx
+./configure --prefix /usr/local/sphinx --with-mysql> ./make
+make install
+{% endcodeblock %}</p>
 
 <p>Once installed, it's fairly simple to start playing with the packaged example
 data and queries. The php APIs make integration easy, either to build a

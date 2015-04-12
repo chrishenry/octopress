@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Process | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/process/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-03-31T23:43:10-04:00</updated>
+  <updated>2015-04-12T18:07:55-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -103,7 +103,7 @@ desktop without having to worry about shuffling things around. It also helps
 tremendously when applying pesky software updates, as you always have one
 machine that will be up and running.</p>
 
-<p><a href="/images/user/workflow_synergy.jpg"><img src="/images/user/workflow_synergy.jpg" alt="Rig at the Behnace Office" /></a></p>
+<p><a href="/images/user/workflow_synergy.jpg"><img src="/images/user/workflow_synergy.jpg" alt="Rig at the Behance Office" /></a></p>
 ]]></content>
   </entry>
   
@@ -113,7 +113,7 @@ machine that will be up and running.</p>
     <updated>2011-06-25T00:00:00-04:00</updated>
     <id>http://chr.ishenry.com/2011/06/25/distributed-updates</id>
     <content type="html"><![CDATA[<p>Part of managing any large site involves writing scripts that will go through
-oyur data, make changes, merge things, remove things, do type transformations,
+your data, make changes, merge things, remove things, do type transformations,
 etc. Most of the time, in PHP, iterating through rows or objects will do just
 fine. However, when there are lots of rows or objects, you could be faced with
 a script that takes hours or days to run. Depending on how often active the
@@ -141,9 +141,9 @@ remains that you have to execute each transformation serially, one after
 another. Your bottleneck is the transformation itself. It will take (# of
 transformations * # of objects to transform) to complete the job. No matter
 how well tuned the database is, it will only be performing one operation at a
-time, which means that the other (max connections - 1) connections are doing
-precisely crap. So the next logical step is to change your update script to
-distribute the update operations so a few can be run in parrallel.</p>
+time, which means your database, which is more than capable of thousands of
+parallel, is not being used well. So the next logical step is to change your
+update script to distribute the update operations so a few can be run in parallel.</p>
 
 <p>Rewriting the update script does require thinking about your update
 differently, and will not work in every case. For example, if one is simply
