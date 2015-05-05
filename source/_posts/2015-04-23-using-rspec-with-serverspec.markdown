@@ -21,3 +21,20 @@ complex, brittle regexes to ensure files are created correctly.
 Using builtin libs to parse configuration files provides a lightweight, implied
 means of testing that configuration files are valid. It's a straightforward,
 programmatic approach to getting values out of configuration files.
+
+Different ways to pull in other ruby libraries when writing serverspec;
+
+* Simply use ruby `include`
+* Add a Gemfile to your serverspec folder
+* Use Gem::DependencyInstaller in the spec_helper
+
+Here's an example of installing the `inifile` gem in your `spec_helper.rb`.
+
+``` ruby Install a gem in spec_helper
+begin
+  Gem::Specification.find_by_name('inifile')
+rescue Gem::LoadError
+  require 'rubygems/dependency_installer'
+  Gem::DependencyInstaller.new(Gem::DependencyInstaller::DEFAULT_OPTIONS).install('inifile')
+end
+```
