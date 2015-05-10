@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="It&#8217;s easy to get caught up in semantics. Figuring out the best names for
-variables, tables, columns, classes, etc is something that can eat up &hellip;">
+	<meta name="description" content="Sometimes bugs come along that require significant work to fix. Depending on
+what project timelines are like at the moment, sometimes fixing the bug &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,81 @@ variables, tables, columns, classes, etc is something that can eat up &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/10/24/fix-or-manage/">
+		
+			Fix or Manage?</a>
+	</h2>
+	<div class="entry-content">
+		<p>Sometimes bugs come along that require significant work to fix. Depending on
+what project timelines are like at the moment, sometimes fixing the bug isn&#8217;t
+the best option. For example, a race condition in the caching architecture
+causes pages to be stale. The persistent data store is correct, but the cache
+is not. To the person who just triggered the update, there&#8217;s a bug. The
+information on the public side is not in sync with the information they just
+entered.</p>
+
+<p>So, like any other bug, a report will eventually percolate down to the dev
+team. People scream, fortunes are lost, the svn blame command is used, and the
+devs who wrote the code pee their pants. Once the chaos dies down, the actual
+prognosis of this issue can turn out to be extremely grim.</p>
+
+<p>A shortcoming of the caching architecture shows that there&#8217;s a race condition
+when the system is under heavy load. In order to fix it, the dev team needs to
+plumb the depths of the data access layer, and probably change some
+parameters. But that&#8217;ll probably break everything. Everywhere. Or the layer
+manipulating the data could be fixed to replace the cache instead of
+invalidating. Except the methods to manipulate that entity live in 3 different
+codebases. It&#8217;ll probably break the editor. Either way, the actual solution
+doesn&#8217;t matter.The dev team certainly needs to do something, and it needs to
+be released three days ago.</p>
+
+<p>The correct way to fix this issue will vary widely depending on circumstances.
+But in this particular case, the best answer was to <strong>not fix it, just manage
+it</strong>. Our team was busy, there were other projects that were more pressing.
+Plus the codebase was being rewritten. So instead of flogging a dead horse, a
+simple script was thrown together that compared the cache and the database. If
+they were out of sync, the cache would be cleared, and would be repopulated
+with the correct information the next time it was requested. Once it was
+implemented, the bug was still there, but the cache <em>seemed</em> to be up to date.</p>
+
+<p>Every dev team will face bugs that have enormous costs to fix. The way to deal
+with these bugs will be different every time they come up. It&#8217;s important to
+remember that managing bugs can be almost as effective as fixing them.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-10-24T00:00:00-04:00" pubdate data-updated="true">Oct 24<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -733,54 +808,6 @@ on Digg, you can spin up some more servers, sit back, and have a drink.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/scalability/'>Scalability</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/05/30/success/">
-		
-			Success!</a>
-	</h2>
-	<div class="entry-content">
-		<p>When making changes to a large site, it&#8217;s really helpful to have tools to
-measure how those changes affect performance. One of my favorite tools is
-<a href="http://bit.ly/1tFcP">cacti</a>. This is a graph of the load average of one our
-database servers</p>
-
-<p><a href="http://174.143.169.75/wp-%0Acontent/uploads/2009/05/cacti.jpg"><img src="http://174.143.169.75/wp-%0Acontent/uploads/2009/05/cacti.jpg" alt="Database Load Average" /></a></p>
-
-<p>We done good…</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-30T00:00:00-04:00" pubdate data-updated="true">May 30<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/scalability/'>Scalability</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
 
 
 </div>

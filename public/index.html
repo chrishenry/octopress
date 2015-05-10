@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Normally, I&#8217;m a big fan of music without lyrics or much adornment for coding,
-but for the past few months, there have been a few albums in my &hellip;">
+	<meta name="description" content="Testing the outcome of infrastructure provisioning is an operator&#8217;s bread and
+butter. Good cookbook tests create predictable automation, and &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,86 @@ but for the past few months, there have been a few albums in my &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2015/04/23/advanced-serverspec/">
+		
+			Advanced Serverspec</a>
+	</h2>
+	<div class="entry-content">
+		<p>Testing the outcome of infrastructure provisioning is an operator&#8217;s bread and
+butter. Good cookbook tests create predictable automation, and can be added to
+once problems are inevitably discovered. Serverspec is a huge part of ensuring
+that infrastructure being provisioned via chef is actually in the desired
+state.</p>
+
+<p>Using ruby&#8217;s builtin libraries to parse and manipulate configuration files is a
+quick and simple win. We&#8217;re no longer bound by having to use overly complex,
+brittle regexes to ensure files are created correctly.</p>
+
+<p>Parsing config files with similar libs that would be consuming them in
+production provides a lightweight, implied method of testing that those files
+are valid. It&#8217;s also a straightforward, programmatic approach to getting values
+out of configuration files. And not just scalar values, but lists and arrays.</p>
+
+<p>Here&#8217;s a few ways to pull in rubygems when writing serverspec;</p>
+
+<ul>
+<li>Simply use ruby <code>include</code></li>
+<li>Add a Gemfile to your serverspec folder</li>
+<li>Use Gem::DependencyInstaller in the spec_helper.rb</li>
+</ul>
+
+
+<p>Here&#8217;s an example of installing the <code>inifile</code> gem in your <code>spec_helper.rb</code>.</p>
+
+<figure class='code'><figcaption><span>Install a gem in spec_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="ss">Gem</span><span class="p">:</span><span class="ss">:Specification</span><span class="o">.</span><span class="n">find_by_name</span><span class="p">(</span><span class="s1">&#39;inifile&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">rescue</span> <span class="ss">Gem</span><span class="p">:</span><span class="ss">:LoadError</span>
+</span><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;rubygems/dependency_installer&#39;</span>
+</span><span class='line'>  <span class="ss">Gem</span><span class="p">:</span><span class="ss">:DependencyInstaller</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">Gem</span><span class="p">:</span><span class="ss">:DependencyInstaller</span><span class="o">::</span><span class="no">DEFAULT_OPTIONS</span><span class="p">)</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;inifile&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-04-23T13:21:00-04:00" pubdate data-updated="true">Apr 23<span>rd</span>, 2015</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/chef/'>chef</a>, <a class='category' href='/blog/categories/operations/'>operations</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -558,48 +638,6 @@ keep your team on the path that gets the job done.</p>
 
 
 	<a class='category' href='/blog/categories/blogs/'>blogs</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2013/06/09/greader-is-going-away/">
-		
-			GReader Is Going Away, and I&#8217;m Not That Sad</a>
-	</h2>
-	<div class="entry-content">
-		<p>There was a period where I was insanely into RSS. It was what I did every time I sat down at the computer. I fired up the Google Reader tab, and spent hours in there. I pored over everything, and it was a really fun game to try and get through everything and still retain at least one useful piece of information from my frenzied filtering. That was usually the case, as at that time, I had a pretty tightly curated list of feeds.</p>
-
-
-		
-		<a href="/2013/06/09/greader-is-going-away/" class="more-link">Go for it</a>
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-06-09T13:15:00-04:00" pubdate data-updated="true">Jun 9<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/existentialism/'>existentialism</a>, <a class='category' href='/blog/categories/thoughts/'>thoughts</a>
 
 
 </div>

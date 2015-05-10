@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-04-12T18:16:13-04:00</updated>
+  <updated>2015-05-10T14:08:58-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,54 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Advanced Serverspec]]></title>
+    <link href="http://chr.ishenry.com/2015/04/23/advanced-serverspec/"/>
+    <updated>2015-04-23T13:21:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/04/23/advanced-serverspec</id>
+    <content type="html"><![CDATA[<p>Testing the outcome of infrastructure provisioning is an operator&#8217;s bread and
+butter. Good cookbook tests create predictable automation, and can be added to
+once problems are inevitably discovered. Serverspec is a huge part of ensuring
+that infrastructure being provisioned via chef is actually in the desired
+state.</p>
+
+<p>Using ruby&#8217;s builtin libraries to parse and manipulate configuration files is a
+quick and simple win. We&#8217;re no longer bound by having to use overly complex,
+brittle regexes to ensure files are created correctly.</p>
+
+<p>Parsing config files with similar libs that would be consuming them in
+production provides a lightweight, implied method of testing that those files
+are valid. It&#8217;s also a straightforward, programmatic approach to getting values
+out of configuration files. And not just scalar values, but lists and arrays.</p>
+
+<p>Here&#8217;s a few ways to pull in rubygems when writing serverspec;</p>
+
+<ul>
+<li>Simply use ruby <code>include</code></li>
+<li>Add a Gemfile to your serverspec folder</li>
+<li>Use Gem::DependencyInstaller in the spec_helper.rb</li>
+</ul>
+
+
+<p>Here&#8217;s an example of installing the <code>inifile</code> gem in your <code>spec_helper.rb</code>.</p>
+
+<figure class='code'><figcaption><span>Install a gem in spec_helper.rb</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="k">begin</span>
+</span><span class='line'>  <span class="ss">Gem</span><span class="p">:</span><span class="ss">:Specification</span><span class="o">.</span><span class="n">find_by_name</span><span class="p">(</span><span class="s1">&#39;inifile&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">rescue</span> <span class="ss">Gem</span><span class="p">:</span><span class="ss">:LoadError</span>
+</span><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;rubygems/dependency_installer&#39;</span>
+</span><span class='line'>  <span class="ss">Gem</span><span class="p">:</span><span class="ss">:DependencyInstaller</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">Gem</span><span class="p">:</span><span class="ss">:DependencyInstaller</span><span class="o">::</span><span class="no">DEFAULT_OPTIONS</span><span class="p">)</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;inifile&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Coding Music, Spring 2015]]></title>
@@ -606,22 +654,6 @@ do.</p></blockquote>
     <updated>2013-02-03T00:00:00-05:00</updated>
     <id>http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest</id>
     <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/jfk_security.png" alt="" /></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[RWW's New Design]]></title>
-    <link href="http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract/"/>
-    <updated>2013-01-31T00:00:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/01/31/readwritewebs-new-design-of-articles-pages-is-just-an-unpleasant-and-overwhelming-barrage-of-text-and-its-mostly-text-im-not-interested-in-readingtheyve-done-a-great-of-job-of-making-scrolling-distract</id>
-    <content type="html"><![CDATA[<p>ReadWriteWeb’s new design of articles pages is just an unpleasant and overwhelming
-barrage of text. And it’s mostly text I’m not interested in reading.</p>
-
-<p>They’ve done a great of job of making scrolling distracting, by ensuring that all
-the content that you don’t want to see (related links, blogroll) does something
-you don’t expect.</p>
-
-<p><img src="http://chr.ishenry.com/images/user/rww_appnet.png" alt="" /></p>
 ]]></content>
   </entry>
   

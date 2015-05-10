@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: operations | The Technician]]></title>
+  <link href="http://chr.ishenry.com/blog/categories/operations/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2015-05-10T14:09:03-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Advanced Serverspec]]></title>
+    <link href="http://chr.ishenry.com/2015/04/23/advanced-serverspec/"/>
+    <updated>2015-04-23T13:21:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/04/23/advanced-serverspec</id>
+    <content type="html"><![CDATA[<p>Testing the outcome of infrastructure provisioning is an operator's bread and
+butter. Good cookbook tests create predictable automation, and can be added to
+once problems are inevitably discovered. Serverspec is a huge part of ensuring
+that infrastructure being provisioned via chef is actually in the desired
+state.</p>
+
+<p>Using ruby's builtin libraries to parse and manipulate configuration files is a
+quick and simple win. We're no longer bound by having to use overly complex,
+brittle regexes to ensure files are created correctly.</p>
+
+<p>Parsing config files with similar libs that would be consuming them in
+production provides a lightweight, implied method of testing that those files
+are valid. It's also a straightforward, programmatic approach to getting values
+out of configuration files. And not just scalar values, but lists and arrays.</p>
+
+<p>Here's a few ways to pull in rubygems when writing serverspec;</p>
+
+<ul>
+<li>Simply use ruby <code>include</code></li>
+<li>Add a Gemfile to your serverspec folder</li>
+<li>Use Gem::DependencyInstaller in the spec_helper.rb</li>
+</ul>
+
+
+<p>Here's an example of installing the <code>inifile</code> gem in your <code>spec_helper.rb</code>.</p>
+
+<p><code>ruby Install a gem in spec_helper.rb
+begin
+  Gem::Specification.find_by_name('inifile')
+rescue Gem::LoadError
+  require 'rubygems/dependency_installer'
+  Gem::DependencyInstaller.new(Gem::DependencyInstaller::DEFAULT_OPTIONS).install('inifile')
+end
+</code></p>
+]]></content>
+  </entry>
+  
+</feed>
