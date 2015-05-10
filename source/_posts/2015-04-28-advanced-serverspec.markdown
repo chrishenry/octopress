@@ -18,11 +18,6 @@ Combining ruby's builtin libraries to parse and manipulate configuration files
 with serverspec is a quick and simple win. We're no longer bound by having to
 use overly complex, brittle regexes to ensure files are created correctly.
 
-Parsing config files with similar libs that would be consuming them in
-production provides a lightweight, implied method of testing that those files
-are valid. It's also a straightforward, programmatic approach to getting values
-out of configuration files. And not just scalar values, but lists and arrays.
-
 Here's a few ways to pull in rubygems when writing serverspec;
 
 * Simply use ruby `include`
@@ -40,7 +35,7 @@ rescue Gem::LoadError
 end
 ```
 
-Here's a few examples of using the gems we installed to make our tests better.
+Here's a few examples of using the ini gem we installed to make our tests better.
 
 ```ruby Parse an ini file
 require 'inifile'
@@ -61,6 +56,38 @@ describe 'conf file tests'
   program_ini = IniFile.load(program_conf)
   it 'has the correct maxmemory value' do
     expect(program_ini['global']['program.java.maxmemory']).to eq(512)
+  end
+end
+```
+
+Parsing config files with similar libs that would be consuming them in
+production provides a lightweight, implied method of testing that those files
+are valid. It's also a straightforward, programmatic approach to getting values
+out of configuration files. And not just scalar values, but lists and arrays.
+
+Here's a more in-depth example, using rspec.
+
+```ruby Parse a json file, check some values, and ensure all items are present in a list
+describe 'json config' do
+  config_file = '/etc/default.json'
+  conf = JSON.parse(File.read(config_file))
+
+  it 'does *not* have the unkey key' do
+    expect(conf).to_not have_key('unkey')
+  end
+
+  it 'sets foo to bar' do
+    expect(conf['foo']).to eq('bar')
+  end
+
+  expected_items = [
+    '127.0.0.128',
+    '127.0.0.126',
+    '127.0.0.127'
+  ]
+
+  describe conf['items'] do
+    it { should match_array(expected_items) }
   end
 end
 ```
