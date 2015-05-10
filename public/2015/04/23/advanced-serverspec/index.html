@@ -86,14 +86,9 @@ once problems are inevitably discovered. Serverspec is a huge part of ensuring
 that infrastructure being provisioned via chef is actually in the desired
 state.</p>
 
-<p>Using ruby&#8217;s builtin libraries to parse and manipulate configuration files is a
-quick and simple win. We&#8217;re no longer bound by having to use overly complex,
-brittle regexes to ensure files are created correctly.</p>
-
-<p>Parsing config files with similar libs that would be consuming them in
-production provides a lightweight, implied method of testing that those files
-are valid. It&#8217;s also a straightforward, programmatic approach to getting values
-out of configuration files. And not just scalar values, but lists and arrays.</p>
+<p>Combining ruby&#8217;s builtin libraries to parse and manipulate configuration files
+with serverspec is a quick and simple win. We&#8217;re no longer bound by having to
+use overly complex, brittle regexes to ensure files are created correctly.</p>
 
 <p>Here&#8217;s a few ways to pull in rubygems when writing serverspec;</p>
 
@@ -117,6 +112,105 @@ out of configuration files. And not just scalar values, but lists and arrays.</p
 </span><span class='line'><span class="k">rescue</span> <span class="ss">Gem</span><span class="p">:</span><span class="ss">:LoadError</span>
 </span><span class='line'>  <span class="nb">require</span> <span class="s1">&#39;rubygems/dependency_installer&#39;</span>
 </span><span class='line'>  <span class="ss">Gem</span><span class="p">:</span><span class="ss">:DependencyInstaller</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="ss">Gem</span><span class="p">:</span><span class="ss">:DependencyInstaller</span><span class="o">::</span><span class="no">DEFAULT_OPTIONS</span><span class="p">)</span><span class="o">.</span><span class="n">install</span><span class="p">(</span><span class="s1">&#39;inifile&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Here&#8217;s a few examples of using the ini gem we installed to make our tests better.</p>
+
+<figure class='code'><figcaption><span>Parse an ini file</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="nb">require</span> <span class="s1">&#39;inifile&#39;</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">describe</span> <span class="s1">&#39;conf file tests&#39;</span>
+</span><span class='line'>  <span class="n">program_conf</span> <span class="o">=</span> <span class="s1">&#39;/my/path/to/important/program.conf&#39;</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s1">&#39;writes out a program.conf file&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">file</span> <span class="n">program_conf</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">be_file</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Regex test</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s1">&#39;has the correct maxmemory value&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">file</span><span class="p">(</span><span class="n">program_conf</span><span class="p">)</span><span class="o">.</span><span class="n">content</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">match</span><span class="o">/^</span><span class="n">program</span><span class="p">\</span><span class="o">.</span><span class="n">java</span><span class="p">\</span><span class="o">.</span><span class="n">maxmemory</span><span class="o">.</span><span class="n">*</span><span class="o">=.</span><span class="n">*</span><span class="mi">512</span><span class="o">.</span><span class="n">*</span><span class="vg">$/</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="c1"># Lib test</span>
+</span><span class='line'>  <span class="n">program_ini</span> <span class="o">=</span> <span class="no">IniFile</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">program_conf</span><span class="p">)</span>
+</span><span class='line'>  <span class="n">it</span> <span class="s1">&#39;has the correct maxmemory value&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">program_ini</span><span class="o">[</span><span class="s1">&#39;global&#39;</span><span class="o">][</span><span class="s1">&#39;program.java.maxmemory&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="mi">512</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'><span class="k">end</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Parsing config files with similar libs that would be consuming them in
+production provides a lightweight, implied method of testing that those files
+are valid. It&#8217;s also a straightforward, programmatic approach to getting values
+out of configuration files. And not just scalar values, but lists and arrays.</p>
+
+<p>Here&#8217;s a more in-depth example, using rspec.</p>
+
+<figure class='code'><figcaption><span>Parse a json file, check some values, and ensure all items are present in a list</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+</pre></td><td class='code'><pre><code class='ruby'><span class='line'><span class="n">describe</span> <span class="s1">&#39;json config&#39;</span> <span class="k">do</span>
+</span><span class='line'>  <span class="n">config_file</span> <span class="o">=</span> <span class="s1">&#39;/etc/default.json&#39;</span>
+</span><span class='line'>  <span class="n">conf</span> <span class="o">=</span> <span class="no">JSON</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="no">File</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">config_file</span><span class="p">))</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s1">&#39;does *not* have the unkey key&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">conf</span><span class="p">)</span><span class="o">.</span><span class="n">to_not</span> <span class="n">have_key</span><span class="p">(</span><span class="s1">&#39;unkey&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">it</span> <span class="s1">&#39;sets foo to bar&#39;</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">expect</span><span class="p">(</span><span class="n">conf</span><span class="o">[</span><span class="s1">&#39;foo&#39;</span><span class="o">]</span><span class="p">)</span><span class="o">.</span><span class="n">to</span> <span class="n">eq</span><span class="p">(</span><span class="s1">&#39;bar&#39;</span><span class="p">)</span>
+</span><span class='line'>  <span class="k">end</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">expected_items</span> <span class="o">=</span> <span class="o">[</span>
+</span><span class='line'>    <span class="s1">&#39;127.0.0.128&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;127.0.0.126&#39;</span><span class="p">,</span>
+</span><span class='line'>    <span class="s1">&#39;127.0.0.127&#39;</span>
+</span><span class='line'>  <span class="o">]</span>
+</span><span class='line'>
+</span><span class='line'>  <span class="n">describe</span> <span class="n">conf</span><span class="o">[</span><span class="s1">&#39;items&#39;</span><span class="o">]</span> <span class="k">do</span>
+</span><span class='line'>    <span class="n">it</span> <span class="p">{</span> <span class="n">should</span> <span class="n">match_array</span><span class="p">(</span><span class="n">expected_items</span><span class="p">)</span> <span class="p">}</span>
+</span><span class='line'>  <span class="k">end</span>
 </span><span class='line'><span class="k">end</span>
 </span></code></pre></td></tr></table></div></figure>
 
