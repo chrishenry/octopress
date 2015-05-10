@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: chef | The Technician]]></title>
+  <link href="http://chr.ishenry.com/blog/categories/chef/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2015-05-10T15:17:36-04:00</updated>
+  <id>http://chr.ishenry.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Advanced Serverspec]]></title>
+    <link href="http://chr.ishenry.com/2015/04/23/advanced-serverspec/"/>
+    <updated>2015-04-23T13:21:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/04/23/advanced-serverspec</id>
+    <content type="html"><![CDATA[<p>Testing the outcome of infrastructure provisioning is an operator's bread and
+butter. Good cookbook tests create predictable automation, and can be added to
+once problems are inevitably discovered. Serverspec is a huge part of ensuring
+that infrastructure being provisioned via chef is actually in the desired
+state.</p>
+
+<p>Combining ruby's builtin libraries to parse and manipulate configuration files
+with serverspec is a quick and simple win. We're no longer bound by having to
+use overly complex, brittle regexes to ensure files are created correctly.</p>
+
+<p>Here's a few ways to pull in rubygems when writing serverspec;</p>
+
+<ul>
+<li>Simply use ruby <code>include</code></li>
+<li>Add a Gemfile to your serverspec folder</li>
+<li>Use Gem::DependencyInstaller in the spec_helper.rb</li>
+</ul>
+
+
+<p>Here's an example of installing the <code>inifile</code> gem in your <code>spec_helper.rb</code>.</p>
+
+<p><code>ruby Install a gem in spec_helper.rb
+begin
+  Gem::Specification.find_by_name('inifile')
+rescue Gem::LoadError
+  require 'rubygems/dependency_installer'
+  Gem::DependencyInstaller.new(Gem::DependencyInstaller::DEFAULT_OPTIONS).install('inifile')
+end
+</code></p>
+
+<p>Here's a few examples of using the ini gem we installed to make our tests better.</p>
+
+<p>```ruby Parse an ini file
+require 'inifile'</p>
+
+<p>describe 'conf file tests'
+  program_conf = '/my/path/to/important/program.conf'</p>
+
+<p>  it 'writes out a program.conf file' do</p>
+
+<pre><code>expect(file program_conf).to be_file
+</code></pre>
+
+<p>  end</p>
+
+<p>  # Regex test
+  it 'has the correct maxmemory value' do</p>
+
+<pre><code>expect(file(program_conf).content).to match/^program\.java\.maxmemory.*=.*512.*$/
+</code></pre>
+
+<p>  end</p>
+
+<p>  # Lib test
+  program_ini = IniFile.load(program_conf)
+  it 'has the correct maxmemory value' do</p>
+
+<pre><code>expect(program_ini['global']['program.java.maxmemory']).to eq(512)
+</code></pre>
+
+<p>  end
+end
+```</p>
+
+<p>Parsing config files with similar libs that would be consuming them in
+production provides a lightweight, implied method of testing that those files
+are valid. It's also a straightforward, programmatic approach to getting values
+out of configuration files. And not just scalar values, but lists and arrays.</p>
+
+<p>Here's a more in-depth example, using rspec.</p>
+
+<p>```ruby Parse a json file, check some values, and ensure all items are present in a list
+describe 'json config' do
+  config_file = '/etc/default.json'
+  conf = JSON.parse(File.read(config_file))</p>
+
+<p>  it 'does <em>not</em> have the unkey key' do</p>
+
+<pre><code>expect(conf).to_not have_key('unkey')
+</code></pre>
+
+<p>  end</p>
+
+<p>  it 'sets foo to bar' do</p>
+
+<pre><code>expect(conf['foo']).to eq('bar')
+</code></pre>
+
+<p>  end</p>
+
+<p>  expected_items = [</p>
+
+<pre><code>'127.0.0.128',
+'127.0.0.126',
+'127.0.0.127'
+</code></pre>
+
+<p>  ]</p>
+
+<p>  describe conf['items'] do</p>
+
+<pre><code>it { should match_array(expected_items) }
+</code></pre>
+
+<p>  end
+end
+```</p>
+]]></content>
+  </entry>
+  
+</feed>

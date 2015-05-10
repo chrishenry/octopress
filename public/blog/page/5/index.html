@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Things never go wrong at convenient times: Like when you&#8217;re auditing the
-latest, coolest version of your app, and looking for bugs. Things &hellip;">
+	<meta name="description" content="A classic UX problems is communicating to users how long they&#8217;ll have to wait
+before their task completes. A spinner or progress bar provides &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,69 @@ latest, coolest version of your app, and looking for bugs. Things &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2011/03/12/the-progress-bar-pysch/">
+		
+			The Progress Bar Pysch</a>
+	</h2>
+	<div class="entry-content">
+		<p>A classic UX problems is communicating to users how long they&#8217;ll have to wait
+before their task completes. A spinner or progress bar provides feedback that
+the system is, in fact, doing something, and how long that task may take.
+Psychologically, progress bars create tension while progressing, and
+resolution when completed.</p>
+
+<p>From a technical standpoint, progress bars are black magic. The developer is
+attempting to estimate a task based on potentially thousands of variables. In
+the case of a file upload, the developer has to deal with differing network
+conditions, disk performance, etc, etc, etc. Then they have to write the code
+to communicate what is happening to the browser. Not a trivial task. However,
+when executed well, can provide the user with reasonable feedback about their
+task.</p>
+
+<p>Lately, sites like LinkedIn, Mint.com, and OKCupid have used that same tension
+to motivate users to completely fill out their profiles. During profile
+creation, a progress bar is displayed indicating how far the user has come
+along. Once the user completely fills out their profile, the progress bar hits
+100%, and what changes? In most cases, nothing. The progress bar is just a
+psychological hack to entice users to go through the entire process.</p>
+
+<p>The question is: Exactly how effective is the progress bar at enticing users
+to fully complete the task at hand? And are they actually worth it.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2011-03-12T00:00:00-05:00" pubdate data-updated="true">Mar 12<span>th</span>, 2011</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/sxsw/'>Sxsw</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -775,71 +838,6 @@ devices.</p>
 
 
 	<a class='category' href='/blog/categories/advertising/'>Advertising</a>, <a class='category' href='/blog/categories/mobile/'>Mobile</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/05/03/mysql-slave-delay-and-maatkit/">
-		
-			MySQL Slave Delay and Maatkit</a>
-	</h2>
-	<div class="entry-content">
-		<p>This post could alternately be titled: &#8216;How to make developers hate you.&#8217;</p>
-
-<p>A very common criticism of MySQL is that there is no support for delayed
-replication. Delaying data flowing from master to slave can be very useful in
-certain cases. For example, running a co-located slave for backups is still
-susceptible to data problems that caused by a DELETE with no where or a
-mistaken executed DROP. However, by running the slave anywhere from an hour to
-a day behind, you have the opportunity to catch whatever problems caused and
-have a good copy of your data ready to go.</p>
-
-<p>In <a href="http://chr.ishenry.com/2010/02/22/sandboxes/">sandbox environments</a>, a
-consistent slave delay is a great way to reproduce race conditions. In fact,
-running slave delay gives you the opportunity to ensure that data will be out
-of sync between the master and slave. When you can count on this part of the
-environment, developers can test and write code against this condition. Of
-course, in reality, working in this type of environment is reaally annoying,
-but necessary.</p>
-
-<p>Delayed MySQL replication can be accomplished by using a tool from the
-<a href="http://www.maatkit.org/">maatkit</a> library. Documentation for the tool can be
-found at <a href="http://www.maatkit.org/doc/mk-slave-delay.html">[http://www.maatkit.org/doc/mk-slave-
-delay.html](http://www.maatkit.org/doc/mk-slave-
-delay.html)</a>. What&#8217;s great
-about this tool is that can be run as a daemon, so that it can be easily run
-for an extended period of time, without have to do any serious management.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-05-03T00:00:00-04:00" pubdate data-updated="true">May 3<span>rd</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mysql/'>MySQL</a>
 
 
 </div>
