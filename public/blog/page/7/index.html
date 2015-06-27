@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Sometimes bugs come along that require significant work to fix. Depending on
-what project timelines are like at the moment, sometimes fixing the bug &hellip;">
+	<meta name="description" content="[Update] My team at Rackspace has sent me the fluffiest, most comfortable
+pillow I have ever had. When a hosting provider goes down, there are lots &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,85 @@ what project timelines are like at the moment, sometimes fixing the bug &hellip;
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/11/04/rackspace-downtime/">
+		
+			Rackspace Downtime</a>
+	</h2>
+	<div class="entry-content">
+		<p>[Update] My team at Rackspace has sent me the fluffiest, most comfortable
+pillow I have ever had.</p>
+
+<p>When a hosting provider goes down, there are lots of questions that get
+raised. Is my host reliable? Will they flake out during crucial times when my
+site needs the traffic? Will they <a href="http://lmgtfy.com/?q=dreamhost+billing">double
+bill</a> me?</p>
+
+<p>Since I have been working with Rackspace, they have had less than stellar
+uptime, with issues mostly related to power. My company pays a lot for hosting
+with them, and downtime for a young company is deadly. But oddly enough, I&#8217;m
+still OK with Rackspace hosting my company&#8217;s myriad services. The benefits of
+hosting with them have been so great that a couple hours of downtime is
+nothing.</p>
+
+<p>First off, their SLA has provisions for downtime, when it happens. If your
+server has a legitimate issue, you&#8217;re entitled to ask for a credit. To me,
+this is a promise that they&#8217;ll put their money where their mouth is. And if
+you call them on it, they&#8217;ll be reasonable.</p>
+
+<p>Secondly, their support during crises is still amazing. During the <a href="http://bit.ly/9LrNz">truck
+incident</a>, I was able to get a tech to run fsck on my
+disks, and hang out to watch no questions asked. No, I am not on their
+intensive plan.</p>
+
+<p>Third, their support culture is simply amazing. Their linux techs are always
+willing to look deep into an issue to find a resolution, and they provide much
+of the basic <a href="http://bit.ly/1HkKYJ">infrastructure</a> that is hard to come by
+for small companies.. They&#8217;re also completely willing to educate their
+customers about the servers they maintain.</p>
+
+<p>In short, Rackspace has been the target of a lot of criticism over issues in
+their datacenters. The fact of the matter is that there will always be issues
+and downtime. <a href="http://www.rackspace.com/solutions/managed_hosting/s%0Aupport/servicelevels/managedsla.php">Their SLA</a> guarantees the impossible, which they
+seem to realize, as any failure on their part comes with swift response. In
+the end their SLA seems to be more of a way of setting standards than anything
+else.</p>
+
+<p>[Full disclosure: I haven&#8217;t slept in 2 days because of their power issues]</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-11-04T00:00:00-05:00" pubdate data-updated="true">Nov 4<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -727,87 +806,6 @@ repeated.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/06/04/architecture-will-save-you/">
-		
-			Architecture Will Save You</a>
-	</h2>
-	<div class="entry-content">
-		<p>There are two things that cause sites to go down:</p>
-
-<ul>
-<li>Something breaks.</li>
-<li>Too much traffic.</li>
-</ul>
-
-
-<p>When things break, there&#8217;s nothing to do but <a href="http://chr.ishenry.com/2009/05/25/crisis-mo/">failover, examine, and
-fix</a>.</p>
-
-<p>But when there&#8217;s too much traffic, you&#8217;re screwed. The reason you&#8217;re getting
-so much traffic is because you&#8217;ve done something to earn it. Your site has
-made it on to Digg or Reddit or even TV. Failing over to a status page is
-admitting that you haven&#8217;t done your job. Staying up means that some people
-will see the site, maybe, but after a stupidly long wait. And then you become
-&#8216;that site&#8217; that was taken down by too much traffic.</p>
-
-<p>So as a web architect, this is your absolute worst moment. Everything you&#8217;ve
-done over the past months or years is falling down miserably in front of you,
-and there isn&#8217;t anything you can do at that moment that will make a meaningful
-difference. Unless, of course, your architecture is set up so you can increase
-capacity by just turning up more servers. Among software architects, this is
-know as being able to <a href="http://bit.ly/14YkWx">scale horizontally</a></p>
-
-<p>So when the site is being built, it&#8217;s extremely important that every choice
-you make supports scaling horizontally, with each layer able to be spread
-across many servers. Storage, session handling, database, apache […] are all
-different layers. They all need to be able to handle more capacity just by
-adding additional services to whatever layer needs it.</p>
-
-<p>Having the horizontal scalable quality is really difficult when trying to get
-a site out quickly. architecture is something that will often get de-
-prioritized because there is no immediate result. However, taking the extra
-time to build an application that follows the horizontally scalable patterns
-is extremely important. Without spending that extra time, you can easily be
-wiped out by the <a href="http://www.ndesign-studio.com/blog/updates/the-%0Adigg-effect/">Digg effect</a>.</p>
-
-<p>The biggest takeaway is when thinking about how to build your application,
-focus on making it scale horizontally. So when the moment comes when you get
-on Digg, you can spin up some more servers, sit back, and have a drink.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-04T00:00:00-04:00" pubdate data-updated="true">Jun 4<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/scalability/'>Scalability</a>
 
 
 </div>

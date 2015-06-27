@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-06-27T15:10:00-04:00</updated>
+  <updated>2015-06-27T15:12:16-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,118 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[FizzBuzz in Go and Rust]]></title>
+    <link href="http://chr.ishenry.com/2015/06/26/fizzbuzz-in-go-and-rust/"/>
+    <updated>2015-06-26T19:23:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/06/26/fizzbuzz-in-go-and-rust</id>
+    <content type="html"><![CDATA[<p>My team and I attended DockerCon earlier this week. We went with the intention
+of taking time at the hackathon to spend some time digging into what it would be
+like to operate services running on Docker &amp; CoreOS. Part of the challenge
+of CoreOS is that there isn&#8217;t a package manager, which makes installing any
+modern programming language difficult. The only way to execute code is drop a
+binary on the machine or to run code in a Docker container.</p>
+
+<p>Therefore, it made a lot of sense to take some time to experiment with both Go
+and Rust. It was also a ton of fun to play with some new ideas. To get a grasp
+of the basics, I looked to the tried and true <a href="http://c2.com/cgi/wiki?FizzBuzzTest">FizzBuzz</a>.
+FizzBuzz is a great exercise because it forces you to loop, use control logic
+(if/else or case), and understand some basic math operators.</p>
+
+<!-- more -->
+
+
+<h2>Rust</h2>
+
+<p><a href="http://www.rust-lang.org/">Rust</a> bills itself as a language for <a href="https://en.wikipedia.org/wiki/System_software">systems
+programming</a>. While I didn&#8217;t get
+far enough to determine if that was true, I did get far enough to determine that
+Rust is relatively difficult to work with, in that it requires a compilation
+step &amp; a run step before you can see the outcome of your code.</p>
+
+<figure class='code'><figcaption><span>Run a rust program</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>± |master ✗| → rustc fizzbuzz.rs
+</span><span class='line'>± |master ✗| → ./fizzbuzz
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It was also a bit awkward in that creating an effective code &rarr;
+execute workflow required installing <a href="https://crates.io/">Cargo</a> to manage the
+very small package I created. Compilation was a bit on the slow side as well,
+considering I only wrote 25 lines of code.</p>
+
+<figure class='code'><figcaption><span>Run my rust fizzbuzz program</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>± |master ✗| → <span class="nb">time </span>cargo run
+</span><span class='line'>   Compiling rust v0.1.0 <span class="o">(</span>file:///Users/chrishenry/Code/fizzbuzz/rust<span class="o">)</span>
+</span><span class='line'>     Running <span class="sb">`</span>target/debug/rust<span class="sb">`</span>
+</span><span class='line'>1
+</span><span class='line'>2
+</span><span class='line'><span class="o">[</span>....<span class="o">]</span>
+</span><span class='line'>Buzz
+</span><span class='line'>
+</span><span class='line'>real  0m0.363s
+</span><span class='line'>user  0m0.292s
+</span><span class='line'>sys   0m0.067s
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p><a href="https://github.com/chrishenry/fizzbuzz/tree/master/rust">Here&#8217;s my implementation</a>.</p>
+
+<h2>Go</h2>
+
+<p><a href="https://golang.org/">Golang</a> is an open source, statically-typed language
+that&#8217;s been designed to make it straight forward to build reliable and efficient
+software. That&#8217;s what it says on the tin, and happily, that was my experience.
+Go is simple to compile and run.</p>
+
+<figure class='code'><figcaption><span>Run my go fizzbuzz program</span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>± |master ✗| → <span class="nb">time </span>go run fizzbuzz.go
+</span><span class='line'>1
+</span><span class='line'>2
+</span><span class='line'><span class="o">[</span>...<span class="o">]</span>
+</span><span class='line'>Buzz
+</span><span class='line'>
+</span><span class='line'>real  0m0.132s
+</span><span class='line'>user  0m0.101s
+</span><span class='line'>sys   0m0.028s
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>It was also fast. Almost 3x faster than rust. It wound up being slightly more
+code, as Go requires you to name the package, and to import the <code>fmt</code> package
+just to print to <code>stdout</code>. However, the experience writing it was quite nice.
+Very clear errors appeared at compile time, which was helpful as a n00b.</p>
+
+<p><a href="https://github.com/chrishenry/fizzbuzz/blob/master/go/fizzbuzz.go">Here&#8217;s my FizzBuzz implementation</a>.</p>
+
+<h2>Conclusion</h2>
+
+<p>Overall, it was a good learning experience to dig into the next generation of
+programming languages. Rust seems promising, should I need to actually do
+system programming. But Go seems like a great candidate for building fast,
+portable tools.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Advanced Serverspec]]></title>
@@ -739,15 +851,6 @@ to trade concessions with the designers if I don’t know what you’re trying t
 do.</p></blockquote>
 
 <p>&#8211;<a href="http://37signals.com/svn/posts/3392-humans-need-to-know-why">http://37signals.com/svn/posts/3392-humans-need-to-know-why</a></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Airport Security at it’s finest.]]></title>
-    <link href="http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest/"/>
-    <updated>2013-02-03T00:00:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/02/03/airport-security-at-its-finest</id>
-    <content type="html"><![CDATA[<p><img src="http://chr.ishenry.com/images/user/jfk_security.png" alt="" /></p>
 ]]></content>
   </entry>
   
