@@ -30,7 +30,7 @@ FizzBuzz is a great exercise because it forces you to loop, use control logic
 [Rust](http://www.rust-lang.org/) bills itself as a language for [systems
 programming](https://en.wikipedia.org/wiki/System_software). While I didn't get
 far enough to determine if that was true, I did get far enough to determine that
-Rust is still fairly difficult to work with, in that it requires a compilation
+Rust is relatively difficult to work with, in that it requires a compilation
 step &amp; a run step before you can see the outcome of your code.
 
 ``` bash Run a rust program
@@ -38,10 +38,10 @@ step &amp; a run step before you can see the outcome of your code.
 ± |master ✗| → ./fizzbuzz
 ```
 
-It was also a bit awkward in that running code effectively required installing
-[Cargo](https://crates.io/) to manage the very small package I created.
-Compilation was a bit on the slow side as well, considering I only wrote 25
-lines of code.
+It was also a bit awkward in that creating an effective code &rarr;
+execute workflow required installing [Cargo](https://crates.io/) to manage the
+very small package I created. Compilation was a bit on the slow side as well,
+considering I only wrote 25 lines of code.
 
 ``` bash Run my rust fizzbuzz program
 ± |master ✗| → time cargo run
