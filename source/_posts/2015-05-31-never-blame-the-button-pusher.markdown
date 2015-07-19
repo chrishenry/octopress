@@ -32,9 +32,10 @@ book. They might be brand new. The run book may have been given to them and
 they were told not to deviate. That's the point of run books, after all, is to
 allow ops teams to operate safely with proven procedures.
 
-The second is that mistakes happen, no matter how much preparation, automation
-and resiliency engineering goes into a service. [It is inevitable that services
-will fail, and getting frustrated or angry about it is irrational.](https://twitter.com/beerops/status/571096463398187008)
+The second is that mistakes and accidents happen, no matter how much
+preparation, automation and resiliency engineering goes into a service. [It is
+inevitable that services will fail, and getting frustrated or angry about it is
+irrational.](https://twitter.com/beerops/status/571096463398187008)
 
 For both of these problems, it's extremely damaging to allow individuals to be
 blamed for an incident. It destroys morale to see a team member singled out. A
