@@ -10,12 +10,14 @@ categories:
 
 While having drinks with a colleague, the topic of improving execution within an
 organization came up. There had been some problems in the past few years, but
-this was an org trying to operate in an unfamiliar way. Some problems could've
-been avoided by having a conscientious operator. At one point in the
-conversation, the following was said;
+this was an organization trying to operate in an unfamiliar way, and it was
+suggested that problems could've been avoided by having a conscientious
+operator. At one point in the conversation, the following was said;
 
 > The people who push the buttons that cause problems should be fired. Heads
 > should roll.
+
+<!-- more -->
 
 I was a bit taken aback. In my short career, I've pushed a lot of buttons
 that have caused __a lot__ of problems. What was said was certainly not a
