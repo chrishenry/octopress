@@ -14,7 +14,7 @@ My team and I attended DockerCon earlier this week. We went with the intention
 of taking time at the hackathon to spend some time digging into what it would be
 like to operate services running on Docker &amp; CoreOS. Part of the challenge
 of CoreOS is that there isn't a package manager, which makes installing any
-modern programming language difficult. The only way to execute code is drop a
+modern programming language difficult. The only way to execute code is to drop a
 binary on the machine or to run code in a Docker container.
 
 Therefore, it made a lot of sense to take some time to experiment with both Go
