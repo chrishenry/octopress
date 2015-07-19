@@ -8,44 +8,46 @@ categories:
  - culture
 ---
 
-While out with someone, the topic of improving execution within an organization
-came up. There had been several high profile incidents, and a lot of low profile
-incidents. For background, this org has not had a lot of operations experience,
-and hasn't quite cut their teeth on understanding what a risky procedure is.
-
-Many of the failures in question could have been avoided by having a
-conscientious operator. At one point in the conversation, the following was
-said;
+While having drinks with a colleague, the topic of improving execution within an
+organization came up. There had been some problems in the past few years, but
+this was an org trying to operate in an unfamiliar way. Some problems could've
+been avoided by having a conscientious operator. At one point in the
+conversation, the following was said;
 
 > The people who push the buttons that cause problems should be fired. Heads
 > should roll.
 
 I was a bit taken aback. In my short career, I've pushed a lot of buttons
-that have caused __a lot__ of problems. And what was said was certainly not a
-suggestion I should be canned. The frustration that led to the statement was
-that most postmortems turned up human error as the root cause of most incidents.
-Of course, that was when a root cause was reached at all.
+that have caused __a lot__ of problems. What was said was certainly not a
+personal condemnation, but a statement made in frustration. Frustration born out
+of seeing `human error` turn up as the root cause of most incidents, and not
+enough improvement.
 
-There are 2 major problems with the sentiments described. The first is that the
-person pushing the button may be just following a run book or SOP.
+## Two problems
 
-Assigning
-blame to a person for following what is supposed to be a well designed set of
-actions to remediate a system is bad juju.
+The first is that the person pushing the button is probably just following a run
+book. They might be brand new. The run book may have been given to them and
+they were told not to deviate. That's the point of run books, after all, is to
+allow ops teams to operate safely with proven procedures.
 
-Assigning blame to a person for these problems creates fear and distrust in an
-organization. So much so that operators will fear to do the right thing, or to
-even think for themselves.
+The second is that mistakes happen, no matter how much preparation, automation
+and resiliency engineering goes into a service. [It is inevitable that services
+will fail, and getting frustrated or angry about it is irrational.](https://twitter.com/beerops/status/571096463398187008)
 
-The second is that
+For both of these problems, it's extremely damaging to allow individuals to be
+blamed for an incident. It destroys morale to see a team member singled out. A
+rough lesson learned by one team member doesn't always translate to
+institutional knowledge that helps prevent the next issues.
 
-In which
-case, that person is not in the wrong in what they did. Of course, any person
-following instructions is still in control of their destiny, and should
-__always__ exercise judgment in anything they are asked to do.
+## The solution
 
-As I've focused on continually improving systems, I've found that the design of
-the system and the ability of a team of to think through what to do are the
-things that actually make a difference.
+What we need to look for are things that can written down, codified and repeated
+to ensure the same problem is prevented. If a run book procedure turns out to be
+incorrect in a given set of circumstances, then it needs to be reexamined, by
+the entire team. If an automation does the wrong thing, it needs to be fixed. If
+a system allows actions to be taken that damage the effectiveness of the
+service, you need to ask why those actions are allowed.
 
-
+The point is, there is almost always an aspect of the system that can be changed
+to ensure problems are avoided. Focusing on that will be way more productive
+than focusing on individual actions.
