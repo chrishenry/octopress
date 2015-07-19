@@ -4,7 +4,7 @@ title: "When to do it yourself"
 date: 2015-03-31 20:07
 comments: true
 categories:
- - ops
+ - operations
  - startups
 ---
 

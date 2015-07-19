@@ -6,7 +6,7 @@ comments: true
 categories:
  - travel
  - research
- - ops
+ - operations
 ---
 
 A few weeks ago, I was stuck in an airport for a couple hours. I was flying to San Francisco, and upon arriving to JFK, was informed my flight would be delayed several hours due to a [ground delay program](http://en.wikipedia.org/wiki/Ground_delay_program). A ground delay program is put in place when a particular airport's ability to keep up with traffic is diminished. If your destination airport has a program in place, your takeoff will be delayed until the destination recovers.
