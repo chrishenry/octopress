@@ -4,7 +4,7 @@
   <title><![CDATA[Category: code | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/code/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-06-27T15:12:16-04:00</updated>
+  <updated>2015-07-19T20:02:31-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -22,7 +22,7 @@
 of taking time at the hackathon to spend some time digging into what it would be
 like to operate services running on Docker &amp; CoreOS. Part of the challenge
 of CoreOS is that there isn't a package manager, which makes installing any
-modern programming language difficult. The only way to execute code is drop a
+modern programming language difficult. The only way to execute code is to drop a
 binary on the machine or to run code in a Docker container.</p>
 
 <p>Therefore, it made a lot of sense to take some time to experiment with both Go

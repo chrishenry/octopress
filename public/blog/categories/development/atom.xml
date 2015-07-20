@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Development | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/development/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-06-27T15:12:16-04:00</updated>
+  <updated>2015-07-19T20:02:31-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -184,22 +184,15 @@ architected in a way that makes a lot of sense for the web. The following
 steps were performed on a Red Hat machine. Don't skip the mysql-dev install,
 even if you already MySQL installed.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
-</span><span class='line'>yum install mysql-dev*
-</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
-</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
-</span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock Sphinx installation lang:bash %}
+yum install gcc-c++
+yum install mysql-dev*
+wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
+tar xzvf sphinx-0.9.9.tar.gz
+mkdir /usr/local/sphinx
+./configure --prefix /usr/local/sphinx --with-mysql> ./make
+make install
+{% endcodeblock %}</p>
 
 <p>Once installed, it's fairly simple to start playing with the packaged example
 data and queries. The php APIs make integration easy, either to build a

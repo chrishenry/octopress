@@ -302,11 +302,11 @@
     </url>
     <url>
         <loc>http://chr.ishenry.com/2014/11/02/flight-status/</loc>
-        <lastmod>2014-11-02T16:57:55-05:00</lastmod>
+        <lastmod>2015-07-19T19:57:53-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/2015/03/31/when-to-do-it-yourself/</loc>
-        <lastmod>2015-03-31T23:42:58-04:00</lastmod>
+        <lastmod>2015-07-19T19:57:28-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/2015/04/11/coding-music-spring-2015/</loc>
@@ -317,16 +317,20 @@
         <lastmod>2015-05-10T15:24:51-04:00</lastmod>
     </url>
     <url>
+        <loc>http://chr.ishenry.com/2015/05/31/never-blame-the-button-pusher/</loc>
+        <lastmod>2015-07-19T19:57:20-04:00</lastmod>
+    </url>
+    <url>
         <loc>http://chr.ishenry.com/2015/06/26/fizzbuzz-in-go-and-rust/</loc>
-        <lastmod>2015-06-27T15:11:47-04:00</lastmod>
+        <lastmod>2015-07-19T19:56:57-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/blog/archives/</loc>
-        <lastmod>2015-06-27T15:11:47-04:00</lastmod>
+        <lastmod>2015-07-19T19:57:53-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/</loc>
-        <lastmod>2015-06-27T15:11:47-04:00</lastmod>
+        <lastmod>2015-07-19T19:57:53-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/robots.txt</loc>

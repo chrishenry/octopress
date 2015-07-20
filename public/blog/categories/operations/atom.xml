@@ -4,7 +4,7 @@
   <title><![CDATA[Category: operations | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/operations/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-06-27T15:12:16-04:00</updated>
+  <updated>2015-07-19T20:02:31-04:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,61 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[never blame the button pusher]]></title>
+    <link href="http://chr.ishenry.com/2015/05/31/never-blame-the-button-pusher/"/>
+    <updated>2015-05-31T00:14:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/05/31/never-blame-the-button-pusher</id>
+    <content type="html"><![CDATA[<p>While having drinks with a colleague, the topic of improving execution within an
+organization came up. There had been some problems in the past few years, but
+this was an organization trying to operate in an unfamiliar way, and it was
+suggested that problems could've been avoided by having a conscientious
+operator. At one point in the conversation, the following was said;</p>
+
+<blockquote><p>The people who push the buttons that cause problems should be fired. Heads
+should roll.</p></blockquote>
+
+<!-- more -->
+
+
+<p>I was a bit taken aback. In my short career, I've pushed a lot of buttons
+that have caused <strong>a lot</strong> of problems. What was said was certainly not a
+personal condemnation, but a statement made in frustration. Frustration born out
+of seeing <code>human error</code> turn up as the root cause of most incidents, and not
+enough improvement.</p>
+
+<h2>Two problems</h2>
+
+<p>The first is that the person pushing the button is probably just following a run
+book. They might be brand new. The run book may have been given to them and
+they were told not to deviate. That's the point of run books, after all, is to
+allow ops teams to operate safely with proven procedures.</p>
+
+<p>The second is that mistakes and accidents happen, no matter how much
+preparation, automation and resiliency engineering goes into a service. <a href="https://twitter.com/beerops/status/571096463398187008">It is
+inevitable that services will fail, and getting frustrated or angry about it is
+irrational.</a></p>
+
+<p>For both of these problems, it's extremely damaging to allow individuals to be
+blamed for an incident. It destroys morale to see a team member singled out. A
+rough lesson learned by one team member doesn't always translate to
+institutional knowledge that helps prevent the next issues.</p>
+
+<h2>The solution</h2>
+
+<p>What we need to look for are things that can written down, codified and repeated
+to ensure the same problem is prevented. If a run book procedure turns out to be
+incorrect in a given set of circumstances, then it needs to be reexamined, by
+the entire team. If an automation does the wrong thing, it needs to be fixed. If
+a system allows actions to be taken that damage the effectiveness of the
+service, you need to ask why those actions are allowed.</p>
+
+<p>The point is, there is almost always an aspect of the system that can be changed
+to ensure problems are avoided. Focusing on that will be way more productive
+than focusing on individual actions.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Advanced Serverspec]]></title>
@@ -125,6 +180,69 @@ describe 'json config' do
 <p>  end
 end
 ```</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[When to do it yourself]]></title>
+    <link href="http://chr.ishenry.com/2015/03/31/when-to-do-it-yourself/"/>
+    <updated>2015-03-31T20:07:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/03/31/when-to-do-it-yourself</id>
+    <content type="html"><![CDATA[<p>Your time is extremely valuable, and execution of your product is everything.
+When it comes to building out key pieces of infrastructure, the choice of
+whether to build it, buy it, or use open source is very personal,
+and depends on what the business really needs.</p>
+
+<p>You do things yourself when you need fine grained control of a resource, or
+require a deep understanding of a mission critical function. Can anyone do it
+better than you can? Even if they can, do you have enough control in the
+direction to get what you need? Does the time it takes to learn and execute in a
+given domain warrant the value it provides? Or could that time be spent on
+something else that would move the needle?</p>
+
+<p>Dead giveaways are things the user sees. Design and product development can’t be
+outsourced, nor can the actual execution of your product. Those stay in house,
+no matter what. Your ability to find your voice and interact with your customers
+is the thing that makes your product unique. If you cannot execute on your own
+product, it's a strong indication you're not doing the right thing.</p>
+
+<p>However, depending on your needs, there gets to be a long list of things that
+aren’t your product, but are still critical to running your business. Campaign
+and transactional email are great examples. Executing on mass email is extremely
+difficult because of defenses put in place by major ISPs. You need an IP with a
+good reputation, reverse DNS, a host that will allow massive amount of email to
+leave it’s datacenter, and the list goes on and on.</p>
+
+<p>There are also implicit supporting requirements of running a service that you
+need to have but shouldn't ever try to build. Project tracking, monitoring,
+graphing, and alerting are all examples of components that have executed
+extremely well by others, and can simply be turned on or deployed with minimal
+effort on the part of your team.</p>
+
+<p>In the end, what’s critical is spending your energy on the things that actually
+create impact. Knowing the intersection of tradeoffs and priorities is what will
+keep your team on the path that gets the job done.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Flight Status]]></title>
+    <link href="http://chr.ishenry.com/2014/11/02/flight-status/"/>
+    <updated>2014-11-02T16:13:00-05:00</updated>
+    <id>http://chr.ishenry.com/2014/11/02/flight-status</id>
+    <content type="html"><![CDATA[<p>A few weeks ago, I was stuck in an airport for a couple hours. I was flying to San Francisco, and upon arriving to JFK, was informed my flight would be delayed several hours due to a <a href="http://en.wikipedia.org/wiki/Ground_delay_program">ground delay program</a>. A ground delay program is put in place when a particular airport's ability to keep up with traffic is diminished. If your destination airport has a program in place, your takeoff will be delayed until the destination recovers.</p>
+
+<p>A ground delay program is the operations equivalent of shedding load. ATC essentially stops allowing inbound flights to take off to allow for the extra time and care it takes for en-route flights to land safely. This is very similar to <a href="http://techblog.netflix.com/2011/12/making-netflix-api-more-resilient.html">Netflix's implementation of the CircuitBreaker pattern</a>, as it allows the resource having trouble to recover while keeping flights en route at a minimum.</p>
+
+<p>While I was stuck, I found there's a couple really neat tools that can tell you a little about your chances of getting there on time.</p>
+
+<h4>FAA</h4>
+
+<p>The FAA is kind enough to supply information on delays <a href="http://www.fly.faa.gov/flyfaa/usmap.jsp">here</a>. However, I found the information to be presented here a bit disingenuous. The map continued to show my destination airport as green, although flights were actually being held at departure points.</p>
+
+<h4>FlightStats.com</h4>
+
+<p><a href="http://www.flightstats.com">They</a> have a delay index where every destination airport is given a ranking of 0 through 5, 0 being totally on time, and 5 meaning go back to the airport bar and grab another beer. They also very helpfully track whether that index is trending up or down. These relate directly to how long a Ground Delay Program has been running. The longer that ground delay program runs, they more likely that index is going to going to trend up. They also provide a listing of flights to your destination airport that you can use to benchmark how delayed other flights and airlines are.</p>
 ]]></content>
   </entry>
   
