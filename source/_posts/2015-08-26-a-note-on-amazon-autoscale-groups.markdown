@@ -11,11 +11,11 @@ AWS provides auto scaling to allow applications to scale up and
 down to meet demand. [Autoscaling](https://aws.amazon.com/autoscaling/) is an
 excellent tactic for ensuring that an application can add and remove capacity
 based on demand. Autoscale policies can be infinitely tuned to use anything that
-can be recorded by CloudWatch.
+can be recorded by CloudWatch. However, autoscale groups are also incredibly
+useful for ensuring that a set number of instances is always available. This can
+be accomplished by omitting scaling policies.
 
-However, autoscale groups are also incredibly useful for ensuring that a set
-number of instances is always available. This is accomplished by omitting
-scaling policies.
+<!-- more -->
 
 But for some reason, AWS users seem to shy away from using autoscale groups for
 anything but satisfying elastic demand. However, in my experience, autoscale
