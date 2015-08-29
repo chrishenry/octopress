@@ -35,7 +35,8 @@ group with min, max and desired set to 1. As long as proper automation is in
 place, the autoscale group will ensure there's always a single instance
 available.
 
-
-
-
+As a design principle, any infrastructure created should have the means to heal
+itself. Don't be put off by the name `Auto Scaling`, as the utility and value of
+keeping a single instance running using a well understood and easily accessible
+service is worth it's weight in gold.
 
