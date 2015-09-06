@@ -10,24 +10,26 @@ categories:
 
 If you haven't noticed, communication among teams (distributed or local) is a
 thing that people care a lot about. For my team, we specifically care about
-density of quality communication across mediums. We're an Operations team, and
+density of quality communication across mediums. We're an ops team, and
 being able to broadcast status and information is critically important. As we
 work, we don't want to have to re-communicate across mediums, but we still want
-to make sure the right people hear us, and provide feedback.
+to make sure the right people hear us and provide feedback.
 
-As our team was searching for ways to accomplish this, we began to utilize the
+As our team was searching for ways to accomplish this, we started using the
 ubiquitous and humble webhook to push information between systems. At first,
 we simply started pushing Pull Request comments into our Slack channel. This
 immediately increased our velocity, as we found ourselves seamlessly moving
 discussions from traditionally asynchronous mediums (Github Pull Requests) to
 more real time mediums (Slack, In Person).
 
+<!-- more -->
+
 Eventually, we started adding more sources to chat via Slack integrations. Our
 project tracking tool was a clear next step, as most of the information we
 were pouring into it was helpful to others. Team members reacting to status
 updates with pointers and questions was yet another boost to velocity of
-information. As we started adding brief comments of intent and even full blown
-plans we also created a hook for correcting mistakes before they even happened.
+information. Including brief comments of intent and even full blown
+plans gave us a hook for correcting mistakes before they even happened.
 
 {% blockquote %}
 <b>Dense Communication</b> - Extremely high signal to noise ratio textual
@@ -53,11 +55,7 @@ were busted more quickly. In general, we reacted more, contributed more, and as
 a result, had better outcomes.
 
 To critics of these practices, we say that [team productivity is more important
-than individual productivity]
-(https://twitter.com/postwait/status/637935373327446016). As humans walk
-down the streets of New York, there are a million stimuli, some gross, and some
-deadly. To say that people can't read and filter a few lines of text is a cop
-out. The cost of not communicating or reacting to our team is velocity and
-quality.
-
-
+than individual productivity](https://twitter.com/postwait/status/637935373327446016).
+As humans walk down the streets of New York, there are a million stimuli, some
+gross, and some deadly. To say that people can't read and filter a few lines of
+text is a cop out.
