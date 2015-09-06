@@ -11,25 +11,11 @@ categories:
 If you haven't noticed, communication among teams (distributed or local) is a
 thing that people care a lot about. For my team, we specifically care about
 density of quality communication across mediums. We're an Operations team, and
-being able to broadcast status and information is critical important. As we
+being able to broadcast status and information is critically important. As we
 work, we don't want to have to re-communicate across mediums, but we still want
 to make sure the right people hear us, and provide feedback.
 
-From my team's charter;
-
-{% blockquote %}
-We focus on ensuring other team members are as productive as we are.
-
-We understand that in any sufficiently complex environment, no one will
-understand everything. We prioritize helping other team members when they
-inevitably encounter issues. We also ensure other teams have what they need to
-move forward.
-{% endblockquote %}
-
-Dense Communication - Communication with an extremely high signal to noise ratio
-that's compiled from different sources and intended to cross mediums.
-
-As our team was searching for ways to accomplish this, we began to utilise the
+As our team was searching for ways to accomplish this, we began to utilize the
 ubiquitous and humble webhook to push information between systems. At first,
 we simply started pushing Pull Request comments into our Slack channel. This
 immediately increased our velocity, as we found ourselves seamlessly moving
@@ -37,10 +23,17 @@ discussions from traditionally asynchronous mediums (Github Pull Requests) to
 more real time mediums (Slack, In Person).
 
 Eventually, we started adding more sources to chat via Slack integrations. Our
-project management tool was a clear next step, as most of the information we
+project tracking tool was a clear next step, as most of the information we
 were pouring into it was helpful to others. Team members reacting to status
 updates with pointers and questions was yet another boost to velocity of
-information and discourse.
+information. As we started adding brief comments of intent and even full blown
+plans we also created a hook for correcting mistakes before they even happened.
+
+{% blockquote %}
+<b>Dense Communication</b> - Extremely high signal to noise ratio textual
+information that's automatically compiled from different sources and intended to
+cross mediums.
+{% endblockquote %}
 
 The flip side of this was that looking through our chat was like drinking from a
 firehose. There was an immense amount of fragmented, context-less information
@@ -53,32 +46,18 @@ distracting.
 However, for those of us deep in the shit, we found that we were on the same
 page more frequently. In person communication became high trust, where one
 speaker could say the wrong thing and the listener could hear the right thing,
-thanks largely to the shared context. We found ourselves responding to status
+thanks largely to shared context. We found ourselves responding to status
 updates made via integrations with helpful suggestions, requests to clarify,
 corrections, etc. Proposed plans were reviewed earlier, and noted blocks
 were busted more quickly. In general, we reacted more, contributed more, and as
 a result, had better outcomes.
 
-slack becomes common medium for communication
-
-- github PR -> slack discussions -> trello card -> realtime
-dense notifications create streams of work & interaction points
-- PR review
-- Movement of trello card triggers question about next steps
-
-public conversations become public knowledge
- - with good records
-
-Team productivity is more important than individual productivity. As humans walk
+To critics of these practices, we say that [team productivity is more important
+than individual productivity]
+(https://twitter.com/postwait/status/637935373327446016). As humans walk
 down the streets of New York, there are a million stimuli, some gross, and some
 deadly. To say that people can't read and filter a few lines of text is a cop
 out. The cost of not communicating or reacting to our team is velocity and
 quality.
-
-
-
-Inspired by;
-https://twitter.com/postwait/status/637935373327446016
-
 
 
