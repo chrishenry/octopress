@@ -1,0 +1,104 @@
+---
+layout: post
+title: "Burnout"
+date: 2015-11-07 18:31
+comments: true
+categories:
+ - operations
+ - personal
+---
+
+It was 4:43 PM. As I headed out the door, someone asked, "Leaving early?" No
+malice, no judgment, just a bit of surprise. The office was still full,
+keyboards clicking and the drone of technical conversation dully throbbing. "I'm
+entitled to it, I just worked an incident for 3 days straight," I shot back.
+
+Was I entitled to bail early? Probably, but that wasn't the right way to say it.
+I __needed__ to leave. Despite handling the incident deftly, I still felt
+fucking awful, and in a dark, looming, nonspecific way. I needed to run from the
+firehose of problems, lack of solutions, apathy and anxiety. The incident in
+question was a days-long spam attack. It wasn't my first rodeo with hackers, but
+this mitigation required bringing several groups together, which is always a
+challenge at a large organization. To add to that, there was a pronounced lack
+of resources from my own team. This attack came at a time when we were gearing
+up to launch a new product, and the team was completely focused on it. Even I
+had been intensely involved with ensuring the stability of a new, shaky
+platform. Being pulled away just added to my frustration.
+
+I had already spoken with my manager that afternoon, told him I was tired. He
+kindly ordered me to go home, and take a vacation. I took the next two days off,
+calling in sick. This was the second time in a month I'd unexpectedly needed
+time off. At home, I crashed, played video games, watched a bunch of shitty
+movies my girlfriend normally wouldn't palate, and generally just tried to avoid
+the real world. Physically, I wasn't all that tired, considering I had only
+slept 9 hours or so over the past 3 days. But my mind and nerves were totally
+shot, and worse, I felt like I didn't care, which I hated myself for.
+
+In short, I burned out. Hard.
+
+<!-- more -->
+
+{% blockquote %}
+Burnout is a state of emotional, mental, and physical exhaustion caused by
+excessive and prolonged stress. It manifests itself in ways including anxiety,
+loss of motivation and confidence, and even degradation of physical health.
+Burnout can be prevalent in organizations that promote hero culture and where
+employees maintain a strong a sense of duty...
+{% endblockquote %}
+
+--- [Burnout.io](http://burnout.io/)
+
+I lead operations at a small part of a large company, and I've been there a very
+long time. My mission is to ensure the company's online presence is up and
+safe. Admittedly, my sense of duty to the mission has always been somewhat
+overzealous. In fact, much of my identity is tied up in the job I do. Those
+sentiments have truly been assets in navigating a treacherous path, but it
+seemed clear that they have become a double edged sword. Once I got bored with
+Xbox, I went through a journal I've been keeping for a few years.
+
+In it, there were multiple notes and rants pointing to the simple fact that I
+have an unhealthy work-life balance. I found a long running list of songs to
+learn on guitar, but I haven't picked up my guitar in several months. I have
+notes on code projects I started but didn't make any progress on for years.
+There are links to museum exhibits I wanted to visit that closed long ago.
+Reading through, I also realized I don't have any more than a handful of friends
+outside of work. All in all, it was a pattern of regret.
+
+But also a lot of reasons to make some changes. Burnout is caused by a
+combination of internal and external factors, some of which can be managed. My
+biggest realization, looking through my past, is that I don't need a vacation, I
+need a change in how I manage my energy with regard to my sense of duty to my
+work. I need to be more cognizant of how I feel when external factors rear
+their head, recognize signs of nearing the burnout zone, and back away.
+Presented without comment, are my signs of burnout;
+
+ - Saying "No" to everything, even the reasonable things
+ - Shortness with team members during normal interactions
+ - Feeling like I've made no forward momentum
+ - Inability to express myself
+ - Constant [amygdala hijack](https://en.wikipedia.org/wiki/Amygdala_hijack)
+ - Inability to stay on task, or read anything longer than an email
+ - Many nights in a row falling asleep while attempting to watch the same
+ episode of John Oliver
+
+Things I need to do to prevent getting to this place in the future;
+
+ - Tightly limit my hours
+ - Let go of, or delegate certain things that I just don't need to do
+ - Be OK with things not happening, and the failures that result
+ - Commit to things I want to do; cooking, music, projects, and social events
+ - Don't accept any new work unless I truly have the capacity to do it
+
+The other hard reality is that for me to affect this change, I will need to
+attempt to manage the external factors. There are going to be some failures, but
+I'll need to be OK with that, or I'll have to make bigger changes. I truly love
+what I do, but now is the time for me to take some of myself back.
+
+Wish me luck.
+
+A few great burnout resources that helped me write this;
+
+ - [burnout.io](http://burnout.io/)
+ - [Getting rid of burnout](http://kentnguyen.com/personal/getting-rid-burnouts/)
+ - [Burnout and Ops; Lars Lehtonen](https://www.usenix.org/node/186465)
+ - [From Hero to Zero; Jennifer Davis](https://vimeo.com/104252736)
