@@ -8,24 +8,24 @@ categories:
  - personal
 ---
 
-It was 443. As I headed out the door, someone asked, "Leaving early?". No
+It was 4:43 PM. As I headed out the door, someone asked, "Leaving early?". No
 malice, no judgment, just a bit of surprise. The office was still full,
 keyboards clicking and the drone of technical conversation dully throbbing. "I'm
 entitled to it, I just worked for 3 days straight on an incident," I shot back.
 
-Was I entitled to bail early? Probably, but that probably wasn't the right way
-to phrase it. I needed it, and without getting away from the firehose of alerts,
-problems, and anxiety I would probably explode. The incident in question was a
-days long spam attack on my company's site. It wasn't my first rodeo with
-hackers, but this time the mitigation required bringing several groups together,
-and a pronounced lack of resources from my own team. This attack came at a time
-when we were gearing up to launch a new product, and I had been intensely
-involved with ensuring the stability of a new, shaky platform.
+Was I entitled to bail early? Probably, but that wasn't the right way to phrase
+it. I needed it to leave. To be away from the firehose of alerts, problems, lack
+of solutions, apathy and anxiety. The incident in question was a days long spam
+attack on my company's site. It wasn't my first rodeo with hackers, but this
+time the mitigation required bringing several groups together, and a pronounced
+lack of resources from my own team. This attack came at a time when we were
+gearing up to launch a new product, and I had been intensely involved with
+ensuring the stability of a new, shaky platform.
 
 I took the next two days off, calling in sick. I had already spoken with my
 manager, told him I was tired. He kindly ordered me to go home, and take a
 vacation. This was the second time in a month I'd unexpectedly needed time off.
-At home, I crashed, I played video games, watched a bunch of movies my
+At home, I crashed, played video games, watched a bunch of movies my
 girlfriend normally wouldn't palate, and generally just tried to avoid the real
 world. Physically, I wasn't all that tired, considering I had only slept 9 hours
 over the past 3 days. But my mind and my nerves were totally shot.
@@ -42,13 +42,13 @@ Burnout can be prevalent in organizations that promote hero culture and where
 employees maintain a strong a sense of duty...
 {% endblockquote %}
 
- - [Burnout.io](http://burnout.io/)
+--- [Burnout.io](http://burnout.io/)
 
 I lead operations at a small part of a large company, and I've been there a very
 long time. My mission has been to ensure the company's online presence is up and
-safe. It has been for a long time, and my sense of duty to that mission has
-always been somewhat overzealous. Once I got bored with the Xbox, I went
-through a journal I've been keeping for a few years.
+safe. Admittedly, my sense of duty to that mission has always been somewhat
+overzealous. In fact, much of my identity is tied up in the job I do. Once I got
+bored with the Xbox, I went through a journal I've been keeping for a few years.
 
 In it, there were multiple notes and rants pointing to the simple fact that I
 have an unhealthy work-life balance. I found a long running list of songs to
@@ -71,10 +71,17 @@ nearing the burnout zone. Presented without comment, my signs of burnout;
  - Inability to stay on task, or read anything longer than an email
  - Many nights in a row falling asleep while attempting to watch John Oliver
 
-Those are in addition to Kent Nguyen's [excellent article on burnout](http://kentnguyen.com/personal/getting-rid-burnouts/).
+Things I need to do to prevent getting to this place in the future;
+
+ - Tightly limit my hours
+ - Let go of certain things that don't need to be done
+ - Be OK with things not happening, and the failures that result
+ - Commit to the things I want to do; cooking, fun projects, social events
+ - Don't accept any new work
 
 The other hard reality is that for me to affect this change, I will need to let
-go of a lot of that sense of duty that has led me here.
+go of a lot of that sense of duty that has led me to burnout. There are going to
+be some failures, but we all need to be OK with that.
 
 Wish me luck.
 
