@@ -8,22 +8,22 @@ categories:
  - personal
 ---
 
-It was 4:43 PM. As I headed out the door, someone asked, "Leaving early?". No
+It was 4:43 PM. As I headed out the door, someone asked, "Leaving early?" No
 malice, no judgment, just a bit of surprise. The office was still full,
 keyboards clicking and the drone of technical conversation dully throbbing. "I'm
 entitled to it, I just worked an incident for 3 days straight," I shot back.
 
-Was I entitled to bail early? Probably, but that wasn't the right way to phrase
-it. I __needed__ to leave. Despite handling the incident deftly, I still felt
+Was I entitled to bail early? Probably, but that wasn't the right way to say it.
+I __needed__ to leave. Despite handling the incident deftly, I still felt
 fucking awful, and in a dark, looming, nonspecific way. I needed to run from the
 firehose of problems, lack of solutions, apathy and anxiety. The incident in
-question was a days-long spam attack. It wasn't my first rodeo with
-hackers, but this mitigation required bringing several groups together, which is
-always a challenge at a large organization. To add to that, there was a
-pronounced lack of resources from my own team. This attack came at a time when
-we were gearing up to launch a new product. Other team members were completely
-focused on it. Even I had been intensely involved with ensuring the stability of
-a new, shaky platform. Being pulled away just added to my frustration.
+question was a days-long spam attack. It wasn't my first rodeo with hackers, but
+this mitigation required bringing several groups together, which is always a
+challenge at a large organization. To add to that, there was a pronounced lack
+of resources from my own team. This attack came at a time when we were gearing
+up to launch a new product, and the team was completely focused on it. Even I
+had been intensely involved with ensuring the stability of a new, shaky
+platform. Being pulled away just added to my frustration.
 
 I had already spoken with my manager that afternoon, told him I was tired. He
 kindly ordered me to go home, and take a vacation. I took the next two days off,
@@ -62,7 +62,7 @@ learn on guitar, but I haven't picked up my guitar in several months. I have
 notes on code projects I started but didn't make any progress on for years.
 There are links to museum exhibits I wanted to visit that closed long ago.
 Reading through, I also realized I don't have any more than a handful of friends
-outside of work. All in all, it was a lot of regret.
+outside of work. All in all, it was a pattern of regret.
 
 But also a lot of reasons to make some changes. Burnout is caused by a
 combination of internal and external factors, some of which can be managed. My
@@ -78,7 +78,8 @@ Presented without comment, are my signs of burnout;
  - Inability to express myself
  - Constant [amygdala hijack](https://en.wikipedia.org/wiki/Amygdala_hijack)
  - Inability to stay on task, or read anything longer than an email
- - Many nights in a row falling asleep while attempting to watch John Oliver
+ - Many nights in a row falling asleep while attempting to watch the same
+ episode of John Oliver
 
 Things I need to do to prevent getting to this place in the future;
 
@@ -90,13 +91,14 @@ Things I need to do to prevent getting to this place in the future;
 
 The other hard reality is that for me to affect this change, I will need to
 attempt to manage the external factors. There are going to be some failures, but
-I'll need to be OK with that, or I'll have to make bigger changes.
+I'll need to be OK with that, or I'll have to make bigger changes. I truly love
+what I do, but now is the time for me to take some of myself back.
 
 Wish me luck.
 
-A few great burnout resources;
+A few great burnout resources that helped me write this;
 
  - [burnout.io](http://burnout.io/)
  - [Getting rid of burnout](http://kentnguyen.com/personal/getting-rid-burnouts/)
- - [Lisa 14 Talk](https://www.usenix.org/node/186465)
+ - [Burnout and Ops; Lars Lehtonen](https://www.usenix.org/node/186465)
  - [From Hero to Zero; Jennifer Davis](https://vimeo.com/104252736)
