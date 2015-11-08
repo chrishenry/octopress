@@ -32,32 +32,49 @@ over the past 3 days. But my nerves, and my mind were totally shot.
 
 In short, I burned out. Hard.
 
+<!-- more -->
+
+{% blockquote %}
+Burnout is a state of emotional, mental, and physical exhaustion caused by
+excessive and prolonged stress. It manifests itself in ways including anxiety,
+loss of motivation and confidence, and even degradation of physical health.
+Burnout can be prevalent in organizations that promote hero culture and where
+employees maintain a strong a sense of duty...
+{% endblockquote %}
+
 I lead operations at a small part of a large company, and I've been there a very
 long time. My mission has been to ensure the company's online presence is up and
 safe. It has been for a long time, and my sense of duty to that mission has
 always been somewhat unhealthy. Once I got bored with the Xbox, I went
 through a journal I've been keeping for a few years.
 
-In it, there are multiple notes and rants pointing to the simple fact that I
-have an unhealthy work-life balance. I have a long running list of songs to
+In it, there were multiple notes and rants pointing to the simple fact that I
+have an unhealthy work-life balance. I found a long running list of songs to
 learn on guitar, but I haven't picked up my guitar in several months. I have
 notes on code projects I started but didn't make any progress on for years.
-There are links to museum exhibits I wanted to go to that closed long ago.
+There are links to museum exhibits I wanted to visit that closed long ago. All
+in all, a lot of regret.
 
-Part of me says that I didn't do any of the things I wanted because I'm lazy.
-But that can't be right, I played a key role in creating a successful company,
-and I continue to do so.
+But also a lot of reasons to make some changes. I realize I don't need a
+vacation, I need a change in how I manage my energy. I need to be more
+cognizant of my own mental health, and back away at the slightest sign of
+nearing the burnout zone. Presented without comment, my signs of burnout;
 
-My signs of burnout
- - say no to everything, even the reasonable things
- - no forward momentum
- - inability to express myself
- - inability to stay on task, or read anything longer than an email
- - how many nights in a row I fall asleep attempting to watch john oliver
- - constant amygdala hijack
+ - Saying no to everything, even the reasonable things
+ - No forward momentum
+ - Inability to express myself
+ - Shortness with team members during normal interactions
+ - Constant [amygdala hijack](https://en.wikipedia.org/wiki/Amygdala_hijack)
+ - Inability to stay on task, or read anything longer than an email
+ - Many nights in a row falling asleep while attempting to watch John Oliver
 
-A few great burn out resources;
+Those are in addition to Kent Nguyen's [excellent article on burnout](http://kentnguyen.com/personal/getting-rid-burnouts/).
+
+
+
+
+A few great burnout resources;
 
  - [burnout.io](http://burnout.io/)
  - [Getting rid of burnout](http://kentnguyen.com/personal/getting-rid-burnouts/)
-
+ - [Lisa 14 Talk](https://www.usenix.org/node/186465)
