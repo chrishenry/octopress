@@ -10,20 +10,21 @@ categories:
 
 It was 443. As I headed out the door, someone asked, "Leaving early?". No
 malice, no judgment, just a bit of surprise. The office was still full,
-keyboards clicking and the drone of technical conversation dully throbbing. "I’m
+keyboards clicking and the drone of technical conversation dully throbbing. "I'm
 entitled to it, I just worked for 3 days straight on an incident," I shot back.
 
 Was I entitled to bail early? Probably, but that probably wasn't the right way
 to phrase it. I needed it, and without getting away from the firehose of alerts,
-problems, and anxiety, I would probably implode. Or worse, explode. Not that I
-hadn't already. The incident in question was a days long spam attack on my
-company's site. It wasn't my first rodeo with hackers, but this time the
-mitigation required bringing several groups together, and a pronounced lack
-of resources from my own team.
+problems, and anxiety I would probably explode. The incident in question was a
+days long spam attack on my company's site. It wasn't my first rodeo with
+hackers, but this time the mitigation required bringing several groups together,
+and a pronounced lack of resources from my own team. This attack came at a time
+when we were gearing up to launch a new product, and I had been intensely
+involved with ensuring the stability of a new, shaky platform.
 
 I took the next two days off, calling in sick. I had already spoken with my
 manager, told him I was tired. He kindly ordered me to go home, and take a
-vacation. This was the second time in a month I'd taken Thursday and Friday off.
+vacation. This was the second time in a month I'd unexpectedly needed time off.
 At home, I crashed, I played video games, watched a bunch of movies my
 girlfriend normally wouldn't palate, and generally just tried to avoid the real
 world. Physically, I wasn't all that tired, considering I had only slept 9 hours
@@ -35,16 +36,19 @@ I lead operations at a small part of a large company, and I've been there a very
 long time. My mission has been to ensure the company's online presence is up and
 safe. It has been for a long time, and my sense of duty to that mission has
 always been somewhat unhealthy. Once I got bored with the Xbox, I went
-through a journal I've been keeping for a few years. In it, there
-were multiple notes and rants pointing to the simple fact that I have an
-unhealthy lifestyle. Lists of songs to learn on guitar that I've never learned.
-Code projects started and discarded. Museums, exhibits and day trips to go,
-all never done. A long list of family events I skipped out on for the wrong
-reasons.
+through a journal I've been keeping for a few years.
 
+In it, there are multiple notes and rants pointing to the simple fact that I
+have an unhealthy work-life balance. I have a long running list of songs to
+learn on guitar, but I haven't picked up my guitar in several months. I have
+notes on code projects I started but didn't make any progress on for years.
+There are links to museum exhibits I wanted to go to that closed long ago.
 
-my signs of burnout
- - http://kentnguyen.com/personal/getting-rid-burnouts/
+Part of me says that I didn't do any of the things I wanted because I'm lazy.
+But that can't be right, I played a key role in creating a successful company,
+and I continue to do so.
+
+My signs of burnout
  - say no to everything, even the reasonable things
  - no forward momentum
  - inability to express myself
