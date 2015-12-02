@@ -1,6 +1,7 @@
 require "rubygems"
 require "bundler/setup"
 require "stringex"
+require 'pp'
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
@@ -29,6 +30,34 @@ server_port     = "4000"      # port for preview server eg. localhost:4000
 
 # Feed files other than atom.xml that needed to be compatible with previous blog
 feed_files = ["rss"]
+
+desc "Gather page categories"
+task :gather_page_categories do
+
+  categories = []
+
+  Dir.glob("./source/_posts/*.markdown") do |file|
+
+    frontmatter = YAML.load_file(file)
+    unless frontmatter.is_a?(Hash); next end
+
+    if frontmatter.has_key?('categories')
+      
+      if frontmatter['categories'].is_a?(Array)
+        categories += frontmatter['categories']
+      elsif frontmatter['categories'].is_a?(String)
+        categories += [frontmatter['categories']]
+      end
+
+    end
+
+  end
+
+  data = {'categories' => categories.sort.uniq}
+
+  pp data
+
+end
 
 desc "Initial setup for Octopress: copies the default theme into the path of Jekyll's generator. Rake install defaults to rake install[classic] to install a different theme run rake install[some_theme_name]"
 task :install, :theme do |t, args|
