@@ -4,7 +4,7 @@
   <title><![CDATA[The Technician]]></title>
   <link href="http://chr.ishenry.com/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-07-19T20:02:25-04:00</updated>
+  <updated>2015-12-18T14:43:38-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,373 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Volunteering at Hour of Code]]></title>
+    <link href="http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code/"/>
+    <updated>2015-12-17T22:48:00-05:00</updated>
+    <id>http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code</id>
+    <content type="html"><![CDATA[<p>Yesterday, as part of the Hour of Code, I went to <a href="http://ithsnyc.org/2013/home">Information Technology High
+School</a> in Long Island City. I spent the morning
+talking to students about what it&#8217;s like to work in Web Operations.</p>
+
+<p>It was amazing seeing students taking an interest in technology and coding. Many
+of them had already completed the <a href="https://hourofcode.com/us">Hour of Code</a>
+projects. Others were still tinkering, seeing what they could add and change. I
+spent some time critiquing and reviewing work they had done in Mrs. Ramirez&#8217;s
+Web Design class. The students had all created functional portfolio sites,
+complete with content, small bits of javascript, and even Flash games.</p>
+
+<p>The students were interested in my day to day, and the path I took to get
+where I am in my career. The students were amazed to hear that I didn&#8217;t work in
+a dark closet by myself, but in a brightly lit office constantly interacting
+with colleagues. They were also amazed to hear that the skills they needed to be
+truly successful in tech weren&#8217;t just coding and hardware, but communication,
+teamwork, and judgment. How a college education fit in to a career in Web
+Operations came up a few times. It was particularly interesting because I&#8217;m not
+aware of any four year university that offers a program in the field.</p>
+
+<p>Students were particularly interested to hear about about some of the
+work I&#8217;ve done around security and incident response. Tales of defending
+against <a href="http://chr.ishenry.com/2013/07/29/what-it-feels-like-to-be-ddosed/">DDoS</a>
+and spam attacks were a great way to let them know that career paths in tech
+aren&#8217;t just limited to coding or back office IT. They were spellbound to hear
+that mitigating DDoS attacks were actually something that could be part
+of an actual career path, and not just something they see in TV and movies. I
+truly hope that some students are inspired to pursue a career in Systems
+Administration and Web Operations.</p>
+
+<p>One thing that was made clear to me as I was asked to describe my path to Web
+Operations was there is no clear path, and that sad fact has resulted in a
+shortage of people in the field. I would encourage other folks in Web Operations
+to spend some time talking to young students about the work that we do in the
+hopes that in a few years the industry will grow and mature. After all, for
+every class that learns to code, there need to be a few students who know
+how to run the infrastructure for that code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[AWS Tags as a Lightweight Datastore]]></title>
+    <link href="http://chr.ishenry.com/2015/11/29/aws-tags-as-a-lightweight-datastore/"/>
+    <updated>2015-11-29T14:36:00-05:00</updated>
+    <id>http://chr.ishenry.com/2015/11/29/aws-tags-as-a-lightweight-datastore</id>
+    <content type="html"><![CDATA[<p>One of the most common tasks in administering clusters of machines is running
+regular tasks on individual machines in a cluster. For example, Cassandra
+benefits greatly from running repairs on individual nodes to ensure data
+consistency. Operating manually, an ops team would maintain a document of when
+each machine has been, and look at that to determine which machine should be
+repaired next.</p>
+
+<p>However, in a world where there could be hundreds of machines, this quickly
+becomes unscalable. Even with only a handful of machines, a team could spend a
+ton of energy and time simply remembering where the source of truth lives and
+how to decide which machine should be repaired next.</p>
+
+<!-- more -->
+
+
+<p>A team could write some code to pick a node and run the necessary commands. This
+is a bit better, but the requirement is that the command runs regularly on each
+node in the cluster. Without a central record to track which nodes have been
+repaired, there&#8217;s no way to know when and where the last repair was run, and no
+way to accurately predict which node will be picked next.</p>
+
+<p>Enter
+<a href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_Tags.html">AWS EC2 Tags</a>.
+While EC2 tagging has some restrictions, it&#8217;s an ideal place to register small
+bits of metadata and completely replace our old school document. For our
+Cassandra example, it&#8217;s easy enough to use the EC2 APIs to list all machines in
+an Autoscale Group, or by tag, and then apply some logic to pick a machine.</p>
+
+<p>Here&#8217;s some sample code that will look at the instances in an ASG, and pick one
+that either hasn&#8217;t been repaired, or the node repaired the longest time ago.</p>
+
+<figure class='code'><figcaption><span>Find least recently repaired node </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+<span class='line-number'>8</span>
+<span class='line-number'>9</span>
+<span class='line-number'>10</span>
+<span class='line-number'>11</span>
+<span class='line-number'>12</span>
+<span class='line-number'>13</span>
+<span class='line-number'>14</span>
+<span class='line-number'>15</span>
+<span class='line-number'>16</span>
+<span class='line-number'>17</span>
+<span class='line-number'>18</span>
+<span class='line-number'>19</span>
+<span class='line-number'>20</span>
+<span class='line-number'>21</span>
+<span class='line-number'>22</span>
+<span class='line-number'>23</span>
+<span class='line-number'>24</span>
+<span class='line-number'>25</span>
+</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="c">#!/usr/bin/env python</span>
+</span><span class='line'>
+</span><span class='line'><span class="kn">import</span> <span class="nn">boto.ec2</span>
+</span><span class='line'><span class="kn">import</span> <span class="nn">boto.ec2.autoscale</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">ec2</span> <span class="o">=</span> <span class="n">boto</span><span class="o">.</span><span class="n">ec2</span><span class="o">.</span><span class="n">connect_to_region</span><span class="p">(</span><span class="s">&#39;us-east-1&#39;</span><span class="p">)</span>
+</span><span class='line'><span class="n">asg</span> <span class="o">=</span> <span class="n">boto</span><span class="o">.</span><span class="n">ec2</span><span class="o">.</span><span class="n">autoscale</span><span class="o">.</span><span class="n">connect_to_region</span><span class="p">(</span><span class="s">&#39;us-east-1&#39;</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">group</span> <span class="o">=</span> <span class="n">asg</span><span class="o">.</span><span class="n">get_all_groups</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;your-asg&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span>
+</span><span class='line'>
+</span><span class='line'><span class="n">instance_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">instance_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">instances</span><span class="p">]</span>
+</span><span class='line'><span class="n">instances</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">get_only_instances</span><span class="p">(</span><span class="n">instance_ids</span><span class="p">)</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Find instances without a `last-repaired` tag</span>
+</span><span class='line'><span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span>
+</span><span class='line'>    <span class="k">if</span> <span class="s">&#39;last-repaired&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
+</span><span class='line'>        <span class="k">print</span> <span class="s">&quot;Found an instance without last-repair tag&quot;</span>
+</span><span class='line'>        <span class="k">print</span> <span class="n">instance</span>
+</span><span class='line'>        <span class="nb">exit</span><span class="p">()</span>
+</span><span class='line'>
+</span><span class='line'><span class="c"># Sort instances by date asc, which is oldest first</span>
+</span><span class='line'><span class="n">sorted_instances</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">instances</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">instance</span><span class="p">:</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="s">&#39;last-repaired&#39;</span><span class="p">])</span>
+</span><span class='line'>
+</span><span class='line'><span class="k">print</span> <span class="s">&quot;Found oldest repair: &quot;</span> <span class="o">+</span> <span class="n">sorted_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
+</span><span class='line'><span class="k">print</span> <span class="n">sorted_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="s">&#39;last-repaired&#39;</span><span class="p">]</span>
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>The above snippet is based on the venerable
+<a href="http://boto.readthedocs.org/en/latest/">boto</a> library. Using python for
+interfacing with AWS allows you to use a mature, well-tested library. You can
+even write tests against code that uses boto with a library of mocks called
+<a href="https://github.com/spulec/moto">moto</a>. In short, it looks for instances that
+haven&#8217;t been operated on first. This is to cover the situation where you have a
+brand new cluster, or when the ASG group replaces nodes. Secondly, it sorts the
+instances by the date of the last repair ascending, which gives you the oldest
+node at the zeroth element of the list.</p>
+
+<p>Taking this approach to managing infrastructure allows you create simple,
+testable code with very few dependencies. Had <code>last-repair</code> data been stored in
+a local database, it would require the team to create and maintain that
+database, as well as write and test additional code. The team is now free to
+spend that time on other things. Without needing to worry about the integrity of
+a persistent datastore, it also means that this script can reliably be run on a
+very ephemeral instance. In fact, it can be run from anywhere. Scheduled Jenkins
+jobs would be a good way to run this, but with the advent of
+<a href="http://docs.aws.amazon.com/lambda/latest/dg/getting-started-scheduled-events.html">Scheduled Lamdbda tasks</a>,
+an Ops team can cut down even further on dependencies required to perform
+maintenance tasks.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Burnout]]></title>
+    <link href="http://chr.ishenry.com/2015/11/07/burnout/"/>
+    <updated>2015-11-07T18:31:00-05:00</updated>
+    <id>http://chr.ishenry.com/2015/11/07/burnout</id>
+    <content type="html"><![CDATA[<p>It was 4:43 PM. As I headed out the door, someone asked, &#8220;Leaving early?&#8221; No
+malice, no judgment, just a bit of surprise. The office was still full,
+keyboards clicking and the drone of technical conversation dully throbbing. &#8220;I&#8217;m
+entitled to it, I just worked an incident for 3 days straight,&#8221; I shot back.</p>
+
+<p>Was I entitled to bail early? Probably, but that wasn&#8217;t the right way to say it.
+I <strong>needed</strong> to leave. Despite handling the incident deftly, I still felt
+fucking awful, and in a dark, looming, nonspecific way. I needed to run from the
+firehose of problems, lack of solutions, apathy and anxiety. The incident in
+question was a days-long spam attack. It wasn&#8217;t my first rodeo with hackers, but
+this mitigation required bringing several groups together, which is always a
+challenge at a large organization. To add to that, there was a pronounced lack
+of resources from my own team. This attack came at a time when we were gearing
+up to launch a new product, and the team was completely focused on it. Even I
+had been intensely involved with ensuring the stability of a new, shaky
+platform. Being pulled away just added to my frustration.</p>
+
+<p>I had already spoken with my manager that afternoon, told him I was tired. He
+kindly ordered me to go home, and take a vacation. I took the next two days off,
+calling in sick. This was the second time in a month I&#8217;d unexpectedly needed
+time off. At home, I crashed, played video games, watched a bunch of shitty
+movies my girlfriend normally wouldn&#8217;t palate, and generally just tried to avoid
+the real world. Physically, I wasn&#8217;t all that tired, considering I had only
+slept 9 hours or so over the past 3 days. But my mind and nerves were totally
+shot, and worse, I felt like I didn&#8217;t care, which I hated myself for.</p>
+
+<p>In short, I burned out. Hard.</p>
+
+<!-- more -->
+
+
+
+
+<blockquote><p>Burnout is a state of emotional, mental, and physical exhaustion caused by<br/>excessive and prolonged stress. It manifests itself in ways including anxiety,<br/>loss of motivation and confidence, and even degradation of physical health.<br/>Burnout can be prevalent in organizations that promote hero culture and where<br/>employees maintain a strong a sense of duty&#8230;</p></blockquote>
+
+
+<p>&#8212; <a href="http://burnout.io/">Burnout.io</a></p>
+
+<p>I lead operations at a small part of a large company, and I&#8217;ve been there a very
+long time. My mission is to ensure the company&#8217;s online presence is up and
+safe. Admittedly, my sense of duty to the mission has always been somewhat
+overzealous. In fact, much of my identity is tied up in the job I do. Those
+sentiments have truly been assets in navigating a treacherous path, but it
+seemed clear that they have become a double edged sword. Once I got bored with
+Xbox, I went through a journal I&#8217;ve been keeping for a few years.</p>
+
+<p>In it, there were multiple notes and rants pointing to the simple fact that I
+have an unhealthy work-life balance. I found a long running list of songs to
+learn on guitar, but I haven&#8217;t picked up my guitar in several months. I have
+notes on code projects I started but didn&#8217;t make any progress on for years.
+There are links to museum exhibits I wanted to visit that closed long ago.
+Reading through, I also realized I don&#8217;t have any more than a handful of friends
+outside of work. All in all, it was a pattern of regret.</p>
+
+<p>But also a lot of reasons to make some changes. Burnout is caused by a
+combination of internal and external factors, some of which can be managed. My
+biggest realization, looking through my past, is that I don&#8217;t need a vacation, I
+need a change in how I manage my energy with regard to my sense of duty to my
+work. I need to be more cognizant of how I feel when external factors rear
+their head, recognize signs of nearing the burnout zone, and back away.
+Presented without comment, are my signs of burnout;</p>
+
+<ul>
+<li>Saying &#8220;No&#8221; to everything, even the reasonable things</li>
+<li>Shortness with team members during normal interactions</li>
+<li>Feeling like I&#8217;ve made no forward momentum</li>
+<li>Inability to express myself</li>
+<li>Constant <a href="https://en.wikipedia.org/wiki/Amygdala_hijack">amygdala hijack</a></li>
+<li>Inability to stay on task, or read anything longer than an email</li>
+<li>Many nights in a row falling asleep while attempting to watch the same
+episode of John Oliver</li>
+</ul>
+
+
+<p>Things I need to do to prevent getting to this place in the future;</p>
+
+<ul>
+<li>Tightly limit my hours</li>
+<li>Let go of, or delegate certain things that I just don&#8217;t need to do</li>
+<li>Be OK with things not happening, and the failures that result</li>
+<li>Commit to things I want to do; cooking, music, projects, and social events</li>
+<li>Don&#8217;t accept any new work unless I truly have the capacity to do it</li>
+</ul>
+
+
+<p>The other hard reality is that for me to affect this change, I will need to
+attempt to manage the external factors. There are going to be some failures, but
+I&#8217;ll need to be OK with that, or I&#8217;ll have to make bigger changes. I truly love
+what I do, but now is the time for me to take some of myself back.</p>
+
+<p>Wish me luck.</p>
+
+<p>A few great burnout resources that helped me write this;</p>
+
+<ul>
+<li><a href="http://burnout.io/">burnout.io</a></li>
+<li><a href="http://kentnguyen.com/personal/getting-rid-burnouts/">Getting rid of burnout</a></li>
+<li><a href="https://www.usenix.org/node/186465">Burnout and Ops; Lars Lehtonen</a></li>
+<li><a href="https://vimeo.com/104252736">From Hero to Zero; Jennifer Davis</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Chat and Dense Communication]]></title>
+    <link href="http://chr.ishenry.com/2015/08/30/slack/"/>
+    <updated>2015-08-30T10:13:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/08/30/slack</id>
+    <content type="html"><![CDATA[<p>If you haven&#8217;t noticed, communication among teams (distributed or local) is a
+thing that people care a lot about. For my team, we specifically care about
+density of quality communication across mediums. We&#8217;re an ops team, and
+being able to broadcast status and information is critically important. As we
+work, we don&#8217;t want to have to re-communicate across mediums, but we still want
+to make sure the right people hear us and provide feedback.</p>
+
+<p>As our team was searching for ways to accomplish this, we started using the
+ubiquitous and humble webhook to push information between systems. At first,
+we simply started pushing Pull Request comments into our Slack channel. This
+immediately increased our velocity, as we found ourselves seamlessly moving
+discussions from traditionally asynchronous mediums (Github Pull Requests) to
+more real time mediums (Slack, In Person).</p>
+
+<!-- more -->
+
+
+<p>Eventually, we started adding more sources to chat via Slack integrations. Our
+project tracking tool was a clear next step, as most of the information we
+were pouring into it was helpful to others. Team members reacting to status
+updates with pointers and questions was yet another boost to velocity of
+information. Including brief comments of intent and even full blown
+plans gave us a hook for correcting mistakes before they even happened.</p>
+
+<blockquote><p><b>Dense Communication</b> - Extremely high signal to noise ratio textual<br/>information that&#8217;s automatically compiled from different sources and intended to<br/>cross mediums.</p></blockquote>
+
+
+<p>The flip side of this was that looking through our chat was like drinking from a
+firehose. There was an immense amount of fragmented, context-less information
+flowing at any given time, so much so that it was easy to drown. The uninitiated
+considered our channel noisy, which is a fair assessment. Those who didn&#8217;t have
+access to the cornucopia of links ubiquitous to our channel had an even harder
+time trying to make sense of things. Some even believed the noise was
+distracting.</p>
+
+<p>However, for those of us deep in the shit, we found that we were on the same
+page more frequently. In person communication became high trust, where one
+speaker could say the wrong thing and the listener could hear the right thing,
+thanks largely to shared context. We found ourselves responding to status
+updates made via integrations with helpful suggestions, requests to clarify,
+corrections, etc. Proposed plans were reviewed earlier, and noted blocks
+were busted more quickly. In general, we reacted more, contributed more, and as
+a result, had better outcomes.</p>
+
+<p>To critics of these practices, we say that <a href="https://twitter.com/postwait/status/637935373327446016">team productivity is more important
+than individual productivity</a>.
+As humans walk down the streets of New York, there are a million stimuli, some
+gross, and some deadly. To say that people can&#8217;t read and filter a few lines of
+text is a cop out.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[A Note on Amazon Autoscale Groups]]></title>
+    <link href="http://chr.ishenry.com/2015/08/26/a-note-on-amazon-autoscale-groups/"/>
+    <updated>2015-08-26T22:04:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/08/26/a-note-on-amazon-autoscale-groups</id>
+    <content type="html"><![CDATA[<p>AWS provides auto scaling to allow applications to scale up and
+down to meet demand. <a href="https://aws.amazon.com/autoscaling/">Autoscaling</a> is an
+excellent tactic for ensuring that an application can add and remove capacity
+based on demand. Autoscale policies can be infinitely tuned to use anything that
+can be recorded by CloudWatch. However, autoscale groups are also incredibly
+useful for ensuring that a set number of instances is always available. This can
+be accomplished by omitting scaling policies.</p>
+
+<!-- more -->
+
+
+<p>But for some reason, AWS users seem to shy away from using autoscale groups for
+anything but satisfying elastic demand. However, in my experience, autoscale
+groups are a critical component of <em>any</em> highly available deployment. Even
+deployments of a single instance.</p>
+
+<p>The utility of a service that does nothing but ensure that the desired number of
+instances available is the basis for creating self healing infrastructure.
+However, the name <code>Auto Scaling</code> has created a widely held opinion that the
+number of instances must regularly change to make use of the service.
+This is simply not true.</p>
+
+<p>For example, you may find a situation where you need to ensure high availability
+for an application only built to run on a single server. Or you may have a
+snowflake server, or an application where it&#8217;s not worth having more than one
+instance. Instead of creating a standalone instance, you can create an autoscale
+group with min, max and desired set to 1. As long as proper automation is in
+place, and the application is a proper <a href="http://12factor.net/">12 factor app</a>,
+the autoscale group will ensure there&#8217;s always a single instance available.</p>
+
+<p>As a design principle, any infrastructure created should have the means to heal
+itself. Don&#8217;t be put off by the name <code>Auto Scaling</code>, as the utility and value of
+keeping a single instance running (that doesn&#8217;t need to scale) using a well
+understood and easily accessible service is worth it&#8217;s weight in gold.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[FizzBuzz in Go and Rust]]></title>
@@ -632,265 +999,6 @@ implicitly trusting their teams to make the right decision.</p>
 <p>From <a href="https://www.slideshare.net/HubSpot/the-hubspot-culture-code-creating-a-company-we-love/56">Hubspot&#8217;s Presentation Culture Code: Creating A Lovable Company</a></p>
 
 <p>The takeaway here is that you can judge organizations and people based on how beholden they are to policy. Smart ones let you make smart decisions.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[First Byte]]></title>
-    <link href="http://chr.ishenry.com/2013/04/01/first-byte/"/>
-    <updated>2013-04-01T23:29:00-04:00</updated>
-    <id>http://chr.ishenry.com/2013/04/01/first-byte</id>
-    <content type="html"><![CDATA[<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
-
-<p>When you click on a link, your browser or client looks up the location of the server via DNS, and then sends off an HTTP request, then your poorly secured router passes it on to the demons that are your local ISP, who then fiendishly pass that same request up to a backbone, which then traverses continents, oceans or even hemispheres, finally arriving at the data center or poorly ventilated closet where the web servers for that particular site live. That web server reads in that request for your stuff (probably porn, you sicko), and begins whatever its process may be to assemble the initial HTML payload, which hopefully involves validating that the way you asked for said stuff is correct, and if it is, then connecting to a database to actually get that lovely stuff, receiving a response, and puts together an HTML page with that data on it, plus references (more on those later) to CSS and JS to format the data in a way that makes sense, and even make it look a little purty. After that exhausting operation, the web server will take the opposite route through the backbone to the succubus ISP, through your router to your computer to your browser. Once that happens, you technically only have the payload HTML, which by itself isn&#8217;t a whole lot of fun, so then the browser will read aforementioned references to CSS and JS, and then make web requests for each of those files, which, btw, will follow the same process as the initial HTML payload went through, until you have all of the CSS and JS. Then you can finally improve your mind by thoughtfully reflecting on the highly intellectual prose you requested not too long ago.</p>
-
-<!-- more -->
-
-
-<p>The point of all those horribly structured sentences in the context of web performance is that a web request will often spend more time being passed around various routers than actually being processed on a web server. Therefore, the act of measuring an entire web request is a fool&#8217;s errand, since you&#8217;re only measuring lots of things that you as a web developer don&#8217;t have any control over. In reference to my poorly written story, the only bit that you can actually change is the time when the web request is in the poorly ventilated closet, being parsed, processed, retrieved, and put together by the web server.</p>
-
-<p>Therefore, one of the most important measurements to be recorded is the time it actually takes from when a request is received to when the server has started sending the complete result back to the client. Working on a standard LAMP (P being PHP) stack, there is no way that I&#8217;m aware of to do this out of the box. One way is to inject code into your app that will measure this, or to use a framework where this sort of functionality is built in. However, IMHO, that&#8217;s not the best approach, as it&#8217;s just more code that needs to be written, maintained, and could possibly explode in some strange way, affecting your users.</p>
-
-<p>The approach that I&#8217;ve taken to measuring response times on the server is to use a somewhat obscure Apache module called <a href="https://code.google.com/p/mod-log-firstbyte/">mod_first_byte</a>. It&#8217;s surprisingly easy to install and run, and having run it for several weeks, I haven&#8217;t seen any performance issues or other oddities. Here&#8217;s a quick example of how to install it.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'><span class="c"># make a suitable folder to hold the source</span>
-</span><span class='line'><span class="nv">install_dir</span><span class="o">=</span>mod_firstbyte
-</span><span class='line'>mkdir <span class="nv">$install_dir</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># svn checkout the source into the install_dir</span>
-</span><span class='line'>svn checkout http://mod-log-firstbyte.googlecode.com/svn/trunk/ <span class="nv">$install_dir</span>
-</span><span class='line'>
-</span><span class='line'><span class="c"># depending on your linux flavor, you&#39;ll need a different program to compile</span>
-</span><span class='line'><span class="k">if</span> <span class="o">[</span> -f /etc/issue <span class="o">]</span>
-</span><span class='line'>  <span class="k">then</span>
-</span><span class='line'><span class="k">  </span><span class="nv">distro</span><span class="o">=</span><span class="s1">&#39;ubuntu&#39;</span>
-</span><span class='line'>  <span class="nv">apache_apxs</span><span class="o">=</span><span class="s1">&#39;apxs2&#39;</span>
-</span><span class='line'>  <span class="nv">apache_conf</span><span class="o">=</span><span class="s1">&#39;/etc/apache2/apache2.conf&#39;</span>
-</span><span class='line'><span class="k">fi</span>
-</span><span class='line'>
-</span><span class='line'><span class="k">if</span> <span class="o">[</span> -f /etc/redhat-release <span class="o">]</span>
-</span><span class='line'>  <span class="k">then</span>
-</span><span class='line'><span class="k">  </span><span class="nv">distro</span><span class="o">=</span><span class="s1">&#39;redhat&#39;</span>
-</span><span class='line'>  <span class="nv">apache_apxs</span><span class="o">=</span><span class="s1">&#39;apxs&#39;</span>
-</span><span class='line'>  <span class="nv">apache_conf</span><span class="o">=</span><span class="s1">&#39;/etc/httpd/httpd.conf&#39;</span>
-</span><span class='line'><span class="k">fi</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'><span class="c"># Use the weird apache command to compile and install the apache mod</span>
-</span><span class='line'><span class="nv">$apache_apxs</span> -c     <span class="nv">$install_dir</span>/mod_log_firstbyte.c
-</span><span class='line'><span class="nv">$apache_apxs</span> -i -a  <span class="nv">$install_dir</span>/mod_log_firstbyte.la
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Now that you&#8217;ve complied the module into an so file, you&#8217;ll need to add it to the apache conf. While you&#8217;re in there, you&#8217;ll also want to add the %F directive to your relevant LogFormat lines. Again, adjust for Linux flavor, and LogFormat preferences.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-</pre></td><td class='code'><pre><code class='apache'><span class='line'><span class="nb">LoadModule</span> log_firstbyte_module <span class="sx">/path/to/apache/modules/mod_log_firstbyte.so</span>
-</span><span class='line'>
-</span><span class='line'><span class="nb">LogFormat</span> <span class="s2">&quot;%h %l %u %t \&quot;%r\&quot; %&gt;s %b %F&quot;</span> common
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>For ease of parsing, I recommend putting the %F flag at the end. I&#8217;ve been using a simple php script that runs every few seconds to grep for the last couple lines that have URLs I&#8217;m interested in measuring, pulling the %F off the end of the line, and then sending the value off to <a href="https://github.com/etsy/statsd/">statsd</a>. Keep in mind that the value of %F is in microseconds, so dividing the value by 1000 to give a more reasonable number is helpful.</p>
-
-<p>My script looks a bit like this. What I&#8217;m attempting to do is exclude anything that seems like it&#8217;s a flat file, and only include URLs that are generated by going through my application. YMMV, depending on what your application is and what you want to measure exactly.</p>
-
-<figure class='code'><figcaption><span></span></figcaption><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-</pre></td><td class='code'><pre><code class='php'><span class='line'><span class="x">$log_lines  = array();</span>
-</span><span class='line'><span class="x">$cmd        = &quot;tail -n 50 /var/log/httpd/access_log | egrep -v \&quot;css|js|gif|png|jpg|jpeg\&quot;;</span>
-</span><span class='line'><span class="x">$statsd_key = &quot;first_byte&quot;;</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">exec( $cmd, $log_lines );</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">foreach ( $log_lines as $line ) {</span>
-</span><span class='line'><span class="x">  </span>
-</span><span class='line'><span class="x">  $line_items = explode( &#39; &#39;, $line );</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">  $firstbyte = $line_items[ count($line_items) - 1 ];</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">  $firstbyte_ms = ceil( ( $firstybyte / 1000 ) );</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">  StatsD::timing( $statsd_key, $firstybyte_ms );</span>
-</span><span class='line'>
-</span><span class='line'><span class="x">} // foreach log lines</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>And voilà, you now have some very revealing graphs that will tell you exactly your app is performing, completely separate of how the hellion ISPs have decided to perform that moment. My favorite thing about these graphs is that they are an unopinionated view of how the last changes you&#8217;ve made have affected your app.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[AppArmor, Ubuntu and MySQL]]></title>
-    <link href="http://chr.ishenry.com/2013/03/08/apparmor-and-mysql/"/>
-    <updated>2013-03-08T22:46:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/03/08/apparmor-and-mysql</id>
-    <content type="html"><![CDATA[<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I&#8217;ve done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
-
-<!-- more -->
-
-
-<p>The error here was;</p>
-
-<blockquote><p>ERROR 29 (HY000): File &#8216;/home/technician/data.csv&#8217; not found (Errcode: 13)</p></blockquote>
-
-<p>I&#8217;ve been known to have short term memory glitches, so I exited mysql and double checked my path. Three times. After jumping in and out of the mysql shell, I figured there must have been some sort of issue with the placement or permissions of file. Perhaps mysql simply isn&#8217;t allowed to read the file from there. So I moved it over to the /tmp folder. Ubuntu allows everyone to read from there. No dice. So I moved it back to someplace that made sense and chown&#8217;ed it to mysql:mysql still no dice. It was simply as if mysql couldn&#8217;t see the file.</p>
-
-<p>After quite a bit of googling, it turns out a program called AppArmor was blocking mysql&#8217;s access to the filesystem. From the <a href="https://help.ubuntu.com/12.04/serverguide/apparmor.html">AppArmor Wiki</a>;</p>
-
-<blockquote><p>AppArmor is a Linux Security Module implementation of name-based mandatory access controls. AppArmor confines individual programs to a set of listed files and posix 1003.1e draft capabilities.</p></blockquote>
-
-<p>As it turns out, I&#8217;m not the <a href="https://bugs.launchpad.net/ubuntu/+source/mysql-dfsg-5.0/+bug/244406">only</a> <a href="http://ubuntuforums.org/archive/index.php/t-822084.html">one</a> <a href="http://stackoverflow.com/questions/2783313/how-can-i-get-around-mysql-errcode-13-with-select-into-outfile">who</a> had issues with this piece of software. Like any good piece of software fighting the good security fight, it gives <a href="http://en.wikipedia.org/wiki/No_quarter">no quarter</a>, intentionally obfuscating the exact error. For Ubuntu, this is pretty strange behavior. Typically, things in Ubuntu just work, and there aren&#8217;t too many gotchas.</p>
-
-<p>After a bit more Googling, the solution was relatively simple. AppArmor operates by reading in profiles for each piece of software that it monitors. Those profiles have two modes of execution, <a href="https://help.ubuntu.com/8.04/serverguide/apparmor.html">per the docs</a>.</p>
-
-<blockquote><ul>
-<li>Complaining/Learning: profile violations are permitted and logged. Useful for testing and developing new profiles.</li>
-<li>Enforced/Confined: enforces profile policy as well as logging the violation.</li>
-</ul>
-</blockquote>
-
-<p>So the only thing we actually have to do to get mysql back in a place where it&#8217;s working as expected is to run the following.</p>
-
-<blockquote><p>$ sudo aa-complain /usr/bin/mysql</p></blockquote>
-
-<p>It&#8217;s great that Ubuntu has enabled this by default, and taken a great step in being secure. However, it feels too heavy handed.</p>
-
-<p>Hope this helps someone!</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Resignation and Continuity]]></title>
-    <link href="http://chr.ishenry.com/2013/02/21/resignation-and-continuity/"/>
-    <updated>2013-02-21T20:19:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/02/21/resignation-and-continuity</id>
-    <content type="html"><![CDATA[<p>I&#8217;ve always believed that the Church is more a political entity than a faithful
-one. Ever since my sister&#8217;s Confirmation, when there were three collections, and
-the sermon admonished parents that every firstborn should be sent to seminary,
-I have been convinced that church and faith are entirely separately. Reading
-through history, it&#8217;s clear the papacy is more of a political organization than
-anything else. The wars, the influence over entire countries to go to war seem
-more the actions of an organization obsessed with power than one that existed to
-help people.</p>
-
-<!-- more -->
-
-
-<p>With Ratzinger bucking the trend of holding the papacy till death, it is even
-more clear that what should be the peaceful fading away of an old
-man who has done his service will be turned into political jockeying. One of the
-more interesting political side effects of Ratzinger&#8217;s decision to resign will
-be that he will continue to influence the policies of the church until his death.</p>
-
-<p>The new Pope will be in a much different position from previous popes, who had
-free reign to set policy as he sees. In this case, there will be Ratzinger&#8217;s
-supporters and the ex-pope himself around to ensure that edicts put in place
-will stay there. Unlike previous new popes, there will be no clean break in
-policy. The man who is now closest to God among all other men will be within a
-stone&#8217;s throw of the man who was closest to God a couple months ago.</p>
-
-<p>The question here will be whether the papacy can continue to move forward with,
-or will the previous pope continue to be pope. Much like an an employee who
-suddenly sits up straight and closes the Facebook window when the boss walks in,
-will the future pope be influenced by the unspoken power dynamic of having a
-previous pope alive?</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[Switching to Octopress]]></title>
-    <link href="http://chr.ishenry.com/2013/02/09/switching-to-octopress/"/>
-    <updated>2013-02-09T16:08:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/02/09/switching-to-octopress</id>
-    <content type="html"><![CDATA[<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
-
-<!-- more -->
-
-
-<p>Overall, here were the features I was looking for</p>
-
-<ul>
-<li>Display code beautifully, right off the bat.</li>
-<li>Add plugins. Maybe even write them myself.</li>
-<li>Be able to have all my content organized how I want.</li>
-</ul>
-
-
-<p><a href="http://octopress.org">Octopress</a> was a perfect fit. Working with git, the command line, and markdown are all things that are very familiar to me. There&#8217;s a great community around it, and enough open development around it to support most of the things I want to do. And if the community hasn&#8217;t built it yet, then I can certainly give it a try myself.</p>
-
-<p>The docs on the <a href="http://octopress.org/docs/setup/">Octopress</a> site are really good. Aside from the typical challenges of upgrading Ruby on Mac. <a href="http://www.macports.org/">MacPorts</a> was extremely helpful with the upgrade to Ruby 1.9.3.  Also, the provisioning of a Heroku dyno, and the deploy was as close to painless as it gets.</p>
-
-<p>The migration, however, was not quite as simple. I had plenty of trouble getting my content into tumblr, and I also had a bit of trouble getting it out. Tom Preston-Warner&#8217;s <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">github wiki</a> was very helpful. However, be aware that the default ruby gems are a little out of date, and the information <a href="https://github.com/mojombo/jekyll/issues/773">this resolved issue</a> helped get around the trouble.</p>
-
-<p>Once the posts were actually imported, there still needed to be a bit of massaging done to get them into shape. The yaml header was using tags instead of categories. In the source/_posts folder, a quick sed command got me what I wanted.</p>
-
-<figure class='code'><figcaption><span>Sed snippet  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="nv">$ </span>sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/^tags/categories/&#39;</span> *
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>I do miss my old Wordpress blog, but it was definitely time for a change, as that had been my blog for years. Setting up Octopress has been a great experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[app.net community]]></title>
-    <link href="http://chr.ishenry.com/2013/02/09/appnet-community/"/>
-    <updated>2013-02-09T12:08:00-05:00</updated>
-    <id>http://chr.ishenry.com/2013/02/09/appnet-community</id>
-    <content type="html"><![CDATA[<p>The community of app.net is certainly steadfast in their defense of what makes
-a great online community, and super eloquent in some cases.</p>
-
-<p><img src="http://chr.ishenry.com/images/user/appnet.png" alt="Community leaders" /></p>
-
-<p>They&#8217;re also not real open to the idea they <a href="https://alpha.app.net/radrad/post/2738575">might be
-wrong</a>.</p>
 ]]></content>
   </entry>
   

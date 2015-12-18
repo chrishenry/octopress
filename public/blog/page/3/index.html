@@ -7,8 +7,7 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="If you simply ask a programmer to implement a feature, but fail to share the
-purpose or the justification for said feature, all you get is a code &hellip;">
+	<meta name="description" content="As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +78,230 @@ purpose or the justification for said feature, all you get is a code &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/04/01/first-byte/">
+		
+			First Byte</a>
+	</h2>
+	<div class="entry-content">
+		<p>As we all may have some idea of at this point, performance on the web is one of the keys to success. However, finding actionable performance metrics can be a challenge. In the course of a web request, there&#8217;s a lot of stuff that happens. I&#8217;ll briefly explain it here in a couple run-on sentences.</p>
+
+<p>When you click on a link, your browser or client looks up the location of the server via DNS, and then sends off an HTTP request, then your poorly secured router passes it on to the demons that are your local ISP, who then fiendishly pass that same request up to a backbone, which then traverses continents, oceans or even hemispheres, finally arriving at the data center or poorly ventilated closet where the web servers for that particular site live. That web server reads in that request for your stuff (probably porn, you sicko), and begins whatever its process may be to assemble the initial HTML payload, which hopefully involves validating that the way you asked for said stuff is correct, and if it is, then connecting to a database to actually get that lovely stuff, receiving a response, and puts together an HTML page with that data on it, plus references (more on those later) to CSS and JS to format the data in a way that makes sense, and even make it look a little purty. After that exhausting operation, the web server will take the opposite route through the backbone to the succubus ISP, through your router to your computer to your browser. Once that happens, you technically only have the payload HTML, which by itself isn&#8217;t a whole lot of fun, so then the browser will read aforementioned references to CSS and JS, and then make web requests for each of those files, which, btw, will follow the same process as the initial HTML payload went through, until you have all of the CSS and JS. Then you can finally improve your mind by thoughtfully reflecting on the highly intellectual prose you requested not too long ago.</p>
+
+
+		
+		<a href="/2013/04/01/first-byte/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-04-01T23:29:00-04:00" pubdate data-updated="true">Apr 1<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/apache/'>apache</a>, <a class='category' href='/blog/categories/devops/'>devops</a>, <a class='category' href='/blog/categories/statsd/'>statsd</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/03/08/apparmor-and-mysql/">
+		
+			AppArmor, Ubuntu and MySQL</a>
+	</h2>
+	<div class="entry-content">
+		<p>The other night I was investigating a rather heinous utf8 issue. I was working on a local copy of Ubuntu 12.04 that contained the entire dev environment, except for data. So I exported a copy of the relevant data as a CSV, pulled it down, and attempted to run a <code>LOAD DATA INFILE</code>. Sane enough right? This is something I&#8217;ve done a million times in a bunch of different environments. However, in the vast, vast majority of cases, the error is typically pretty clear. In this case, not so much.</p>
+
+
+		
+		<a href="/2013/03/08/apparmor-and-mysql/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-03-08T22:46:00-05:00" pubdate data-updated="true">Mar 8<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/ubuntu/'>ubuntu</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/02/21/resignation-and-continuity/">
+		
+			Resignation and Continuity</a>
+	</h2>
+	<div class="entry-content">
+		<p>I&#8217;ve always believed that the Church is more a political entity than a faithful
+one. Ever since my sister&#8217;s Confirmation, when there were three collections, and
+the sermon admonished parents that every firstborn should be sent to seminary,
+I have been convinced that church and faith are entirely separately. Reading
+through history, it&#8217;s clear the papacy is more of a political organization than
+anything else. The wars, the influence over entire countries to go to war seem
+more the actions of an organization obsessed with power than one that existed to
+help people.</p>
+
+
+		
+		<a href="/2013/02/21/resignation-and-continuity/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-21T20:19:00-05:00" pubdate data-updated="true">Feb 21<span>st</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/religion/'>religion</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/02/09/switching-to-octopress/">
+		
+			Switching to Octopress</a>
+	</h2>
+	<div class="entry-content">
+		<p>Last month, I decided to refresh my blogging platform. My Wordpress was old and busted, and working on it didn&#8217;t quite fit with the way I wanted to work. I tried tumblr for a few weeks, but it felt pretty constraining. Overall, I was looking for a platform that gave me control, and the ability to crack open the source and do what I wanted.</p>
+
+
+		
+		<a href="/2013/02/09/switching-to-octopress/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-09T16:08:00-05:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/blog/'>blog</a>, <a class='category' href='/blog/categories/octopress/'>octopress</a>, <a class='category' href='/blog/categories/tumblr/'>tumblr</a>, <a class='category' href='/blog/categories/wordpress/'>wordpress</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2013/02/09/appnet-community/">
+		
+			app.net Community</a>
+	</h2>
+	<div class="entry-content">
+		<p>The community of app.net is certainly steadfast in their defense of what makes
+a great online community, and super eloquent in some cases.</p>
+
+<p><img src="/images/user/appnet.png" alt="Community leaders" /></p>
+
+<p>They&#8217;re also not real open to the idea they <a href="https://alpha.app.net/radrad/post/2738575">might be
+wrong</a>.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2013-02-09T12:08:00-05:00" pubdate data-updated="true">Feb 9<span>th</span>, 2013</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/app-net/'>app.net</a>, <a class='category' href='/blog/categories/troll/'>troll</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -365,371 +588,6 @@ closed.</p>
 
 
 	<a class='category' href='/blog/categories/security/'>security</a>, <a class='category' href='/blog/categories/ssh/'>ssh</a>, <a class='category' href='/blog/categories/tools/'>tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2013/01/26/rules-for-london/">
-		
-			Rules for London</a>
-	</h2>
-	<div class="entry-content">
-		<p>A few weeks ago, I took a trip to London and Paris. It was my first trip to
-Europe. Having never been to Europe, or on a real vacation for the last couple
-years, I was really looking to maximize my time there. So I had a couple rules
-while for I was there;</p>
-
-<ol>
-<li>Have a long list of things to do, but no plan.</li>
-<li>Walk or take public transportation everywhere.</li>
-<li>Get to know the neighborhoods I&#8217;m staying in.</li>
-<li>If something looks interesting, do it.</li>
-<li>Don&#8217;t be an #uglyamerican.</li>
-</ol>
-
-
-<p>As it turns out, those were some really great rules. The last thing I wanted
-in a vacation was a schedule. Plus, if we got involved in something, and took
-more time than we thought, it wouldn&#8217;t matter. And following rule #2 the
-entire and rule #4 the entire trip, there were plenty of things that we found
-along the way that took up more time than we thought. The <a href="http://www.camdenlock.net/stables/index.html">Camden
-Stalls</a>, for example, were full
-of treasures and side alleys to explore.</p>
-
-<p>Rule #2 turned out to be pretty great for a bunch of reasons. The London tube
-is super efficient, clean, and has wifi. The only drawback of the Underground
-is that it closes early, as does most of London. Walking a city is really the
-only way to really get to know a city. Also, getting lost is the best way to
-find the really cool stuff.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-26T00:00:00-05:00" pubdate data-updated="true">Jan 26<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/london/'>london</a>, <a class='category' href='/blog/categories/paris/'>paris</a>, <a class='category' href='/blog/categories/rules/'>rules</a>, <a class='category' href='/blog/categories/travel/'>travel</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2012/12/10/fizzbuzz-a-thon/">
-		
-			FizzBuzz-a-thon</a>
-	</h2>
-	<div class="entry-content">
-		<p>The <a href="http://www.codinghorror.com/blog/2007/02/why-cant-programmers-%0Aprogram.html">FizzBuzz</a> test is a simple way of showing that a developer has mastery of
-basic concepts like loops, variables and operators. Having given the test to
-other developers several times, I felt like a bit of hypocrite having never
-actually having taken it myself. I&#8217;ve also asked folks to complete the task in
-php, even though it wasn&#8217;t a language they were particularly familiar with.
-So, I decided it was time to end the hypocrisy, and give myself a little
-challenge:</p>
-
-<p><strong>Do FizzBuzz in as many languages as I could.</strong></p>
-
-<p>So, what did I learn?</p>
-
-<ul>
-<li>With the <a href="http://chr.ishenry.com/2011/06/13/development-without-internet-access/">internet</a>, you can learn the basics of most programming languages in about 5 minutes.</li>
-<li>Programming knowledge is portable between most common web languages. A loop is a loop, a variable is a variable, etc. Syntax for a task this simple can be learned in a few minutes.</li>
-<li>FizzBuzz <em>can</em> be done in sql, bitch.</li>
-<li>Clojure is hard for no reason.</li>
-<li>Lisp is basically impossible to get running.</li>
-<li>Languages have uptake because they&#8217;re included with the OS and have good documentation and communities.
-In the end, doing FizzBuzz in 10 languages took around 5 hours. There was,
-however, significant time taken for screwing around on Twitter, potty breaks,
-drinking too much coffee, <a href="http://stackoverflow.com/questions/13536889/php-works-but-%0Agives-sql-syntax-error/13536929#comment18536820_13536929">curmedgeon-ing on
-StackOverflow,</a> drinking beer, and
-making carnitas. Time was also spent looking for a way to run my FizzBuzzes in
-bash and benchmark them, which proved fruitless, since OS X doesn&#8217;t support
-nanoseconds in the date command.</li>
-</ul>
-
-
-<p>For a closer look at the code, take a look at the <a href="https://github.com/chrishenry/fizzbuzz">github
-repo.</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-12-10T00:00:00-05:00" pubdate data-updated="true">Dec 10<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/existentialism/'>Existentialism</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/thoughts/'>Thoughts</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2012/10/14/the-care--feeding-of-a-mongodb-cluster/">
-		
-			The Care + Feeding of a MongoDB Cluster</a>
-	</h2>
-	<div class="entry-content">
-		<p>Thanks to all those who came to my last two MongoDB Skillshare classes. For
-those interested, here are the slides.</p>
-
-<p><strong> <a href="http://www.slideshare.net/chrishnry/the-care-feeding-of-a-mongodb-cluster">The Care + Feeding of a Mongodb Cluster</a> </strong> from <strong><a href="http://www.slideshare.net/chrishnry">Chris Henry</a></strong></p>
-
-<iframe src="http://www.slideshare.net/slideshow/embed_code/14725427" width="427" height="356" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC;border-width:1px 1px 0;margin-bottom:5px" allowfullscreen webkitallowfullscreen mozallowfullscreen> </iframe>
-
-
-<p> <div style="margin-bottom:5px"> <strong> <a href="http://www.slideshare.net/chrishnry/the-care-feeding-of-a-mongodb-cluster" title="The Care + Feeding of a Mongodb Cluster" target="_blank">The Care + Feeding of a Mongodb Cluster</a> </strong> from <strong><a href="http://www.slideshare.net/chrishnry" target="_blank">Chris Henry</a></strong> </div></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-10-14T00:00:00-04:00" pubdate data-updated="true">Oct 14<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mongodb/'>mongodb</a>, <a class='category' href='/blog/categories/skillshare/'>skillshare</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2012/08/19/appnet-i-smell-a-pattern/">
-		
-			app.net, I Smell a Pattern</a>
-	</h2>
-	<div class="entry-content">
-		<p>After being pummeled into submission by 42924 tweets about
-<a href="https://join.app.net/">app.net,</a> I finally decided it was time to take a look
-at what seemed like a very popular concept. If (IF) I understand correctly,
-app.net is an attempt to reboot Twitter. The aim is to build a realtime social
-feed free from the shackles of advertising, and instead a focus on creating an
-experience tailored to its users and developers. Also, there seems to be a $50
-cover.</p>
-
-<p>Frankly, this undertaking seems ill advised, as does asking a bunch of people
-for $50 for a username. App.net is taking on the giants of the Internet who
-have worked for years to build product, developer community, etc. Having
-worked with Twitter&#8217;s APIs, I can say that Twitter has done a fantastic job of
-advocating for developers and providing them the tools and data to innovate. I
-can also say that I actually haven&#8217;t noticed much impact from advertising, and
-I consider myself a pretty heavy Twitter user. I also tend to have a hard time
-differentiating between Rob Delaney&#8217;s
-<a href="https://twitter.com/Charmin/status/231413266251907073">digital</a>
-<a href="https://twitter.com/HomeDepot/status/235083704358301697">harassment</a> and
-properly promoted tweets.</p>
-
-<p>Looking back, this project doesn&#8217;t seem all that different from
-<a href="https://joindiaspora.com/">Diaspora</a>. A small team aggravated with certain
-aspects of larger services that they love puts out an app that is viable, but
-is really a carbon copy of the original, with their own special twist.
-Diaspora and App.net both want their users to have control over privacy, data,
-and how much advertising is shoved in their face. Currently, Diaspora seems to
-be completely off the radar, having made practically no dent in addressing its
-original goals.</p>
-
-<p>Building a product to address a flaw in someone else&#8217;s product seems to be a
-fools errand, particularly when the giants of real time social feeds are well
-ensconced. Building a competitor product also doesn&#8217;t seem like a great way to
-convince the Internet that advertising is bad. Also, the Internet doesn&#8217;t
-really need convincing that ads are bad. I&#8217;m relatively sure that based on
-diving click throughs, nonexistent conversion, and the mere existence of
-banner blindness that Internet advertising industry also knows that its days
-are numbered. Interestingly enough, the most fertile area of brand awareness
-actually seems to be around using real time social media to engage in simple,
-human ways. So I&#8217;m not sure how cutting brands out of the business model will
-help here.</p>
-
-<p>What surprises me most about the existence of app.net is how blatantly it
-reinvents the wheel. The alpha was put out to show backers there was a real
-app behind the video. However, aside from proving they can convince folks that
-advertising control is bad, the actual app doesn&#8217;t really do anything
-innovative or different, at least that I can see. OK, you got me, there&#8217;s
-[data export|http://daltoncaldwell.com/we-did-it]. Realistically, this is an
-alpha, there&#8217;s virtually no data to export, so I would hardly consider this a
-marvel of engineering. When Diaspora came onto the scene, they had actually
-built something different, and innovative. Even Identi.ca attempted to
-<a href="http://identi.ca/doc/faq">differentiate themselves</a> in functionality.</p>
-
-<p>This entire project reeks of misdirected energy, and a &#8221;<a href="http://www.richard-banks.org/2007/07/built-here-syndrome.html">not built
-here</a>&#8221;
-mentality. Granted, I&#8217;m a huge fan of building things that make you happy,
-it&#8217;s part of what keeps me going as a developer. Truthfully, the thing I love
-most about being a developer is that I can build whatever the fuck I want,
-whether it helps, hurts, solves a problem, or complicates stuff. However, I
-just can&#8217;t help but feel this entire project is a form of lashing out. It
-feels destructive to me to rally a group of smart people off of a platform
-that&#8217;s working well because of some flaws. Flaws which are really inherent
-challenges building business on the Internet. I feel like a more effective
-method of changing the environment would&#8217;ve been creating better ways to
-monetize without having to resort to advertising.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-19T00:00:00-04:00" pubdate data-updated="true">Aug 19<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/advertising/'>Advertising</a>, <a class='category' href='/blog/categories/thoughts/'>Thoughts</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2012/08/13/mysqls-insert-select-replication-and-you/">
-		
-			MySQL&#8217;s INSERT SELECT, Replication, and You</a>
-	</h2>
-	<div class="entry-content">
-		<p>Whenever there are situations where data needs to be copied from table to
-table, or SELECTing lots of rows to be inserted, the <a href="http://dev.mysql.com/doc/refman/5.5/en/insert-select.html">INSERT
-SELECT</a> is an
-elegant solution. It reduces the number of queries sent to a MySQL server, and
-makes for elegant code. Additionally, with INSERT SELECTs, all processing
-happens on the MySQL side. The app doesn&#8217;t have to deal with having any of the
-data in memory. This means that application servers can be run with less
-memory.</p>
-
-<p>Unfortunately, INSERT SELECT&#8217;s best use cases coincide with cases where the
-SELECT query has the potential to run a long time. On standalone servers
-running InnoDB, this can be fine, as reads and writes will continue to execute
-concurrently. However, if you&#8217;re running MyISAM, queries will lock, and
-nothing will execute. Instead, queries will queue up, your application will
-come to a dead halt, MySQL will likely hit max_connections and Very Bad Things
-will happen.</p>
-
-<p>In <a href="http://dev.mysql.com/doc/refman/5.5/en/replication-%0Aimplementation.html">replicated</a> environments, even well tuned ones running on InnoDB, a
-long running INSERT SELECT can cause other sorts of problem. MySQL replication
-is statement based. In other words, every statement that writes to disk on the
-master is written to a log. The log is then transferred to slave(s), and those
-statements are replayed on the slaves.</p>
-
-<p>With INSERT SELECTS, every slave needs to run the same SELECT. The master will
-not simply pass on the results of the SELECT, but rather simply pass the same
-query to be executed by the slave(s). So in a replicated environment, it&#8217;s
-even more important to keep an eye on how long those INSERT SELECTS are
-running. Not only is it a waste of processing power to run the SELECT portion
-of the query across the entire cluster, the SELECT will actually block other
-statements in the log from executing. This means that the data on the slaves
-will become out of sync with the master, a condition called slave lag.</p>
-
-<p>INSERT SELECT is a great tool, but beware of the costs of using it in certain
-situations.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2012-08-13T00:00:00-04:00" pubdate data-updated="true">Aug 13<span>th</span>, 2012</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/ops/'>Ops</a>
 
 
 </div>

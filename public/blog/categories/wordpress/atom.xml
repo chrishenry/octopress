@@ -4,7 +4,7 @@
   <title><![CDATA[Category: wordpress | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/wordpress/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-07-19T20:02:31-04:00</updated>
+  <updated>2015-12-18T14:43:38-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -40,9 +40,10 @@
 
 <p>Once the posts were actually imported, there still needed to be a bit of massaging done to get them into shape. The yaml header was using tags instead of categories. In the source/_posts folder, a quick sed command got me what I wanted.</p>
 
-<p>{% codeblock Sed snippet lang:bash %}
-  $ sed -i '' 's/<sup>tags/categories/'</sup> *
-{% endcodeblock %}</p>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Sed snippet  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>  <span class="nv">$ </span>sed -i <span class="s1">&#39;&#39;</span> <span class="s1">&#39;s/&lt;sup&gt;tags/categories/&#39;</span>&lt;/sup&gt; *
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <p>I do miss my old Wordpress blog, but it was definitely time for a change, as that had been my blog for years. Setting up Octopress has been a great experiment in looking at another language (ruby, and some python), getting more familiar with git, and getting even more acquainted with SublimeText.</p>
 ]]></content>

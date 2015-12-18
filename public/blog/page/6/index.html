@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="Many people value money as the most important thing in life, and will gladly
-trade time for it. The pursuit of saving money is an extremely American &hellip;">
+	<meta name="description" content="Through a combination of unhealthy fears, paranoid tendencies, and luck, I&#8217;ve
+been able to avoid that unavoidable situation that every &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,407 @@ trade time for it. The pursuit of saving money is an extremely American &hellip;
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/09/26/it-happens-to-everyone/">
+		
+			It Happens to Everyone&#8230;</a>
+	</h2>
+	<div class="entry-content">
+		<p>Through a combination of unhealthy fears, paranoid tendencies, and luck, I&#8217;ve
+been able to avoid that unavoidable situation that every sysadmin fears:
+completely nuking a system. Until last Tuesday, when I did something really,
+really dumb. On the server that hosts
+<a href="http://chr.ishenry.com">http://chr.ishenry.com</a>, I had noticed a script,
+<a href="http://lmgtfy.com/?q=svcrack.py">svcrack.py</a>, running and consuming lots of
+resources, and bandwidth, as I would later find out from my hosting bill.</p>
+
+<p>Since I sure as hell wasn&#8217;t running that, I could only assume that someone had
+exploited my server and was using it to look for unsecured voip installations.
+Initially, I assumed killing the scripts and changing some passwords would be
+sufficient. However, checking in the server later, I found the same script
+running. All this is fair enough, as I am on Wordpress, a few versions behind,
+and there are enough folders with unhealthy permissions that I kind of
+deserved it. So after a few days of trying to lock things down, I got a bit
+desperate.</p>
+
+<p>Since svcrack is a python script, there was a good chance the best way to
+discourage my assailant would be to remove python. Great idea in theory, but
+it seemed my execution was a bit poor. It turns out running &#8216;yum remove
+python&#8217; is a great way to destroy your entire system. yum runs on python,
+which meant a reinstall would have to be done manually. Only problem, most of
+the shell bultins stopped working as well. cp, mv, ls all resulted in a
+&#8216;command not found&#8217; error. The best part of this situation: no backups. After
+all the <a href="http://www.codinghorror.com/blog/2009/12/international-backup-%0Aawareness-day.html">hubbub about blogs and
+backups</a> lately, it&#8217;s kind of amazing I missed this rather
+important detail.</p>
+
+<p>I&#8217;ve always considered data loss the cardinal sin in development, web or
+otherwise. However, I also never considered my personal site to be mission
+critical, or worthy of taking the the time for backups. But as they say, you
+never know what you have till it&#8217;s gone. I was lucky enough that mysql and
+apache were still running, and I was able to export everything, spin up a new
+server, and import. Even with no data loss, this is certainly a lesson
+learned. I am making a backup right now.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-09-26T00:00:00-04:00" pubdate data-updated="true">Sep 26<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/08/24/ode-to-the-environment/">
+		
+			Ode to the Environment</a>
+	</h2>
+	<div class="entry-content">
+		<p>Consistency is key, in everything. People come to rely on trains, because they
+come on time. Devs rely on the environment which they develop in, because its
+stability allows them to be productive. Changing or upgrading that environment
+can be the same as changing the train schedule. Sometimes people get where
+they&#8217;re going faster, but sometimes, the change makes their life miserable.</p>
+
+<p>Environment upgrades can be just like that.  Speed, security, features.
+Everybody likes those.  The ugly side to upgrades is that they have a tendency
+to break things that are already working, may be incompatible with current
+code, and disrupt the work of the team.  As a struggling sysadmin / developer,
+all I really want in life is to build a stable platform that I can build my
+app in.</p>
+
+<p>Hence, the Ode to the Environment:</p>
+
+<blockquote><p>The Environment is the basis for my business. Without it, and it&#8217;s
+consistency, there is uncertainty, chaos, and ultimately, failure.</p></blockquote>
+
+<p>I need to be able to replicate the Environment quickly, identify when issues
+are caused by it, <a href="http://chr.ishenry.com/2010/02/22/sandboxes/%20">sandbox</a>
+it, and be comfortable building it from scratch, if it comes to that.
+(Hopefully, it never does.)</p>
+
+<p>I need to be confident in the set of packages I&#8217;ve come to love, loathe, and
+rely on, and make sure they work for my business&#8217;s app.</p>
+
+<p>I know that the Environment&#8217;s well-being will affect my application&#8217;s uptime,
+developers relying on it, and my business&#8217;s reputation.</p>
+
+<p>I need to know the flaws and shortcomings in the Environment, and weigh how to
+fix them against the cost of change.</p>
+
+<p>When it comes time to upgrade the Environment, there will be damn good reason.
+I need to be horribly convinced that my business will see benefits
+immediately.</p>
+
+<p>Once I upgrade the Environment, I need to love and loathe it same as the old,
+embrace whatever change it brings, advocate for it and fix whatever issues the
+change brings.</p>
+
+<p>Above all, I will maintain the best Environment that suits my business, and
+ensure that it is always meets the goals of my business, no matter the cost.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-24T00:00:00-04:00" pubdate data-updated="true">Aug 24<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/08/16/gmail-actually-gets-something-really-wrong/">
+		
+			Gmail Actually Gets Something Really Wrong.</a>
+	</h2>
+	<div class="entry-content">
+		<p>I&#8217;m a huge fan of Gmail and Google Apps for
+<a href="http://chr.ishenry.com/2009/04/26/just-manage-it-for-me/">many</a> reasons. I
+love the new redesign, and how they&#8217;re finally promoting consistency across
+their major webapps. It makes me feel like the web could <em>really</em> be a viable
+alternative alternative to desktop software. I can even deal with
+<a href="http://www.avc.com/a_vc/2010/06/gmail-performance-issues.html">slowness</a> in
+Gmail, given the amount of work they need to do in order to keep your inbox
+snappy. They need to index every message, which means parsing every message,
+converting every attachment, and linking it the search architecture. In real
+time. Not easy…</p>
+
+<p>However, what I found today, was completely inexcusable: Gmail&#8217;s clipping
+&#8220;feature&#8221;. This is definitely a feature that sounds a lot more like a bug than
+a helpful tool.</p>
+
+<p><a href="/images/user/gmail_clipping.png"><img src="/images/user/gmail_clipping.png" alt="Gmail Message clipping" /></a></p>
+
+<p>What <em>should</em> be here is a few more links, some mouse text that contains our
+mailing address and unsubscribe links. What I did not show in this screenshot
+is the capacity for destruction this feature has on HTML emails. When the
+email is &#8216;clipped&#8217;, the HTML is broken at a random place, and not displayed.
+If your message is clipped at an inopportune place, there goes your entire
+HTML layout. In the best case, your HTML is simply truncated, leaving users
+with only a piece of their email.</p>
+
+<p>As the entity sending this email, the responsibility falls on me to make sure
+that I send emails that are accessible, conform to CAN-SPAM, and are pleasing
+to the eye. Gmail bones me on three of these goals. Thanks to a
+<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">lack</a> of
+<a href="http://tinyurl.com/2asve9s">documentation</a> as to how long an email can be
+without invoking the clipping feature. Most importantly, my users have no
+clear to unsubscribe from the list, since the most likely links to be clipped
+are the unsubscribe links.</p>
+
+<p>I agree that
+<a href="http://mail.google.com/support/bin/answer.py?hl=en&amp;answer=9377">performance</a>
+is king, but never at the cost of the user.</p>
+
+<p><strong>Update:</strong> It seems like Gmail limits messages to around 102k characters before clipping. So the solution seems to be running HTML through a compressor. I found a pretty good one <a href="http://www.textfixer.com/html/compress-html-compression.php">here</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-08-16T00:00:00-04:00" pubdate data-updated="true">Aug 16<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/07/30/mysql-and-linux-swappiness/">
+		
+			MySQL and Linux Swappiness</a>
+	</h2>
+	<div class="entry-content">
+		<p>MySQL&#8217;s InnoDB engine is really great. Row-level locking is amazing in tables
+where there is heavy concurrency. Write buffering is also awesome for cases
+where a table needs to accept a lot of data. InnoDB&#8217;s use of memory to store
+indexes or sometimes the entire table can also make reads incredibly fast,
+especially on tables that need to support complex queries where even the best
+placed indexes do nothing.</p>
+
+<p>However, when tables get large, the innodb_buffer_pool is set to close to
+amount of memory on the server, Linux has a tendency to remove your data from
+memory for no good reason. The symptoms are unmistakable: a query that was
+known to be pretty quick, but hasn&#8217;t run in a while, will take long. Too long.
+Run it again, and it becomes snappy. What&#8217;s happening is that when the query
+initially runs, the necessary data isn&#8217;t in memory, so it&#8217;s read in from disk,
+and the query is performed. Once it&#8217;s in memory, that second run is quick.</p>
+
+<p>Actually there is a good reason Linux behaves like this:</p>
+
+<blockquote><p>&#8220;My point is that decreasing the tendency of the kernel to swap stuff out is
+wrong. You really don&#8217;t want hundreds of megabytes of BloatyApp&#8217;s untouched
+memory floating about in the machine. Get it out on the disk, use the memory
+for something useful.&#8221;</p></blockquote>
+
+<ul>
+<li><a href="http://kerneltrap.org/node/3000">[http://kerneltrap.org/node/3000](http://kerneltrap.org/node/3000)</a></li>
+</ul>
+
+
+<p>This all makes sense, as most systems need to reclaim memory from applications
+that aren&#8217;t doing anything. Except in the case where you have a large dataset
+in InnoDB that you&#8217;d really like to be in memory when you query it. Luckily,
+there is a tunable that you can change to dictate how aggressive Linux is
+reclaiming memory from applications. /proc/sys/vm/swappiness stores a number
+for 0 to 100, where 100 means that Linux will be extremely aggressive in
+reclaiming memory, and 0 means that memory won&#8217;t be reclaimed all that much.</p>
+
+<p>For servers that need to keep datasets in memory all the time, this variable
+can be extremely helpful. With an InnoDB table / indexes that consume ~80% of
+memory on the machine, a swappiness value of 30 is sufficient to allow MySQL
+to keep most of that in memory. Of course, I don&#8217;t recommend this for a
+machine that is not 100% dedicated to a single task. However, on dedicated
+MySQL machines, tuning this variable can be really helpful.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-07-30T00:00:00-04:00" pubdate data-updated="true">Jul 30<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/06/23/accountability-is-a-feedback-loop/">
+		
+			Accountability Is a Feedback Loop</a>
+	</h2>
+	<div class="entry-content">
+		<p><a href="http://wordnetweb.princeton.edu/perl/webwn?s=accountability">Accountability</a>
+is a word that&#8217;s getting tossed around a lot lately. You hear people saying
+things like:</p>
+
+<blockquote><ul>
+<li><p>That developer should be held accountable for the validation problems.</p></li>
+<li><p>The tester should be accountable for not finding that bug.</p></li>
+<li><p>BP needs to be accountable for destroying an ecosystem.</p></li>
+</ul>
+</blockquote>
+
+<p>The term seems to be thrown around most often when parts of a system fail. BP
+is part of a larger industry which that&#8217;s regulated. The government agency
+responsible for monitoring safety measures is responsible for ensuring they
+follow safety regulations. So when BP made their <a href="http://twitter.com/bpglobalpr/status/14583761878">whoopsie
+daisy</a>, the fingers were
+pointed squarely at them. However, where were the regulators? There were tons
+of opportunities for the government to push feedback to BP regarding the
+safety of their operation. But it seemed like no one was talking.</p>
+
+<p>The development process is strikingly similar. Any development team worth
+their bits has a process that puts any issue in front of at least two parties
+at all times. Joel Spolsky&#8217;s infamous <a href="http://www.joelonsoftware.com/articles/fog0000000029.html">Bug
+1203</a>, a quick
+story about the interactions between a dev and a tester, is the picture of
+accountability, and shows that without active management and constant feedback
+being exchanged, <strong>things don&#8217;t get done</strong>.</p>
+
+<p>A quick synopsis and commentary: Jill the tester finds a bug, and provides
+feedback to the dev team via the ticket system. In doing so, Jill has started
+the feedback loop, and made it the responsibility of the dev team to
+investigate the issue. The dev team, as they are prone to doing, deny
+responsibility for the issue, and mark the issue as &#8216;NOT A BUG&#8217; Having done
+so, they&#8217;ve put the onus on Jill to prove it&#8217;s <em>really</em> a bug, which she does
+(probably in about 2 seconds). It&#8217;s again the responsibility of the dev team
+to fix the bug, which they do. Jill confirms the fix, and thereby closes the
+loop.</p>
+
+<p>What&#8217;s important to realize is that in this type of process, it is the
+responsibility of anyone and everyone involved to be accountable for their
+role, and be focused on pushing feedback to the next person. Once there&#8217;s a
+break in the loop, the issue is likely to be dropped, and never fixed. The
+last person holding the ball is the screwup. I&#8217;m sure someone somewhere is
+really upset they didn&#8217;t ask BP about that little safety measure.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-06-23T00:00:00-04:00" pubdate data-updated="true">Jun 23<span>rd</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/process/'>Process</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -421,328 +822,6 @@ handle a <a href="http://chr.ishenry.com/2009/05/25/crisis-mo/">crisis</a>.</p>
 
 
 	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/02/12/japanese-inspection/">
-		
-			Japanese Inspection</a>
-	</h2>
-	<div class="entry-content">
-		<p>Everybody procrastinates. Some tasks that get pushed off don&#8217;t matter, it just
-gets done later. Some tasks that go over deadline result in profanities and
-bloody noses. But every once in a while, tasks come along that have an
-expiration date. As in, if it doesn&#8217;t get done by a certain time, it doesn&#8217;t
-matter.</p>
-
-<blockquote><p>You ever heard of a &#8220;Japanese Inspection?&#8221; Japanese Inspection, you see,
-when the Japs take in a load of lettuce they&#8217;re not sure they wanna let in the
-country, why they&#8217;ll just let it sit there on the dock &#8216;til they get good and
-ready to look at, But then of course, it&#8217;s all gone rotten… ain&#8217;t nothing left
-to inspect. You see, lettuce is a perishable item…like you two monkeys.</p></blockquote>
-
-<ul>
-<li><a href="http://www.imdb.com/title/tt0099371/">Big John, <em>Days of Thunder</em></a></li>
-</ul>
-
-
-<p>What Big John was referring to was the fact that all he had to do was ignore
-Cole and Rowdy until they didn&#8217;t any fight left in them. Tasks can be just the
-same way. Eventually, the need for the task to be done just goes away, or
-starts to smell. The only thing that really matters is being able to tell the
-difference between the things that <strong>really</strong> need to get done, and the things
-that just aren&#8217;t important enough to get done.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-02-12T00:00:00-05:00" pubdate data-updated="true">Feb 12<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/01/29/sphinx-full-text-search-engine/">
-		
-			Sphinx Full Text Search Engine</a>
-	</h2>
-	<div class="entry-content">
-		<p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
-best solution for all your searching needs. Then I realized that it was
-horribly slow, and mixing with complex joins completely destroyed any chances
-of using MySQL indexes in any way that would make sense or get decent results.
-The solution to fast and scalable free text search on any website is, of
-course, a Full Text search engine.</p>
-
-<p>There are a few different ones out there. After a brief affair with Lucene, I
-settled on Sphinx. Sphinx is easy to install, even on 64-bit machines, and is
-architected in a way that makes a lot of sense for the web. The following
-steps were performed on a Red Hat machine. Don&#8217;t skip the mysql-dev install,
-even if you already MySQL installed.</p>
-
-<figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
-</span><span class='line'>yum install mysql-dev*
-</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
-</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
-</span><span class='line'>mkdir /usr/local/sphinx
-</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
-</span><span class='line'>make install
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p>Once installed, it&#8217;s fairly simple to start playing with the packaged example
-data and queries. The php APIs make integration easy, either to build a
-service, or use locally as a substitute for MySQL. In fact, as long as the
-index can be kept reasonably up to date, Sphinx is a better choice for
-complicated sorts than MySQL.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-29T00:00:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2010/01/07/google-short-links/">
-		
-			Google Short Links</a>
-	</h2>
-	<div class="entry-content">
-		<p>Having your own domain and server is a really fun thing. You can keep a blog,
-store files, post photos. All good ole down-home interwebz fun you can dream
-up. With the advent of micro-blogging, everyone now has an audience they need
-to communicate with in the briefest fashion.</p>
-
-<p>Short links have become the norm for sharing, but with a huge price. Short
-links break the interconnectedness of the Internet. Search results that depend
-on the count of links become incorrect. Some services try to reconnect links
-between domains by using some DNS trickery. But the issue remains that there
-is a middleman that can&#8217;t help make the connection.</p>
-
-<p>Unless, of course, that middleman is the search engine. Google&#8217;s recently
-announced URL shortener could solve many of the problems inherent with URL
-shorteners. By being the middleman, Google would have all the necessary
-information to put the pieces back together. It&#8217;s easy enough to set up,
-provided you have a Google Apps account. It does not currently have an API,
-but here&#8217;s hoping.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2010-01-07T00:00:00-05:00" pubdate data-updated="true">Jan 7<span>th</span>, 2010</time></div>
-	<div class="tags">
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/12/22/30-seconds-to-mars--this-is-war/">
-		
-			30 Seconds to Mars :: This Is War</a>
-	</h2>
-	<div class="entry-content">
-		<p>30 Seconds to Mars recently released their third album, This is War, and it is
-quite the departure from their first album. Brand New Day was raw and angry,
-with amazing guitar sounds, great composition, and a real sense of urgency in
-the writing. The album was really exciting to listen to, and the live
-performances were great. I saw them at Avalon in NYC a few years ago, and it&#8217;s
-still one of my all time favorite shows.</p>
-
-<p>This is War is mild and boring in comparison. The effects driven distorted
-guitars characteristic to Brand New Day is missing. They seem to have been
-replaced with over-produced electronics. Jared Leto has less than half the
-intensity than he did in Brand New Day, and the lyrics have lost their edge.
-The focus on deeply layered choruses of what sounds like children singing
-lacks impact. The collaboration with Kanye and his 808 didn&#8217;t really go
-anywhere, and just seemed to pull the band further from their roots. It&#8217;s sad
-to hear a band that had such a great band with a unique sound has gone so far
-off track.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-22T00:00:00-05:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/music/'>Music</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/12/12/changing-criteria/">
-		
-			Changing Criteria</a>
-	</h2>
-	<div class="entry-content">
-		<p>Occasionally, a project will come across my plate with the criteria, &#8216;Make
-sure this works everywhere, is completely template-able, and is something we
-can grow with.&#8217; Normally this is coupled with &#8216;We need this to work with X
-<em>right now</em>, and Y and Z later.&#8217; What I really hear is &#8216;Make it work for X,
-and <a href="http://bit.ly/6kpqUc">ship </a> the damn thing.&#8217; After all, hitting those
-deadlines is <strong>really</strong> important.</p>
-
-<p>Of course, this has a whole bunch of ugly assumptions tied to it. The first
-is: when I get to Y, everything I did for X will work. All I need to do is
-drop in a few config changes, and tweak a few parameters, and I&#8217;m done. (Yea,
-right) Secondly: that every case Y needs to cover is contained within X. (Not
-Likely) Third: All of this will be so well documented that any literate
-individual will be able to implement Y by osmosis.</p>
-
-<p>So. Do we spend time now or later? Shipping X seems pretty simple, so why not
-just build X, satisfy the business dude and call it a day. Spending time now
-means that deadlines may have to shift, and something that should be simple
-becomes complex. We have other, more important, projects to work on.</p>
-
-<p>Eventually Y comes calling. So let me introduce you to…Future Web Dev Guy
-Person Girl! If you&#8217;re lucky, that person is you. If you&#8217;re not, it&#8217;s another
-dev. The assumptions we made back in paragraph 2 have reared their ugly heads.
-Since they were assumptions, you&#8217;re probably boned. If not, you&#8217;re probably
-one of <a href="http://www.ioinformatics.org/photo/images/p4.jpg">these guys</a>. If
-you&#8217;re the rest of us, Future Web Dev Guy Person Girl definitely hates your
-guts, because the groundwork that was supposed to be laid out is not there.
-They&#8217;re running through a lice-infested rat&#8217;s nest of procedural functions
-trying to pass the additional variable that will make this all work.</p>
-
-<p>The best way to keep Future Web Dev Guy Person Girl from cursing like a sailor
-is implement correctly, test thoroughly, and deal with Y before it&#8217;s due.
-Deadlines need to be managed according to project scope, and if project scope
-includes Y, it needs to be accounted for now, before you lose a friend in
-Future Web Dev Guy Person Girl.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-12-12T00:00:00-05:00" pubdate data-updated="true">Dec 12<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>
 
 
 </div>

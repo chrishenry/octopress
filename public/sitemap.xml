@@ -302,11 +302,11 @@
     </url>
     <url>
         <loc>http://chr.ishenry.com/2014/11/02/flight-status/</loc>
-        <lastmod>2015-07-19T19:57:53-04:00</lastmod>
+        <lastmod>2015-07-19T20:03:34-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/2015/03/31/when-to-do-it-yourself/</loc>
-        <lastmod>2015-07-19T19:57:28-04:00</lastmod>
+        <lastmod>2015-07-19T20:03:34-04:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/2015/04/11/coding-music-spring-2015/</loc>
@@ -322,15 +322,35 @@
     </url>
     <url>
         <loc>http://chr.ishenry.com/2015/06/26/fizzbuzz-in-go-and-rust/</loc>
-        <lastmod>2015-07-19T19:56:57-04:00</lastmod>
+        <lastmod>2015-07-19T20:03:34-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://chr.ishenry.com/2015/08/26/a-note-on-amazon-autoscale-groups/</loc>
+        <lastmod>2015-08-29T19:27:46-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://chr.ishenry.com/2015/08/30/slack/</loc>
+        <lastmod>2015-09-06T16:02:59-04:00</lastmod>
+    </url>
+    <url>
+        <loc>http://chr.ishenry.com/2015/11/07/burnout/</loc>
+        <lastmod>2015-11-08T16:11:05-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://chr.ishenry.com/2015/11/29/aws-tags-as-a-lightweight-datastore/</loc>
+        <lastmod>2015-12-14T20:28:42-05:00</lastmod>
+    </url>
+    <url>
+        <loc>http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code/</loc>
+        <lastmod>2015-12-18T14:42:34-05:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/blog/archives/</loc>
-        <lastmod>2015-07-19T19:57:53-04:00</lastmod>
+        <lastmod>2015-12-18T14:42:34-05:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/</loc>
-        <lastmod>2015-07-19T19:57:53-04:00</lastmod>
+        <lastmod>2015-12-18T14:42:34-05:00</lastmod>
     </url>
     <url>
         <loc>http://chr.ishenry.com/robots.txt</loc>

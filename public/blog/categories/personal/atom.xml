@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: personal | The Technician]]></title>
+  <link href="http://chr.ishenry.com/blog/categories/personal/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2015-12-18T14:43:38-05:00</updated>
+  <id>http://chr.ishenry.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Volunteering at Hour of Code]]></title>
+    <link href="http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code/"/>
+    <updated>2015-12-17T22:48:00-05:00</updated>
+    <id>http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code</id>
+    <content type="html"><![CDATA[<p>Yesterday, as part of the Hour of Code, I went to <a href="http://ithsnyc.org/2013/home">Information Technology High
+School</a> in Long Island City. I spent the morning
+talking to students about what it's like to work in Web Operations.</p>
+
+<p>It was amazing seeing students taking an interest in technology and coding. Many
+of them had already completed the <a href="https://hourofcode.com/us">Hour of Code</a>
+projects. Others were still tinkering, seeing what they could add and change. I
+spent some time critiquing and reviewing work they had done in Mrs. Ramirez's
+Web Design class. The students had all created functional portfolio sites,
+complete with content, small bits of javascript, and even Flash games.</p>
+
+<p>The students were interested in my day to day, and the path I took to get
+where I am in my career. The students were amazed to hear that I didn't work in
+a dark closet by myself, but in a brightly lit office constantly interacting
+with colleagues. They were also amazed to hear that the skills they needed to be
+truly successful in tech weren't just coding and hardware, but communication,
+teamwork, and judgment. How a college education fit in to a career in Web
+Operations came up a few times. It was particularly interesting because I'm not
+aware of any four year university that offers a program in the field.</p>
+
+<p>Students were particularly interested to hear about about some of the
+work I've done around security and incident response. Tales of defending
+against <a href="http://chr.ishenry.com/2013/07/29/what-it-feels-like-to-be-ddosed/">DDoS</a>
+and spam attacks were a great way to let them know that career paths in tech
+aren't just limited to coding or back office IT. They were spellbound to hear
+that mitigating DDoS attacks were actually something that could be part
+of an actual career path, and not just something they see in TV and movies. I
+truly hope that some students are inspired to pursue a career in Systems
+Administration and Web Operations.</p>
+
+<p>One thing that was made clear to me as I was asked to describe my path to Web
+Operations was there is no clear path, and that sad fact has resulted in a
+shortage of people in the field. I would encourage other folks in Web Operations
+to spend some time talking to young students about the work that we do in the
+hopes that in a few years the industry will grow and mature. After all, for
+every class that learns to code, there need to be a few students who know
+how to run the infrastructure for that code.</p>
+]]></content>
+  </entry>
+  
+  <entry>
+    <title type="html"><![CDATA[Burnout]]></title>
+    <link href="http://chr.ishenry.com/2015/11/07/burnout/"/>
+    <updated>2015-11-07T18:31:00-05:00</updated>
+    <id>http://chr.ishenry.com/2015/11/07/burnout</id>
+    <content type="html"><![CDATA[<p>It was 4:43 PM. As I headed out the door, someone asked, "Leaving early?" No
+malice, no judgment, just a bit of surprise. The office was still full,
+keyboards clicking and the drone of technical conversation dully throbbing. "I'm
+entitled to it, I just worked an incident for 3 days straight," I shot back.</p>
+
+<p>Was I entitled to bail early? Probably, but that wasn't the right way to say it.
+I <strong>needed</strong> to leave. Despite handling the incident deftly, I still felt
+fucking awful, and in a dark, looming, nonspecific way. I needed to run from the
+firehose of problems, lack of solutions, apathy and anxiety. The incident in
+question was a days-long spam attack. It wasn't my first rodeo with hackers, but
+this mitigation required bringing several groups together, which is always a
+challenge at a large organization. To add to that, there was a pronounced lack
+of resources from my own team. This attack came at a time when we were gearing
+up to launch a new product, and the team was completely focused on it. Even I
+had been intensely involved with ensuring the stability of a new, shaky
+platform. Being pulled away just added to my frustration.</p>
+
+<p>I had already spoken with my manager that afternoon, told him I was tired. He
+kindly ordered me to go home, and take a vacation. I took the next two days off,
+calling in sick. This was the second time in a month I'd unexpectedly needed
+time off. At home, I crashed, played video games, watched a bunch of shitty
+movies my girlfriend normally wouldn't palate, and generally just tried to avoid
+the real world. Physically, I wasn't all that tired, considering I had only
+slept 9 hours or so over the past 3 days. But my mind and nerves were totally
+shot, and worse, I felt like I didn't care, which I hated myself for.</p>
+
+<p>In short, I burned out. Hard.</p>
+
+<!-- more -->
+
+
+<p><blockquote><p>Burnout is a state of emotional, mental, and physical exhaustion caused by<br/>excessive and prolonged stress. It manifests itself in ways including anxiety,<br/>loss of motivation and confidence, and even degradation of physical health.<br/>Burnout can be prevalent in organizations that promote hero culture and where<br/>employees maintain a strong a sense of duty...</p></blockquote></p>
+
+<p>--- <a href="http://burnout.io/">Burnout.io</a></p>
+
+<p>I lead operations at a small part of a large company, and I've been there a very
+long time. My mission is to ensure the company's online presence is up and
+safe. Admittedly, my sense of duty to the mission has always been somewhat
+overzealous. In fact, much of my identity is tied up in the job I do. Those
+sentiments have truly been assets in navigating a treacherous path, but it
+seemed clear that they have become a double edged sword. Once I got bored with
+Xbox, I went through a journal I've been keeping for a few years.</p>
+
+<p>In it, there were multiple notes and rants pointing to the simple fact that I
+have an unhealthy work-life balance. I found a long running list of songs to
+learn on guitar, but I haven't picked up my guitar in several months. I have
+notes on code projects I started but didn't make any progress on for years.
+There are links to museum exhibits I wanted to visit that closed long ago.
+Reading through, I also realized I don't have any more than a handful of friends
+outside of work. All in all, it was a pattern of regret.</p>
+
+<p>But also a lot of reasons to make some changes. Burnout is caused by a
+combination of internal and external factors, some of which can be managed. My
+biggest realization, looking through my past, is that I don't need a vacation, I
+need a change in how I manage my energy with regard to my sense of duty to my
+work. I need to be more cognizant of how I feel when external factors rear
+their head, recognize signs of nearing the burnout zone, and back away.
+Presented without comment, are my signs of burnout;</p>
+
+<ul>
+<li>Saying "No" to everything, even the reasonable things</li>
+<li>Shortness with team members during normal interactions</li>
+<li>Feeling like I've made no forward momentum</li>
+<li>Inability to express myself</li>
+<li>Constant <a href="https://en.wikipedia.org/wiki/Amygdala_hijack">amygdala hijack</a></li>
+<li>Inability to stay on task, or read anything longer than an email</li>
+<li>Many nights in a row falling asleep while attempting to watch the same
+episode of John Oliver</li>
+</ul>
+
+
+<p>Things I need to do to prevent getting to this place in the future;</p>
+
+<ul>
+<li>Tightly limit my hours</li>
+<li>Let go of, or delegate certain things that I just don't need to do</li>
+<li>Be OK with things not happening, and the failures that result</li>
+<li>Commit to things I want to do; cooking, music, projects, and social events</li>
+<li>Don't accept any new work unless I truly have the capacity to do it</li>
+</ul>
+
+
+<p>The other hard reality is that for me to affect this change, I will need to
+attempt to manage the external factors. There are going to be some failures, but
+I'll need to be OK with that, or I'll have to make bigger changes. I truly love
+what I do, but now is the time for me to take some of myself back.</p>
+
+<p>Wish me luck.</p>
+
+<p>A few great burnout resources that helped me write this;</p>
+
+<ul>
+<li><a href="http://burnout.io/">burnout.io</a></li>
+<li><a href="http://kentnguyen.com/personal/getting-rid-burnouts/">Getting rid of burnout</a></li>
+<li><a href="https://www.usenix.org/node/186465">Burnout and Ops; Lars Lehtonen</a></li>
+<li><a href="https://vimeo.com/104252736">From Hero to Zero; Jennifer Davis</a></li>
+</ul>
+
+]]></content>
+  </entry>
+  
+</feed>

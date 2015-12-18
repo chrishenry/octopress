@@ -7,8 +7,9 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="My team and I attended DockerCon earlier this week. We went with the intention
-of taking time at the hackathon to spend some time digging into what &hellip;">
+	<meta name="description" content="Yesterday, as part of the Hour of Code, I went to Information Technology High
+School in Long Island City. I spent the morning
+talking to students &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +80,305 @@ of taking time at the hackathon to spend some time digging into what &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2015/12/17/volunteering-at-hour-of-code/">
+		
+			Volunteering at Hour of Code</a>
+	</h2>
+	<div class="entry-content">
+		<p>Yesterday, as part of the Hour of Code, I went to <a href="http://ithsnyc.org/2013/home">Information Technology High
+School</a> in Long Island City. I spent the morning
+talking to students about what it&#8217;s like to work in Web Operations.</p>
+
+<p>It was amazing seeing students taking an interest in technology and coding. Many
+of them had already completed the <a href="https://hourofcode.com/us">Hour of Code</a>
+projects. Others were still tinkering, seeing what they could add and change. I
+spent some time critiquing and reviewing work they had done in Mrs. Ramirez&#8217;s
+Web Design class. The students had all created functional portfolio sites,
+complete with content, small bits of javascript, and even Flash games.</p>
+
+<p>The students were interested in my day to day, and the path I took to get
+where I am in my career. The students were amazed to hear that I didn&#8217;t work in
+a dark closet by myself, but in a brightly lit office constantly interacting
+with colleagues. They were also amazed to hear that the skills they needed to be
+truly successful in tech weren&#8217;t just coding and hardware, but communication,
+teamwork, and judgment. How a college education fit in to a career in Web
+Operations came up a few times. It was particularly interesting because I&#8217;m not
+aware of any four year university that offers a program in the field.</p>
+
+<p>Students were particularly interested to hear about about some of the
+work I&#8217;ve done around security and incident response. Tales of defending
+against <a href="http://chr.ishenry.com/2013/07/29/what-it-feels-like-to-be-ddosed/">DDoS</a>
+and spam attacks were a great way to let them know that career paths in tech
+aren&#8217;t just limited to coding or back office IT. They were spellbound to hear
+that mitigating DDoS attacks were actually something that could be part
+of an actual career path, and not just something they see in TV and movies. I
+truly hope that some students are inspired to pursue a career in Systems
+Administration and Web Operations.</p>
+
+<p>One thing that was made clear to me as I was asked to describe my path to Web
+Operations was there is no clear path, and that sad fact has resulted in a
+shortage of people in the field. I would encourage other folks in Web Operations
+to spend some time talking to young students about the work that we do in the
+hopes that in a few years the industry will grow and mature. After all, for
+every class that learns to code, there need to be a few students who know
+how to run the infrastructure for that code.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-12-17T22:48:00-05:00" pubdate data-updated="true">Dec 17<span>th</span>, 2015</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/operations/'>operations</a>, <a class='category' href='/blog/categories/personal/'>personal</a>, <a class='category' href='/blog/categories/volunteering/'>volunteering</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2015/11/29/aws-tags-as-a-lightweight-datastore/">
+		
+			AWS Tags as a Lightweight Datastore</a>
+	</h2>
+	<div class="entry-content">
+		<p>One of the most common tasks in administering clusters of machines is running
+regular tasks on individual machines in a cluster. For example, Cassandra
+benefits greatly from running repairs on individual nodes to ensure data
+consistency. Operating manually, an ops team would maintain a document of when
+each machine has been, and look at that to determine which machine should be
+repaired next.</p>
+
+<p>However, in a world where there could be hundreds of machines, this quickly
+becomes unscalable. Even with only a handful of machines, a team could spend a
+ton of energy and time simply remembering where the source of truth lives and
+how to decide which machine should be repaired next.</p>
+
+
+		
+		<a href="/2015/11/29/aws-tags-as-a-lightweight-datastore/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-29T14:36:00-05:00" pubdate data-updated="true">Nov 29<span>th</span>, 2015</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/operations/'>operations</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2015/11/07/burnout/">
+		
+			Burnout</a>
+	</h2>
+	<div class="entry-content">
+		<p>It was 4:43 PM. As I headed out the door, someone asked, &#8220;Leaving early?&#8221; No
+malice, no judgment, just a bit of surprise. The office was still full,
+keyboards clicking and the drone of technical conversation dully throbbing. &#8220;I&#8217;m
+entitled to it, I just worked an incident for 3 days straight,&#8221; I shot back.</p>
+
+<p>Was I entitled to bail early? Probably, but that wasn&#8217;t the right way to say it.
+I <strong>needed</strong> to leave. Despite handling the incident deftly, I still felt
+fucking awful, and in a dark, looming, nonspecific way. I needed to run from the
+firehose of problems, lack of solutions, apathy and anxiety. The incident in
+question was a days-long spam attack. It wasn&#8217;t my first rodeo with hackers, but
+this mitigation required bringing several groups together, which is always a
+challenge at a large organization. To add to that, there was a pronounced lack
+of resources from my own team. This attack came at a time when we were gearing
+up to launch a new product, and the team was completely focused on it. Even I
+had been intensely involved with ensuring the stability of a new, shaky
+platform. Being pulled away just added to my frustration.</p>
+
+<p>I had already spoken with my manager that afternoon, told him I was tired. He
+kindly ordered me to go home, and take a vacation. I took the next two days off,
+calling in sick. This was the second time in a month I&#8217;d unexpectedly needed
+time off. At home, I crashed, played video games, watched a bunch of shitty
+movies my girlfriend normally wouldn&#8217;t palate, and generally just tried to avoid
+the real world. Physically, I wasn&#8217;t all that tired, considering I had only
+slept 9 hours or so over the past 3 days. But my mind and nerves were totally
+shot, and worse, I felt like I didn&#8217;t care, which I hated myself for.</p>
+
+<p>In short, I burned out. Hard.</p>
+
+
+		
+		<a href="/2015/11/07/burnout/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-11-07T18:31:00-05:00" pubdate data-updated="true">Nov 7<span>th</span>, 2015</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/operations/'>operations</a>, <a class='category' href='/blog/categories/personal/'>personal</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2015/08/30/slack/">
+		
+			Chat and Dense Communication</a>
+	</h2>
+	<div class="entry-content">
+		<p>If you haven&#8217;t noticed, communication among teams (distributed or local) is a
+thing that people care a lot about. For my team, we specifically care about
+density of quality communication across mediums. We&#8217;re an ops team, and
+being able to broadcast status and information is critically important. As we
+work, we don&#8217;t want to have to re-communicate across mediums, but we still want
+to make sure the right people hear us and provide feedback.</p>
+
+<p>As our team was searching for ways to accomplish this, we started using the
+ubiquitous and humble webhook to push information between systems. At first,
+we simply started pushing Pull Request comments into our Slack channel. This
+immediately increased our velocity, as we found ourselves seamlessly moving
+discussions from traditionally asynchronous mediums (Github Pull Requests) to
+more real time mediums (Slack, In Person).</p>
+
+
+		
+		<a href="/2015/08/30/slack/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-30T10:13:00-04:00" pubdate data-updated="true">Aug 30<span>th</span>, 2015</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/operations/'>operations</a>, <a class='category' href='/blog/categories/team/'>team</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2015/08/26/a-note-on-amazon-autoscale-groups/">
+		
+			A Note on Amazon Autoscale Groups</a>
+	</h2>
+	<div class="entry-content">
+		<p>AWS provides auto scaling to allow applications to scale up and
+down to meet demand. <a href="https://aws.amazon.com/autoscaling/">Autoscaling</a> is an
+excellent tactic for ensuring that an application can add and remove capacity
+based on demand. Autoscale policies can be infinitely tuned to use anything that
+can be recorded by CloudWatch. However, autoscale groups are also incredibly
+useful for ensuring that a set number of instances is always available. This can
+be accomplished by omitting scaling policies.</p>
+
+
+		
+		<a href="/2015/08/26/a-note-on-amazon-autoscale-groups/" class="more-link">Go for it</a>
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2015-08-26T22:04:00-04:00" pubdate data-updated="true">Aug 26<span>th</span>, 2015</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/operations/'>operations</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -513,241 +813,6 @@ keep your team on the path that gets the job done.</p>
 
 
 	<a class='category' href='/blog/categories/operations/'>operations</a>, <a class='category' href='/blog/categories/startups/'>startups</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2014/11/02/flight-status/">
-		
-			Flight Status</a>
-	</h2>
-	<div class="entry-content">
-		<p>A few weeks ago, I was stuck in an airport for a couple hours. I was flying to San Francisco, and upon arriving to JFK, was informed my flight would be delayed several hours due to a <a href="http://en.wikipedia.org/wiki/Ground_delay_program">ground delay program</a>. A ground delay program is put in place when a particular airport&#8217;s ability to keep up with traffic is diminished. If your destination airport has a program in place, your takeoff will be delayed until the destination recovers.</p>
-
-<p>A ground delay program is the operations equivalent of shedding load. ATC essentially stops allowing inbound flights to take off to allow for the extra time and care it takes for en-route flights to land safely. This is very similar to <a href="http://techblog.netflix.com/2011/12/making-netflix-api-more-resilient.html">Netflix&#8217;s implementation of the CircuitBreaker pattern</a>, as it allows the resource having trouble to recover while keeping flights en route at a minimum.</p>
-
-<p>While I was stuck, I found there&#8217;s a couple really neat tools that can tell you a little about your chances of getting there on time.</p>
-
-<h4>FAA</h4>
-
-<p>The FAA is kind enough to supply information on delays <a href="http://www.fly.faa.gov/flyfaa/usmap.jsp">here</a>. However, I found the information to be presented here a bit disingenuous. The map continued to show my destination airport as green, although flights were actually being held at departure points.</p>
-
-<h4>FlightStats.com</h4>
-
-<p><a href="http://www.flightstats.com">They</a> have a delay index where every destination airport is given a ranking of 0 through 5, 0 being totally on time, and 5 meaning go back to the airport bar and grab another beer. They also very helpfully track whether that index is trending up or down. These relate directly to how long a Ground Delay Program has been running. The longer that ground delay program runs, they more likely that index is going to going to trend up. They also provide a listing of flights to your destination airport that you can use to benchmark how delayed other flights and airlines are.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-11-02T16:13:00-05:00" pubdate data-updated="true">Nov 2<span>nd</span>, 2014</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/operations/'>operations</a>, <a class='category' href='/blog/categories/research/'>research</a>, <a class='category' href='/blog/categories/travel/'>travel</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2014/09/12/a-return/">
-		
-			A Return</a>
-	</h2>
-	<div class="entry-content">
-		<p>The past year has been an extremely busy one. There have been a number of challenges placed in front of me that were somewhat all-consuming. While there&#8217;s been plenty of introspection, much of it has been exceedingly private. My goal for the end of the year is to consider what I&#8217;ve learned in the past 9 or so months, and share it publicly. Wish me luck.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2014-09-12T19:48:00-04:00" pubdate data-updated="true">Sep 12<span>th</span>, 2014</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/life/'>life</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2013/12/30/inn-on-randolph/">
-		
-			Inn on Randolph</a>
-	</h2>
-	<div class="entry-content">
-		<p>This Christmas, <a href="http://sequinsandbobbypins.com/">Jessica</a> and I took a trip to Napa Valley. In the past year, I&#8217;ve taken quite a few trips out to California, but most of them have been helicopter trips for work. I&#8217;ve flown in, done what I needed to do, and flown out, as quickly as possible. These trips have been grueling, as they were designed to get me home quickly, and never allowed any time for relaxation. It seemed important to take a trip focused on getting to know an area.</p>
-
-<p>We decided that we were going to spend a few days in Napa, so naturally, a B&amp;B was a great choice. We wanted to have breakfast provided, a bunch of other folks to chat with about life, and a warm, comfy place to call home for a couple days. We found the <a href="http://www.innonrandolph.com/">Inn on Randolph</a> via the Googlez, and were impressed by the comfortable looking rooms, so we booked. They offered a wine tour through <a href="http://www.platypustours.com/">Platypus Tours</a> so we booked it. It seemed like a good idea for 2 folks who haven&#8217;t been behind the wheel in years to not be behind the wheel and drinking. That&#8217;s about all the planning we did.</p>
-
-<p>Upon arriving, we were greeted warmly, given freshly baked cookies and the lay of the land. Both Karen and Stacey were immensely knowledgeable about navigating Napa, and were able to recommend great places based on how we felt. What&#8217;s more, it seems the Inn on Randolph has taken advantage of a great network of wine makers, restaurateurs, and tasting rooms to provide a great experience. Each morning at breakfast, Karen or Stacey would ask if we had plans, and if not, could they help. On their recommendation, they booked us into amazing experiences. For wineries they couldn&#8217;t book us into, they provided tasting cards. Much of the value of staying at the Inn is the advice and access (read: free tastings) they provide. However, expect that to evaporate into wine purchases, as the recommendations will quickly turn into opportunities to buy very unique and delicious wines.</p>
-
-<p>The Inn itself is gorgeous. It has a warm, comfortable palette of dark wood, grays, and cremes decorated with Victorian furniture. The Inn has also paid close attention to creature comforts that make for a truly relaxing stay away from home. The bathroom floors were heated, which makes the Inn the most luxuriant place I have ever stayed at. The beds were the kind that hug you and don&#8217;t let go, with heavy comforters that make it difficult to leave. (The only way I was able to get up was knowing my feet wouldn&#8217;t freeze on cold floors.)</p>
-
-<p>All in all, this was an incredibly warm, comfortable way to spend a few days in wine country. The Inn aims to send folks to places that will educate and treat them well, and to provide a delightful place to roost at once they&#8217;re done.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-12-30T17:13:00-05:00" pubdate data-updated="true">Dec 30<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/service/'>service</a>, <a class='category' href='/blog/categories/travel/'>travel</a>, <a class='category' href='/blog/categories/vacation/'>vacation</a>, <a class='category' href='/blog/categories/wine/'>wine</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2013/10/06/eggs-benedict-and-burgers/">
-		
-			Eggs Benedict and Burgers</a>
-	</h2>
-	<div class="entry-content">
-		<p>Since moving to New York, and discovering that there are more restaurants per square mile than any other place in the world, I&#8217;ve started eating out a lot. A probably unhealthy amount. But that&#8217;s OK, because everyone&#8217;s got to eat, right? And after eating at lots of places, I&#8217;ve discovered that there are certain gold standard dishes that most places are beholden to. The two that I&#8217;ve focused on are Eggs Benedict, and the humble hamburger. These are two meals that are basic, but can be riffed on infinitely.</p>
-
-<p>Eggs Benedict is arguably the more complex of the two, given <a href="http://www.youtube.com/watch?v=z3eLeDNK1fo">how hard it can be to poach a goddamn egg properly</a>. Also, since it&#8217;s a breakfast, a bad eggs benny can put a serious damper on your day. However, despite the whole poaching challenge, I&#8217;ve rarely seen it mangled. There&#8217;s even room for quite a bit of variance. A bit of apple cider vinegar in the water can impart a tangy flavor. A few seconds can make the difference between a completely liquid yolk and a more viscous one.  Then we get to the bread (soda bread being a unique standout, at <a href="http://wilfieandnell.com/">Wilfie and Nell</a>. This is the foundation of the dish, so it can really make or break it. For example, an overdone, rubbery English muffin can be so challenging to even the sharpest steak knife that you wind up shredding the whole meal. Breakfast should never be a workout. Hollandaise sauce is yet another canvas which can be painted on in endless ways. It accepts most seasonings surprisingly well. Dill is my favorite so far. Then you have the pig portion of the meal. Ham steak, streaky bacon, it&#8217;s all fair game.</p>
-
-<p>The you have the burger, the old American stalwart. Again, super hard to screw up, but even harder to stand out. You also don&#8217;t have to wait in line at Umami Burger to get a good one. The blend of meat that goes into the patty (LaFrieda is king here), the cheese, bun all have a universe of possibilities. In my opinion, the more fat you start with in your meat, the better. Any burger that has short rib within 10 feet of it&#8217;s name is almost guaranteed to have a great flavor and texture. As pricy as it was, the $25 Black Label burger at <a href="http://www.minettatavernny.com/">Minetta Tavern</a> was really something special. The patty there was made of prime dry-aged neef cuts. The choice of caramelized onions was awesome, as was skipping the cheese, as the patty stood completely on its own. Cave aged cheddar, which <a href="http://peelsnyc.com/">Peels</a> employs, has made for a notable meal. And of course, the bun is there to keep your fingers (relatively) clean, or just fall apart. It doesn&#8217;t even have to be a traditional bun. <a href="http://whitmansnyc.com/">Whitman&#8217;s</a> makes a patty melt that comes between two slices of a Blue Ribbon Pullman loaf.</p>
-
-<p>The best thing about these two dishes is that they&#8217;ll never get old. As long as restaurants keep experiments, coming and going, there&#8217;s always going to be an awesome variation!</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-10-06T12:33:00-04:00" pubdate data-updated="true">Oct 6<span>th</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/food/'>food</a>, <a class='category' href='/blog/categories/west-village/'>west village</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2013/09/03/the-wrong-path/">
-		
-			The Wrong Path</a>
-	</h2>
-	<div class="entry-content">
-		<p>Robert Frost extolled the path not taken in his famous poem. It was a tribute to bucking the trend, and finding a place that was your own. In the go go go world of the tech industry, there are fewer paths untrodden, and many of them look wrong. And yet there are just as many reasons to go along those paths. Those reasons are specific to each context, and may look sunnier or darker depending on what lays along that path.</p>
-
-<p>After seeing many of these paths, and knowing that each one looks different to everyone, the only way to truly determine the wrong path is to wholeheartedly walk down a path as if it were the right one. My favorite learning experiences have been when I pursued paths that seemed right, but were not. When determining the right path to take, sometimes the best thing to do is pick a path, walk down it, and see if you get where you need to go.</p>
-
-<p>Here&#8217;s to walking down each path as if it were right.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-09-03T22:26:00-04:00" pubdate data-updated="true">Sep 3<span>rd</span>, 2013</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/existentialism/'>existentialism</a>
 
 
 </div>

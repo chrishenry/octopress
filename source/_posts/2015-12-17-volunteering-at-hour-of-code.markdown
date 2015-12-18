@@ -15,8 +15,8 @@ talking to students about what it's like to work in Web Operations.
 
 It was amazing seeing students taking an interest in technology and coding. Many
 of them had already completed the [Hour of Code](https://hourofcode.com/us)
-projects. Others were tinkering with the projects still, seeing what they could
-add. I spent some time critiquing and reviewing work they done in Mrs. Ramirez's
+projects. Others were still tinkering, seeing what they could add and change. I
+spent some time critiquing and reviewing work they had done in Mrs. Ramirez's
 Web Design class. The students had all created functional portfolio sites,
 complete with content, small bits of javascript, and even Flash games.
 

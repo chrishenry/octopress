@@ -4,7 +4,7 @@
   <title><![CDATA[Category: team | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/team/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-07-19T20:02:31-04:00</updated>
+  <updated>2015-12-18T14:43:38-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -12,6 +12,62 @@
   </author>
   <generator uri="http://octopress.org/">Octopress</generator>
 
+  
+  <entry>
+    <title type="html"><![CDATA[Chat and Dense Communication]]></title>
+    <link href="http://chr.ishenry.com/2015/08/30/slack/"/>
+    <updated>2015-08-30T10:13:00-04:00</updated>
+    <id>http://chr.ishenry.com/2015/08/30/slack</id>
+    <content type="html"><![CDATA[<p>If you haven't noticed, communication among teams (distributed or local) is a
+thing that people care a lot about. For my team, we specifically care about
+density of quality communication across mediums. We're an ops team, and
+being able to broadcast status and information is critically important. As we
+work, we don't want to have to re-communicate across mediums, but we still want
+to make sure the right people hear us and provide feedback.</p>
+
+<p>As our team was searching for ways to accomplish this, we started using the
+ubiquitous and humble webhook to push information between systems. At first,
+we simply started pushing Pull Request comments into our Slack channel. This
+immediately increased our velocity, as we found ourselves seamlessly moving
+discussions from traditionally asynchronous mediums (Github Pull Requests) to
+more real time mediums (Slack, In Person).</p>
+
+<!-- more -->
+
+
+<p>Eventually, we started adding more sources to chat via Slack integrations. Our
+project tracking tool was a clear next step, as most of the information we
+were pouring into it was helpful to others. Team members reacting to status
+updates with pointers and questions was yet another boost to velocity of
+information. Including brief comments of intent and even full blown
+plans gave us a hook for correcting mistakes before they even happened.</p>
+
+<p><blockquote><p><b>Dense Communication</b> - Extremely high signal to noise ratio textual<br/>information that's automatically compiled from different sources and intended to<br/>cross mediums.</p></blockquote></p>
+
+<p>The flip side of this was that looking through our chat was like drinking from a
+firehose. There was an immense amount of fragmented, context-less information
+flowing at any given time, so much so that it was easy to drown. The uninitiated
+considered our channel noisy, which is a fair assessment. Those who didn't have
+access to the cornucopia of links ubiquitous to our channel had an even harder
+time trying to make sense of things. Some even believed the noise was
+distracting.</p>
+
+<p>However, for those of us deep in the shit, we found that we were on the same
+page more frequently. In person communication became high trust, where one
+speaker could say the wrong thing and the listener could hear the right thing,
+thanks largely to shared context. We found ourselves responding to status
+updates made via integrations with helpful suggestions, requests to clarify,
+corrections, etc. Proposed plans were reviewed earlier, and noted blocks
+were busted more quickly. In general, we reacted more, contributed more, and as
+a result, had better outcomes.</p>
+
+<p>To critics of these practices, we say that <a href="https://twitter.com/postwait/status/637935373327446016">team productivity is more important
+than individual productivity</a>.
+As humans walk down the streets of New York, there are a million stimuli, some
+gross, and some deadly. To say that people can't read and filter a few lines of
+text is a cop out.</p>
+]]></content>
+  </entry>
   
   <entry>
     <title type="html"><![CDATA[Policy Fallacy]]></title>
