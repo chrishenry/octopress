@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: volunteering | The Technician]]></title>
+  <link href="http://chr.ishenry.com/blog/categories/volunteering/atom.xml" rel="self"/>
+  <link href="http://chr.ishenry.com/"/>
+  <updated>2015-12-18T14:43:38-05:00</updated>
+  <id>http://chr.ishenry.com/</id>
+  <author>
+    <name><![CDATA[Chris Henry]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Volunteering at Hour of Code]]></title>
+    <link href="http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code/"/>
+    <updated>2015-12-17T22:48:00-05:00</updated>
+    <id>http://chr.ishenry.com/2015/12/17/volunteering-at-hour-of-code</id>
+    <content type="html"><![CDATA[<p>Yesterday, as part of the Hour of Code, I went to <a href="http://ithsnyc.org/2013/home">Information Technology High
+School</a> in Long Island City. I spent the morning
+talking to students about what it's like to work in Web Operations.</p>
+
+<p>It was amazing seeing students taking an interest in technology and coding. Many
+of them had already completed the <a href="https://hourofcode.com/us">Hour of Code</a>
+projects. Others were still tinkering, seeing what they could add and change. I
+spent some time critiquing and reviewing work they had done in Mrs. Ramirez's
+Web Design class. The students had all created functional portfolio sites,
+complete with content, small bits of javascript, and even Flash games.</p>
+
+<p>The students were interested in my day to day, and the path I took to get
+where I am in my career. The students were amazed to hear that I didn't work in
+a dark closet by myself, but in a brightly lit office constantly interacting
+with colleagues. They were also amazed to hear that the skills they needed to be
+truly successful in tech weren't just coding and hardware, but communication,
+teamwork, and judgment. How a college education fit in to a career in Web
+Operations came up a few times. It was particularly interesting because I'm not
+aware of any four year university that offers a program in the field.</p>
+
+<p>Students were particularly interested to hear about about some of the
+work I've done around security and incident response. Tales of defending
+against <a href="http://chr.ishenry.com/2013/07/29/what-it-feels-like-to-be-ddosed/">DDoS</a>
+and spam attacks were a great way to let them know that career paths in tech
+aren't just limited to coding or back office IT. They were spellbound to hear
+that mitigating DDoS attacks were actually something that could be part
+of an actual career path, and not just something they see in TV and movies. I
+truly hope that some students are inspired to pursue a career in Systems
+Administration and Web Operations.</p>
+
+<p>One thing that was made clear to me as I was asked to describe my path to Web
+Operations was there is no clear path, and that sad fact has resulted in a
+shortage of people in the field. I would encourage other folks in Web Operations
+to spend some time talking to young students about the work that we do in the
+hopes that in a few years the industry will grow and mature. After all, for
+every class that learns to code, there need to be a few students who know
+how to run the infrastructure for that code.</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -7,8 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="When things go wrong, there is always a reason. Sometimes it&#8217;s a good one. (I
-had no idea $_SERVER wasn&#8217;t available from the CLI) &hellip;">
+	<meta name="description" content="Users have high expectations of web apps in terms of performance,
+responsiveness and tons of features. Normally, you&#8217;re only allowed two of &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -79,6 +79,392 @@ had no idea $_SERVER wasn&#8217;t available from the CLI) &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/07/25/gearman/">
+		
+			Gearman</a>
+	</h2>
+	<div class="entry-content">
+		<p>Users have high expectations of web apps in terms of performance,
+responsiveness and tons of features. Normally, you&#8217;re only allowed two of any
+list of three really cool things. In the case of Web Apps, that would be true.
+Most will find some compromise of between performance / responsiveness and
+tons of features. More features usually equals less responsiveness, depending
+on the feature and scale.</p>
+
+<p>Enter Gearman. <a href="http://bit.ly/1Wrot">Gearman</a> is a queuing system that allows
+work to be farmed out to other servers. Most importantly, it allows for
+intense tasks to be queued and performed in the background. This means that
+when a user performs an action that could potentially take a long time
+(sending notification emails, updating Full Text indexes, etc), that slow task
+can be queued to run in the background, and the page can be sent to the user,
+keeping things snappy.</p>
+
+<p>Gearman is pretty simple to install on Red Hat.</p>
+
+<p>download gearman from server> wget <a href="http://launchpad.net/gearmand/trunk/0.8/+download%0A/gearmand-0.8.tar.gz">http://launchpad.net/gearmand/trunk/0.8/+d
+ownload/gearmand-0.8.tar.gz</a></p>
+
+<p>unzip and move into the directory> tar -xvzf gearmand-0.8.tar.gz> cd
+gearmand-0.8</p>
+
+<p>Red Hat didn&#8217;t have some dependencies. The next few steps will vary depending
+on your *nix distro.</p>
+
+<p>Install the libevent developer library.> yum install libevent-devel</p>
+
+<p>Install the e2fsprogs developer library> yum install e2fsprogs-devel</p>
+
+<p>configure and install> ./configure> make> make install</p>
+
+<p>/<strong> Net Gearman </strong>/</p>
+
+<p>download php extension from the pecl repo> wget <a href="http://pecl.php.net/get/gearman-0.4.0.tgz">http://pecl.php.net/get/gearm
+an-0.4.0.tgz</a></p>
+
+<p>untar> tar -xvf gearman-0.4.0.tgz</p>
+
+<p>build the extension> phpize> ./configure> make> make test> make install</p>
+
+<p>Add the extension to the php.ini</p>
+
+<p>[gearman]extension=gearman.so</p>
+
+<p>And you&#8217;re all set!</p>
+
+<p>Integration will depend on if you decide to use the php extension, and how
+encapsulated the code base is. I highly recommend using the pecl extension, as
+it provides great implementations of the client and worker. <a href="http://bit.ly/TunGR"> and Gearman will
+save you.</a></p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-25T00:00:00-04:00" pubdate data-updated="true">Jul 25<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/07/16/save-mysql/">
+		
+			Save MySQL</a>
+	</h2>
+	<div class="entry-content">
+		<p>Runaway queries on MySQL can be a real problem. If a long-running query locks
+up important tables, other queries trying to query the table will will placed
+in a queue. Each new query is a new connection to MySQL. Once you hit
+max_connections, your MySQL connection code will start to fail. Depending on
+how errors are handled at this stage of the request, this could mean total
+disaster for a site.</p>
+
+<p>Although there is no way to fix this within the MySQL server itself, a bit of
+clever scripting can be run via cron to check if there is a problem.
+Presenting : save_mysql</p>
+
+<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/null |grep -A1 -B5 -E
+&#8220;Time: [1-9][0-9][0-9]?&#8221; |grep -E &#8220;Id\:\ |State\:\ &#8221; |/usr/bin/perl -n -e
+&#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_; }&#8221; |grep -E &#8220;\ State\:\
+Sending\ data$|\ State\:\ Sorting\ result$&#8221; |awk {&#8216;print $2&#8217;} |xargs -iTHREAD
+-r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/null</p>
+
+<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/nullThis line will grab
+a list of all the currently running queries and commands from the MySQL
+server. It also redirects any error output to the blackhole. It produces
+output like so:</p>
+
+<pre><code>*************************** 1. row ***************************Id: 842863User: adminHost: localhostdb: NULLCommand: QueryTime: 0State: NULLInfo: show full processlist
+</code></pre>
+
+<p>grep -A1 -B5 -E &#8220;Time: [1-9][0-9][0-9]?&#8221;The grep here will grab line directly
+below and the 5 above if the time is over 100 seconds. This line can be
+tweaked to grep for less time. My preference is between 30 seconds and a
+minute. So instead of[1-9][0-9][0-9]you&#8217;d have[3-9][0-9] (30 seconds) OR
+[6-9][0-9] (60 seconds)</p>
+
+<p>grep -E &#8220;Id\:\ |State\:\ &#8220;This will filter out the other lines from the
+previous grep and just grab the MySQL process ID and it&#8217;s State.</p>
+
+<p>/usr/bin/perl -n -e &#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_;
+}&#8221;Quick Perl script to put id and state from the step above on the same line.</p>
+
+<p>grep -E &#8220;\ State\:\ Sending\ data$|\ State\:\ Sorting\ result$&#8221;This line will
+filter out the queries being run that are in the state &#8216;Sending Data&#8217; or
+&#8216;Sorting Result&#8217;. These are both states where it&#8217;s safe to kill the query.</p>
+
+<p>awk {&#8216;print $2&#8217;}This line grabs the query ID from the output.</p>
+
+<p>xargs -iTHREAD -r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/nullLastly, this
+line will grab the ID from above to the mysqladmin kill command, effectively
+killing the query.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-16T00:00:00-04:00" pubdate data-updated="true">Jul 16<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/07/08/do-one-thing-but-do-it-really-well/">
+		
+			Do One Thing, but Do It Really Well</a>
+	</h2>
+	<div class="entry-content">
+		<p>In life there are people who will consider themselves Jacks of all Trades. But
+as the saying goes, they are master of none.</p>
+
+<p>Websites will always start out as a codebase that does everything. There will
+be a couple files that add users, encode video to Flash, pull rss feeds,
+assemble HTML, update products, charge users, manipulate images, redirect old
+links, handle file uploads, calculate shipping, delete categories, create rss
+feeds, search the database, etc. Sometimes the code to do these will be
+organized into files, sometimes it won&#8217;t. The whole site will run on a single
+server, or more likely, a slice of a single server.</p>
+
+<p>None of the things in the above list will be done well. None. This is mostly
+because there is too little code and too little hardware focused on doing too
+much. Also, every piece of code will be tightly coupled. So any one of those
+features could potentially get a ton of traffic, or hit a bump, and consume a
+ton of resources. Once that happens, it&#8217;s safe to assume the whole thing will
+go down in flames.</p>
+
+<p>So to avoid the Fail Whale, its really important to build sites as a group of
+components that work together. <a href="http://bit.ly/TunGR">Architecture</a> is key, and
+when carefully thought out, can ensure that the most important parts of the
+site stay up. Even when your image manipulation script on the backend freaks
+out, the home page should continue to load flawlessly.</p>
+
+<p>With database-driven apps (almost every major site on the web), there needs to
+be particular attention paid to a caching layer. Again, since most sites start
+out with a jumbled codebase, the likelihood that all the code to manage data
+is in the same place is unlikely. Given the complexities of managing cache
+objects, making sure that objects are invalidated on update is crucial to
+making updates look seamless. So there needs to be a set of code that&#8217;s good
+at one thing: managing data and its cache.</p>
+
+<p>Search is another area that commonly relies on database, and can eat a ton of
+resources. If performing search in SQL, difficult queries can lock tables and
+keep other queries from being answered. As good as some DBMSes have gotten at
+handling search ( ie MySQL&#8217;s FULLTEXT ), they still can&#8217;t fulfill the
+concurrency demands of a site with heavy traffic. So, again, the solution is a
+change where a resource intensice feature needs to be isolated from other
+code. There are a few different ways to do this. One is running replication,
+which may not be possible in smaller hosting environments. Another is to use
+Full Text Search (Lucene, Sphinx, etc.) Again, this may not be possible in
+smaller hosting environments.</p>
+
+<p>Using code that&#8217;s already good at managing and retrieving data, an interface
+can be built to query your data. A second hosting environment that&#8217;s suitable
+for running the search tool of your choice can then query the data code for
+updates it needs to keep itself updated. In turn, this server will return
+search results without tying up any resources necessary for doing important
+stuff, like serving the home page.</p>
+
+<p>So in these two short examples, we&#8217;ve created a theoretical architecture that
+can sustain heavy, site-breaking traffic to the search, and still continue to
+serve the home page. Of course, until the Apache server becomes so inundated
+with requests that it can&#8217;t do anything. Then it&#8217;s time to get that load
+balancer in place…</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-08T00:00:00-04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/07/01/explain-your-code/">
+		
+			Explain Your Code</a>
+	</h2>
+	<div class="entry-content">
+		<p>In my search to expand my dev team, I use a code sample as one of the main
+determining factors. During an interview, I will always make the same request:</p>
+
+<p>&#8220;Give us a code sample. It can be something that you think is really great, or
+something you think really sucks. Most importantly, tell us why you think it&#8217;s
+great, or why you think it sucks.&#8221;</p>
+
+<p>No one seems to able to do it. I have received code samples that consist of
+stream wrappers, database wrappers, complete websites, etc. Some have been
+really good, and some have been outright scary. But very few candidates have
+been able to communicate what they think of their own code and why.</p>
+
+<p>Which is very surprising, given most developers&#8217; proclivity to judge others&#8217;
+code as total crap without a second thought (guilty).</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-07-01T00:00:00-04:00" pubdate data-updated="true">Jul 1<span>st</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/06/30/zombie-projects/">
+		
+			Zombie Projects</a>
+	</h2>
+	<div class="entry-content">
+		<p>A Zombie Project is any project that has been completed for a while but needs
+to be changed or updated in some way. After laying dormant for a while, the
+team that developed it may have left, or evolved into a different team, or
+changed their methodology entirely.</p>
+
+<p>While the project was dormant, it is extremely likely, if not definite that
+knee-jerk reactions to bugs have caused changes that no one remembers, much
+less committed. So when development starts on the project sandbox, if it still
+exists, it is more likely than not that everything is out of date. In this
+case, bite the bullet. FTP the whole codebase down, and check it against the
+repo. Your life will probably be miserable for a bit, but at least there won&#8217;t
+be any horrible surprises later. Also, if there&#8217;s a sandbox, triple check it.
+If not, be glad there&#8217;s nothing you&#8217;ll miss in an old one.</p>
+
+<p>If this project is only being opened for a short period, resist the urge to
+make small changes in methodology or framework. For every small change you
+make, you&#8217;ll want to make another, and update this, and modify that. Be
+extremely careful of the budget, and cost of each change, or you&#8217;re done for.</p>
+
+<p>Lastly, be very, very afraid of the build to production. Even with fastidious
+notes, a sys admin with OCD, and Gillian the QA girl telling you how awesome
+you are, assume you missed something. An open tail of the error log is your
+best visibility into whatever has reared it&#8217;s ugly head. Your next best bet is
+your trusty <a href="http://bit.ly/96yBC">Crisis MO</a>.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-06-30T00:00:00-04:00" pubdate data-updated="true">Jun 30<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -410,285 +796,12 @@ refactored, and how.</p>
 </div>
 </article>
 
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/05/16/framed--hijacked/">
-		
-			Framed / Hijacked</a>
-	</h2>
-	<div class="entry-content">
-		<p>&#8220;There&#8217;s lots of bad stuff out there on the Internet.&#8221; &#8211; anonymous
-<a href="http://www.Rackspace.com">Rackspace</a> tech</p>
-
-<p>And bad people, too. On one occasion, I found that someone had hijacked a
-domain similar to ours, and framed our site. Once they had the frame set up,
-they started sending out spam from the hijacked domain. The legitimacy they
-gained from having our site at their domain was really, really scary. Users
-clicking links from their spam were sent to a site that was actually ours.
-Luckily, we were alerted to this issue before any real damage was done.</p>
-
-<p>There wasn&#8217;t much I could do server-side to fight this, without having to dig
-into a bunch of PHP. However, checking the location window.top against what I
-knew to be my domain turned out to be decent defense.</p>
-
-<p>if (top.location != self.location) { alert(&#8220;someone is doing something
-bad…&#8221;);}</p>
-
-<p>Of course, this particular defense will also complain about anyone who has
-framed your site for any other reason. For example, the Digg toolbar frames
-sites. So if anyone hits your site using the Digg toolbar, they&#8217;ll be treated
-to your warning as well. But whether Digg should be framing sites in this way
-seems to be <a href="http://bit.ly/15snr9">controversial</a> enough.</p>
-
-<p>Update : <a href="http://su.pr">su.pr</a>, which combines a URL shortener with the
-StumbleUpon toolbar, has even further complicated the framing situation. (Full
-disclosure : I am a user.) Clicking any su.pr link will open the shortened URL
-with the StumbleUpon toolbar. This has great potential for authors, who can
-use the toolbar to increase traffic to their site, but at the cost of forcing
-the toolbar on users.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-16T00:00:00-04:00" pubdate data-updated="true">May 16<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/security/'>Security</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/05/10/hard-file-limits/">
-		
-			Hard File Limits</a>
-	</h2>
-	<div class="entry-content">
-		<p>A while ago, we ran up against a hard file limit on our storage server. Within
-the main images directory, we subdivide our folders for every user. Well, it
-turns out that on the <a href="http://en.wikipedia.org/wiki/Ext3">ext3</a> filesystem,
-there is a hard limit of 32k folders within a folder. So when our 32001th user
-signed up, they were welcomed by not being able to upload any content to their
-nonexistent user folder.</p>
-
-<p>So there we were…</p>
-
-<p>Several calls to our hosting provider <a href="http://www.rackspace.com">Rackspace</a>
-yielded no elegant solution where we could simply reconfigure the limit. If we
-wanted to continue on with our file structure the way it was, we would need to
-migrate our data off the server, reformat the filesystem to
-<a href="http://en.wikipedia.org/wiki/Xfs">xfs</a>, and migrate back on. That would take
-us down for close to 36 hours. Needless to say that was not an option.</p>
-
-<p>The other option was to quietly close registration, and start a mad dash to
-implement programmatic partitioning. We created 5 folders next to our root
-user content folder, numbered them 2-5, and assigned current users the
-partition of 1. New users would be assigned a randomly generated number at
-registration. Then we wrote a few quick utility methods to determine which
-user belonged to which partition and began the quickest rewrite of file upload
-system the world has ever seen.</p>
-
-<p>Downtime : 0</p>
-
-<p>In retrospect, someone (me) should have taken a scrutinizing look at the
-characteristics of the filesystem that would be responsible for storing all of
-our users&#8217; content.</p>
-
-<p>Lesson learned, the hard way.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-10T00:00:00-04:00" pubdate data-updated="true">May 10<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/horror-stories/'>Horror Stories</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/05/02/run-cron-more-than-once-a-minute/">
-		
-			Run Cron More Than Once a Minute</a>
-	</h2>
-	<div class="entry-content">
-		<p>As far as linux utilities go, cron is one of my favorite tools. It handles
-batch jobs, checks your database, cleans up files, whatever you need to do on
-a regular basis. One of my favorite uses for it has been to keep a watchful
-eye on MySQL for runaway queries.</p>
-
-<p><img src="http://174.143.169.75/wp-%0Acontent/uploads/2009/02/picture-2.png" alt="The lowly crontab file" /></p>
-
-<p>One of the problems with managing a website that has outgrown its database
-design is that as traffic piles up and tables grow, so does the length of time
-it takes to run queries. Even the simplest query, when faced with examining
-several million rows can wind up locking a table for a scary amount of time.
-The real solution is to rewrite your app to not suck. However, when that
-luxury (neccessity?) isn&#8217;t available, the next best thing is periodically run
-a script that will kill long running queries.</p>
-
-<p>It is not the cleanest solution, or the safest, and care must be taken to
-avoid killing queries that do important things. It would be a really, really
-BAD THING if you wind up killing the query that logs that $500 transaction.
-That said, in most situations running this script every minute should solve
-all your woes. With decent error logging, it&#8217;ll also tell you exactly what is
-running away from you. But what happens when you need to run it more often?
-Say every 30 seconds. And that&#8217;s where cron falls on its face.</p>
-
-<p>After exhaustively researching, I could not find a way to get cron to run a
-job more than once a minute. (If any one knows differently, please say so…)
-However, knowing that I needed to run this script more than once a minute, I
-needed to find an alternative. That alternative turned out to be the humble,
-rarely used sleep() command. Set up a second cron job, with the script doing
-nothing sleeping for 30 seconds, and then calling the save mysql script.</p>
-
-<p>Voila, cron that runs more often than a minute!</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-05-02T00:00:00-04:00" pubdate data-updated="true">May 2<span>nd</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/04/26/just-manage-it-for-me/">
-		
-			Just Manage It for Me</a>
-	</h2>
-	<div class="entry-content">
-		<p>I&#8217;m busy. Really busy. So busy that most of the time, I can&#8217;t be bothered with
-minor details that are so important they really shouldn&#8217;t be minor.</p>
-
-<p>Hardware upgrades, hardware failures, Kernel updates, Red Hat updates, PHP
-updates, MySQL updates, who actually has the expertise to make judgments on
-every single one of these? I certainly do not. However, at this point, I&#8217;m
-managing over 15 servers, and I need to be up to date and secure. So that&#8217;s
-why we host at <a href="http://www.rackspace.com/index.php">Rackspace</a>. They do it all
-for me.</p>
-
-<p>Then there&#8217;s mail.  Spam, ISP&#8217;s blacklists, whitelists, bounce management,
-mailbombs, DKIM, DomainKeys, SPF, WTF.  The world of SMTP messages is one of
-black magic and voodoo.  Hosting your own email offers infinite flexibility,
-and working with a single server with postfix lets you do pretty much whatever
-you want.  But every time you do something nifty, you have to deal with the
-ongoing maintenance of said nifty hack.  Then there&#8217;s spam.  Good luck.
-Instead of fighting the good fight against spammers, I decided to wimp out and
-let someone smarter do it for me.  In 20 minutes, I set up <a href="http://www.google.com/apps%20">Google
-Apps</a>, imported every user in my postfix
-server.  5 minutes later, after changing DNS, I gave my users a spam-free,
-flexible mail system.</p>
-
-<p>Moral of these stories…don&#8217;t be too proud to let someone else manage your IT.
-Free up your time to do important things.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-04-26T00:00:00-04:00" pubdate data-updated="true">Apr 26<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>
-
-
-</div>
-	
-</div>
-</article>
-
 <nav id="pagenavi">
     
         <a href="/blog/page/7/" class="prev">Prev</a>
     
+    
+        <a href="/blog/page/9/" class="next">Next</a>
     
     <div class="center"><a href="/blog/archives">Blog Archives</a></div>
 </nav></div>

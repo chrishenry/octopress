@@ -7,9 +7,8 @@
 	<meta name="author" content="Chris Henry">
 
 	
-	<meta name="description" content="I am pleased to announce that this site is now hosted on the Rackspace
-Cloud. It was a simple migration from MediaTemple, and
-has given me the level &hellip;">
+	<meta name="description" content="Everybody procrastinates. Some tasks that get pushed off don&#8217;t matter, it just
+gets done later. Some tasks that go over deadline result in &hellip;">
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -80,6 +79,328 @@ has given me the level &hellip;">
 
 </header>
 	<div id="content" class="inner">
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/02/12/japanese-inspection/">
+		
+			Japanese Inspection</a>
+	</h2>
+	<div class="entry-content">
+		<p>Everybody procrastinates. Some tasks that get pushed off don&#8217;t matter, it just
+gets done later. Some tasks that go over deadline result in profanities and
+bloody noses. But every once in a while, tasks come along that have an
+expiration date. As in, if it doesn&#8217;t get done by a certain time, it doesn&#8217;t
+matter.</p>
+
+<blockquote><p>You ever heard of a &#8220;Japanese Inspection?&#8221; Japanese Inspection, you see,
+when the Japs take in a load of lettuce they&#8217;re not sure they wanna let in the
+country, why they&#8217;ll just let it sit there on the dock &#8216;til they get good and
+ready to look at, But then of course, it&#8217;s all gone rotten… ain&#8217;t nothing left
+to inspect. You see, lettuce is a perishable item…like you two monkeys.</p></blockquote>
+
+<ul>
+<li><a href="http://www.imdb.com/title/tt0099371/">Big John, <em>Days of Thunder</em></a></li>
+</ul>
+
+
+<p>What Big John was referring to was the fact that all he had to do was ignore
+Cole and Rowdy until they didn&#8217;t any fight left in them. Tasks can be just the
+same way. Eventually, the need for the task to be done just goes away, or
+starts to smell. The only thing that really matters is being able to tell the
+difference between the things that <strong>really</strong> need to get done, and the things
+that just aren&#8217;t important enough to get done.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-02-12T00:00:00-05:00" pubdate data-updated="true">Feb 12<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/01/29/sphinx-full-text-search-engine/">
+		
+			Sphinx Full Text Search Engine</a>
+	</h2>
+	<div class="entry-content">
+		<p>For a very long time, I was convinced that a FULLTEXT index in MySQL was the
+best solution for all your searching needs. Then I realized that it was
+horribly slow, and mixing with complex joins completely destroyed any chances
+of using MySQL indexes in any way that would make sense or get decent results.
+The solution to fast and scalable free text search on any website is, of
+course, a Full Text search engine.</p>
+
+<p>There are a few different ones out there. After a brief affair with Lucene, I
+settled on Sphinx. Sphinx is easy to install, even on 64-bit machines, and is
+architected in a way that makes a lot of sense for the web. The following
+steps were performed on a Red Hat machine. Don&#8217;t skip the mysql-dev install,
+even if you already MySQL installed.</p>
+
+<figure class='code'><figcaption><span>Sphinx installation  </span></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<span class='line-number'>2</span>
+<span class='line-number'>3</span>
+<span class='line-number'>4</span>
+<span class='line-number'>5</span>
+<span class='line-number'>6</span>
+<span class='line-number'>7</span>
+</pre></td><td class='code'><pre><code class='bash'><span class='line'>yum install gcc-c++
+</span><span class='line'>yum install mysql-dev*
+</span><span class='line'>wget http://www.sphinxsearch.com/downloads/sphinx-0.9.9.tar.gz
+</span><span class='line'>tar xzvf sphinx-0.9.9.tar.gz
+</span><span class='line'>mkdir /usr/local/sphinx
+</span><span class='line'>./configure --prefix /usr/local/sphinx --with-mysql&gt; ./make
+</span><span class='line'>make install
+</span></code></pre></td></tr></table></div></figure>
+
+
+<p>Once installed, it&#8217;s fairly simple to start playing with the packaged example
+data and queries. The php APIs make integration easy, either to build a
+service, or use locally as a substitute for MySQL. In fact, as long as the
+index can be kept reasonably up to date, Sphinx is a better choice for
+complicated sorts than MySQL.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-29T00:00:00-05:00" pubdate data-updated="true">Jan 29<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2010/01/07/google-short-links/">
+		
+			Google Short Links</a>
+	</h2>
+	<div class="entry-content">
+		<p>Having your own domain and server is a really fun thing. You can keep a blog,
+store files, post photos. All good ole down-home interwebz fun you can dream
+up. With the advent of micro-blogging, everyone now has an audience they need
+to communicate with in the briefest fashion.</p>
+
+<p>Short links have become the norm for sharing, but with a huge price. Short
+links break the interconnectedness of the Internet. Search results that depend
+on the count of links become incorrect. Some services try to reconnect links
+between domains by using some DNS trickery. But the issue remains that there
+is a middleman that can&#8217;t help make the connection.</p>
+
+<p>Unless, of course, that middleman is the search engine. Google&#8217;s recently
+announced URL shortener could solve many of the problems inherent with URL
+shorteners. By being the middleman, Google would have all the necessary
+information to put the pieces back together. It&#8217;s easy enough to set up,
+provided you have a Google Apps account. It does not currently have an API,
+but here&#8217;s hoping.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2010-01-07T00:00:00-05:00" pubdate data-updated="true">Jan 7<span>th</span>, 2010</time></div>
+	<div class="tags">
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/12/22/30-seconds-to-mars--this-is-war/">
+		
+			30 Seconds to Mars :: This Is War</a>
+	</h2>
+	<div class="entry-content">
+		<p>30 Seconds to Mars recently released their third album, This is War, and it is
+quite the departure from their first album. Brand New Day was raw and angry,
+with amazing guitar sounds, great composition, and a real sense of urgency in
+the writing. The album was really exciting to listen to, and the live
+performances were great. I saw them at Avalon in NYC a few years ago, and it&#8217;s
+still one of my all time favorite shows.</p>
+
+<p>This is War is mild and boring in comparison. The effects driven distorted
+guitars characteristic to Brand New Day is missing. They seem to have been
+replaced with over-produced electronics. Jared Leto has less than half the
+intensity than he did in Brand New Day, and the lyrics have lost their edge.
+The focus on deeply layered choruses of what sounds like children singing
+lacks impact. The collaboration with Kanye and his 808 didn&#8217;t really go
+anywhere, and just seemed to pull the band further from their roots. It&#8217;s sad
+to hear a band that had such a great band with a unique sound has gone so far
+off track.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-22T00:00:00-05:00" pubdate data-updated="true">Dec 22<span>nd</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/music/'>Music</a>
+
+
+</div>
+	
+</div>
+</article>
+
+
+    <article class="post">
+	<h2 class="title">
+		
+		<a href="/2009/12/12/changing-criteria/">
+		
+			Changing Criteria</a>
+	</h2>
+	<div class="entry-content">
+		<p>Occasionally, a project will come across my plate with the criteria, &#8216;Make
+sure this works everywhere, is completely template-able, and is something we
+can grow with.&#8217; Normally this is coupled with &#8216;We need this to work with X
+<em>right now</em>, and Y and Z later.&#8217; What I really hear is &#8216;Make it work for X,
+and <a href="http://bit.ly/6kpqUc">ship </a> the damn thing.&#8217; After all, hitting those
+deadlines is <strong>really</strong> important.</p>
+
+<p>Of course, this has a whole bunch of ugly assumptions tied to it. The first
+is: when I get to Y, everything I did for X will work. All I need to do is
+drop in a few config changes, and tweak a few parameters, and I&#8217;m done. (Yea,
+right) Secondly: that every case Y needs to cover is contained within X. (Not
+Likely) Third: All of this will be so well documented that any literate
+individual will be able to implement Y by osmosis.</p>
+
+<p>So. Do we spend time now or later? Shipping X seems pretty simple, so why not
+just build X, satisfy the business dude and call it a day. Spending time now
+means that deadlines may have to shift, and something that should be simple
+becomes complex. We have other, more important, projects to work on.</p>
+
+<p>Eventually Y comes calling. So let me introduce you to…Future Web Dev Guy
+Person Girl! If you&#8217;re lucky, that person is you. If you&#8217;re not, it&#8217;s another
+dev. The assumptions we made back in paragraph 2 have reared their ugly heads.
+Since they were assumptions, you&#8217;re probably boned. If not, you&#8217;re probably
+one of <a href="http://www.ioinformatics.org/photo/images/p4.jpg">these guys</a>. If
+you&#8217;re the rest of us, Future Web Dev Guy Person Girl definitely hates your
+guts, because the groundwork that was supposed to be laid out is not there.
+They&#8217;re running through a lice-infested rat&#8217;s nest of procedural functions
+trying to pass the additional variable that will make this all work.</p>
+
+<p>The best way to keep Future Web Dev Guy Person Girl from cursing like a sailor
+is implement correctly, test thoroughly, and deal with Y before it&#8217;s due.
+Deadlines need to be managed according to project scope, and if project scope
+includes Y, it needs to be accounted for now, before you lose a friend in
+Future Web Dev Guy Person Girl.</p>
+
+		
+		
+	</div>
+
+
+<div class="meta">
+	<div class="date">
+
+
+
+
+
+
+
+
+  
+
+
+<time datetime="2009-12-12T00:00:00-05:00" pubdate data-updated="true">Dec 12<span>th</span>, 2009</time></div>
+	<div class="tags">
+
+
+	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>
+
+
+</div>
+	
+</div>
+</article>
 
 
     <article class="post">
@@ -413,392 +734,6 @@ between apps is probably even more important than pushing App World.</p>
 
 	<a class='category' href='/blog/categories/mobile/'>Mobile</a>
 
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/07/25/gearman/">
-		
-			Gearman</a>
-	</h2>
-	<div class="entry-content">
-		<p>Users have high expectations of web apps in terms of performance,
-responsiveness and tons of features. Normally, you&#8217;re only allowed two of any
-list of three really cool things. In the case of Web Apps, that would be true.
-Most will find some compromise of between performance / responsiveness and
-tons of features. More features usually equals less responsiveness, depending
-on the feature and scale.</p>
-
-<p>Enter Gearman. <a href="http://bit.ly/1Wrot">Gearman</a> is a queuing system that allows
-work to be farmed out to other servers. Most importantly, it allows for
-intense tasks to be queued and performed in the background. This means that
-when a user performs an action that could potentially take a long time
-(sending notification emails, updating Full Text indexes, etc), that slow task
-can be queued to run in the background, and the page can be sent to the user,
-keeping things snappy.</p>
-
-<p>Gearman is pretty simple to install on Red Hat.</p>
-
-<p>download gearman from server> wget <a href="http://launchpad.net/gearmand/trunk/0.8/+download%0A/gearmand-0.8.tar.gz">http://launchpad.net/gearmand/trunk/0.8/+d
-ownload/gearmand-0.8.tar.gz</a></p>
-
-<p>unzip and move into the directory> tar -xvzf gearmand-0.8.tar.gz> cd
-gearmand-0.8</p>
-
-<p>Red Hat didn&#8217;t have some dependencies. The next few steps will vary depending
-on your *nix distro.</p>
-
-<p>Install the libevent developer library.> yum install libevent-devel</p>
-
-<p>Install the e2fsprogs developer library> yum install e2fsprogs-devel</p>
-
-<p>configure and install> ./configure> make> make install</p>
-
-<p>/<strong> Net Gearman </strong>/</p>
-
-<p>download php extension from the pecl repo> wget <a href="http://pecl.php.net/get/gearman-0.4.0.tgz">http://pecl.php.net/get/gearm
-an-0.4.0.tgz</a></p>
-
-<p>untar> tar -xvf gearman-0.4.0.tgz</p>
-
-<p>build the extension> phpize> ./configure> make> make test> make install</p>
-
-<p>Add the extension to the php.ini</p>
-
-<p>[gearman]extension=gearman.so</p>
-
-<p>And you&#8217;re all set!</p>
-
-<p>Integration will depend on if you decide to use the php extension, and how
-encapsulated the code base is. I highly recommend using the pecl extension, as
-it provides great implementations of the client and worker. <a href="http://bit.ly/TunGR"> and Gearman will
-save you.</a></p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-25T00:00:00-04:00" pubdate data-updated="true">Jul 25<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/best-practices/'>Best Practices</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/07/16/save-mysql/">
-		
-			Save MySQL</a>
-	</h2>
-	<div class="entry-content">
-		<p>Runaway queries on MySQL can be a real problem. If a long-running query locks
-up important tables, other queries trying to query the table will will placed
-in a queue. Each new query is a new connection to MySQL. Once you hit
-max_connections, your MySQL connection code will start to fail. Depending on
-how errors are handled at this stage of the request, this could mean total
-disaster for a site.</p>
-
-<p>Although there is no way to fix this within the MySQL server itself, a bit of
-clever scripting can be run via cron to check if there is a problem.
-Presenting : save_mysql</p>
-
-<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/null |grep -A1 -B5 -E
-&#8220;Time: [1-9][0-9][0-9]?&#8221; |grep -E &#8220;Id\:\ |State\:\ &#8221; |/usr/bin/perl -n -e
-&#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_; }&#8221; |grep -E &#8220;\ State\:\
-Sending\ data$|\ State\:\ Sorting\ result$&#8221; |awk {&#8216;print $2&#8217;} |xargs -iTHREAD
--r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/null</p>
-
-<p>/usr/bin/mysql -e &#8216;show full processlist \G;&#8217; 2> /dev/nullThis line will grab
-a list of all the currently running queries and commands from the MySQL
-server. It also redirects any error output to the blackhole. It produces
-output like so:</p>
-
-<pre><code>*************************** 1. row ***************************Id: 842863User: adminHost: localhostdb: NULLCommand: QueryTime: 0State: NULLInfo: show full processlist
-</code></pre>
-
-<p>grep -A1 -B5 -E &#8220;Time: [1-9][0-9][0-9]?&#8221;The grep here will grab line directly
-below and the 5 above if the time is over 100 seconds. This line can be
-tweaked to grep for less time. My preference is between 30 seconds and a
-minute. So instead of[1-9][0-9][0-9]you&#8217;d have[3-9][0-9] (30 seconds) OR
-[6-9][0-9] (60 seconds)</p>
-
-<p>grep -E &#8220;Id\:\ |State\:\ &#8220;This will filter out the other lines from the
-previous grep and just grab the MySQL process ID and it&#8217;s State.</p>
-
-<p>/usr/bin/perl -n -e &#8220;if( $. % 2 ) { chomp $<em>;print $</em>; } else { print $_;
-}&#8221;Quick Perl script to put id and state from the step above on the same line.</p>
-
-<p>grep -E &#8220;\ State\:\ Sending\ data$|\ State\:\ Sorting\ result$&#8221;This line will
-filter out the queries being run that are in the state &#8216;Sending Data&#8217; or
-&#8216;Sorting Result&#8217;. These are both states where it&#8217;s safe to kill the query.</p>
-
-<p>awk {&#8216;print $2&#8217;}This line grabs the query ID from the output.</p>
-
-<p>xargs -iTHREAD -r -n1 /usr/bin/mysqladmin kill THREAD &amp;> /dev/nullLastly, this
-line will grab the ID from above to the mysqladmin kill command, effectively
-killing the query.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-16T00:00:00-04:00" pubdate data-updated="true">Jul 16<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/mysql/'>MySQL</a>, <a class='category' href='/blog/categories/systems-administration/'>Systems Administration</a>, <a class='category' href='/blog/categories/tools/'>Tools</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/07/08/do-one-thing-but-do-it-really-well/">
-		
-			Do One Thing, but Do It Really Well</a>
-	</h2>
-	<div class="entry-content">
-		<p>In life there are people who will consider themselves Jacks of all Trades. But
-as the saying goes, they are master of none.</p>
-
-<p>Websites will always start out as a codebase that does everything. There will
-be a couple files that add users, encode video to Flash, pull rss feeds,
-assemble HTML, update products, charge users, manipulate images, redirect old
-links, handle file uploads, calculate shipping, delete categories, create rss
-feeds, search the database, etc. Sometimes the code to do these will be
-organized into files, sometimes it won&#8217;t. The whole site will run on a single
-server, or more likely, a slice of a single server.</p>
-
-<p>None of the things in the above list will be done well. None. This is mostly
-because there is too little code and too little hardware focused on doing too
-much. Also, every piece of code will be tightly coupled. So any one of those
-features could potentially get a ton of traffic, or hit a bump, and consume a
-ton of resources. Once that happens, it&#8217;s safe to assume the whole thing will
-go down in flames.</p>
-
-<p>So to avoid the Fail Whale, its really important to build sites as a group of
-components that work together. <a href="http://bit.ly/TunGR">Architecture</a> is key, and
-when carefully thought out, can ensure that the most important parts of the
-site stay up. Even when your image manipulation script on the backend freaks
-out, the home page should continue to load flawlessly.</p>
-
-<p>With database-driven apps (almost every major site on the web), there needs to
-be particular attention paid to a caching layer. Again, since most sites start
-out with a jumbled codebase, the likelihood that all the code to manage data
-is in the same place is unlikely. Given the complexities of managing cache
-objects, making sure that objects are invalidated on update is crucial to
-making updates look seamless. So there needs to be a set of code that&#8217;s good
-at one thing: managing data and its cache.</p>
-
-<p>Search is another area that commonly relies on database, and can eat a ton of
-resources. If performing search in SQL, difficult queries can lock tables and
-keep other queries from being answered. As good as some DBMSes have gotten at
-handling search ( ie MySQL&#8217;s FULLTEXT ), they still can&#8217;t fulfill the
-concurrency demands of a site with heavy traffic. So, again, the solution is a
-change where a resource intensice feature needs to be isolated from other
-code. There are a few different ways to do this. One is running replication,
-which may not be possible in smaller hosting environments. Another is to use
-Full Text Search (Lucene, Sphinx, etc.) Again, this may not be possible in
-smaller hosting environments.</p>
-
-<p>Using code that&#8217;s already good at managing and retrieving data, an interface
-can be built to query your data. A second hosting environment that&#8217;s suitable
-for running the search tool of your choice can then query the data code for
-updates it needs to keep itself updated. In turn, this server will return
-search results without tying up any resources necessary for doing important
-stuff, like serving the home page.</p>
-
-<p>So in these two short examples, we&#8217;ve created a theoretical architecture that
-can sustain heavy, site-breaking traffic to the search, and still continue to
-serve the home page. Of course, until the Apache server becomes so inundated
-with requests that it can&#8217;t do anything. Then it&#8217;s time to get that load
-balancer in place…</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-08T00:00:00-04:00" pubdate data-updated="true">Jul 8<span>th</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/development/'>Development</a>, <a class='category' href='/blog/categories/web-architecture/'>Web Architecture</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/07/01/explain-your-code/">
-		
-			Explain Your Code</a>
-	</h2>
-	<div class="entry-content">
-		<p>In my search to expand my dev team, I use a code sample as one of the main
-determining factors. During an interview, I will always make the same request:</p>
-
-<p>&#8220;Give us a code sample. It can be something that you think is really great, or
-something you think really sucks. Most importantly, tell us why you think it&#8217;s
-great, or why you think it sucks.&#8221;</p>
-
-<p>No one seems to able to do it. I have received code samples that consist of
-stream wrappers, database wrappers, complete websites, etc. Some have been
-really good, and some have been outright scary. But very few candidates have
-been able to communicate what they think of their own code and why.</p>
-
-<p>Which is very surprising, given most developers&#8217; proclivity to judge others&#8217;
-code as total crap without a second thought (guilty).</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-07-01T00:00:00-04:00" pubdate data-updated="true">Jul 1<span>st</span>, 2009</time></div>
-	<div class="tags">
-
-
-	<a class='category' href='/blog/categories/web-dev-teams/'>Web Dev Teams</a>
-
-
-</div>
-	
-</div>
-</article>
-
-
-    <article class="post">
-	<h2 class="title">
-		
-		<a href="/2009/06/30/zombie-projects/">
-		
-			Zombie Projects</a>
-	</h2>
-	<div class="entry-content">
-		<p>A Zombie Project is any project that has been completed for a while but needs
-to be changed or updated in some way. After laying dormant for a while, the
-team that developed it may have left, or evolved into a different team, or
-changed their methodology entirely.</p>
-
-<p>While the project was dormant, it is extremely likely, if not definite that
-knee-jerk reactions to bugs have caused changes that no one remembers, much
-less committed. So when development starts on the project sandbox, if it still
-exists, it is more likely than not that everything is out of date. In this
-case, bite the bullet. FTP the whole codebase down, and check it against the
-repo. Your life will probably be miserable for a bit, but at least there won&#8217;t
-be any horrible surprises later. Also, if there&#8217;s a sandbox, triple check it.
-If not, be glad there&#8217;s nothing you&#8217;ll miss in an old one.</p>
-
-<p>If this project is only being opened for a short period, resist the urge to
-make small changes in methodology or framework. For every small change you
-make, you&#8217;ll want to make another, and update this, and modify that. Be
-extremely careful of the budget, and cost of each change, or you&#8217;re done for.</p>
-
-<p>Lastly, be very, very afraid of the build to production. Even with fastidious
-notes, a sys admin with OCD, and Gillian the QA girl telling you how awesome
-you are, assume you missed something. An open tail of the error log is your
-best visibility into whatever has reared it&#8217;s ugly head. Your next best bet is
-your trusty <a href="http://bit.ly/96yBC">Crisis MO</a>.</p>
-
-		
-		
-	</div>
-
-
-<div class="meta">
-	<div class="date">
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2009-06-30T00:00:00-04:00" pubdate data-updated="true">Jun 30<span>th</span>, 2009</time></div>
-	<div class="tags">
 
 </div>
 	
