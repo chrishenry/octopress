@@ -4,7 +4,7 @@
   <title><![CDATA[Category: personal | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/personal/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-12-18T14:43:38-05:00</updated>
+  <updated>2015-12-21T17:42:13-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -94,7 +94,13 @@ shot, and worse, I felt like I didn't care, which I hated myself for.</p>
 <!-- more -->
 
 
-<p><blockquote><p>Burnout is a state of emotional, mental, and physical exhaustion caused by<br/>excessive and prolonged stress. It manifests itself in ways including anxiety,<br/>loss of motivation and confidence, and even degradation of physical health.<br/>Burnout can be prevalent in organizations that promote hero culture and where<br/>employees maintain a strong a sense of duty...</p></blockquote></p>
+<p>{% blockquote %}
+Burnout is a state of emotional, mental, and physical exhaustion caused by
+excessive and prolonged stress. It manifests itself in ways including anxiety,
+loss of motivation and confidence, and even degradation of physical health.
+Burnout can be prevalent in organizations that promote hero culture and where
+employees maintain a strong a sense of duty...
+{% endblockquote %}</p>
 
 <p>--- <a href="http://burnout.io/">Burnout.io</a></p>
 

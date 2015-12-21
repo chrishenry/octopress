@@ -4,7 +4,7 @@
   <title><![CDATA[Category: team | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/team/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-12-18T14:43:38-05:00</updated>
+  <updated>2015-12-21T17:42:13-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -42,7 +42,11 @@ updates with pointers and questions was yet another boost to velocity of
 information. Including brief comments of intent and even full blown
 plans gave us a hook for correcting mistakes before they even happened.</p>
 
-<p><blockquote><p><b>Dense Communication</b> - Extremely high signal to noise ratio textual<br/>information that's automatically compiled from different sources and intended to<br/>cross mediums.</p></blockquote></p>
+<p>{% blockquote %}
+<b>Dense Communication</b> - Extremely high signal to noise ratio textual
+information that's automatically compiled from different sources and intended to
+cross mediums.
+{% endblockquote %}</p>
 
 <p>The flip side of this was that looking through our chat was like drinking from a
 firehose. There was an immense amount of fragmented, context-less information

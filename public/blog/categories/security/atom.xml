@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Category: Security | The Technician]]></title>
+  <title><![CDATA[Category: security | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/security/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-12-18T14:43:44-05:00</updated>
+  <updated>2015-12-21T17:42:13-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -14,39 +14,65 @@
 
   
   <entry>
-    <title type="html"><![CDATA[Framed / Hijacked]]></title>
-    <link href="http://chr.ishenry.com/2009/05/16/framed--hijacked/"/>
-    <updated>2009-05-16T00:00:00-04:00</updated>
-    <id>http://chr.ishenry.com/2009/05/16/framed--hijacked</id>
-    <content type="html"><![CDATA[<p>"There's lots of bad stuff out there on the Internet." -- anonymous
-<a href="http://www.Rackspace.com">Rackspace</a> tech</p>
+    <title type="html"><![CDATA[SSH tunnels made easy]]></title>
+    <link href="http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy/"/>
+    <updated>2013-01-27T00:00:00-05:00</updated>
+    <id>http://chr.ishenry.com/2013/01/27/ssh-tunnels-made-easy</id>
+    <content type="html"><![CDATA[<p>One of the classic problems in administering databases is providing secure,
+yet accessible tools for all those who need to run queries or examine
+production data. Classically, phpMyAdmin has been a great tool for handling
+MySQL for those who don't know the command line. However, as any sysadmin
+worth his salt knows, it's an extremely insecure tool for a couple of reasons.</p>
 
-<p>And bad people, too. On one occasion, I found that someone had hijacked a
-domain similar to ours, and framed our site. Once they had the frame set up,
-they started sending out spam from the hijacked domain. The legitimacy they
-gained from having our site at their domain was really, really scary. Users
-clicking links from their spam were sent to a site that was actually ours.
-Luckily, we were alerted to this issue before any real damage was done.</p>
+<ul>
+<li>It requires php, and specific modules, which is just one more thing to install.</li>
+<li>It requires apache.</li>
+<li>Apache requires port 80 to be open.</li>
+</ul>
 
-<p>There wasn't much I could do server-side to fight this, without having to dig
-into a bunch of PHP. However, checking the location window.top against what I
-knew to be my domain turned out to be decent defense.</p>
 
-<p>if (top.location != self.location) { alert("someone is doing something
-bad…");}</p>
+<p>All of these things are bad, since garden variety attackers and script kiddies
+can potentially find your phpmyadmin installation. Since phpMyAdmin is open-
+source, and freely available, there always likely to be security holes. One of
+the best ways around this is to close phpMyAdmin off to the public via
+firewall, and then use an SSH tunnel to pass traffic through another server.
+The server hosting mysql and phpMyAdmin can safely stay hidden, with all ports
+closed.</p>
 
-<p>Of course, this particular defense will also complain about anyone who has
-framed your site for any other reason. For example, the Digg toolbar frames
-sites. So if anyone hits your site using the Digg toolbar, they'll be treated
-to your warning as well. But whether Digg should be framing sites in this way
-seems to be <a href="http://bit.ly/15snr9">controversial</a> enough.</p>
+<p><img src="/images/user/ssh_tunnel_diagram.gif" alt="Diagram, showing the flow of traffic between client and secure mysql server.
+" /></p>
 
-<p>Update : <a href="http://su.pr">su.pr</a>, which combines a URL shortener with the
-StumbleUpon toolbar, has even further complicated the framing situation. (Full
-disclosure : I am a user.) Clicking any su.pr link will open the shortened URL
-with the StumbleUpon toolbar. This has great potential for authors, who can
-use the toolbar to increase traffic to their site, but at the cost of forcing
-the toolbar on users.</p>
+<p>Set up looks something like this (on a Mac, at least).</p>
+
+<ol>
+<li><p>Install <a href="http://www.macports.org/install.php">MacPorts</a></p></li>
+<li><p>Install Xcode command line dev tools.</p></li>
+</ol>
+
+
+<blockquote><p>Open Xcode -> Preferences -> Downloads -> Command Line Tools</p></blockquote>
+
+<ol>
+<li>Install <a href="http://www.harding.motd.ca/autossh/">autossh</a> , which is a tool for opening an ssh connection, and making sure it stays open. I use MacPorts to install it. <a href="http://www.macports.org/">http://www.macports.org/</a></li>
+</ol>
+
+
+<blockquote><p>$ sudo port install autossh</p></blockquote>
+
+<ol>
+<li>Once that's installed, you can run something like this. (Make sure that the port is the port that you configured Apache to accept traffic on.)</li>
+</ol>
+
+
+<blockquote><p>autossh -M 20002 -f -L 7422:your.db.served.biz.org:7422 your.jump.server.biz
+"sleep 99999999999"</p></blockquote>
+
+<ol>
+<li>From there, you can open phpMyAdmin at a URL like http://localhost:7422/phpMyAdmin. One very convenient way to wrap all this up is to use the automator app.</li>
+</ol>
+
+
+<p><img src="/images/user/ssh_tunnel_auto.png" alt="Automator screenshot" /></p>
 ]]></content>
   </entry>
   
