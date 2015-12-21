@@ -27,8 +27,6 @@ var github = (function(){
       fragment += '<h2><a href="'+repo_url+'">'+repo_name+'</a></h4>'
       fragment += '<ul>'
       for(i = 0; i < contributions[repo].length; i++) {
-        console.log(contributions[repo][i])
-
         pr = contributions[repo][i]
         fragment += '<li><a href="'+pr.pull_request.html_url+'">'+pr.title+'</a></li>';
       }

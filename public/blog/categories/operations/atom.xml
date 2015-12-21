@@ -4,7 +4,7 @@
   <title><![CDATA[Category: operations | The Technician]]></title>
   <link href="http://chr.ishenry.com/blog/categories/operations/atom.xml" rel="self"/>
   <link href="http://chr.ishenry.com/"/>
-  <updated>2015-12-18T14:43:38-05:00</updated>
+  <updated>2015-12-21T17:42:13-05:00</updated>
   <id>http://chr.ishenry.com/</id>
   <author>
     <name><![CDATA[Chris Henry]]></name>
@@ -94,70 +94,38 @@ an Autoscale Group, or by tag, and then apply some logic to pick a machine.</p>
 <p>Here's some sample code that will look at the instances in an ASG, and pick one
 that either hasn't been repaired, or the node repaired the longest time ago.</p>
 
-<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span>Find least recently repaired node </span></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-</pre></td><td class='code'><pre><code class='python'><span class='line'><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="err">!</span><span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="nb">bin</span><span class="o">/</span><span class="n">env</span> <span class="n">python</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="kn">import</span> <span class="nn">boto.ec2</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">boto.ec2.autoscale</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">ec2</span> <span class="o">=</span> <span class="n">boto</span><span class="o">.</span><span class="n">ec2</span><span class="o">.</span><span class="n">connect_to_region</span><span class="p">(</span><span class="s">&#39;us-east-1&#39;</span><span class="p">)</span>
-</span><span class='line'><span class="n">asg</span> <span class="o">=</span> <span class="n">boto</span><span class="o">.</span><span class="n">ec2</span><span class="o">.</span><span class="n">autoscale</span><span class="o">.</span><span class="n">connect_to_region</span><span class="p">(</span><span class="s">&#39;us-east-1&#39;</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">group</span> <span class="o">=</span> <span class="n">asg</span><span class="o">.</span><span class="n">get_all_groups</span><span class="p">(</span><span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;your-asg&quot;</span><span class="p">])[</span><span class="mi">0</span><span class="p">]</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">instance_ids</span> <span class="o">=</span> <span class="p">[</span><span class="n">i</span><span class="o">.</span><span class="n">instance_id</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">group</span><span class="o">.</span><span class="n">instances</span><span class="p">]</span>
-</span><span class='line'><span class="n">instances</span> <span class="o">=</span> <span class="n">ec2</span><span class="o">.</span><span class="n">get_only_instances</span><span class="p">(</span><span class="n">instance_ids</span><span class="p">)</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Find</span> <span class="n">instances</span> <span class="n">without</span> <span class="n">a</span> <span class="o">&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="n">last</span><span class="o">-</span><span class="n">repaired</span><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;</span> <span class="n">tag</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">for</span> <span class="n">instance</span> <span class="ow">in</span> <span class="n">instances</span><span class="p">:</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">pre</span><span class="o">&gt;&lt;</span><span class="n">code</span><span class="o">&gt;</span><span class="k">if</span> <span class="s">&#39;last-repaired&#39;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="o">.</span><span class="n">keys</span><span class="p">():</span>
-</span><span class='line'>    <span class="k">print</span> <span class="s">&quot;Found an instance without last-repair tag&quot;</span>
-</span><span class='line'>    <span class="k">print</span> <span class="n">instance</span>
-</span><span class='line'>    <span class="nb">exit</span><span class="p">()</span>
-</span><span class='line'><span class="o">&lt;/</span><span class="n">code</span><span class="o">&gt;&lt;/</span><span class="n">pre</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">h1</span><span class="o">&gt;</span><span class="n">Sort</span> <span class="n">instances</span> <span class="n">by</span> <span class="n">date</span> <span class="n">asc</span><span class="p">,</span> <span class="n">which</span> <span class="ow">is</span> <span class="n">oldest</span> <span class="n">first</span><span class="o">&lt;/</span><span class="n">h1</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="n">sorted_instances</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">instances</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">instance</span><span class="p">:</span> <span class="n">instance</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="s">&#39;last-repaired&#39;</span><span class="p">])</span><span class="o">&lt;/</span><span class="n">p</span><span class="o">&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">&lt;</span><span class="n">p</span><span class="o">&gt;</span><span class="k">print</span> <span class="s">&quot;Found oldest repair: &quot;</span> <span class="o">+</span> <span class="n">sorted_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">id</span>
-</span><span class='line'><span class="k">print</span> <span class="n">sorted_instances</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">tags</span><span class="p">[</span><span class="s">&#39;last-repaired&#39;</span><span class="p">]</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+<p>{% codeblock lang:python Find least recently repaired node %}</p>
+
+<h1>!/usr/bin/env python</h1>
+
+<p>import boto.ec2
+import boto.ec2.autoscale</p>
+
+<p>ec2 = boto.ec2.connect_to_region('us-east-1')
+asg = boto.ec2.autoscale.connect_to_region('us-east-1')</p>
+
+<p>group = asg.get_all_groups(names=["your-asg"])[0]</p>
+
+<p>instance_ids = [i.instance_id for i in group.instances]
+instances = ec2.get_only_instances(instance_ids)</p>
+
+<h1>Find instances without a <code>last-repaired</code> tag</h1>
+
+<p>for instance in instances:</p>
+
+<pre><code>if 'last-repaired' not in instance.tags.keys():
+    print "Found an instance without last-repair tag"
+    print instance
+    exit()
+</code></pre>
+
+<h1>Sort instances by date asc, which is oldest first</h1>
+
+<p>sorted_instances = sorted(instances, key=lambda instance: instance.tags['last-repaired'])</p>
+
+<p>print "Found oldest repair: " + sorted_instances[0].id
+print sorted_instances[0].tags['last-repaired']
+{% endcodeblock %}</p>
 
 <p>The above snippet is based on the venerable
 <a href="http://boto.readthedocs.org/en/latest/">boto</a> library. Using python for
@@ -219,7 +187,13 @@ shot, and worse, I felt like I didn't care, which I hated myself for.</p>
 <!-- more -->
 
 
-<p><blockquote><p>Burnout is a state of emotional, mental, and physical exhaustion caused by<br/>excessive and prolonged stress. It manifests itself in ways including anxiety,<br/>loss of motivation and confidence, and even degradation of physical health.<br/>Burnout can be prevalent in organizations that promote hero culture and where<br/>employees maintain a strong a sense of duty...</p></blockquote></p>
+<p>{% blockquote %}
+Burnout is a state of emotional, mental, and physical exhaustion caused by
+excessive and prolonged stress. It manifests itself in ways including anxiety,
+loss of motivation and confidence, and even degradation of physical health.
+Burnout can be prevalent in organizations that promote hero culture and where
+employees maintain a strong a sense of duty...
+{% endblockquote %}</p>
 
 <p>--- <a href="http://burnout.io/">Burnout.io</a></p>
 
@@ -318,7 +292,11 @@ updates with pointers and questions was yet another boost to velocity of
 information. Including brief comments of intent and even full blown
 plans gave us a hook for correcting mistakes before they even happened.</p>
 
-<p><blockquote><p><b>Dense Communication</b> - Extremely high signal to noise ratio textual<br/>information that's automatically compiled from different sources and intended to<br/>cross mediums.</p></blockquote></p>
+<p>{% blockquote %}
+<b>Dense Communication</b> - Extremely high signal to noise ratio textual
+information that's automatically compiled from different sources and intended to
+cross mediums.
+{% endblockquote %}</p>
 
 <p>The flip side of this was that looking through our chat was like drinking from a
 firehose. There was an immense amount of fragmented, context-less information
