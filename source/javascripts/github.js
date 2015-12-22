@@ -16,7 +16,7 @@ var github = (function(){
 
     for(repo in contributions) {
 
-      if(repo.match('chrishenry') || repo.match('geonosis')) {
+      if(repo.match('geonosis')) {
         continue;
       }
 
@@ -74,10 +74,11 @@ var github = (function(){
       $.ajax({
         url: "https://api.github.com/search/issues"
        ,data: {
-          q: 'author:chrishenry is:pr is:public',
+          q: 'is:pr author:chrishenry is:public -user:chrishenry -user:behance is:closed',
           ref: 'searchresults',
           type: 'Issues',
-          utf: 'utf8=%E2%9C%93'
+          utf: 'utf8=%E2%9C%93',
+          per_page: '100'
         }
        ,error: function (err) { $(options.target + ' p.loading').addClass('error').text("Error loading Contributions"); }
        ,success: function(data) {
