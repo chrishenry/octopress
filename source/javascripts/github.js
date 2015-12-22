@@ -77,7 +77,8 @@ var github = (function(){
           q: 'is:pr author:chrishenry is:public -user:chrishenry -user:behance is:closed',
           ref: 'searchresults',
           type: 'Issues',
-          utf: 'utf8=%E2%9C%93'
+          utf: 'utf8=%E2%9C%93',
+          per_page: '100'
         }
        ,error: function (err) { $(options.target + ' p.loading').addClass('error').text("Error loading Contributions"); }
        ,success: function(data) {
