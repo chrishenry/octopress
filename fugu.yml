@@ -1,0 +1,8 @@
+image: octopress
+name: octopress
+rm: true
+tty: true
+workdir: /opt/octopress
+volume:
+  - $PWD:/opt/octopress/
+
