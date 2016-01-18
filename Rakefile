@@ -453,7 +453,7 @@ class S3FolderUpload
   #
   def initialize(folder_path, bucket)
     @folder_path       = folder_path
-    @files             = Dir.glob("#{folder_path}/**/*")
+    @files             = Dir.glob("#{folder_path}/**/**")
     @total_files       = files.length
     @connection        = Aws::S3::Client.new()
     resp = @connection.list_buckets()
@@ -490,6 +490,7 @@ class S3FolderUpload
           end
           file_name = files.pop rescue nil
           next unless file_name
+          next unless File.file?(file_name)
 
           puts "[#{Thread.current["file_number"]}/#{total_files}] uploading..."
 
