@@ -1,17 +1,20 @@
-FROM envygeeks/alpine
+FROM ubuntu:14.04.3
 MAINTAINER Chris Henry <henry.christopher@gmail.com>
 
-RUN \
-  apk --update add readline readline-dev libxml2 libxml2-dev libxslt  \
-    libxslt-dev zlib zlib-dev ruby ruby-dev yaml \
-    yaml-dev libffi libffi-dev build-base nodejs ruby-io-console \
-    ruby-irb ruby-json ruby-rdoc
+ENV LANG en_US.UTF-8
+ENV LC_ALL en_US.UTF-8
+
+# Assumes yes for any whiptail interactive screens
+ENV DEBIAN_FRONTEND noninteractive
+
+# Install tools & libs to compile everything
+RUN locale-gen en_US.UTF-8 && export LANG=en_US.UTF-8 && \
+    apt-get update -y && apt-get install -y \
+      ruby ruby-dev libffi-dev build-essential nodejs ruby-json
 
 RUN mkdir -p /aws && \
-  apk -Uuv add groff less python py-pip && \
-  pip install awscli && \
-  apk --purge -v del py-pip && \
-  rm /var/cache/apk/*
+  apt-get update -y && apt-get install -y python python-dev python-pip && \
+  pip install awscli
 
 RUN mkdir -p /opt/octopress
 COPY Gemfile /opt/octopress/
