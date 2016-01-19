@@ -10,14 +10,14 @@ ENV DEBIAN_FRONTEND noninteractive
 # Install tools & libs to compile everything
 RUN locale-gen en_US.UTF-8 && export LANG=en_US.UTF-8 && \
     apt-get update -y && apt-get install -y \
-      ruby ruby-dev libffi-dev build-essential nodejs ruby-json
+      ruby ruby-dev build-essential
 
 RUN mkdir -p /opt/octopress
 COPY Gemfile /opt/octopress/
 COPY Gemfile.lock /opt/octopress/
 
 RUN cd /opt/octopress/ && \
-  gem install bundle && bundle install --system
+  gem install bundle && gem install rdoc && bundle install --system
 
 WORKDIR /opt/octopress
 EXPOSE 4000 80
