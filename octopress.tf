@@ -47,6 +47,22 @@ resource "aws_iam_user_policy" "octopress-deploy-policy" {
       "Resource": [
         "arn:aws:s3:::*"
       ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+          "ecr:GetAuthorizationToken"
+      ],
+      "Resource": "*"
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+          "ecr:GetDownloadUrlForLayer",
+          "ecr:BatchGetImage",
+          "ecr:BatchCheckLayerAvailability"
+      ],
+      "Resource": "arn:aws:ecs:us-east-1:152888288016:container/octopress"
     }
   ]
 }
