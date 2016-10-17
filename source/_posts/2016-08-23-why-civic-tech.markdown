@@ -67,3 +67,6 @@ actually doing just that.
 
 Politicians' jobs are to represent those that have deemed them worthy / elected them / etc. As with any / all of us, we're all beholden to those that write our paychecks / give us power. With any job, performance must be measured and feedback must be exchanged.
 
+
+https://www.whitehouse.gov/blog/2016/10/13/removing-barriers-constituent-conversations
+
