@@ -14,6 +14,7 @@ group :development do
   gem 'rb-fsevent', '~> 0.9'
   gem 'stringex', '~> 1.4.0'
   gem 'aws-sdk', '~> 2'
+  gem 'front_matter_parser'
 end
 
 gem 'sinatra', '~> 1.4.2'
