@@ -3,6 +3,7 @@ require "bundler/setup"
 require "stringex"
 require 'pp'
 require 'aws-sdk'
+require 'front_matter_parser'
 
 ## -- Rsync Deploy config -- ##
 # Be sure your public key is listed in your server's ~/.ssh/authorized_keys file
@@ -37,25 +38,17 @@ task :gather_page_categories do
 
   categories = []
 
-  Dir.glob("./source/_posts/*.markdown") do |file|
+  Dir.glob("./source/_posts/*.md") do |file|
 
-    frontmatter = YAML.load_file(file)
-    unless frontmatter.is_a?(Hash); next end
+    parsed = FrontMatterParser.parse_file(file)
 
-    if frontmatter.has_key?('categories')
-
-      if frontmatter['categories'].is_a?(Array)
-        categories += frontmatter['categories']
-      elsif frontmatter['categories'].is_a?(String)
-        categories += [frontmatter['categories']]
-      end
-
+    if parsed.front_matter['categories'].is_a?(Array)
+      categories += parsed.front_matter['categories']
     end
 
   end
 
   data = {'categories' => categories.sort.uniq}
-
   pp data
 
 end
@@ -296,7 +289,7 @@ desc "deploy public directory to github pages"
 multitask :push do
   puts "## Deploying branch to Github Pages "
   puts "## Pulling any updates from Github Pages "
-  cd "#{deploy_dir}" do 
+  cd "#{deploy_dir}" do
     Bundler.with_clean_env { system "git pull" }
   end
   (Dir["#{deploy_dir}/*"]).each { |f| rm_rf(f) }
