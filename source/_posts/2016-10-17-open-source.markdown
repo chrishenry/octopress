@@ -6,21 +6,21 @@ comments: true
 categories:
  - code
  - tools
+ - open source
 ---
 
 After almost ten years working in web development and operations, I've used a
-ton of open source software.
+ton of open source software. And now, it's time to give back.
 
-It's been amazing to see how the culture around open source has changed. Early
-on, it was a point of pride to say that one didn't use third party packages. It
+It's been amazing to see how the opinion of open source has changed. Early
+on, it was a point of pride to say that one didn't use third party code. It
 was viewed that if you did that, you didn't know how to program.
 
-As time went on, the industry's perspective on that has shifted to the point
+As time went on, the industry's perspective has shifted to the point
 where writing significant amounts of your own code is folly. The logic being
 that there are too many details that need to be accounted for to build a
-meaningful app. As time went on, even the most tinfoil hat security guys
-transitioned from shunning third party code to requiring it for particularly
-sensitive parts of your app (crypto, validation, templating).
+meaningful app. Any amount of time spent on problems that have been solved over
+and over again was time *not* spent on your product.
 
 Nowadays, thanks mainly to Github, any problem that I've encountered can be
 (mostly) solved by a search through open Github repos. Many of these freely
