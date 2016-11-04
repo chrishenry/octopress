@@ -71,3 +71,4 @@ Politicians' jobs are to represent those that have deemed them worthy / elected 
 https://www.whitehouse.gov/blog/2016/10/13/removing-barriers-constituent-conversations
 
 http://fusion.net/story/359126/mark-zuckerberg-john-podesta-wikeleaks-sheryl-sandberg/
+https://medium.com/@USCTO/our-civic-duty-as-techies-fd2008df76e4#.dz8qzvkjp
