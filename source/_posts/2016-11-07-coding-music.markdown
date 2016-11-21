@@ -25,11 +25,19 @@ get all tangled in words.
 
 ### _Hacker's Coffee_, Spotify Playlist
 
-https://open.spotify.com/user/omegak/playlist/4mWcjE2mVcaALYi6v8hDZN
+I was looking for a good coding soundtrack, and turned to Spotify's search for
+some quick wins. There were a ton of great lists, but [Hacker's Coffee](https://open.spotify.com/user/omegak/playlist/4mWcjE2mVcaALYi6v8hDZN)
+was the only one that not only held me, but sent me looking looking for music
+from the featured artists. Highlights include Hans Zimmer's _Mombassa_,  from the
+Inception Soundtrack, a number of tracks by 65 days of static, and Infiltration,
+from the Mass Effect Soundtrack. Due to this soundtrack's sheer depth (532
+tracks), there is a high chance you're going to find something you like.
 
 ### _Radio_, Steep Canyon Rangers
 
 I randomly saw Steve Martin with the Steep Canyon Rangers recently. While I've
 never been a fan of bluegrass, I was super impressed by what I heard and felt.
-Turns out the busyness of the bango (which should be quite distracting),
-actually turns into a lovely melange.
+Turns out the twangy busyness of the banjo (which should be quite distracting),
+actually turns into a lovely mélange when backed by guitars and mandolin. Look
+out for all the awesome fiddle hooks, too, especially on the title track
+_Radio_.
