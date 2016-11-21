@@ -6,6 +6,20 @@ comments: true
 categories:
 ---
 
+In a lot of ways, tech has failed the nation.
+
+Nate Silver's fiery crash of a prediction engine led many people astray. The thought that we could boil down
+the state of mind of the nation to a simple probability was fatally egotistical.
+
+One measure of a country is ease of access to information.
+
+On rallying cry to technologists the past 2 weeks has been to go out and build. While the sentiment is amazing, I must caution that energy needs to be directed towards existing projects that are struggling, and not creating something new. There are plenty of struggling efforts that need help. Don't create a new one.
+
+Here's some projects you should be working with;
+ * The National Voter File, for enabling access to all states voter registries.
+ *
+
+
 https://en.wikipedia.org/wiki/Information_wants_to_be_free
 https://en.wikipedia.org/wiki/Chelsea_Manning
 https://en.wikipedia.org/wiki/Adrian_Lamo
@@ -22,7 +36,7 @@ What I’m About
 What tech is about
  - empowering people
  - enabling organizations
- - codifying process
+ - codifying processes
 
 Data wants to be free
  - https://en.wikipedia.org/wiki/Information_wants_to_be_free
@@ -33,16 +47,7 @@ Data wants to be free
 Accountability
  - Clearly present the differences (wrong word, looking for diff, but in laymans’ terms) in constituent desires and congressional action
 
-Moved to IssueVoter
-Hello World, I’m looking for a job. I have a bunch of experience moving data through systems, working with designers, fighting hackers, defending form hackers, connecting people to the cause/mission, and feeling my way through problems not felt before.
-
 Since $job-1 I’ve been in search of a problem that once solved, could lead to a large number of people being better informed, better connected, and happier as a result.
-
-I’m not fucking interested in putting motherfucking mustaches on crappy cats or shitty selfies.
-
-I joined issuevoter because i despise the lack of accountability in government. The data is out there for people to see if their congresspeople are voting the way constituents want them to. However, it’s hidden in a quagmire of legalese, jargon, and outdated design.
-
-I met Maria, and she explained what she was doing. Upon hearing the mission, I realized I had no idea who my dipshit congressperson was. Then I was fairly pissed off at myself for not knowing any of that.
 
 Then I took cursory look at trying to find the kind of information that would lead to accountability. Congressional votes, attendance (these guys don't even fucking show up sometimes), yea or nay, serving on committees. The data is actually out there. But it took me, someone considers Google more important that certain nerve endings, quite a bit of time and pain to actually find what I was looking for.
 
