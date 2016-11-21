@@ -1,0 +1,31 @@
+---
+layout: post
+title: "Hiring Well in Tech"
+date: 2016-11-21 12:15:49 -0500
+comments: true
+categories:
+ - team
+ - hiring
+---
+
+Hiring in tech is oft talked and written about topic, but most of the content
+out there tends to focus on technical skills, interview questions, and
+whiteboarding.
+
+
+Danny Meyer on how to hire well
+***********************
+Serious eats podcast
+
+How they make you feel is just as important as well they code
+
+https://soundcloud.com/user-306003081/danny-meyer-talks-hospitality#t=32:00
+
+No one can be trained to be motivated to make you feel good. 6 emotional skills that are required to be on a great hospitality team.
+
+Optimistic kindness; they need to be hopeful.
+Curious intelligence; every day is an opportunity to learn something new
+Work ethic; you can't train someone to care about doing the work right.
+Empathy; be aware of the wake you're leaving, and care what it does to other boats.
+Self awareness; understanding what your personal weather report is, and how it affects others.
+Integrity; have the judgment to do the right thing, even if not in your own self interest.
