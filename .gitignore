@@ -11,3 +11,5 @@ source/stylesheets/screen.css
 vendor
 .vendor
 node_modules
+Gemfile.lock
+public/

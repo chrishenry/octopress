@@ -16,10 +16,6 @@ var github = (function(){
 
     for(repo in contributions) {
 
-      if(repo.match('geonosis')) {
-        continue;
-      }
-
       repo_url = getRepoUrlFromPull(contributions[repo][0].pull_request.html_url)
       repo_name = getRepoNameFromPull(contributions[repo][0].pull_request.html_url)
 
@@ -71,10 +67,14 @@ var github = (function(){
       });
     },
     showContributions: function(options){
+      var q = 'is:pr author:' + options['user'] + ' is:public -user:' + options['user'] + ' ' + options['search_extra']  + ' is:merged';
+
+      console.log(q)
+
       $.ajax({
         url: "https://api.github.com/search/issues"
        ,data: {
-          q: 'is:pr author:chrishenry is:public -user:chrishenry -user:behance is:closed',
+          q: q,
           ref: 'searchresults',
           type: 'Issues',
           utf: 'utf8=%E2%9C%93',
