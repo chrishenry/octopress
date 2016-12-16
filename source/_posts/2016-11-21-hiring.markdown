@@ -10,14 +10,22 @@ categories:
 
 Hiring in tech is oft talked and written about topic, but most of the content
 out there tends to focus on technical skills, interview questions, and
-whiteboarding.
+whiteboarding. While finding a technical fit is at the core of the task, it's
+often a cold process that ignores the value of finding a candidate who can join
+a team and make everyone happy (reword this).
 
+A while ago, I listened to a [Special Sauce](http://www.seriouseats.com/tags/special%20sauce%20podcast)
+podcast interviewing Danny Meyer. Danny Meyer is the CEO of Union Square
+Hospitality Group, the organization behind Union Square Cafe, Shake Shack, and a
+dozen other notable restaurants.
 
 Danny Meyer on how to hire well
 ***********************
 Serious eats podcast
 
 How they make you feel is just as important as well they code
+
+It's Danny Meyer on hiring for hospitality, but the six qualities he outlines are super applicable to hiring technical people.
 
 https://soundcloud.com/user-306003081/danny-meyer-talks-hospitality#t=32:00
 
@@ -30,11 +38,7 @@ Empathy; be aware of the wake you're leaving, and care what it does to other boa
 Self awareness; understanding what your personal weather report is, and how it affects others.
 Integrity; have the judgment to do the right thing, even if not in your own self interest.
 
-Hey Regina,
-
-Sorry for the delay in response, it was a super busy week.
-
-That's great you've gotten responses already! Here's some feedback on your posting;
+Some general tips on job descriptions;
 
  - Try to avoid language that evokes aggression like "warrior" or "rockstar" when describing the ideal candidate. You're really looking for someone thoughtful who can effectively solve technical problems while communicating the what and why to non-technical folks.
  - It's great you're upfront about the compensation being equity, as it really clears it up for folks who might need a job that pays cash. However, what do you mean by "upfront"?
@@ -45,21 +49,31 @@ When reading resumes, here's some things to look for;
 
  - Long lists of technologies aren't usually helpful in determining a good fit, especially when they have the same tech, but incrementing version numbers. (ie Adobe cs2, cs3, cs4). It shows a lack of self-confidence that they're trying to make up for in list length.
  - Be sure to check the release date of technologies with versions. For example, Adobe CS5 was released 6 years ago. You're looking for someone who is up on modern technologies.
-  - Look for candidates who showcase business outcomes of tech built instead of simple output. This goes back to the idea that technologists should be connected to their work.
+ - Look for candidates who showcase business outcomes of tech built instead of
+ simple output. This goes back to the idea that technologists should be connected to their work.
  - In general, try to judge a candidate on functionality present on work they link to. With Patrick, for example, I couldn't find a link that showcased any sort of dynamic content or backend functionality. If you really need a candidate with eCommerce experience (and you probably do) they should be able to link to an existing project.
 
 When interviewing;
 
- A good way to establish technical fit would be to build up a list of very clear and specific tasks to be done. Walk through them with the candidate, and ask them to explain how they would execute. They should be able to detail things that might be problems, how the feature would be tested, and what sort of things would be needed from other team members. In essence, have them talk through the process of building, testing and deploying. While talking through this, ask them questions about things that aren't clear, or were jargon. As this is the way you'll be working together, it's super important they're able to do this in the interview.
+Make sure to establish your role within the organization. Part of what you're
+looking for is willingness and capability of the candidate to communicate with
+someone outside their sphere of comfort. More importantly, do they ask you
+questions about what your own goals are, and see if there's anything they can do
+to help.
+
+A good way to establish technical fit would be to build up a list of very clear
+and specific tasks. Walk through them with the candidate, and ask them to
+explain how they would execute. The candidate is sure to ask clarifying
+questions in response, and it's OK if you don't know the answer.
+
+
+ They should be able to detail things that might be problems, how the
+ feature would be tested, and what sort of things would be needed from other team members. In essence, have them talk through the process of building, testing and deploying. While talking through this, ask them questions about things that aren't clear, or were jargon. As this is the way you'll be working together, it's super important they're able to do this in the interview.
 
  At the end of that conversation, if a candidate can confidently talk through what they'd be doing (and ask good questions about the existing codebase) they may be a good technical fit. More importantly, the better you understand each other, the more likely the candidate is be good fit, regardless of tech.
 
  With regards to technical tests, I've found that the closer they are to the actual tasks, the better they'll indicate fit. Instead of designing a test, why not ask your best candidate to do a trial. Pick what they think is the easiest task you talked about, and actually do it. Ask them to demonstrate, on a trial basis, what they said they could do. This also gives you the opportunity to gauge how quickly they would get up to speed.
 
-Hope that helps!
-Chris
-
-PS Also, take a listen to this (https://soundcloud.com/user-306003081/danny-meyer-talks-hospitality#t=32:00). It's Danny Meyer on hiring for hospitality, but the six qualities he outlines are super applicable to hiring technical people.
 
 
 
