@@ -50,7 +50,7 @@ Here's some projects you should be working with;
 
 Politicians' jobs are to represent those that have deemed them worthy / elected them / etc. As with any / all of us, we're all beholden to those that write our paychecks / give us power. With any job, performance must be measured and feedback must be exchanged.
 
-
+https://tech-forward.com/
 https://www.whitehouse.gov/blog/2016/10/13/removing-barriers-constituent-conversations
 http://civichall.org/civicist/rebuilding-our-civic-muscles/
 http://fusion.net/story/359126/mark-zuckerberg-john-podesta-wikeleaks-sheryl-sandberg/
