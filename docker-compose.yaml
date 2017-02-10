@@ -3,8 +3,8 @@ services:
   web:
     build:
       context: .
-    volumes: 
+    volumes:
       - .:/opt/octopress/
     command: "rake preview"
     ports:
-      - "4000:4000"      
+      - "4000:4000"
