@@ -8,11 +8,11 @@ categories:
  - hiring
 ---
 
-Hiring in tech is oft talked and written about topic, but most of the content
+Hiring in tech is an oft talked and written about topic, but most of the content
 out there tends to focus on technical skills, interview questions, and
 whiteboarding. While finding a technical fit is at the core of the task, it's
-often a cold process that ignores the value of finding a candidate who can join
-a team and contribute more than just code.
+often a cold, needlessly judgmental process that ignores the value of finding a
+candidate who can join a team and contribute more than just code.
 
 A while ago, I listened to a [Special Sauce](http://www.seriouseats.com/tags/special%20sauce%20podcast)
 podcast interviewing Danny Meyer. Danny Meyer is the CEO of Union Square
@@ -26,36 +26,43 @@ Optimistic kindness.
 Team members need to be hopeful. Nothing shuts down a team quicker than someone
 who is pessimistic about new ideas and creativity. There are tons of code
 problems that are solvable, and treating them as such helps create a team
-committed to moving forward. Enthusiasm during ideation helps drive energy and
-execution.
+committed to moving forward.
 
 Curious intelligence.
 
-Every day is an opportunity to learn something new. In tech, things change
-ridiculously quickly. Without curiosity, team members' skills stagnate.
-Without openly exploring how things can be improved, product languishes.
-Treating new features as an experiment is critical to discovering what works,
+Curiosity has two important ramifications; introspection into a candidates own
+ideas, and willingness to explore weird problems that crop up.
+
+In tech, things change ridiculously quickly. New frameworks, methodologies and
+services pop up every day, and that makes every day is an opportunity to learn
+and apply something new. Without curiosity and introspection into the how of
+our work, skills stagnate.
+
+Treating features as experiments is critical to discovering what works,
 and being deeply curious about interactions will help build domain knowledge
-for the team.
+for the team. When things go sideways, and they often do, in weird and
+unexpected ways, a sense of open curiosity is incredibly helpful in tracking
+down, understanding, and fixing problems.
 
 Work ethic.
 
-You can't train someone to care deeply about doing the work right. Many don't
-realize that the success of their own work translates to success for the entire
-team.
+You can't train or incentivize someone into giving a shit about doing the work
+right. Many don't realize that the success of their own work translates to
+success for the entire team.
 
 Empathy.
 
 Be aware of the wake you're leaving, and care about what it does to others.
-Everything we say and do has consequences. Ignoring asks for help, or failing to
-document and discuss the work you do makes it more difficult for those you with
-to build on what you've done.
+Everything we say and do has consequences. Ignoring requests for help, or
+failing to document and discuss the work you do makes it more difficult for
+those you with to build on what you've done.
 
 Self awareness.
 
 Understanding what your personal weather report is, and how it affects others.
-Knowing your strengths and weaknesses, and acting accordingly is what allows you
-to be a truly productive team member.
+Know your weaknesses, and ask for help on decisions and work you know you are
+weak in. Also, understand your mood, and how it affects work. When you're
+feeling in a funk, understand how to get out of it.
 
 Integrity.
 
@@ -63,6 +70,5 @@ Have the judgment to do the right thing, even if not in your own self interest.
 
 https://soundcloud.com/user-306003081/danny-meyer-talks-hospitality#t=32:00
 
-No one can be trained to be motivated to make you feel good. 6 emotional skills that are required to be on a great hospitality team.
 
 
