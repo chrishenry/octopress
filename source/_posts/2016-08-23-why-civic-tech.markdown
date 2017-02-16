@@ -17,8 +17,8 @@ have turned into opinion-impermeable bubbles, with no chance of civil
 discourse, and no trust of the "other side".
 
 One measure of a country is ease of access to information. We have access to
-more information than ever before, but lack the ability to make any sense of it.
-Or worse, are unwilling to trust it.
+more information than ever before, but lack the tools to make meaningful sense
+of it.
 
 As a American, this is a troubling time. As a technologist, this is a nightmare,
 to see trust in online tools eroding before our eyes.
@@ -33,7 +33,7 @@ problems is the stuff that the nation is built on.
 
 A rallying cry to technologists has been to go out and build. While the
 sentiment is amazing, I must caution that energy needs to be directed towards
-existing, meaningful projects that are resource starved, and not creating
+existing, meaningful projects that are resource starved, instead of creating
 something new. There are plenty of struggling efforts that need help. Don't
 create a new one. Even when looking to contribute, there is a high opportunity
 cost of working on the wrong project, so choose carefully.
