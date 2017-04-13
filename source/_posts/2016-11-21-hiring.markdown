@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Hiring Well in Tech"
+title: "Hiring in Tech based on Emotional Qualities"
 date: 2017-01-21 12:15:49 -0500
 comments: true
 categories:
