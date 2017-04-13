@@ -1,0 +1,84 @@
+---
+layout: post
+title: "Hiring in Tech based on Emotional Qualities"
+date: 2017-01-21 12:15:49 -0500
+comments: true
+categories:
+ - team
+ - hiring
+---
+
+Hiring in tech is an oft talked and written about topic, but most of the content
+out there tends to focus on technical skills, interview questions, and
+whiteboarding. While finding a technical fit is at the core of the task, it's
+often a cold, needlessly judgmental process that ignores the value of finding a
+candidate who can join a team and contribute more than just code.
+
+A while ago, I listened to a [Special Sauce](http://www.seriouseats.com/tags/special%20sauce%20podcast)
+podcast interviewing Danny Meyer. Danny Meyer is the CEO of Union Square
+Hospitality Group, the organization behind Union Square Cafe, Shake Shack, and a
+slew of other notable restaurants. He believes there are six emotional
+qualities that are critical to a team member's success. Here they are, and
+how they relate to being a successful tech hire.
+
+## Optimistic kindness.
+
+Team members need to be hopeful. Nothing shuts down a team quicker than someone
+who is pessimistic about new ideas and creativity. There are tons of code
+problems that are solvable, and treating them as such helps create a team
+committed to moving forward.
+
+## Curious intelligence.
+
+Curiosity has two important ramifications; introspection into a candidates own
+ideas, and willingness to explore weird problems that crop up.
+
+In tech, things change ridiculously quickly. New frameworks, methodologies and
+services pop up every day, and that makes every day is an opportunity to learn
+and apply something new. Without curiosity and introspection into the how of
+our work, skills stagnate.
+
+Treating features as experiments is critical to discovering what works,
+and being deeply curious about interactions will help build domain knowledge
+for the team. When things go sideways, and they often do, in weird and
+unexpected ways, a sense of open curiosity is incredibly helpful in tracking
+down, understanding, and fixing problems.
+
+## Work ethic.
+
+You can't train or incentivize someone into giving a shit about doing the work
+right. Many don't realize that the success of their own work translates to
+success for the entire team.
+
+## Empathy.
+
+Be aware of the wake you're leaving, and care about what it does to others.
+Everything we say and do has consequences. Ignoring requests for help, or
+failing to document and discuss the work you do makes it more difficult for
+those you with to build on what you've done.
+
+## Self awareness.
+
+Understanding what your personal weather report is, and how it affects others.
+Know your weaknesses, and ask for help on decisions and work you know you are
+weak in. Also, understand your mood, and how it affects work. When you're
+feeling in a funk, understand how to get out of it.
+
+## Integrity.
+
+Does the candidate have the judgment to do the right thing, even if that thing
+is not in their own self interest.
+
+The entire podcast was great, but [click here to hear Meyers's take on hiring](https://soundcloud.com/user-306003081/danny-meyer-talks-hospitality#t=32:00).
+
+With all the challenges of hiring, and vitriol around whiteboarding, focusing in
+on just emotional qualities is a great way for an organization to set themselves
+apart from the competition. Everyone needs a job, but few can have one where
+they have a team of great people.
+
+
+
+
+
+
+
